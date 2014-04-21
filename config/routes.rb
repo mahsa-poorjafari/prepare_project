@@ -1,5 +1,7 @@
 PrepareProject::Application.routes.draw do
 
+  resources :users
+
   resources :pictures
 
   resources :products
