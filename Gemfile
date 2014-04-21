@@ -3,6 +3,18 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 
+
+gem "html2haml"
+gem 'haml-rails'
+gem 'jquery-rails'
+gem 'colorbox-rails'
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'ckeditor_rails'
+gem 'friendly_id', '5.0.0.rc2'
+gem 'jalalidate'
+
+
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
