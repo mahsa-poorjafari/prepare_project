@@ -10,7 +10,5 @@
  *
  *= require_self
  *= require colorbox-rails   
- *= require jquery.ui.core
- *= require jquery.ui.theme
  *= require_tree .
  */
