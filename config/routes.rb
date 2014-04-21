@@ -1,5 +1,7 @@
 PrepareProject::Application.routes.draw do
 
+  resources :pages
+
   resources :categories
 
   root :to => 'static#home'
