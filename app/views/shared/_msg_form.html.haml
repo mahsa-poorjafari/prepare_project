@@ -2,7 +2,8 @@
   %fieldset
     %legend
       %span= " تماس با ما"        
-      =image_tag "msg-icon.png"
+      =image_tag "msg-icon.png"   
+      
   = form_for @message ||= Message.new, :html => {:class => "contact"} do |f|
     - if @message.errors.any?
       #error_explanation
@@ -18,16 +19,13 @@
     .form-group
       = f.label "نام",  :class => "control-label"    
       %span.Necessary= "ضروری"
-      = f.text_field :user_name, :class => "form-control"
-     
+      = f.text_field :name, :class => "form-control"  
       
       
     .form-group
       = f.label " ایمیل",  :class => "control-label"
       %span.Necessary= "ضروری"
-      = f.text_field :email, :class => "form-control"
-      
-      
+      = f.text_field :email, :class => "form-control"          
       
     .form-group
       = f.label " تلفن",  :class => "control-label"

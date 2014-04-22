@@ -1,0 +1,12 @@
+%h3
+  = Message.last.email
+  = Message.last.name
+  = Message.last.phone
+  
+%br
+%h4
+  = Message.last.text
+  %b
+    تاریخ ارسال
+    = JalaliDate.new(Message.last.created_at).strftime("%X")
+  

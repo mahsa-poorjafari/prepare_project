@@ -1,12 +1,13 @@
-%p#notice= notice
-
 %p
   %b Title:
   = @page.title
 %p
   %b Html text:
   = @page.html_text
-
+-if @page.read_attribute("title") == "تماس با ما"
+  = render "shared/msg_form"
 = link_to 'Edit', edit_page_path(@page)
 \|
 = link_to 'Back', pages_path
+
+

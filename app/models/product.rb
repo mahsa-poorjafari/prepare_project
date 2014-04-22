@@ -5,4 +5,6 @@ class Product < ActiveRecord::Base
   belongs_to :category
   extend FriendlyId
   friendly_id :title
+  validates :title, :presence => {:message => 'عنوان محصول را وارد کنید.'}
+  validates :title, :uniqueness => {:message => 'عنوان محصول تکراری است'}
 end
