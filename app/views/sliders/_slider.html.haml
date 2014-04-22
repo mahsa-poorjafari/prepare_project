@@ -10,15 +10,15 @@
                 %i.icon-edit
               = link_to  slide, :method => :delete, :data => { :confirm => 'Are you sure?' }  do
                 %i.icon-trash
-          -if slide.description.present?
+          -if slide.description_en.present?
             .image-des-holder{:class => I18n.locale}
-              = slide.description 
+              = slide.description_en 
     -if @sliders.count > 1          
       .carousel-controls
         .center
           %ol.carousel-indicator-list.carousel-indicators
-            - if  @slides.count != 1
-              -  @slides.each_with_index do |slide, index|
+            - if  @sliders.count != 1
+              -  @sliders.each_with_index do |slide, index|
                 %li{"data-slide-to" => "#{index}", "data-target" => "#homeCarousel", :class => "slide-indicator"}      
       %a.carousel-control.left{"data-slide" => "prev", href: ".carousel"} ›
       %a.carousel-control.right{"data-slide" => "next", href: ".carousel"}‹             

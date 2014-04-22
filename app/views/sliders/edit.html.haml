@@ -1,13 +1,11 @@
 .list-div
   #welcom_pan   
     %h2.heading2 
-      = t("Slider")
-      %span
-        = t("IDM_Slider")
+      slider
     .show-list
       .form-holder    
-        = form_for @slide, :html => {:multipart => true} do |f| 
-          = image_tag @slide.image.url(:original), :class => "crop cropImage", :height => "500", :width => "901"
+        = form_for @slider, :html => {:multipart => true} do |f| 
+          = image_tag @slider.image.url(:original), :class => "crop cropImage", :height => "500", :width => "901"
           = f.hidden_field :crop_x
           = f.hidden_field :crop_y
           = f.hidden_field :crop_w
@@ -15,7 +13,7 @@
           .field
             .s-description
               = f.label "توضیحات به انگلیسی"
-              = f.text_area :description, :cols => '80', :rows => "3", :class => "slide-description"
+              = f.text_area :description_en, :cols => '80', :rows => "3", :class => "slide-description"
           
             .s-description
               = f.label "توضیحات به فارسی"
@@ -27,7 +25,7 @@
               = f.submit 'ثبت', :class => "btn"
     #quotPan
       .footer_Link
-        = link_to 'بازگشت', slides_path
+        = link_to 'بازگشت', sliders_path
 
       :javascript
         $( '.crop' ).each( function () {

@@ -1,8 +1,8 @@
-= form_for @slide, :html => {:multipart => true} do |f|
-  - if @slide.errors.any?
+= form_for @slider, :html => {:multipart => true} do |f|
+  - if @slider.errors.any?
     #error_explanation      
       %ul
-        - @slide.errors.full_messages.each do |msg|
+        - @slider.errors.each do |attr, msg|
           %li= msg
 
   .field
@@ -10,7 +10,7 @@
       = f.file_field :image, :id => "slide_img"    
     .s-description
       = f.label "توضیحات به انگلیسی"
-      = f.text_area :description, :id => "slide_des"
+      = f.text_area :description_en, :id => "slide_des"
     .s-description
       = f.label "توضیحات به فارسی"
       = f.text_area :description_fa, :id => "slide_des"
