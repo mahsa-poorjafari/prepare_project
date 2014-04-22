@@ -1,5 +1,7 @@
 PrepareProject::Application.routes.draw do
 
+  resources :sliders
+
   resources :messages
 
   resources :users

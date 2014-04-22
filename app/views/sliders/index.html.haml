@@ -1,0 +1,13 @@
+.list-div
+  #welcom_pan   
+    %h2.heading2 
+      = "اسلایدر"
+
+    .index_slider  
+      = render 'slider'            
+    #quotPan
+      = link_to content_tag("span", "عکس جدید"), new_slider_path, :class => "brochure"
+      
+:javascript
+  $(".item").first().addClass("active");
+  $('.carousel').carousel();

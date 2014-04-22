@@ -1,0 +1,16 @@
+.list-div
+  #welcom_pan   
+    %h2.heading2 
+      slider
+      
+    = image_tag @slider.image(:gallery_size)
+    .show-des-fa
+      =raw @slide.description
+    #quotPan
+      .footer_Link
+        = link_to content_tag("span", "ویرایش"), edit_slide_path(@slide)
+        \|
+        = link_to content_tag("span", "بازگشت"), home_path
+        \|        
+        = link_to 'حذف', @slide, :method => :delete, :data => { confirm: 'آیا میخواهید این  تصویر را حذف کنید?'} 
+    
