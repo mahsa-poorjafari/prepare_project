@@ -8,5 +8,5 @@
   = Message.last.text
   %b
     تاریخ ارسال
-    = JalaliDate.new(Message.last.created_at).strftime("%X")
+    = JalaliDate.new(Message.last.created_at).strftime("%y/%m/%e %X")
   

@@ -10,7 +10,7 @@ gem 'haml-rails'
 gem 'colorbox-rails'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'ckeditor_rails'
-gem 'friendly_id', '5.0.0.rc2'
+gem "friendly_id", "~> 5.0.1"
 gem 'jalalidate'
 gem "nested_form"
 
