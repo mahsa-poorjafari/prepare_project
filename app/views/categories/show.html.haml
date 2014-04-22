@@ -6,6 +6,8 @@
 %p
   %b Description:
   = @category.description
+%p
+  = image_tag @category.image(:small)
 
 = link_to 'Edit', edit_category_path(@category)
 \|

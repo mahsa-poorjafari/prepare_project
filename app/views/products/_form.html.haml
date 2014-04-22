@@ -1,9 +1,8 @@
-= form_for @product do |f|
+= nested_form_for @product,  :html => { :multipart => true  } do |f|
   - if @product.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@product.errors.count, "error")} prohibited this product from being saved:"
+    #error_explanation      
       %ul
-        - @product.errors.full_messages.each do |msg|
+        - @product.errors.each do |attr, msg|
           %li= msg
 
   .field
@@ -13,7 +12,26 @@
     = f.label :description
     = f.text_area :description
   .field
-    = f.label :category_id
-    = f.number_field :category_id
+    = f.label "گروه محصول"
+    = f.select(:category_id, Category.all.collect {|u| [u.name, u.id]}, :prompt => 'گروه محصول را انتخاب کنید.')        
+  .field
+    = f.fields_for :pictures do |picture|  
+      = render "shared/upload_image_form", :picture => picture
+  .field
+    = f.link_to_add content_tag(:span, "افزودن تصویر"), :pictures, :id => "add_new_picture"    
   .actions
     = f.submit 'Save'
+
+:javascript
+  function enable_file_select(){
+    $(".enable_file_select").unbind('click').click(function(){
+      $(this).parent().find("input:file").click();
+    });
+   }
+
+  enable_file_select();
+
+  $("#add_new_picture").click(function(){
+    $(".enable_file_select").unbind('click');
+    window.setTimeout('enable_file_select()', 1000);
+  });
