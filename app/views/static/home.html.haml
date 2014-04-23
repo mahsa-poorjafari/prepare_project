@@ -1,9 +1,7 @@
-.menu
-  - @page.each do |page|            
-    =link_to page.title, page
+
 .admin_menu    
   -if is_admin?
     = render "shared/admin_menu"
 %h1 Static#home
 %p Find me in app/views/static/home.html.haml
-= t('home')
+

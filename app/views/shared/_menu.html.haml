@@ -1,0 +1,10 @@
+.item  
+  =link_to t('home'), root_path
+.item  
+  =link_to t('gallery'), Category    
+.item  
+  =link_to t('products'), Product
+- Page.all.each do |page|           
+  .item
+    =link_to page.title, page
+.clr-float
