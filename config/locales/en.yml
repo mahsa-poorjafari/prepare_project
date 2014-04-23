@@ -20,4 +20,48 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  back: "back"
+  show: "Show"
+  home: "Home"  
+  More: "More"
+  products: "Products"
+  gallery: "Gallery"
+  SignUp: "Sign Up"
+  product_categoty: "Product Category"
+  
+  form:
+    title: "Title:"
+    Description: "Description"
+    New: "New"
+    save: "Save"
+    category: "Category"
+    reseller: "Reseller"
+    edit: "Edit"
+    delete: "Delete"
+    web: "WebSite:"
+    
+  product: "Product"  
+  resellers: "Resellers"
+  messages: "Message"
+  
+  
+  reseller:
+    
+  
+  msg:
+    contact-name: "Name:"
+    contact-email: "Email:"
+    contact-phone: "Phone:"
+    contact-msg: "Message:"    
+    contact-date: "Date:"
+    contact-btn: "Send"
+    contact-title: "Contact us"
+  Required: "Required"
+  
+  
+  user:
+    email: "Email:"
+    user_name: "User Name:"
+    password: "Password:"
+    password_confirmation: "Password Confirmation:"
+    

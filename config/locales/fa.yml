@@ -1,0 +1,46 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting point
+
+fa:
+  back: "بازگشت"
+  show: "مشاهده"
+  home: "صفحه اصلی"
+  More: "مشاهده"
+  products: "محصولات"
+  gallery: "گالری"
+  SignUp: "افزودن مدیرسایت"
+  product_categoty: "گروه بندی محصولات"
+  page: "صفحات متنی"
+  form:
+    title: "عنوان:"
+    Description: "توضیحات"
+    New: "جدید"
+    save: "ثبت"
+    category: "گروه"
+    reseller: "نمایندگی های فروش"
+    edit: "ویرایش"
+    delete: "حذف"
+    web: "وب سایت:"
+    
+  product: "محصولات"
+  resellers: "نمایندگی های فروش"  
+  messages: "پیام ها"
+  
+  
+  msg:
+    contact-name: "نام:"
+    contact-email: "ایمیل:"
+    contact-phone: "تلفن:"
+    contact-msg: "پیام:"
+    contact-date: "تاریخ ارسال:"
+    contact-btn: "ارسال"
+    contact-title: "تماس با ما"
+  Required: "ضروری"
+    
+  
+  user:
+    email: "ایمیل:"
+    name: "نام:"
+    password: "رمزعبور:"
+    password_confirmation: "تکرار رمزعبور:"
+    

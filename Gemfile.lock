@@ -158,6 +158,7 @@ DEPENDENCIES
   friendly_id (~> 5.0.1)
   haml-rails
   html2haml
+  i18n
   jalalidate
   jbuilder (~> 1.2)
   jquery-rails
