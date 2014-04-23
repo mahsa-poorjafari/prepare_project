@@ -6,10 +6,17 @@
           %li= msg
 
   .field
-    = f.label :title
-    = f.text_field :title
+    = f.label "عنوان صفحه به فارسی"
+    = @page.title_fa
   .field
-    = f.label :html_text
+    = f.label "عنوان صفحه به انگلیسی"
+    = @page.title
+  
+  .field
+    = f.label "متن صفحه به فارسی:"
+    = f.text_area :html_text_fa
+  .field
+    = f.label "متن صفحه به انگلیسی:"
     = f.text_area :html_text
   .actions
-    = f.submit 'Save'
+    = f.submit 'ثبت'

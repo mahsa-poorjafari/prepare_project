@@ -1,5 +1,5 @@
 PrepareProject::Application.routes.draw do
-
+scope "(:locale)", :locale => /en|fa/ do
   resources :resellers
   resources :sliders
   resources :messages  
@@ -7,7 +7,7 @@ PrepareProject::Application.routes.draw do
   resources :products
   resources :pages
   resources :categories
-
+end
   resources :users
 
   root :to => 'static#home'

@@ -16,6 +16,7 @@ fa:
   resellers: "نمایندگی های فروش"  
   messages: "پیام ها"
   
+    
   form:
     title: "عنوان:"
     Description: "توضیحات"
@@ -31,7 +32,7 @@ fa:
     contact-name: "نام:"
     contact-email: "ایمیل:"
     contact-phone: "تلفن:"
-    contact-msg: "پیام:"
+    contact-msg: "پیام شما:"
     contact-date: "تاریخ ارسال:"
     contact-btn: "ارسال"
     contact-title: "تماس با ما"
