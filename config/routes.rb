@@ -1,5 +1,7 @@
 PrepareProject::Application.routes.draw do
 
+  resources :resellers
+
   resources :sliders
 
   resources :messages

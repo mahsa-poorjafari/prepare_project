@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Title fa:
+  = @reseller.title_fa
+%p
+  %b Title en:
+  = @reseller.title_en
+%p
+  %b Management name fa:
+  = @reseller.Management_name_fa
+%p
+  %b Management name en:
+  = @reseller.Management_name_en
+%p
+  %b Phone:
+  = @reseller.phone
+%p
+  %b Address fa:
+  = @reseller.address_fa
+%p
+  %b Address en:
+  = @reseller.address_en
+
+= link_to 'Edit', edit_reseller_path(@reseller)
+\|
+= link_to 'Back', resellers_path

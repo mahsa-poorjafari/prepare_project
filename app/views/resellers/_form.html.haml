@@ -1,0 +1,31 @@
+= form_for @reseller do |f|
+  - if @reseller.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@reseller.errors.count, "error")} prohibited this reseller from being saved:"
+      %ul
+        - @reseller.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :title_fa
+    = f.text_field :title_fa
+  .field
+    = f.label :title_en
+    = f.text_field :title_en
+  .field
+    = f.label :Management_name_fa
+    = f.text_field :Management_name_fa
+  .field
+    = f.label :Management_name_en
+    = f.text_field :Management_name_en
+  .field
+    = f.label :phone
+    = f.text_area :phone
+  .field
+    = f.label :address_fa
+    = f.text_area :address_fa
+  .field
+    = f.label :address_en
+    = f.text_area :address_en
+  .actions
+    = f.submit 'Save'
