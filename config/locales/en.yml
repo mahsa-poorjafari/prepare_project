@@ -26,23 +26,22 @@ en:
   More: "More"
   products: "Products"
   gallery: "Gallery"
-  SignUp: "Sign Up"
-  product_categoty: "Product Category"
+  SignUp: "Sign Up"  
+  category: "Category of Products"
+  product: "Product"  
+  resellers: "Resellers"
+  messages: "Message"
   
   form:
     title: "Title:"
     Description: "Description"
     New: "New"
-    save: "Save"
-    category: "Category"
+    save: "Save"    
     reseller: "Reseller"
     edit: "Edit"
     delete: "Delete"
     web: "WebSite:"
     
-  product: "Product"  
-  resellers: "Resellers"
-  messages: "Message"
   
   
   reseller:

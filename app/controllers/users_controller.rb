@@ -61,6 +61,22 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def create_session
+    user = User.where(:user_name => params[:user_name]).first
+    if user.present? and user.password == params[:password]
+      session[:admin] = user
+      redirect_to :root and return
+    else
+      session[:admin] = nil
+      flash[:partial] = "error"
+      render "login"
+    end
+  end
+
+  def delete_session
+    session[:admin] = nil
+    redirect_to home_path
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

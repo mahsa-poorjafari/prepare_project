@@ -8,7 +8,14 @@
   = @product.description
 %p
   %b Category:
-  = @product.category_id
+  = @product.category.title
+  
+.show-pics.go-center
+  - @product.pictures.each do |pic|
+    .project-pics
+      =link_to (image_tag pic.image(:medium)), pic.image(:large), :data => { :colorbox => true }, :title => pic.description         
+    .vertical-line
+
 
 = link_to 'Edit', edit_product_path(@product)
 \|

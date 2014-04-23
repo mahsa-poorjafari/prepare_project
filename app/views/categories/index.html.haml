@@ -1,21 +1,26 @@
-%h1 Listing categories
+%h1= t('category')
+-if is_admin?
+  = link_to 'تعریف گروه جدید', new_category_path
 
 %table
   %tr
-    %th Title
-    %th Description
-    %th
-    %th
+    %th Title_fa
+    %th Title_en
+    %th Description_fa
+    %th Description_en
+    %th    
     %th
 
   - @categories.each do |category|
     %tr
-      %td= category.title
-      %td= category.description
+      %td= category.title_fa
+      %td= category.title_en
+      %td= category.description_fa
+      %td= category.description_en
       %td= link_to 'Show', category
-      %td= link_to 'Edit', edit_category_path(category)
-      %td= link_to 'Destroy', category, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      -if is_admin?
+        %td
+          = link_to 'ویرایش', edit_category_path(category)
+          = link_to 'حذف', category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
 
-%br
 
-= link_to 'New Category', new_category_path

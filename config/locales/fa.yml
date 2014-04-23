@@ -9,23 +9,23 @@ fa:
   products: "محصولات"
   gallery: "گالری"
   SignUp: "افزودن مدیرسایت"
-  product_categoty: "گروه بندی محصولات"
   page: "صفحات متنی"
+  category: "گروه بندی محصولات"
+      
+  product: "محصولات"
+  resellers: "نمایندگی های فروش"  
+  messages: "پیام ها"
+  
   form:
     title: "عنوان:"
     Description: "توضیحات"
     New: "جدید"
     save: "ثبت"
-    category: "گروه"
     reseller: "نمایندگی های فروش"
     edit: "ویرایش"
     delete: "حذف"
     web: "وب سایت:"
-    
-  product: "محصولات"
-  resellers: "نمایندگی های فروش"  
-  messages: "پیام ها"
-  
+
   
   msg:
     contact-name: "نام:"

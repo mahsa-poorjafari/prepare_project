@@ -1,22 +1,19 @@
 PrepareProject::Application.routes.draw do
 
   resources :resellers
-
   resources :sliders
-
-  resources :messages
+  resources :messages  
+  resources :pictures
+  resources :products
+  resources :pages
+  resources :categories
 
   resources :users
 
-  resources :pictures
-
-  resources :products
-
-  resources :pages
-
-  resources :categories
-
   root :to => 'static#home'
+  get "login" => "users#login"  
+  post "create_session" => "users#create_session", :as => :create_session
+  get "delete_session" => "users#delete_session", :as => :delete_session
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

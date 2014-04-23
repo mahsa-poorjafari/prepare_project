@@ -1,4 +1,4 @@
-= form_for @category do |f|
+= form_for @category, :html => { :multipart => true  } do |f|
   - if @category.errors.any?
     #error_explanation      
       %ul
@@ -6,13 +6,22 @@
           %li= msg
 
   .field
-    = f.label :title
-    = f.text_field :title
+    = f.label "عنوان گروه به فارسی"
+    = f.text_field :title_fa
   .field
-    = f.label :description
-    = f.text_area :description
+    = f.label "عنوان گروه به انگلیسی"
+    = f.text_field :title_en
+  .field
+    = f.label "توضیحات به فارسی"
+    = f.text_area :description_fa
+  .field
+    = f.label "توضیحات به انگلیسی"
+    = f.text_area :description_en
+  -if @category.image.present?
+    .field  
+      = image_tag @category.image(:small)
   .field  
     = f.label " تصویر نمونه:"
     = f.file_field :image
   .actions
-    = f.submit 'Save'
+    = f.submit 'ثبت'

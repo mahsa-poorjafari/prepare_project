@@ -2,13 +2,15 @@
 
 %p
   %b Title:
-  = @category.title
+  = @category.title_fa
+  = @category.title_en
 %p
   %b Description:
-  = @category.description
+  = @category.description_fa
+  = @category.description_en
 %p
   = image_tag @category.image(:small)
 
-= link_to 'Edit', edit_category_path(@category)
+= link_to 'ویرایش', edit_category_path(@category)
 \|
-= link_to 'Back', categories_path
+= link_to 'بازگشت', categories_path
