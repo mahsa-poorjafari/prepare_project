@@ -12,11 +12,11 @@
  *= require colorbox-rails   
  *= require_tree .
  */
-.menu_fa .item {float:right}
-.menu_en .item {float:left}
-.item { min-width:120px; background:#BFBFBF; margin:2px; text-align:center}
+
+
+
 
 .clr-float{ clear:both}
-#en {direction:ltr; text-align:left}
-#fa {direction:rtl; text-align:right;}
+#en {direction:ltr; text-align:left; font-family:arial}
+#fa {direction:rtl; text-align:right;font-family:'open_sansregular'}
 

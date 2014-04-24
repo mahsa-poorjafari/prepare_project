@@ -1,7 +1,259 @@
-
 .admin_menu    
   -if is_admin?
     = render "shared/admin_menu"
-%h1 Static#home
-%p Find me in app/views/static/home.html.haml
+%form#form1{action: "#", method: "post"}
+  .aspNetHidden
+    %input#__VIEWSTATE{name: "__VIEWSTATE", type: "hidden", value: "/wEPDwULLTIwMTg0NTQzNjFkZAluAOigYKrNNM9cigAFA06Gx9PsMLEMCVoFQEZ4fr6G"}/
+  %div{style: "width:96px;height:195px;position:absolute;margin-left:80%;margin-top:-170px;z-index:15"}
+    = link_to '#', :class => "noline", target: "_blank" do
+      = image_tag "download-e-catalog-icon.png", :width => "165%", :height => "55%", :class => "catalogIcon"
+      
+  .overlay
+    %header
+      #header-top
+      #logo-menu
+        #logo
+          = image_tag "logo.png"          
+        #mainmenu
+          %nav
+            -if I18n.locale == :fa        
+              .menu_fa{:id => I18n.locale}
+                = render "shared/menu"
+            - else
+              .menu_en{:id => I18n.locale}
+                = render "shared/menu"
+    %footer
+      .footer-menu{:id => I18n.locale}
+        %ul
+          %li.first
+            %ul
+              %li.head
+                %b ABOUT US
+              %li.elizegroup.pointer.noline 
+              %li{onclick: "openPage('test.html');"} 
+          %li
+            %ul
+              %li.head
+                %b= t('products')
+              %li.pointer.noline 
+                Model Varients
+              %li.pointer.noline 
+                Technical instalation
+              %li.pointer.noline
+                Maintain
+              %li.pointer.noline
+                Warranty & Certification
+          %li
+            %ul
+              %li.head
+                %b= t('gallery')
+              %li Liquid Floor
+              %li Laminate Floor
+              %li Wallpaper
+              
+          %li
+            %ul
+              %li.head
+                %b DOWNLOADS              
+              %li Movie
+              %li Wallpaper
+          %li
+            %ul
+              %li.head
+                %b CONTACT
+              %li Sales Office              
+              %li Registration
+      #footer-bottom
+        © Copyright RLfloor | RLfloor GROUP 2014 | Powered by 
+        = link_to 'Raush.ir', "www.raush.ir"
+        #social-buttons
+          = link_to '#', :class => "noline" do
+            = image_tag "facebook-icon.png"
+            = image_tag "twitter-icon.png"
+            = image_tag "in-icon.png"            
+            = image_tag "gplus-icon.png"            
+        #quick-bar
+          %span 
+            Language
+            = link_to 'ENG', locale: :en
+            \|
+            = link_to 'FA', locale: :fa
+             
+          
+    #content{"data-cycle-manual-speed" => "300", "data-cycle-next" => "#prev-button", "data-cycle-overlay-fx-in" => "slideDown", "data-cycle-overlay-fx-out" => "slideUp", "data-cycle-pager" => "#pager-top", "data-cycle-prev" => "#next-button", "data-cycle-speed" => "2000"}
+      .cycle-overlay{align: "center", :id => I18n.locale}      
+        %p= t('about')
+      
+      %img{"data-cycle-fx" => "scrollHorz", "data-cycle-overlay-template" => "", "data-cycle-timeout" => "15000", src: "images/home/slide1.jpg"}/
+      %img{"data-cycle-desc" => "For every taste<br/> A different choice\r\n<br/> A different life <br/><br/> Be Your Life architect <br /><span style='width:80px;height:10px;background-color:#beca02;float:left;padding:5px;cursor:pointer;font-size:7pt;font-weight:bold' onClick='openPage(1);'>+ Read more ...</span>", "data-cycle-fx" => "scrollHorz", src: "images/home/slide4.jpg"}/
+      %img{"data-cycle-desc" => "It’s your whole life <br/>\r\n         You can choose <br/> To be safe, to be happy <br/><br/>Be Your Life architect <br /><span style='width:80px;height:10px;background-color:#beca02;float:left;padding:5px;cursor:pointer;font-size:7pt;font-weight:bold' onClick='openPage(2);'>+ Read more ...</span>", "data-cycle-fx" => "scrollHorz", src: "images/home/slide5.jpg"}/
+      %img{"data-cycle-desc" => "It’s your impression<br/>  You can choose <br/>To be elegant, to be majestic <br/><br/>Be Your Life architect", "data-cycle-fx" => "scrollHorz", src: "images/aminties/lobby.jpg"}/
+      %img{"data-cycle-desc" => "It’s your hosting <br/>\r\n         You can choose <br/> To be magnificent, to be memorable <br/><br/> Be Your Life architect", "data-cycle-fx" => "scrollHorz", src: "images/home/slide11.jpg"}/
+      %img{"data-cycle-fx" => "scrollHorz", "data-cycle-overlay-template" => "", src: "images/home/slide12.jpg"}/
+      %img{"data-cycle-desc" => "It’s your well-being<br/>\r\n         You can choose <br/> To be lively, to be wholesome.<br/><br/> Be Your Life architect", "data-cycle-fx" => "scrollHorz", src: "images/home/slide100.jpg"}/
+    #prev-button{onmouseout: "this.style.opacity=0.3; this.style.filter  = 'alpha(opacity=20)';", onmouseover: "this.style.opacity=1.0; this.style.filter  = 'alpha(opacity=100)';"}
+    #next-button{onmouseout: "this.style.opacity=0.3; this.style.filter  = 'alpha(opacity=20)';", onmouseover: "this.style.opacity=1.0; this.style.filter  = 'alpha(opacity=100)';"}
+    #pager
+      #pager-top
+  #page{style: "width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index = 9999; display: none;"}
+    #page_close{style: "width: 975px; min-height: 55px; padding: 0 5px 0 20px; margin: auto; height: 32px; clear: right; background-color: #514c02;opacity:.8;"}
+      %div{style: "width: 600px; height: 14px; background-color: #430d46;"}
+      %img{onclick: "closePage()", src: "images/close-page-icon.png", style: "float: right; cursor: pointer; width: 32px; height: 32px;"}/
+    #page_inner{style: "width: 1000px;height:100%; margin: 0 auto;background:#514c02;opacity:.8"}
+  :javascript
+    var openPage = function ($url) {
+        if ($url == 1) $url = 'CustomDesign.html';
+        if ($url == 2) $url = 'Daycare.html';
+        //$('.overlay').css({"display":"none"});
+        $('#page').css({ "display": "block", "z-index": "20" });
+        var page = document.getElementById('page_inner');
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+            xmlhttp = new XMLHttpRequest();
+        else
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                page.innerHTML = xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("GET.html", $url, true);
+        xmlhttp.send();
+    }
+    var closePage = function () {
+        //$('.overlay').css({"display":"block"});
+        $('#page').css({ "display": "none" });
+        var page = document.getElementById('page_inner');
+        page.innerHTML = '';
+    }
+  :javascript
+    var resize = function () {
+        var overlay_left = ($('.overlay').width() - 500) / 2 + 'px';
+        var sw = ($('.overlay').height() - 250) + 'px';
+        var tb = (($('.overlay').height() - 150) / 2) + 'px';
+        $('#content').height(sw);
+        $('#content img').height(sw);
+        $('#prev-button').css({ "top": tb });
+        $('#next-button').css({ "top": tb });
+        $('.cycle-overlay').css({ "left": overlay_left });
+    }
+    resize();
+    $(document).ready(function () {
+        var sw = ($('.overlay').width() - 500) / 2 + 'px';
+        $('.cycle-overlay').css({ "left": sw });
+        $('#content').cycle({
+            speed: 2500,
+            timeout: 6000
+        });
+    });
+    $(window).resize(function () {
+        resize();
+    });
+  :javascript
+    var imn = 8;
+    
+          function removeAll() {
+              for (var i = 0; i < imn; i++) {
+                  $('#content').cycle('remove', 0);
+              }
+          }
+    
+          function addAll(img) {
+              for (var i = 0; i < img.length; i++) {
+                  $('#content').cycle('add', img[i]);
+              }
+              $(this).prop('disabled', true);
+          }
+    
+          function updateSlide(img) {
+              if (img.length == 1) {
+                  $('#prev-button').hide();
+                  $('#next-button').hide();
+                  $('#pager').hide();
+              } else {
+                  $('#prev-button').show();
+                  $('#next-button').show();
+                  $('#pager').show();
+              }
+              removeAll();
+              addAll(img);
+              return img.length;
+          }
+    
+          $('#home').click(function () {
+              var images = [
+    			'<img src="home/newyear.jpg" data-cycle-timeout="15000" data-cycle-fx="scrollHorz" data-cycle-overlay-template="">',
+    			'<img src="home/slide1.jpg" data-cycle-timeout="15000" data-cycle-fx="scrollHorz" data-cycle-overlay-template="">',
+    			'<img src="home/slide4.jpg" data-cycle-fx="scrollHorz" data-cycle-desc="For every taste<br/> A different choice <br/> A different life <br/><br/> Be Your Life architect">',
+    			'<img src="home/slide5.jpg" data-cycle-fx="scrollHorz" data-cycle-desc="It’s your whole life <br/> You can choose <br/> To be safe, to be happy <br/><br/> Be Your Life architect">',
+    			'<img src="aminties/lobby.jpg" data-cycle-fx="scrollHorz" data-cycle-desc="It’s your impression<br/>  You can choose <br/>To be elegant, to be majestic <br/><br/>Be Your Life architect">',
+    			'<img src="home/slide11.jpg" data-cycle-fx="scrollHorz" data-cycle-desc="It’s your hosting <br/> You can choose <br/> To be magnificent, to be memorable <br/><br/> Be Your Life architect">',
+    			'<img src="home/slide12.jpg" data-cycle-fx="scrollHorz" data-cycle-overlay-template="">',
+    			'<img src="home/slide100.jpg" data-cycle-fx="scrollHorz" data-cycle-desc="It’s your well-being <br/> You can choose <br/> To be lively, to be wholesome. <br/><br/> Be Your Life architect">'
+    		];
+              imn = updateSlide(images);
+              resize();
+          });
+    
+          $('.gallery').click(function () {
+              var images = [
+    		'<img src="images/elizeh_group/elizeh.jpg" data-cycle-fx="scrollHorz" data-cycle-desc="Since its inception in late 1380’s , Elizeh engineering group has begun operating with <br/>innovative approach, creative human resources and “Be your life architect” as its slogan.">'
+    		];
+              imn = updateSlide(images);
+              resize();
+          });
+    
+          $('#ourprojects').click(function () {
+              var images = [
+    		'<img src="images/our_project/our_project.jpg" data-cycle-fx="scrollHorz" data-cycle-overlay-template="">'
+    		];
+              imn = updateSlide(images);
+              resize();
+          });    
+          
+    
+          $('#contact').click(function () {
+              var images = [
+    		'<img src="slide4.jpg" data-cycle-fx="scrollHorz" data-cycle-desc="29th Mollasadra St., Mollasadra Blvd. <br/> Elizeh Residential Tower, Mashhad, Iran <br/> Tel: +98 511 8188 <br/>E-mail: info@elizehgroup.com">'
+    		];
+              imn = updateSlide(images);
+              resize();
+          });
+    
+          $('.aminties').click(function () {
+              var images = [
+    		'<img src="aminties/ca.jpg" data-cycle-fx="scrollHorz" data-cycle-desc="For every taste<br/> A different choice <br/> A different life <br/><br/> Be Your Life architect">',
+    		'<img src="aminties/daycare.jpg" data-cycle-fx="scrollHorz" data-cycle-desc="It’s your whole life <br/> You can choose <br/> To be safe, to be happy <br/><br/> Be Your Life architect">',
+    		'<img src="aminties/garden.jpg" data-cycle-fx="scrollHorz" data-cycle-desc="It’s your relief<br/>  You can choose <br/> To feel the nature To breathe, to dream <br/><br/> Be Your Life architect">',
+    		'<img src="aminties/gym.jpg" data-cycle-fx="scrollHorz" data-cycle-desc="It’s your body<br/> You can choose<br/> To be fit, to be fabulous <br/><br/>Be Your Life architect">',
+    		'<img src="aminties/housekeeping.jpg" data-cycle-fx="scrollHorz" data-cycle-overlay-template="">',
+    		'<img src="aminties/lobby.jpg" data-cycle-fx="scrollHorz" data-cycle-desc="It’s your impression<br/>  You can choose <br/>To be elegant, to be majestic <br/><br/>Be Your Life architect">',
+    		'<img src="aminties/parking.jpg" data-cycle-fx="scrollHorz" data-cycle-overlay-template="">',
+    		'<img src="aminties/pool.jpg" data-cycle-fx="scrollHorz" data-cycle-desc="It’s your well-being <br/> You can choose <br/> To be lively, to be wholesome. <br/><br/> Be Your Life architect">',
+    		'<img src="aminties/restaurant.jpg" data-cycle-fx="scrollHorz" data-cycle-desc="It is your meal<br/> You can choose <br/>To be delicious To be healthy <br/><br/>Be your life architect ">',
+    		'<img src="aminties/spa.jpg" data-cycle-fx="scrollHorz" data-cycle-desc="It’s your soul <br/> You can choose<br/>  To be away from it all<br/> To find yoursellf<br/> To revive<br/><br/>Be Your Life architect">',
+    		'<img src="aminties/tennis.jpg" data-cycle-fx="scrollHorz" data-cycle-desc="It’s your adrenaline<br/> You can choose<br/> To be energetic, to be amused<br/><br/>Be Your Life architect">'
+    		];
+              imn = updateSlide(images);
+              resize();
+          });
+    
+          $('.location').click(function () {
+              var images = [
+    		'<img src="slide4.jpg" data-cycle-fx="scrollHorz" data-cycle-overlay-template="">' ];
+              imn = updateSlide(images);
+              resize();
+          });
+    
+          $('.floorplan').click(function () {
+              var images = [
+    		'<img src="images/floor_plan/floor-plan280.jpg" data-cycle-fx="scrollHorz" data-cycle-overlay-template="">',
+    		'<img src="images/floor_plan/floor-plan365.jpg" data-cycle-fx="scrollHorz" data-cycle-overlay-template="">',
+    		'<img src="images/floor_plan/floor-plan395.jpg" data-cycle-fx="scrollHorz" data-cycle-overlay-template="">',
+    		'<img src="images/floor_plan/floor-plan450.jpg" data-cycle-fx="scrollHorz" data-cycle-overlay-template="">',
+    		'<img src="images/floor_plan/floor-plan590.jpg" data-cycle-fx="scrollHorz" data-cycle-overlay-template="">'
+    		];
+              imn = updateSlide(images);
+              resize();
+          });
 

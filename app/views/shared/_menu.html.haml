@@ -1,10 +1,10 @@
-.item  
-  =link_to t('home'), root_path
-.item  
-  =link_to t('gallery'), Category    
-.item  
-  =link_to t('products'), Product
-- Page.all.each do |page|           
-  .item
-    =link_to page.title, page
-.clr-float
+%ul
+  %li#home.first{style: "font-size:11px;font-weight:bold"}
+    = t('home')
+  %li.gallery{style: "font-size:11px;font-weight:bold"} 
+    = t('gallery')
+  %li#ourprojects{style: "font-size:11px;font-weight:bold"} 
+    = t('products')  
+  - Page.all.each do |page|    
+    %li#contact{style: "font-size:11px;font-weight:bold"} 
+      = page.title
