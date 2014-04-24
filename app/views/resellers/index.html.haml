@@ -1,31 +1,22 @@
-%h1 Listing resellers
+.set-locale{:id => I18n.locale}
+  %h1= t('resellers')
+  -if is_admin?
+    = link_to 'تعریف نمایندگی جدید', new_reseller_path
 
-%table
-  %tr
-    %th Title fa
-    %th Title en
-    %th Management name fa
-    %th Management name en
-    %th Phone
-    %th Address fa
-    %th Address en
-    %th
-    %th
-    %th
-
+%table  
+    
   - @resellers.each do |reseller|
     %tr
-      %td= reseller.title_fa
-      %td= reseller.title_en
-      %td= reseller.Management_name_fa
-      %td= reseller.Management_name_en
+      %td= reseller.title      
+      %td= reseller.Management_name      
       %td= reseller.phone
-      %td= reseller.address_fa
-      %td= reseller.address_en
+      %td= reseller.address      
       %td= link_to 'Show', reseller
-      %td= link_to 'Edit', edit_reseller_path(reseller)
-      %td= link_to 'Destroy', reseller, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      -if is_admin?
+        %td
+          = link_to 'ویرایش', edit_reseller_path(reseller)
+          = link_to 'حذف', reseller, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
 
 %br
 
-= link_to 'New Reseller', new_reseller_path
+
