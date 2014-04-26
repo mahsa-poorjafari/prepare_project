@@ -1,0 +1,56 @@
+%footer
+  .footer-menu{:id => I18n.locale}
+    %ul
+      %li.first
+        %ul
+          %li.head
+            %b ABOUT US
+          %li.elizegroup.pointer.noline 
+          %li{onclick: "openPage('test.html');"} 
+      %li
+        %ul
+          %li.head
+            %b= t('products')
+          %li.pointer.noline 
+            Model Varients
+          %li.pointer.noline 
+            Technical instalation
+          %li.pointer.noline
+            Maintain
+          %li.pointer.noline
+            Warranty & Certification
+      %li
+        %ul
+          %li.head
+            %b= t('gallery')
+          %li Liquid Floor
+          %li Laminate Floor
+          %li Wallpaper
+          
+      %li
+        %ul
+          %li.head
+            %b DOWNLOADS              
+          %li Movie
+          %li Wallpaper
+      %li
+        %ul
+          %li.head
+            %b CONTACT
+          %li Sales Office              
+          %li Registration
+  #footer-bottom
+    © Copyright RLfloor | RLfloor GROUP 2014 | Powered by 
+    = link_to 'Raush.ir', url_with_protocol('www.raush.net')
+    #social-buttons
+      = link_to '#', :class => "noline" do
+        = image_tag "facebook-icon.png"
+        = image_tag "twitter-icon.png"
+        = image_tag "in-icon.png"            
+        = image_tag "gplus-icon.png"            
+    #quick-bar
+      %span 
+        Language
+        = link_to 'ENG', locale: :en
+        \|
+        = link_to 'FA', locale: :fa

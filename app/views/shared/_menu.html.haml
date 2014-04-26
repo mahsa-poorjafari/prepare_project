@@ -1,8 +1,8 @@
 %ul
   %li#home.first{style: "font-size:11px;font-weight:bold"}
-    = t('home')
+    = link_to t('home'), root_path
   %li.gallery{style: "font-size:11px;font-weight:bold"} 
-    = t('gallery')
+    = link_to t('gallery'), Product
   %li#ourprojects{style: "font-size:11px;font-weight:bold"} 
     = t('products')  
   - Page.all.each do |page|    

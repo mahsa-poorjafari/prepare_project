@@ -5,5 +5,28 @@
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
-  %body    
-    = yield
+  %body 
+    .admin_menu    
+      -if is_admin?
+        = render "shared/admin_menu"
+    %div{style: "width:96px;height:195px;position:absolute;margin-left:80%;margin-top:-170px;z-index:15"}
+      = link_to '#', :class => "noline", target: "_blank" do
+        = image_tag "download-e-catalog-icon.png", :width => "165%", :height => "55%", :class => "catalogIcon"
+    
+    .overlay
+      %header
+        #header-top
+        #logo-menu
+          #logo
+            = image_tag "logo.png"          
+          #mainmenu
+            %nav
+              -if I18n.locale == :fa        
+                .menu_fa{:id => I18n.locale}
+                  = render "shared/menu"
+              - else
+                .menu_en{:id => I18n.locale}
+                  = render "shared/menu"
+        
+      = yield
+      = render "shared/footer"

@@ -4,7 +4,7 @@
 	height: 100%;
 	left: 0;
 	top: 0;
-	background: #674978;
+	background: #D9CF35;
 	z-index: 10;
 }
 header {
@@ -285,8 +285,8 @@ transition:all 2s;}
 
 .cycle-overlay {     
 	font-size:12px;
-    position: absolute; bottom: 0; width: 500px; z-index: 600;
-    background:#aba906; color: white; padding: 15px; opacity: .8;
+    position: absolute; bottom: 0; width: 150px; z-index: 600;
+    background:#aba906; color: white; padding: 5px; opacity: .5;
 	min-height:70px;margin:auto auto 25px auto;
 }
 
