@@ -1,13 +1,7 @@
 %footer
   .footer-menu{:id => I18n.locale}
-    %ul
+    %ul      
       %li.first
-        %ul
-          %li.head
-            %b ABOUT US
-          %li.elizegroup.pointer.noline 
-          %li{onclick: "openPage('test.html');"} 
-      %li
         %ul
           %li.head
             %b= t('products')
@@ -30,15 +24,15 @@
       %li
         %ul
           %li.head
-            %b DOWNLOADS              
+            %b= t('downloads')
           %li Movie
           %li Wallpaper
       %li
         %ul
           %li.head
-            %b CONTACT
+            %b= t('contact')
           %li Sales Office              
-          %li Registration
+          %li= link_to t('resellers'), Page.first
   #footer-bottom
     © Copyright RLfloor | RLfloor GROUP 2014 | Powered by 
     = link_to 'Raush.ir', url_with_protocol('www.raush.net')

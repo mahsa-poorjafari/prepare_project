@@ -24,3 +24,7 @@
 .product-pics { margin:5px}
 .upload-pic{width: 30%; }
 span.Necessary {color:#F33535}
+.footer-menu ul li a {color:#e5ec6f}
+.footer-menu ul li a:hover {color:#DEFF00}
+.admin-icon {width: 100px; background:#1A1A1A; float: left; height:370px; opacity:.8; display: none}
+#content:hover .admin-icon{display: block}

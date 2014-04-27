@@ -64,8 +64,8 @@ header #header-top-tmp {
 	float: left;
 	margin; 0;
 	padding: 0;
-	height: 90px;
-	width: 160px;
+	height: 100px;
+	width: 200px;
 	z-index: 30;
 }
 #logo img {
@@ -184,9 +184,10 @@ footer #footer-bottom {
 	float: left;
 	color: white;
 	list-style: none;
+  
 }
 .footer-menu>ul>li {
-	width: 150px;
+	width: 170px;
 	float: left;
 	padding: auto 5px;
 	border-left: 2px solid #deff00;

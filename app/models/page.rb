@@ -1,7 +1,7 @@
 # encoding: UTF-8
 class Page < ActiveRecord::Base
   extend FriendlyId  
-  friendly_id :title
+  friendly_id :title_fa
   validates :title, :title_fa, :presence => {:message => 'عنوان صفحه متنی را وارد کنید.'}
   validates :title, :title_fa, :uniqueness => {:message => 'عنوان صفحه تکراری است'}
   
