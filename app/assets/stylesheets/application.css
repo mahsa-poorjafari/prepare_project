@@ -18,5 +18,9 @@
 
 .clr-float{ clear:both}
 #en {direction:ltr; text-align:left; font-family:arial}
+.en {direction:ltr; text-align:left; font-family:arial}
 #fa {direction:rtl; text-align:right;font-family:'open_sansregular'}
-
+.fa {direction:rtl; text-align:right;font-family:'open_sansregular'}
+.product-pics { margin:5px}
+.upload-pic{width: 30%; }
+span.Necessary {color:#F33535}

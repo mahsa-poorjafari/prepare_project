@@ -1,8 +1,8 @@
-.well.small-form
+.col-sm-6
   %fieldset
     %legend
       %span= t('msg.contact-title')
-      =image_tag "msg-icon.png"   
+         
       
   = form_for @message ||= Message.new, :html => {:class => "contact"} do |f|
     - if @message.errors.any?
@@ -38,5 +38,5 @@
       
            
     .form-group
-      = f.submit t('msg.contact-btn'), :class=> "btn btn-primary btn-xs"
+      = f.submit t('msg.contact-btn'), :class=> "btn btn-default btn-xs"
 %br

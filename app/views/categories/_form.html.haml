@@ -5,23 +5,30 @@
         - @category.errors.each do |attr, msg|
           %li= msg
 
-  .field
-    = f.label "عنوان گروه به فارسی"
-    = f.text_field :title_fa
-  .field
-    = f.label "عنوان گروه به انگلیسی"
-    = f.text_field :title_en
-  .field
-    = f.label "توضیحات به فارسی"
-    = f.text_area :description_fa
-  .field
-    = f.label "توضیحات به انگلیسی"
-    = f.text_area :description_en
+  .form-group
+    = f.label "عنوان گروه به فارسی", :class => "col-sm-2 control-label"
+    .col-sm-4
+      = f.text_field :title_fa, :class => "form-control"
+  .form-group
+    = f.label "عنوان گروه به انگلیسی", :class => "col-sm-2 control-label"
+    .col-sm-4
+      = f.text_field :title_en, :class => "form-control"
+  .form-group
+    = f.label "توضیحات به فارسی", :class => "col-sm-2 control-label"
+    .col-sm-4
+      = f.text_area :description_fa, :class => "form-control"
+  .form-group
+    = f.label "توضیحات به انگلیسی", :class => "col-sm-2 control-label"
+    .col-sm-4
+      = f.text_area :description_en, :class => "form-control"
   -if @category.image.present?
-    .field  
-      = image_tag @category.image(:small)
-  .field  
-    = f.label " تصویر نمونه:"
-    = f.file_field :image
-  .actions
+    .form-group      
+      .col-sm-4        
+        = image_tag @category.image(:small)
+  .form-group
+    = f.label " تصویر نمونه:", :class => "col-sm-2 control-label"
+    .col-sm-4
+      = f.file_field :image, :class => "form-control"
+  .clr-float
+  .form-group
     = f.submit 'ثبت'

@@ -1,31 +1,36 @@
-= nested_form_for @product,  :html => { :multipart => true  } do |f|
+= nested_form_for @product,  :html => { :multipart => true  } do |f| 
   - if @product.errors.any?
     #error_explanation      
       %ul
         - @product.errors.each do |attr, msg|
           %li= msg
-
-  .field
-    = f.label "عنوان محصول به فارسی:"
-    = f.text_field :title_fa
-  .field
-    = f.label "عنوان محصول به انگلیسی:"
-    = f.text_field :title
-  .field
-    = f.label "توضیحات به فارسی:"
-    = f.text_area :description_fa
-  .field
-    = f.label "توضیحات به انگلیسی:"
-    = f.text_area :description
-  .field
-    = f.label "گروه محصول"
-    = f.select(:category_id, Category.all.collect {|u| [u.title_fa, u.id]}, :prompt => 'گروه محصول را انتخاب کنید.')        
-  .field
+  .form-group  
+    = f.label "عنوان محصول به فارسی:", :class => "col-sm-2 control-label"
+    .col-sm-4
+      = f.text_field :title_fa, :class => "form-control"
+  .form-group 
+    = f.label "عنوان محصول به انگلیسی:", :class => "col-sm-2 control-label"
+    .col-sm-4
+      = f.text_field :title, :class => "form-control"
+  .form-group 
+    = f.label "توضیحات به فارسی:", :class => "col-sm-2 control-label"
+    .col-sm-4
+      = f.text_area :description_fa, :class => "form-control"
+  .form-group 
+    = f.label "توضیحات به انگلیسی:", :class => "col-sm-2 control-label"
+    .col-sm-4
+      = f.text_area :description, :class => "form-control"
+  .form-group 
+    = f.label "گروه محصول", :class => "col-sm-2 control-label"
+    .col-sm-4
+      = f.select(:category_id, Category.all.collect {|u| [u.title_fa, u.id]}, :prompt => 'گروه محصول را انتخاب کنید.')        
+  .clr-float
+  .form-group 
     = f.fields_for :pictures do |picture|  
       = render "shared/upload_image_form", :picture => picture
-  .field
+  .col-sm-4
     = f.link_to_add content_tag(:span, "افزودن تصویر"), :pictures, :id => "add_new_picture"    
-  .actions
+  .form-group 
     = f.submit 'ثبت'
 
 :javascript

@@ -1,7 +1,7 @@
 # encoding: UTF-8
 class Product < ActiveRecord::Base
   extend FriendlyId  
-  friendly_id :title
+  friendly_id :title_fa
   
   has_many :pictures
   accepts_nested_attributes_for :pictures, :allow_destroy => true

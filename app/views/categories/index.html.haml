@@ -1,27 +1,12 @@
-.set-locale{:id => I18n.locale}
-  %h1= t('category')
+#content{"data-cycle-manual-speed" => "300", "data-cycle-next" => "#prev-button", "data-cycle-overlay-fx-in" => "slideDown", "data-cycle-overlay-fx-out" => "slideUp", "data-cycle-pager" => "#pager-top", "data-cycle-prev" => "#next-button", "data-cycle-speed" => "2000", :class => I18n.locale}
   -if is_admin?
     = link_to 'تعریف گروه جدید', new_category_path
-
-  %table
-    %tr
-      %th Title_fa
-      %th Title_en
-      %th Description_fa
-      %th Description_en
-      %th    
-      %th
-
-    - @categories.each do |category|
-      %tr
-        %td= category.title_fa
-        %td= category.title_en
-        %td= category.description_fa
-        %td= category.description_en
-        %td= link_to 'Show', category
-        -if is_admin?
-          %td
-            = link_to 'ویرایش', edit_category_path(category)
-            = link_to 'حذف', category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
-
+  - @categories.each do |category|
+    .cycle-overlay{align: "center", :id => I18n.locale, :style => "float:right; width: 150px; opacity: .8; margin:10px"}                
+      = link_to category do
+        %p  
+          = image_tag category.image(:small)
+          = category.title 
+        
+    
 

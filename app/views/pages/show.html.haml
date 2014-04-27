@@ -1,13 +1,10 @@
-%p  
-  = @page.title
-%p  
-  = @page.html_text
+#content{"data-cycle-manual-speed" => "300", "data-cycle-next" => "#prev-button", "data-cycle-overlay-fx-in" => "slideDown", "data-cycle-overlay-fx-out" => "slideUp", "data-cycle-pager" => "#pager-top", "data-cycle-prev" => "#next-button", "data-cycle-speed" => "2000", :class => I18n.locale}
   
-%hr  
--if @page.read_attribute("title") == "Contact us"
-  = render "shared/msg_form"
-= link_to 'ویرایش', edit_page_path(@page)
-\|
-= link_to 'بازگشت', pages_path
+  -if @page.read_attribute("title") == "Contact us"
+    = render "shared/msg_form"
+    = render 'resellers/index'
+  = link_to 'ویرایش', edit_page_path(@page)
+  \|
+  = link_to 'بازگشت', pages_path
 
 

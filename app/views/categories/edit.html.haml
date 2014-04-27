@@ -1,7 +1,8 @@
-%h1 Editing category
+#content{"data-cycle-manual-speed" => "300", "data-cycle-next" => "#prev-button", "data-cycle-overlay-fx-in" => "slideDown", "data-cycle-overlay-fx-out" => "slideUp", "data-cycle-pager" => "#pager-top", "data-cycle-prev" => "#next-button", "data-cycle-speed" => "2000", :class => I18n.locale}
+  %h1= 'ویرایش اطلاعات'
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Show', @category
-\|
-= link_to 'Back', categories_path
+  = link_to 'Show', @category
+  \|
+  = link_to 'بازگشت', categories_path

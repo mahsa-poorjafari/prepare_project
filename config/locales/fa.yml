@@ -36,7 +36,7 @@ fa:
     contact-date: "تاریخ ارسال:"
     contact-btn: "ارسال"
     contact-title: "تماس با ما"
-  Required: "ضروری"
+    Required: "ضروری"
     
   
   user:

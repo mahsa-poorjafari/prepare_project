@@ -1,22 +1,20 @@
-%p#notice= notice
-
-%p
-  %b Title:
-  = @product.title
-%p
-  %b Description:
-  = @product.description
-%p
-  %b Category:
-  = @product.category.title
-  
-.show-pics.go-center
-  - @product.pictures.each do |pic|
-    .project-pics
-      =link_to (image_tag pic.image(:medium)), pic.image(:large), :data => { :colorbox => true }, :title => pic.description         
-    .vertical-line
+#content{"data-cycle-manual-speed" => "300", "data-cycle-next" => "#prev-button", "data-cycle-overlay-fx-in" => "slideDown", "data-cycle-overlay-fx-out" => "slideUp", "data-cycle-pager" => "#pager-top", "data-cycle-prev" => "#next-button", "data-cycle-speed" => "2000", :class => I18n.locale}
+  %p#notice= notice
+  .col-sm-4
+    %p   
+      = @product.title
+    %p    
+      = @product.description
+    %p    
+      = @product.category.title
+    
+  .col-sm-4
+    - @product.pictures.each do |pic|
+      .product-pics
+        =link_to (image_tag pic.image(:medium)), pic.image(:large), :data => { :colorbox => true }, :title => pic.description         
+      
 
 
-= link_to 'Edit', edit_product_path(@product)
-\|
-= link_to 'Back', products_path
+  = link_to 'ویرایش', edit_product_path(@product)
+  \|
+  = link_to 'بازگشت', products_path

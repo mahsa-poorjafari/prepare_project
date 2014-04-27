@@ -1,0 +1,27 @@
+.col-sm-6{:style => "overflow-y: scroll; max-height:350px"}
+  -if is_admin?
+    = link_to 'تعریف نمایندگی جدید', new_reseller_path
+
+  .row
+    - Reseller.all.each do |reseller|
+      .cycle-overlay
+        %strong.row        
+          = reseller.title                 
+        .row        
+          .col-sm-3= 'مدیرعامل'
+          .col-sm-5= reseller.Management_name          
+        .row 
+          .col-sm-3= 'تلفن های تماس'
+          .col-sm-4= reseller.phone        
+        .row
+          .col-sm-3= 'آدرس'
+          = reseller.address              
+        .row
+          -if is_admin?
+            %td
+              = link_to 'ویرایش', edit_reseller_path(reseller)
+              = link_to 'حذف', reseller, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+
+  %br
+
+

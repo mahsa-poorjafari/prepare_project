@@ -1,32 +1,18 @@
-#content{"data-cycle-manual-speed" => "300", "data-cycle-next" => "#prev-button", "data-cycle-overlay-fx-in" => "slideDown", "data-cycle-overlay-fx-out" => "slideUp", "data-cycle-pager" => "#pager-top", "data-cycle-prev" => "#next-button", "data-cycle-speed" => "2000"}
+#content{"data-cycle-manual-speed" => "300", "data-cycle-next" => "#prev-button", "data-cycle-overlay-fx-in" => "slideDown", "data-cycle-overlay-fx-out" => "slideUp", "data-cycle-pager" => "#pager-top", "data-cycle-prev" => "#next-button", "data-cycle-speed" => "2000", :class => I18n.locale}
+
+  -if is_admin?
+    = link_to 'تعریف محصول جدید', new_product_path
   - @products.each do |product|
-    .cycle-overlay{align: "center", :id => I18n.locale, :style => "float:right"}            
-      = product.title 
+    .cycle-overlay{align: "center", :id => I18n.locale, :style => "float:right; width: 150px; opacity: .8; margin:10px"}                
+      = link_to product do
+        %p  
+          = image_tag product.pictures.first.image(:small)
+          = product.title 
+        
     
-  = image_tag "home/slide4.jpg" ,"data-cycle-fx" => "scrollHorz", "data-cycle-overlay-template" => "", "data-cycle-timeout" => "15000"
-%h1= t('product')
--if is_admin?
-  = link_to 'تعریف محصول جدید', new_product_path
+  
+   
 
-%table
-  %tr
-    %th Title    
-    %th Description
-    %th Category
-    %th
-    %th
-    %th
-
-  - @products.each do |product|
-    %tr      
-      %td= product.title      
-      %td= product.description
-      %td= product.category.title
-      %td= link_to 'Show', product
-      -if is_admin?
-        %td
-          = link_to 'ویرایش', edit_product_path(product)
-          = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
 
 
 
