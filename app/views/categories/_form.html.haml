@@ -4,38 +4,45 @@
       %ul
         - @category.errors.each do |attr, msg|
           %li= msg
-
-  .form-group
-    = f.label "عنوان گروه به فارسی", :class => "col-sm-2 control-label"
-    .col-sm-4
+  .col-sm-6
+    .form-group
+      = f.label "عنوان گروه به فارسی", :class => "col-sm-4 control-label"    
       = f.text_field :title_fa, :class => "form-control"
-  .form-group
-    = f.label "عنوان گروه به انگلیسی", :class => "col-sm-2 control-label"
-    .col-sm-4
-      = f.text_field :title_en, :class => "form-control"
-  .form-group
-    = f.label "توضیحات به فارسی", :class => "col-sm-2 control-label"
-    .col-sm-4
+    .form-group
+      = f.label "عنوان گروه به انگلیسی", :class => "col-sm-4 control-label"      
+      = f.text_field :title_en, :class => "form-control"    
+    .form-group
+      = f.label "توضیحات به فارسی", :class => "col-sm-4 control-label"      
       = f.text_area :description_fa, :class => "form-control"
-  .form-group
-    = f.label "توضیحات به انگلیسی", :class => "col-sm-2 control-label"
-    .col-sm-4
+    .form-group
+      = f.label "توضیحات به انگلیسی", :class => "col-sm-4 control-label"      
       = f.text_area :description_en, :class => "form-control"
- 
-  .form-group
-    = f.label " تصویر نمونه:", :class => "col-sm-2 control-label"
-    .col-sm-4
+    .form-group
+      = f.label " تصویر نمونه:", :class => "col-sm-2 control-label"      
       = f.file_field :image
-  -if @category.image.present?
-    .form-group      
-      .col-sm-4        
-        = image_tag @category.image(:small)
-  .clr-float
-  .form-group 
-    = f.fields_for :certifications do |certificate|  
-      = render "certifications/form", :f => certificate
-  .col-sm-4
-    = f.link_to_add content_tag(:span, "افزودن گواهینامه"), :certifications, :id => "add_new_picture"    
+    -if @category.image.present?
+      .form-group      
+        = image_tag @category.image(:small)  
+  .col-sm-6
+    .form-group
+      = f.label "وارد کردن اطلاعات نصب و راه اندازی فنی", :class => "control-label", :id => "installation"
+    .editor
+      #installation-area
+        %span#close-editor= 'بستن ادیتور'
+        = f.text_area :installation, :class => "form-control ckeditor"
+    .form-group
+      = f.label "وارد کردن اطلاعات شرایط نگهداری", :class => "control-label", :id => "maintaion"
+    .editor
+      #maintaion-area
+        %span#close-editor= 'بستن ادیتور'
+        = f.text_area :maintaion, :class => "form-control ckeditor"
+    
+    .clr-float
+    .form-group 
+      = f.fields_for :certifications do |certificate|  
+        = render "certifications/form", :f => certificate
+    .col-sm-4
+      = f.link_to_add content_tag(:span, "افزودن گواهینامه"), :certifications, :id => "add_new_picture"    
 
   .form-group
     = f.submit 'ثبت'
@@ -53,4 +60,23 @@
   $("#add_new_picture").click(function(){
     $(".enable_file_select").unbind('click');
     window.setTimeout('enable_file_select()', 1000);
+  });
+  
+  
+  $('#installation').click(function(){
+    $('#installation-area').show(1000);
+    
+  });
+  
+  $('#installation-area #close-editor').click(function(){
+    $('#installation-area').hide(1000);
+  });
+  
+    $('#maintaion').click(function(){
+    $('#maintaion-area').show(1000);
+    
+  });
+  
+  $('#maintaion-area #close-editor').click(function(){
+    $('#maintaion-area').hide(1000);
   });

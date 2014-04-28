@@ -67,3 +67,8 @@ span.Necessary {color:#F33535}
 .show-pro .box-3:hover .box-menu{ width:100%}
 .box-menu .arrow-vertical {width:5px; background:#4D4D4D; height:100%}
 .cer-title {text-align:center}
+
+#installation-area, #maintaion-area {display:none}
+#installation, #close-editor, #maintaion {cursor:pointer}
+#installation:hover, #close-editor:hover, #maintaion:hover {color:#8B6914}
+
