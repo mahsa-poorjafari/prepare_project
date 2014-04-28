@@ -21,6 +21,7 @@
 .en {direction:ltr; text-align:left; font-family:arial}
 #fa {direction:rtl; text-align:right;font-family:'open_sansregular'}
 .fa {direction:rtl; text-align:right;font-family:'open_sansregular'}
+.set-center {margin-right:auto; margin-left:auto}
 .product-pics { margin:5px}
 .upload-pic{width: 30%; }
 span.Necessary {color:#F33535}
@@ -28,3 +29,37 @@ span.Necessary {color:#F33535}
 .footer-menu ul li a:hover {color:#DEFF00}
 .admin-icon {width: 100px; background:#1A1A1A; float: left; height:370px; opacity:.8; display: none}
 #content:hover .admin-icon{display: block}
+.show-pro {
+  min-width:90%; min-height:90%; 
+  max-width:90%; max-height:90%; 
+  text-align:center;    
+  }
+.box-3 {     
+  font-size:12px;
+  bottom: 0; z-index: 600;
+  background:#aba906; color: white; padding: 5px; opacity: .8;
+  min-height:70px; margin:30px;
+  float:right; width:28%; 
+}
+.box-3 img {width:100%}
+.box-3 p {text-align:center; font-size:20px}
+
+.show-pro .box-menu {
+  background:#4D4D4D; 
+  opacity: .8; 
+  width:1px;
+  min-height:80px;
+  max-height:80px;
+  overflow:hidden;    
+  margin-top:-80px;
+  padding:5px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.show-pro .box-menu ul {list-style:none;}
+.show-pro .box-menu a {color:#E5EC6F; }
+.show-pro .box-menu a:hover {color:#DEFF00}
+.show-pro .box-3:hover .box-menu{ width:100%}
+.box-menu .arrow-vertical {width:5px; background:#4D4D4D; height:100%}

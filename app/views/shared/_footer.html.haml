@@ -6,20 +6,20 @@
           %li.head
             %b= t('products')
           %li.pointer.noline 
-            Model Varients
+            =t('model')
           %li.pointer.noline 
-            Technical instalation
+            =t('technical')
           %li.pointer.noline
-            Maintain
+            =t('maintain')
           %li.pointer.noline
-            Warranty & Certification
+            =t('warranty')
       %li
         %ul
           %li.head
             %b= t('gallery')
-          %li Liquid Floor
-          %li Laminate Floor
-          %li Wallpaper
+          - Category.all.each do |category|
+            %li= category.title
+          
           
       %li
         %ul
@@ -31,7 +31,7 @@
         %ul
           %li.head
             %b= t('contact')
-          %li Sales Office              
+          %li= t('send-msg')           
           %li= link_to t('resellers'), Page.first
   #footer-bottom
     © Copyright RLfloor | RLfloor GROUP 2014 | Powered by 

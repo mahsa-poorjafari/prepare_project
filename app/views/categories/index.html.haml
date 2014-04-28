@@ -1,12 +1,19 @@
 #content{"data-cycle-manual-speed" => "300", "data-cycle-next" => "#prev-button", "data-cycle-overlay-fx-in" => "slideDown", "data-cycle-overlay-fx-out" => "slideUp", "data-cycle-pager" => "#pager-top", "data-cycle-prev" => "#next-button", "data-cycle-speed" => "2000", :class => I18n.locale}
   -if is_admin?
     = link_to 'تعریف گروه جدید', new_category_path
-  - @categories.each do |category|
-    .cycle-overlay{align: "center", :id => I18n.locale, :style => "float:right; width: 150px; opacity: .8; margin:10px"}                
-      = link_to category do
-        %p  
+  .show-pro.set-center 
+    - @categories.each do |category|
+      .box-3.set-center{align: "center", :id => I18n.locale}                
+        = link_to category do         
+          %p= category.title 
           = image_tag category.image(:small)
-          = category.title 
+        .box-menu 
+          .arrow-vertical
+          %ul
+            %li= link_to t('model'), category
+            %li= link_to t('technical'), category
+            %li= link_to t('maintain'), category
+            %li= link_to t('warranty'), category
         
-    
-
+          
+        
