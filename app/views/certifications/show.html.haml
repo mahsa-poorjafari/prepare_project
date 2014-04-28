@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Title fa:
+  = @certification.title_fa
+%p
+  %b Title en:
+  = @certification.title_en
+
+= link_to 'Edit', edit_certification_path(@certification)
+\|
+= link_to 'Back', certifications_path

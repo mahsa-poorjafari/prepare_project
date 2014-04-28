@@ -1,4 +1,6 @@
 PrepareProject::Application.routes.draw do
+  resources :certifications
+
 scope "(:locale)", :locale => /en|fa/ do
   resources :resellers
   resources :sliders
