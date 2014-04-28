@@ -1,18 +1,35 @@
 #content{"data-cycle-manual-speed" => "300", "data-cycle-next" => "#prev-button", "data-cycle-overlay-fx-in" => "slideDown", "data-cycle-overlay-fx-out" => "slideUp", "data-cycle-pager" => "#pager-top", "data-cycle-prev" => "#next-button", "data-cycle-speed" => "2000", :class => I18n.locale}
-  %p#notice= notice  
-  .row
-    %p   
-      = @category.title
-    %p    
-      = @category.description
-  .row.col-sm-6        
-    - @category.products.each do |product|
-      - product.pictures.each do |pic|
-        .col-sm-4
-          = image_tag pic.image(:small)
+  .info-holder
+    %p#notice= notice  
+    .category-info
+      .row.col-sm-9
+        %p   
+          = @category.title
+        %p    
+          = @category.description
+        = link_to 'مشاهده گواهینامه ها', '#cer', :id => "show-cer"
     
-  = link_to 'ویرایش', edit_category_path(@category)
-  \|
-  = link_to 'بازگشت', categories_path
+    .row.col-sm-6#pictures        
+      - @category.products.each do |product|
+        - product.pictures.each do |pic|
+          .col-sm-4
+            = image_tag pic.image(:small)  
+    .row.col-sm-6#certification{:style => "overflow-y: scroll; max-height:350px; "}
+      = link_to "", "#",:name => "cer"
+      %b= 'گواهینامه ها'
+      - @category.certifications.each do |certification|      
+        .col-sm-2.box-3{:style => "text-align:center"}
+          =link_to (image_tag certification.image(:small)), certification.image(:original), :data => { :colorbox => true }
+          .cer-title= certification.title
+            
       
-
+    = link_to 'ویرایش', edit_category_path(@category)
+    \|
+    = link_to 'بازگشت', categories_path
+        
+:javascript
+  $('#show-cer').click(function(){
+    $('.row.col-sm-6#pictures').hide(1000);
+    $('.row.col-sm-6#certification').show(1000);
+    
+  });

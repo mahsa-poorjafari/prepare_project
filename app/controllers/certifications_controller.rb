@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class CertificationsController < ApplicationController
   before_action :set_certification, only: [:show, :edit, :update, :destroy]
 
@@ -69,6 +70,6 @@ class CertificationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def certification_params
-      params.require(:certification).permit(:title_fa, :title_en)
+      params.require(:certification).permit(:title_fa, :title_en, :category_id, :image)
     end
 end

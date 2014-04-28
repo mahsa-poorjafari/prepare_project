@@ -1,16 +1,14 @@
-= form_for @certification do |f|
-  - if @certification.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@certification.errors.count, "error")} prohibited this certification from being saved:"
-      %ul
-        - @certification.errors.full_messages.each do |msg|
-          %li= msg
-
-  .field
-    = f.label :title_fa
+.col-sm-4
+  .form-group  
+    = f.label "عنوان گواهینامه به فارسی"
     = f.text_field :title_fa
-  .field
-    = f.label :title_en
+  .form-group  
+    = f.label "عنوان گواهینامه به انگلیسی"
     = f.text_field :title_en
-  .actions
-    = f.submit 'Save'
+  .form-group  
+    = f.label "تصویر گواهینامه"
+    = f.file_field :image  
+  .form-group       
+    = f.link_to_remove  do
+      = image_tag "del.png"
+      %span= "حذف  "

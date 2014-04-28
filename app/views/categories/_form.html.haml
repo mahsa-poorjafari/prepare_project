@@ -1,4 +1,4 @@
-= form_for @category, :html => { :multipart => true  } do |f|
+= nested_form_for @category, :html => { :multipart => true  } do |f|
   - if @category.errors.any?
     #error_explanation      
       %ul
@@ -21,14 +21,36 @@
     = f.label "توضیحات به انگلیسی", :class => "col-sm-2 control-label"
     .col-sm-4
       = f.text_area :description_en, :class => "form-control"
+ 
+  .form-group
+    = f.label " تصویر نمونه:", :class => "col-sm-2 control-label"
+    .col-sm-4
+      = f.file_field :image
   -if @category.image.present?
     .form-group      
       .col-sm-4        
         = image_tag @category.image(:small)
-  .form-group
-    = f.label " تصویر نمونه:", :class => "col-sm-2 control-label"
-    .col-sm-4
-      = f.file_field :image, :class => "form-control"
   .clr-float
+  .form-group 
+    = f.fields_for :certifications do |certificate|  
+      = render "certifications/form", :f => certificate
+  .col-sm-4
+    = f.link_to_add content_tag(:span, "افزودن گواهینامه"), :certifications, :id => "add_new_picture"    
+
   .form-group
     = f.submit 'ثبت'
+
+
+:javascript
+  function enable_file_select(){
+    $(".enable_file_select").unbind('click').click(function(){
+      $(this).parent().find("input:file").click();
+    });
+   }
+
+  enable_file_select();
+
+  $("#add_new_picture").click(function(){
+    $(".enable_file_select").unbind('click');
+    window.setTimeout('enable_file_select()', 1000);
+  });
