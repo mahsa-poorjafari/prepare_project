@@ -2,14 +2,16 @@
 
   -if is_admin?
     = link_to 'تعریف محصول جدید', new_product_path
-  - @products.each do |product|
-    .cycle-overlay{align: "center", :id => I18n.locale, :style => "float:right; width: 150px; opacity: .8; margin:10px"}                
-      = link_to product do
-        %p  
-          = image_tag product.pictures.first.image(:small)
-          = product.title 
-        
-    
+  .products
+    - @products.each do |product|      
+      .pro_wrapper{align: "center", :id => I18n.locale}                
+        = link_to product do
+          %p.pro-info  
+            = image_tag product.pictures.first.image(:small)
+            .line
+            %p= product.title 
+          
+      
   
    
 

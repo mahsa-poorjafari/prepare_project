@@ -1,51 +1,66 @@
-= nested_form_for @category, :html => { :multipart => true  } do |f|
+= nested_form_for @category, :html => { :multipart => true  }  do |f|
   - if @category.errors.any?
     #error_explanation      
       %ul
         - @category.errors.each do |attr, msg|
           %li= msg
-  .col-sm-6
-    .form-group
-      = f.label "عنوان گروه به فارسی", :class => "col-sm-4 control-label"    
-      = f.text_field :title_fa, :class => "form-control"
-    .form-group
-      = f.label "عنوان گروه به انگلیسی", :class => "col-sm-4 control-label"      
-      = f.text_field :title_en, :class => "form-control"    
-    .form-group
-      = f.label "توضیحات به فارسی", :class => "col-sm-4 control-label"      
-      = f.text_area :description_fa, :class => "form-control"
-    .form-group
-      = f.label "توضیحات به انگلیسی", :class => "col-sm-4 control-label"      
-      = f.text_area :description_en, :class => "form-control"
-    .form-group
-      = f.label " تصویر نمونه:", :class => "col-sm-2 control-label"      
-      = f.file_field :image
-    -if @category.image.present?
-      .form-group      
-        = image_tag @category.image(:small)  
-  .col-sm-6
-    .form-group
-      = f.label "وارد کردن اطلاعات نصب و راه اندازی فنی", :class => "control-label", :id => "installation"
-    .editor
-      #installation-area
-        %span#close-editor= 'بستن ادیتور'
-        = f.text_area :installation, :class => "form-control ckeditor"
-    .form-group
-      = f.label "وارد کردن اطلاعات شرایط نگهداری", :class => "control-label", :id => "maintaion"
-    .editor
-      #maintaion-area
-        %span#close-editor= 'بستن ادیتور'
-        = f.text_area :maintaion, :class => "form-control ckeditor"
-    
+  
+  .info-form.set-center
+    .col-sm-6
+      = link_to ' ', '#', :name => "general"
+      .form-group
+        = f.label "عنوان گروه به فارسی", :class => "col-sm-4 control-label"    
+        = f.text_field :title_fa, :class => "form-control"
+      .form-group
+        = f.label "عنوان گروه به انگلیسی", :class => "col-sm-4 control-label"      
+        = f.text_field :title_en, :class => "form-control"    
+      .form-group
+        = f.label "توضیحات به فارسی", :class => "col-sm-4 control-label"      
+        = f.text_area :description_fa, :class => "form-control"
+      .form-group
+        = f.label "توضیحات به انگلیسی", :class => "col-sm-4 control-label"      
+        = f.text_area :description_en, :class => "form-control"       
+  
+    .col-sm-6
+      .form-group        
+        = f.label " تصویر نمونه:", :class => "col-sm-3 control-label"      
+        = f.file_field :image     
+        -if @category.image.present?              
+          = image_tag @category.image(:small) 
     .clr-float
-    .form-group 
-      = f.fields_for :certifications do |certificate|  
-        = render "certifications/form", :f => certificate
-    .col-sm-4
-      = f.link_to_add content_tag(:span, "افزودن گواهینامه"), :certifications, :id => "add_new_picture"    
-
-  .form-group
+      .form-group        
+        = link_to ' ', '#', :name => "install"
+        = f.label "وارد کردن اطلاعات نصب و راه اندازی فنی", :class => "control-label"
+      .editor.form-group   
+        = f.text_area :installation, :class => "form-control ckeditor"
+      
+      .form-group        
+        = f.label "وارد کردن اطلاعات شرایط نگهداری", :class => "control-label"  
+        = link_to ' ', '#', :name => "maintaion"
+      .editor.form-group
+        = f.text_area :maintaion, :class => "form-control ckeditor"      
+      
+      .form-group        
+        = f.label "وارد کردن اطلاعات گارانتی", :class => "control-label"  
+        = link_to ' ', '#', :name => "warranty"
+      .editor.form-group
+        = f.text_area :warranty, :class => "form-control ckeditor"      
+    .form-group     
+      .col-sm-10
+        = link_to ' ', '#', :name => "certification"
+        = f.link_to_add content_tag(:span, "افزودن گواهینامه", :class => "btn"), :certifications, :id => "add_new_picture"    
+      .clr-float
+      .form-group 
+        -if @category.certifications.present?
+          .col-sm-6     
+            - @category.certifications.each do |cer|
+              = image_tag cer.image(:small)
+        = f.fields_for :certifications do |certificate|  
+          = render "certifications/form", :f => certificate
+      
+  .form-group.col-sm-4
     = f.submit 'ثبت'
+  
 
 
 :javascript
@@ -63,20 +78,4 @@
   });
   
   
-  $('#installation').click(function(){
-    $('#installation-area').show(1000);
-    
-  });
   
-  $('#installation-area #close-editor').click(function(){
-    $('#installation-area').hide(1000);
-  });
-  
-    $('#maintaion').click(function(){
-    $('#maintaion-area').show(1000);
-    
-  });
-  
-  $('#maintaion-area #close-editor').click(function(){
-    $('#maintaion-area').hide(1000);
-  });
