@@ -1,6 +1,5 @@
 # encoding: UTF-8
-class Certification < ActiveRecord::Base
-  validates :title_fa, :title_en, :uniqueness => {:message => 'عنوان گواهینامه تکراریست.'}
+class Certification < ActiveRecord::Base  
   validates :title_fa, :title_en, :presence => {:message => 'عنوان گواهینامه را وارد کنید.'}
   belongs_to :category
   has_attached_file :image, :styles => { :large => "500x500>" , :medium => "300x300>", :small => "200x200>" }

@@ -14,17 +14,15 @@
  */
 
 
-
-
 .clr-float{ clear:both}
 #en {direction:ltr; text-align:left; font-family:arial}
 .en {direction:ltr; text-align:left; font-family:arial}
 #fa {direction:rtl; text-align:right;font-family:'open_sansregular'}
 .fa {direction:rtl; text-align:right;font-family:'open_sansregular'}
 .set-center {margin-right:auto; margin-left:auto}
-
-.info-holder{ width:200%}
-.category-info {max-width:400px; min-width:400px; float:right}
+.float-left {float:left;}
+.info-holder{ width:100%; max-height:350px}
+.category-info {max-width:400px; min-width:400px; float:right; }
 .product-pics { margin:5px}
 
 span.Necessary {color:#F33535}
@@ -95,3 +93,4 @@ span.Necessary {color:#F33535}
 .line {background:#DEFF00; height:5px; border-radius:5px}
 .slider  img {width: 100%}
 
+#installation, #maintaion, #warranty, #certification {display:none; overflow-y:scroll; max-height:350px; margin-top:10px; padding:5px}

@@ -1,35 +1,86 @@
-#content{"data-cycle-manual-speed" => "300", "data-cycle-next" => "#prev-button", "data-cycle-overlay-fx-in" => "slideDown", "data-cycle-overlay-fx-out" => "slideUp", "data-cycle-pager" => "#pager-top", "data-cycle-prev" => "#next-button", "data-cycle-speed" => "2000", :class => I18n.locale}
+#content{:class => I18n.locale}
   .info-holder
     %p#notice= notice  
-    .category-info
+    
+    .category-info.general.float-left
       .row.col-sm-9
         %p   
           = @category.title
         %p    
           = @category.description
+      
         = link_to 'مشاهده گواهینامه ها', '#cer', :id => "show-cer"
-    
-    .row.col-sm-6#pictures        
-      - @category.products.each do |product|
-        - product.pictures.each do |pic|
-          .col-sm-4
-            = image_tag pic.image(:small)  
-    .row.col-sm-6#certification{:style => "overflow-y: scroll; max-height:350px; "}
-      = link_to "", "#",:name => "cer"
-      %b= 'گواهینامه ها'
-      - @category.certifications.each do |certification|      
-        .col-sm-2.box-3{:style => "text-align:center"}
-          =link_to (image_tag certification.image(:small)), certification.image(:original), :data => { :colorbox => true }
-          .cer-title= certification.title
+        %br
+        = link_to 'شرایط نگهداری', '#maintaion', :id => "show-main"
+        %br
+        = link_to 'نصب و راه اندازی فنی', '#installation', :id => "show-inst"
+        %br
+        = link_to 'گارانتی', '#installation', :id => "show-war"
+        %br
+        = link_to 'ویرایش', edit_category_path(@category)
+        \|
+        = link_to 'بازگشت', categories_path
+    #category-details    
+      .col-sm-8.float-left#installation
+        %b= 'نصب'
+        %p=raw @category.installation
+        
+      .col-sm-8.float-left#maintaion      
+        %b= 'شرایط'
+        %p=raw @category.maintaion
+        
+      .col-sm-8.float-left#warranty
+        %b= 'گارانتی'
+        %p=raw @category.warranty
             
       
-    = link_to 'ویرایش', edit_category_path(@category)
-    \|
-    = link_to 'بازگشت', categories_path
+        
+      .row.col-sm-8#pictures.float-left       
+        - @category.products.each do |product|
+          #fade.pics{:style => "position: relative;"}
+            - product.pictures.each do |pic|              
+              = image_tag pic.image(:small) , :style => "position: absolute; top: 0px; left: 0px; display: block; z-index: 4; opacity: 0.9975; width: 200px; height: 200px;"
+            
+        
+      .row.col-sm-6#certification.float-left{:style => "overflow-y: scroll; max-height:350px; "}
+        = link_to "", "#",:name => "cer"
+        %b= 'گواهینامه ها'
+        - @category.certifications.each do |certification|      
+          .col-sm-2.box-3{:style => "text-align:center"}
+            =link_to (image_tag certification.image(:small)), certification.image(:original), :data => { :colorbox => true }
+            .cer-title= certification.title
+              
+
         
 :javascript
-  $('#show-cer').click(function(){
-    $('.row.col-sm-6#pictures').hide(1000);
-    $('.row.col-sm-6#certification').show(1000);
+  $('#fade').cycle({ 
+    fx:    'curtainX', 
+    sync:  false, 
+    delay: -2000 
+  });
+  
+  $('#show-cer').click(function(){   
+    $('#category-details').children().fadeOut(); 
+    $('.row.col-sm-6#certification').fadeIn(1000);
     
   });
+  
+  $('#show-main').click(function(){          
+    $('#category-details').children().fadeOut(); 
+    $('#category-details #maintaion').fadeIn(1000);
+    
+  });
+  
+  $('#show-inst').click(function(){          
+    $('#category-details').children().fadeOut(); 
+    $('#category-details #installation').fadeIn(1000);
+    
+  });
+  
+  $('#show-war').click(function(){          
+    $('#category-details').children().hide('drop', 1000)
+    $('#category-details #warranty').fadeIn(1000);    
+  });
+
+  
+  
