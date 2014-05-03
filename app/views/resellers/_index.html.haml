@@ -1,27 +1,33 @@
-.col-sm-6{:style => "overflow-y: scroll; max-height:350px; "}
+.col-sm-7{:style => "overflow-y: scroll; max-height:350px; "}
   -if is_admin?
     = link_to 'تعریف نمایندگی جدید', new_reseller_path
 
   .row
     - Reseller.all.each do |reseller|
-      .cycle-overlay
-        %strong.row        
+      .cycle-overlay{:id => I18n.locale}
+        %strong.row
           = reseller.title                 
-        .row        
-          .col-sm-3= 'مدیرعامل'
-          .col-sm-5= reseller.Management_name          
-        .row 
-          .col-sm-3= 'تلفن های تماس'
-          .col-sm-4= reseller.phone        
+        .row{:id => I18n.locale}
+          .col-sm-2= t('reseller.CEO')
+          .col-sm-10= reseller.Management_name          
         .row
-          .col-sm-3= 'آدرس'
-          = reseller.address              
+          .col-sm-2= t('reseller.Phone')
+          .col-sm-10= reseller.phone        
+        .row
+          .col-sm-2= t('reseller.address')
+          .col-sm-10= reseller.address              
         .row
           -if is_admin?
             %td
               = link_to 'ویرایش', edit_reseller_path(reseller)
               = link_to 'حذف', reseller, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
 
-  %br
+  
 
-
+:javascript
+  
+  if ( $('.cycle-overlay').attr("id") == 'en' ) {
+    $('.row .col-sm-2').css('float', 'left');    
+    $('.row .col-sm-10').css('float', 'left');
+  }
+  

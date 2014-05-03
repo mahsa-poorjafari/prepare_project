@@ -13,12 +13,14 @@
             =t('maintain')
           %li.pointer.noline
             =t('warranty')
+          %li.pointer.noline
+            =t('certificate')
       %li
         %ul
           %li.head
             %b= t('gallery')
           - Category.all.each do |category|
-            %li= category.title
+            %li= link_to category.title, category
           
           
       %li

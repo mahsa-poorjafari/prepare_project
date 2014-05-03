@@ -94,3 +94,5 @@ span.Necessary {color:#F33535}
 .slider  img {width: 100%}
 
 #installation, #maintaion, #warranty, #certification {display:none; overflow-y:scroll; max-height:350px; margin-top:10px; padding:5px}
+#pictures {overflow-y:scroll; max-height:350px; margin-top:10px; padding:5px}
+strong.row {margin: 3px }

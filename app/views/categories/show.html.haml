@@ -1,5 +1,5 @@
 #content{:class => I18n.locale}
-  .info-holder
+  .info-holder{:id => I18n.locale}
     %p#notice= notice  
     
     .category-info.general.float-left
@@ -9,13 +9,17 @@
         %p    
           = @category.description
       
-        = link_to 'مشاهده گواهینامه ها', '#cer', :id => "show-cer"
+        
+        = link_to t('model'), '#model', :id => "show-model"
         %br
-        = link_to 'شرایط نگهداری', '#maintaion', :id => "show-main"
+        = link_to t('maintain'), '#maintaion', :id => "show-main"
         %br
-        = link_to 'نصب و راه اندازی فنی', '#installation', :id => "show-inst"
+        = link_to t('technical'), '#installation', :id => "show-inst"
         %br
-        = link_to 'گارانتی', '#installation', :id => "show-war"
+        = link_to t('warranty'), '#installation', :id => "show-war"
+        %br
+        = link_to t('certificate'), '#cer', :id => "show-cer"
+        
         %br
         = link_to 'ویرایش', edit_category_path(@category)
         \|
@@ -36,49 +40,52 @@
       
         
       .row.col-sm-8#pictures.float-left       
-        - @category.products.each do |product|
-          #fade.pics{:style => "position: relative;"}
-            - product.pictures.each do |pic|              
-              = image_tag pic.image(:small) , :style => "position: absolute; top: 0px; left: 0px; display: block; z-index: 4; opacity: 0.9975; width: 200px; height: 200px;"
+        - @category.products.each do |product|         
+          - product.pictures.each do |pic|              
+            = image_tag pic.image(:small) 
             
         
-      .row.col-sm-6#certification.float-left{:style => "overflow-y: scroll; max-height:350px; "}
+      .row.col-sm-8#certification.float-left{:style => "overflow-y: scroll; max-height:350px; "}
         = link_to "", "#",:name => "cer"
         %b= 'گواهینامه ها'
+        %br
         - @category.certifications.each do |certification|      
-          .col-sm-2.box-3{:style => "text-align:center"}
+          .col-sm-3.box-3{:style => "text-align:center"}
             =link_to (image_tag certification.image(:small)), certification.image(:original), :data => { :colorbox => true }
             .cer-title= certification.title
               
 
         
 :javascript
-  $('#fade').cycle({ 
-    fx:    'curtainX', 
-    sync:  false, 
-    delay: -2000 
-  });
+
+  
+ 
   
   $('#show-cer').click(function(){   
-    $('#category-details').children().fadeOut(); 
-    $('.row.col-sm-6#certification').fadeIn(1000);
+    $('#category-details').children().hide(); 
+    $('.row.col-sm-8#certification').show(1000);
+    
+  });
+  $('#show-model').click(function(){   
+    $('#category-details').children().hide(); 
+    $('#pictures').show(1000);
     
   });
   
   $('#show-main').click(function(){          
-    $('#category-details').children().fadeOut(); 
+    $('#category-details').children().hide(); 
     $('#category-details #maintaion').fadeIn(1000);
     
   });
   
   $('#show-inst').click(function(){          
-    $('#category-details').children().fadeOut(); 
+    $('#category-details').children().hide(); 
     $('#category-details #installation').fadeIn(1000);
     
   });
   
   $('#show-war').click(function(){          
-    $('#category-details').children().hide('drop', 1000)
+    $('#category-details').children().hide(); 
     $('#category-details #warranty').fadeIn(1000);    
   });
 

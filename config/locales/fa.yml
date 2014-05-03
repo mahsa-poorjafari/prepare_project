@@ -21,7 +21,8 @@ fa:
   model: "تنوع مدلها"
   technical: "نصب و راه اندازی فنی"
   maintain: "شرایط نگهداری"
-  warranty: "گارانتی و گواهینامه"
+  warranty: "گارانتی "
+  certificate: "گواهینامه"
   send-msg: "ارسال پیام به مدیر"
     
   form:
@@ -33,6 +34,11 @@ fa:
     edit: "ویرایش"
     delete: "حذف"
     web: "وب سایت:"
+  
+  reseller:
+    CEO: "مدیر عامل"
+    Phone: "تلفن تماس"
+    address: "آدرس"
 
   
   msg:

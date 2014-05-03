@@ -37,7 +37,8 @@ en:
   model: "Model Varients"
   technical: "Technical instalation "
   maintain: "Maintain"
-  warranty: "Warranty & Certification "
+  warranty: "Warranty"
+  certificate: "Certification"
   send-msg: "Leave a Message"
   
   form:
@@ -53,7 +54,9 @@ en:
   
   
   reseller:
-    
+    CEO: "CEO"
+    Phone: "Phone"
+    address: "Address"
   
   msg:
     contact-name: "Name:"
