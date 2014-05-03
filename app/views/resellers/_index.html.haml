@@ -1,10 +1,10 @@
-.col-sm-7{:style => "overflow-y: scroll; max-height:350px; "}
+.col-sm-7{:style => "overflow-y:scroll; max-height:370px; "}
   -if is_admin?
     = link_to 'تعریف نمایندگی جدید', new_reseller_path
 
   .row
     - Reseller.all.each do |reseller|
-      .cycle-overlay{:id => I18n.locale}
+      .cycle-overlay{:id => I18n.locale, :style => "width:90%; padding:3px"}
         %strong.row
           = reseller.title                 
         .row{:id => I18n.locale}

@@ -29,7 +29,7 @@ class SlidersController < ApplicationController
 
     respond_to do |format|
       if @slider.save
-        format.html { redirect_to @slider, notice: 'Slider was successfully created.' }
+        format.html { redirect_to edit_slide_path(@slider), notice: 'عکس جدید در اسلایدر اضافه شد' }
         format.json { render action: 'show', status: :created, location: @slider }
       else
         format.html { render action: 'new' }

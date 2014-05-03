@@ -1,17 +1,12 @@
 #content.slider{"data-cycle-manual-speed" => "300", "data-cycle-next" => "#prev-button", "data-cycle-overlay-fx-in" => "slideDown", "data-cycle-overlay-fx-out" => "slideUp", "data-cycle-pager" => "#pager-top", "data-cycle-prev" => "#next-button", "data-cycle-speed" => "2000"}
   .cycle-overlay{align: "center", :id => I18n.locale, :style => "width: 500px; position: absolute;"}                
     %p= t('about')
-  = image_tag "home/slide1.jpg" ,"data-cycle-fx" => "scrollHorz", "data-cycle-overlay-template" => "", "data-cycle-timeout" => "15000"
+  = render "sliders/slider"
 
-  
-#prev-button{onmouseout: "this.style.opacity=0.3; this.style.filter  = 'alpha(opacity=20)';", onmouseover: "this.style.opacity=1.0; this.style.filter  = 'alpha(opacity=100)';"}
-#next-button{onmouseout: "this.style.opacity=0.3; this.style.filter  = 'alpha(opacity=20)';", onmouseover: "this.style.opacity=1.0; this.style.filter  = 'alpha(opacity=100)';"}
-#pager
-  #pager-top
-#page{style: "width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index = 9999; display: none;"}
-#page_close{style: "width: 975px; min-height: 55px; padding: 0 5px 0 20px; margin: auto; height: 32px; clear: right; background-color: #514c02;opacity:.8;"}
-  %div{style: "width: 600px; height: 14px; background-color: #430d46;"}
-  = image_tag "close-page-icon.png", onclick: "closePage()", style: "float: right; cursor: pointer; width: 32px; height: 32px;"
-#page_inner{style: "width: 1000px;height:100%; margin: 0 auto;background:#514c02;opacity:.8"}
+:javascript 
+  $(".item").first().addClass("active");
+  $(".slide-indicator").first().addClass("active");
+  $('.carousel').carousel();
+
 
 

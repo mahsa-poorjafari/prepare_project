@@ -1,11 +1,9 @@
-.list-div
-  #welcom_pan   
-    %h2.heading2
-      slider
-    .show-list
-      = render 'form'
+#content
+  .col-sm-4
+    %h1= 'اسلایدر'
+  .show-pro.set-center 
+    = render 'form'
       
-    #quotPan
-      .footer_Link
-        = link_to 'بازگشت', sliders_path
+   
+  = link_to 'بازگشت', sliders_path
 

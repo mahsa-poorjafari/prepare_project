@@ -1,7 +1,8 @@
-.hero-unit
+.hero-unit{:style => "position:relative"}
   .carousel.slide
     .carousel-inner
-      -@sliders.each do |slide|
+      - @sliders = Slider.all
+      - @sliders.each do |slide|
         .item-row.item
           = link_to (image_tag slide.image(:gallery_size), :id =>  slide.id ), slide, :class => "slide"
           -if is_admin?
@@ -20,6 +21,9 @@
             - if  @sliders.count != 1
               -  @sliders.each_with_index do |slide, index|
                 %li{"data-slide-to" => "#{index}", "data-target" => "#homeCarousel", :class => "slide-indicator"}      
-      %a.carousel-control.left{"data-slide" => "prev", href: ".carousel"} ›
-      %a.carousel-control.right{"data-slide" => "next", href: ".carousel"}‹             
+      = link_to ".carousel", :class => "carousel-control left", "data-slide" => "prev" do
+        = image_tag 'next-icon.png'
+      = link_to ".carousel", :class => "carousel-control right", "data-slide" => "next" do
+        = image_tag 'prev-icon.png'
+      
 
