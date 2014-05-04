@@ -1,16 +1,14 @@
-.list-div
-  #welcom_pan   
-    %h2.heading2 
-      slider
-      
-    = image_tag @slider.image(:gallery_size)
-    .show-des-fa
-      = @slider.description_fa
-    #quotPan
-      .footer_Link
-        = link_to content_tag("span", "ویرایش"), edit_slider_path(@slider)
-        \|
-        = link_to content_tag("span", "بازگشت"), root_path
-        \|        
-        = link_to 'حذف', @slider, :method => :delete, :data => { confirm: 'آیا میخواهید این  تصویر را حذف کنید?'} 
-    
+#content 
+  .show-pro 
+    .col-sm-6
+      = image_tag @slider.image(:gallery_size)
+    .col-sm-6
+      = @slider.description
+   
+
+    = link_to content_tag("span", "ویرایش"), edit_slider_path(@slider)
+    \|
+    = link_to content_tag("span", "بازگشت"), root_path
+    \|        
+    = link_to 'حذف', @slider, :method => :delete, :data => { confirm: 'آیا میخواهید این  تصویر را حذف کنید?'} 
+

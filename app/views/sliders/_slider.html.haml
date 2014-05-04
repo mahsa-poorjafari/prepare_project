@@ -1,4 +1,4 @@
-.hero-unit{:style => "position:relative"}
+.hero-unit
   .carousel.slide
     .carousel-inner
       - @sliders = Slider.all
@@ -9,11 +9,9 @@
             .row-controls
               = link_to edit_slider_path(slide) do
                 %i.icon-edit
-              = link_to  slide, :method => :delete, :data => { :confirm => 'Are you sure?' }  do
+              = link_to  slide, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }  do
                 %i.icon-trash
-          -if slide.description_en.present?
-            .image-des-holder{:class => I18n.locale}
-              = slide.description_en 
+          
     -if @sliders.count > 1          
       .carousel-controls
         .center

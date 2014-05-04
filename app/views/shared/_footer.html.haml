@@ -1,52 +1,56 @@
-%footer
-  .footer-menu{:id => I18n.locale}
-    %ul      
-      %li.first
-        %ul
-          %li.head
-            %b= t('products')
-          %li.pointer.noline 
-            =t('model')
-          %li.pointer.noline 
-            =t('technical')
-          %li.pointer.noline
-            =t('maintain')
-          %li.pointer.noline
-            =t('warranty')
-          %li.pointer.noline
-            =t('certificate')
-      %li
-        %ul
-          %li.head
-            %b= t('gallery')
-          - Category.all.each do |category|
-            %li= link_to category.title, category
-          
-          
-      %li
-        %ul
-          %li.head
-            %b= t('downloads')
-          %li Movie
-          %li Wallpaper
-      %li
-        %ul
-          %li.head
-            %b= t('contact')
-          %li= t('send-msg')           
-          %li= link_to t('resellers'), Page.first
-  #footer-bottom
-    © Copyright RLfloor | RLfloor GROUP 2014 | Powered by 
-    = link_to 'Raush.ir', url_with_protocol('www.raush.net'), :target => "_blank"
-    #social-buttons
-      = link_to '#', :class => "noline" do
-        = image_tag "facebook-icon.png"
-        = image_tag "twitter-icon.png"
-        = image_tag "in-icon.png"            
-        = image_tag "gplus-icon.png"            
-    #quick-bar
-      %span 
-        Language
-        = link_to 'ENG', locale: :en
-        \|
-        = link_to 'FA', locale: :fa
+.footer-admin
+  - if is_admin?
+    = render 'shared/admin_menu'
+.footer-menu{:class => I18n.locale, :style => "float:right"}
+  %ul      
+    %li.first
+      %ul
+        %li.head
+          %b= t('products')
+        %li.pointer.noline 
+          =t('model')
+        %li.pointer.noline 
+          =t('technical')
+        %li.pointer.noline
+          =t('maintain')
+        %li.pointer.noline
+          =t('warranty')
+        %li.pointer.noline
+          =t('certificate')
+    %li
+      %ul
+        %li.head
+          %b= t('gallery')
+        - Category.all.each do |category|
+          %li= link_to category.title, category
+        
+        
+    %li
+      %ul
+        %li.head
+          %b= t('downloads')
+        %li Movie
+        %li= t('catalog')
+    %li
+      %ul
+        %li.head
+          %b= t('contact')
+        %li= t('send-msg')           
+        %li= link_to t('resellers'), Page.first
+
+        
+#footer-bottom
+  © Copyright RLfloor | RLfloor GROUP 2014 | Powered by 
+  = link_to 'Raush.ir', url_with_protocol('www.raush.net'), :target => "_blank"
+  #social-buttons
+    = link_to '#', :class => "noline" do
+      = image_tag "facebook-icon.png"
+      = image_tag "twitter-icon.png"
+      = image_tag "in-icon.png"            
+      = image_tag "gplus-icon.png"            
+  #quick-bar
+    %span 
+      Language
+      = link_to 'ENG', locale: :en
+      \|
+      = link_to 'FA', locale: :fa

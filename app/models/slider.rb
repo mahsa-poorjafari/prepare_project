@@ -7,4 +7,7 @@ class Slider < ActiveRecord::Base
   def cropping?
     !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
   end
+  def description
+    I18n.locale == :fa ? self.read_attribute("description_fa") : self.read_attribute("description_en")
+  end
 end

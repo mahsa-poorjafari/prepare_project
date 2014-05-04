@@ -1,22 +1,19 @@
-#content{"data-cycle-manual-speed" => "300", "data-cycle-next" => "#prev-button", "data-cycle-overlay-fx-in" => "slideDown", "data-cycle-overlay-fx-out" => "slideUp", "data-cycle-pager" => "#pager-top", "data-cycle-prev" => "#next-button", "data-cycle-speed" => "2000", :class => I18n.locale}
-  %p#notice= notice
-  .col-sm-4
-    %p   
-      = @product.title
-    %p    
-      = @product.description
-    %p    
-      = @product.category.title
+%p#notice= notice
+.col-sm-4
+  %p   
+    = @product.title
+  %p    
+    = @product.description
+  %p    
+    = @product.category.title
+  
+.col-sm-4
+  - @product.pictures.each do |pic|
+    .product-pics
+      =link_to (image_tag pic.image(:medium)), pic.image(:large), :data => { :colorbox => true }, :title => pic.description         
     
-  .col-sm-4
-    - @product.pictures.each do |pic|
-      .product-pics
-        =link_to (image_tag pic.image(:medium)), pic.image(:large), :data => { :colorbox => true }, :title => pic.description         
-      
 
-  .admin-icon
-    .col-sm-6
-      = link_to  edit_product_path(@product) do
-        = image_tag 'edit.png'      
-      = link_to products_path do
-        = image_tag 'back.png'
+= link_to  edit_product_path(@product) do
+  = image_tag 'edit.png'      
+= link_to products_path do
+  = image_tag 'back.png'

@@ -24,6 +24,9 @@ fa:
   warranty: "گارانتی "
   certificate: "گواهینامه"
   send-msg: "ارسال پیام به مدیر"
+  
+  
+  catalog: 'کاتالوگ '
     
   form:
     title: "عنوان:"
@@ -36,6 +39,7 @@ fa:
     web: "وب سایت:"
   
   reseller:
+    title: 'عنوان'
     CEO: "مدیر عامل"
     Phone: "تلفن تماس"
     address: "آدرس"

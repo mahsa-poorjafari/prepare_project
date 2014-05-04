@@ -41,6 +41,9 @@ en:
   certificate: "Certification"
   send-msg: "Leave a Message"
   
+  
+  catalog: "Catalog"
+  
   form:
     title: "Title:"
     Description: "Description"
@@ -54,6 +57,7 @@ en:
   
   
   reseller:
+    title: 'Title'
     CEO: "CEO"
     Phone: "Phone"
     address: "Address"

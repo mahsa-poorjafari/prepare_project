@@ -1,21 +1,14 @@
-%h1 Listing pages
-
-%table
-  %tr
-    %th Title
-    %th Html text
-    %th
-    %th
-    %th
-
+%h1= 'صفحات متنی'
+= link_to 'صفحه جدید', new_page_path, :class => "btn"
+%table.table
   - @pages.each do |page|
     %tr
       %td= page.title
-      %td= page.html_text
+      
       %td= link_to 'Show', page
       %td= link_to 'Edit', edit_page_path(page)
-      %td= link_to 'Destroy', page, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Destroy', page, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
 
-%br
 
-= link_to 'New Page', new_page_path
+
+

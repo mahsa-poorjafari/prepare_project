@@ -1,22 +1,21 @@
-#content{"data-cycle-manual-speed" => "300", "data-cycle-next" => "#prev-button", "data-cycle-overlay-fx-in" => "slideDown", "data-cycle-overlay-fx-out" => "slideUp", "data-cycle-pager" => "#pager-top", "data-cycle-prev" => "#next-button", "data-cycle-speed" => "2000", :class => I18n.locale}
-  %h1= 'گواهینامه ها'
 
-  %table
+%h1= 'گواهینامه ها'
+= link_to 'گواهینامه جدید', new_certification_path
+%table
+  %tr
+    %th عنوان
+    
+    %th
+    %th
+    %th
+
+  - @certifications.each do |certification|
     %tr
-      %th Title fa
-      %th Title en
-      %th
-      %th
-      %th
+      %td= certification.title      
+      %td= link_to 'Show', certification
+      %td= link_to 'Edit', edit_certification_path(certification)
+      %td= link_to 'Destroy', certification, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-    - @certifications.each do |certification|
-      %tr
-        %td= certification.title_fa
-        %td= certification.title_en
-        %td= link_to 'Show', certification
-        %td= link_to 'Edit', edit_certification_path(certification)
-        %td= link_to 'Destroy', certification, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-  %br
 
-  = link_to 'گواهینامه جدید', new_certification_path
+

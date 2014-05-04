@@ -1,10 +1,10 @@
-#content
-  %h2.heading2 
-    = "اسلایدر"
-  -if is_admin?
-    = link_to content_tag("span", "عکس جدید"), new_slider_path
-  .show-pro.set-center 
-    = render 'slider'            
+
+%h2.heading2 
+  = "اسلایدر"
+-if is_admin?
+  = link_to content_tag("span", "عکس جدید"), new_slider_path
+.show-pro.set-center 
+  = render 'slider'            
   
     
     

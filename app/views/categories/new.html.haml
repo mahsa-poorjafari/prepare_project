@@ -1,19 +1,19 @@
-#content{"data-cycle-manual-speed" => "300", "data-cycle-next" => "#prev-button", "data-cycle-overlay-fx-in" => "slideDown", "data-cycle-overlay-fx-out" => "slideUp", "data-cycle-pager" => "#pager-top", "data-cycle-prev" => "#next-button", "data-cycle-speed" => "2000", :class => I18n.locale}
-  .col-sm-4
-    %h1= 'تعریف گروه جدید '
-  .col-sm-6.category-link
-    = link_to 'نصب و راه اندازی', '#install'
-    \|
-    = link_to 'شرایط نگهداری', '#maintaion'
-    \|
-    = link_to 'گارانتی', '#warranty'
-    \|
-    = link_to 'گواهینامه ها', '#certification'
-  .clr-float
-  = render 'form'
 
-  = link_to 'بازگشت', categories_path
+.col-sm-4
+  %h1= 'تعریف گروه جدید '
+.col-sm-6.category-link
+  = link_to 'نصب و راه اندازی', '#install'
   \|
-  = link_to '#general' do
-    = image_tag "go-up.png"
-    %span= 'بازگشت به بالا صفحه'
+  = link_to 'شرایط نگهداری', '#maintaion'
+  \|
+  = link_to 'گارانتی', '#warranty'
+  \|
+  = link_to 'گواهینامه ها', '#certification'
+.clr-float
+= render 'form'
+
+= link_to 'بازگشت', categories_path
+\|
+= link_to '#general' do
+  = image_tag "go-up.png"
+  %span= 'بازگشت به بالا صفحه'

@@ -15,10 +15,10 @@
 
 
 .clr-float{ clear:both}
-#en {direction:ltr; text-align:left; font-family:arial}
+
 .en {direction:ltr; text-align:left; font-family:arial}
-#fa {direction:rtl; text-align:right;font-family:'open_sansregular'}
 .fa {direction:rtl; text-align:right;font-family:'open_sansregular'}
+
 .set-center {margin-right:auto; margin-left:auto}
 .float-left {float:left;}
 .info-holder{ width:100%; max-height:350px}
@@ -76,7 +76,6 @@ span.Necessary {color:#F33535}
 .box-menu .arrow-vertical {width:5px; background:#4D4D4D; height:100%}
 .cer-title {text-align:center}
 
-
 .info-form {width: 95%; overflow-y: scroll; height:350px}
 .category-link a:hover{color:#4D4D4D}
 .products {width: 100%}
@@ -91,11 +90,27 @@ span.Necessary {color:#F33535}
 .products  .pro_wrapper .pro-info {text-align:center; margin:0px; }
 .products  .pro_wrapper .pro-info p{text-align:center; margin:0px; }
 .line {background:#DEFF00; height:5px; border-radius:5px}
-.slider  img {width: 100%}
 
+.slider  img {width: 100%}
+.slider  .cycle-overlay {text-align:center; width: 40%; position: absolute; left: 30%; bottom:65px}
+.row .cycle-overlay {margin-bottom:2px}
 #installation, #maintaion, #warranty, #certification {display:none; overflow-y:scroll; max-height:350px; margin-top:10px; padding:5px}
 #pictures {overflow-y:scroll; max-height:350px; margin-top:10px; padding:5px}
 
-#content.slider .hero-unit {width: 100%; height: 100%}
+.slider .hero-unit {width: 100%; max-height: 441px; position:relative;}
+.slider .hero-unit .carousel-inner img {height: 441px}
 
 .hero-unit .image-des-holder {margin-top:-20px; background-color:#FFA500; color:#000; position: absolute;}
+.content-holder{ max-height: 540px; overflow: hidden;}
+.category-image{max-height: 350px;}
+.carousel-control img {margin-top: 200px}
+table.table  tr {text-align:right;}
+table.table  tr th {width: 120px;}
+table.table  tr th.count {width: 50px;}
+table.table tr.visited {font-weight:bold}
+.footer-admin {float:right; direction:rtl; text-align:right;font-family:'open_sansregular'}
+.footer-admin .col-sm-6 {border-right: 2px solid #deff00}
+.footer-admin a {color:#e5ec6f;}
+.footer-admin a:hover {color:#DEFF00}
+
+.admin-link {height:20px; margin:5px}

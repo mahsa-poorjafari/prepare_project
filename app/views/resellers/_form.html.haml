@@ -1,31 +1,30 @@
 = form_for @reseller do |f|
   - if @reseller.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@reseller.errors.count, "error")} prohibited this reseller from being saved:"
+    #error_explanation      
       %ul
-        - @reseller.errors.full_messages.each do |msg|
+        - @reseller.errors.each do |attr, msg|
           %li= msg
 
-  .field
-    = f.label :title_fa
-    = f.text_field :title_fa
-  .field
-    = f.label :title_en
-    = f.text_field :title_en
-  .field
-    = f.label :Management_name_fa
-    = f.text_field :Management_name_fa
-  .field
-    = f.label :Management_name_en
-    = f.text_field :Management_name_en
-  .field
-    = f.label :phone
-    = f.text_area :phone
-  .field
-    = f.label :address_fa
-    = f.text_area :address_fa
-  .field
-    = f.label :address_en
-    = f.text_area :address_en
-  .actions
-    = f.submit 'Save'
+  .form-group
+    = f.label 'عنوان به فارسی', :class => "col-sm-4 control-label"    
+    = f.text_field :title_fa, :class => "form-control"
+  .form-group
+    = f.label 'عنوان به انگلیسی', :class => "col-sm-4 control-label"    
+    = f.text_field :title_en, :class => "form-control"
+  .form-group
+    = f.label 'نام مدیر عامل به فارسی', :class => "col-sm-4 control-label"    
+    = f.text_field :Management_name_fa, :class => "form-control"
+  .form-group
+    = f.label 'نام مدیرعامل به انگلیسی', :class => "col-sm-4 control-label"    
+    = f.text_field :Management_name_en, :class => "form-control"
+  .form-group
+    = f.label 'تلفن های تماس', :class => "col-sm-4 control-label"    
+    = f.text_area :phone, :class => "form-control"
+  .form-group
+    = f.label 'آدرس به فارسی', :class => "col-sm-4 control-label"    
+    = f.text_area :address_fa, :class => "form-control"
+  .form-group
+    = f.label 'آدرس به انگلیسی', :class => "col-sm-4 control-label"    
+    = f.text_area :address_en, :class => "form-control"
+  .form-group
+    = f.submit 'ثبت', :class => "btn"

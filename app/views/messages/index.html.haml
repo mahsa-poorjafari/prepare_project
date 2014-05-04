@@ -1,28 +1,39 @@
-%h1 Listing messages
+%h2= 'لیست پیام های ارسالی'
+.col-sm-8
+  .col-sm-4
+    %span
+      تعداد کل
+      = @num_msg
+  .col-sm-4
+    %span
+      خوانده نشده
+      = @unread_msg
+  .col-sm-4
+    %span
+      خوانده شده
+      = @read_msg
 
-%table
-  %tr
-    %th Email
-    %th Name
-    %th Phone
-    %th Text
-    %th Visited
+%table.table
+  %tr    
+    %th.count ردیف
+    %th ایمیل
+    %th نام
+    %th تلفن
+    %th متن    
     %th
     %th
     %th
 
-  - @messages.each do |message|
-    %tr
+  - @messages.each_with_index do |message, i| 
+    %tr{:class => ('visited' if message.visited == true)}
+      %td= (i+1)        
       %td= message.email
       %td= message.name
       %td= message.phone
-      %td= message.text
-      %td= message.visited
+      %td= truncate(strip_tags(message.text), :length => 30)
       %td= link_to 'Show', message
       %td= link_to 'Edit', edit_message_path(message)
-      %td= link_to 'Destroy', message, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Destroy', message, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
 
-%br
-= @unread_msg
 
-= link_to 'New Message', new_message_path
+
