@@ -1,9 +1,10 @@
-%h1
-  ویرایش صفحه
-  = @page.title
+.fa
+  %h1
+    ویرایش صفحه
+    = @page.title
 
-= render 'form'
+  = render 'form'
 
-= link_to 'مشاهده', @page
-\|
-= link_to 'بازگشت', pages_path
+  = link_to 'مشاهده', @page
+  \|
+  = link_to 'بازگشت', pages_path

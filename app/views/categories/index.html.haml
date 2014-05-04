@@ -1,6 +1,9 @@
 
 -if is_admin?
-  = link_to 'تعریف گروه جدید', new_category_path
+  .admin-link.fa
+    %p= 'منوی صفحه'
+    %hr
+    = link_to 'تعریف گروه جدید', new_category_path
 .show-pro.set-center 
   - @categories.each do |category|
     .box-3.set-center{align: "center", :class => I18n.locale}                

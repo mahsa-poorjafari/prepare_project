@@ -108,9 +108,13 @@ table.table  tr {text-align:right;}
 table.table  tr th {width: 120px;}
 table.table  tr th.count {width: 50px;}
 table.table tr.visited {font-weight:bold}
-.footer-admin {float:right; direction:rtl; text-align:right;font-family:'open_sansregular'}
+.footer-admin {float:right; direction:rtl; text-align:right;font-family:'open_sansregular'; min-width:20%; height:100%}
 .footer-admin .col-sm-6 {border-right: 2px solid #deff00}
 .footer-admin a {color:#e5ec6f;}
 .footer-admin a:hover {color:#DEFF00}
 
-.admin-link {height:20px; margin:5px}
+.admin-link {height:20px; margin:5px; background:#4D4D4D; width:200px; opacity:.5;
+overflow:hidden; color:#DEFF00; text-align:center;
+-webkit-transition:all 2s; /* For Safari 3.1 to 6.0 */
+transition:all 2s;}
+.admin-link:hover{ height:100px ; cursor:pointer}

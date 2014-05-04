@@ -1,14 +1,15 @@
 .middle-div.go-center
-  .col-lg-4.col-lg-offset-1{ :class => ('pull-left' if I18n.locale == :'en') || ('pull-right' if I18n.locale == :'fa')}          
+  .col-sm-4.col-lg-offset-1.fa
     %p#notice= notice
     = form_tag create_session_path do 
       .form-group 
-        %span.lable=" نام کاربری:"
+        %span.col-sm-4.lable=" نام کاربری:"
         %span= text_field_tag :user_name, "",:class => "form-control", :placeholder => "نام کاربری را وارد کنید"
-        %span.lable=" رمز عبور:"
+      .form-group 
+        %span.col-sm-4.lable=" رمز عبور:"
         %span= password_field_tag :password, "", :class => "form-control", :placeholder => "رمز عبور را وارد کنید" 
-        %br
+        
+      .form-group.pull-left
         = submit_tag "ورود", :class => "btn btn-default"
-  .clear-float
-%br
+
 

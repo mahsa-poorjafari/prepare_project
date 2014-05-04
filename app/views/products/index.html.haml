@@ -1,6 +1,9 @@
 
 -if is_admin?
-  = link_to 'تعریف محصول جدید', new_product_path, :class => "btn btn-default"
+  .admin-link.fa
+    %p= 'منوی صفحه'
+    %hr
+    = link_to 'تعریف محصول جدید', new_product_path
 .products
   - @products.each do |product|      
     .pro_wrapper{align: "center", :id => I18n.locale}                

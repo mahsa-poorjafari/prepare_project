@@ -75,7 +75,7 @@ class UsersController < ApplicationController
 
   def delete_session
     session[:admin] = nil
-    redirect_to home_path
+    redirect_to root_path
   end
 
   private

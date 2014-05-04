@@ -5,18 +5,18 @@
         - @page.errors.each do |attr, msg|
           %li= msg
 
-  .field
-    = f.label "عنوان صفحه به فارسی"
+  .form-group   
+    = f.label "عنوان صفحه به فارسی", :class => "control-label"
     = @page.title_fa
-  .field
-    = f.label "عنوان صفحه به انگلیسی"
+  .form-group   
+    = f.label "عنوان صفحه به انگلیسی", :class => "control-label"
     = @page.title
   
-  .field
-    = f.label "متن صفحه به فارسی:"
-    = f.text_area :html_text_fa
-  .field
-    = f.label "متن صفحه به انگلیسی:"
-    = f.text_area :html_text
-  .actions
-    = f.submit 'ثبت', :class => "btn"
+  .editor.form-group   
+    = f.label "متن صفحه به فارسی:", :class => "control-label"
+    = f.text_area :html_text_fa, :class => "form-control ckeditor"
+  .editor.form-group   
+    = f.label "متن صفحه به انگلیسی:", :class => "control-label"
+    = f.text_area :html_text, :class => "form-control ckeditor"
+  .form-group   
+    = f.submit 'ثبت', :class=> "btn btn-default"

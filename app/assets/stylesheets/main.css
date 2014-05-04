@@ -214,6 +214,7 @@ footer #footer-bottom {
 	margin: 100px 0 150px 0;
 	background: #d9cf35;
   overflow:hidden;
+  height:438px;
   
 }
 
@@ -276,11 +277,10 @@ footer #footer-bottom {
 }
 
 .noline{text-decoration:none;color:#e5ec6f}
-.catalogIcon{-webkit-transition:all 2s; /* For Safari 3.1 to 6.0 */
-transition:all 2s;}
+
 .noline:visited{text-decoration:none;color:#e5ec6f}
 .noline:hover{color:#deff00}
-.catalogIcon:hover{margin-top:5px ; height:400px }
+
 
 .cycle-overlay {     
 	font-size:12px;
