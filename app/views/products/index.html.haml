@@ -1,21 +1,21 @@
+.product-bg
+  -if is_admin?
+    .admin-link.fa
+      %p= 'منوی صفحه'
+      %hr
+      = link_to 'تعریف محصول جدید', new_product_path
+  .products
+    - @products.each do |product|      
+      .pro_wrapper{align: "center", :id => I18n.locale}                
+        = link_to product do
+          %p.pro-info  
+            = image_tag product.pictures.first.image(:small)
+            .line
+            %p= product.title 
+          
+      
 
--if is_admin?
-  .admin-link.fa
-    %p= 'منوی صفحه'
-    %hr
-    = link_to 'تعریف محصول جدید', new_product_path
-.products
-  - @products.each do |product|      
-    .pro_wrapper{align: "center", :id => I18n.locale}                
-      = link_to product do
-        %p.pro-info  
-          = image_tag product.pictures.first.image(:small)
-          .line
-          %p= product.title 
-        
-    
-
- 
+   
 
 
 

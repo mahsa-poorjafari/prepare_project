@@ -1,22 +1,22 @@
-
--if is_admin?
-  .admin-link.fa
-    %p= 'منوی صفحه'
-    %hr
-    = link_to 'تعریف گروه جدید', new_category_path
-.show-pro.set-center 
-  - @categories.each do |category|
-    .box-3.set-center{align: "center", :class => I18n.locale}                
-      = link_to category do         
-        %p= category.title 
-        = image_tag category.image(:small), :class => "category-image"
-      .box-menu 
-        .arrow-vertical
-        %ul
-          %li= link_to t('model'), category
-          %li= link_to t('technical'), category
-          %li= link_to t('maintain'), category
-          %li= link_to t('warranty'), category
-      
+.category-bg
+  -if is_admin?
+    .admin-link.fa
+      %p= 'منوی صفحه'
+      %hr
+      = link_to 'تعریف گروه جدید', new_category_path
+  .show-pro.set-center 
+    - @categories.each do |category|
+      .box-3.set-center{align: "center", :class => I18n.locale}                
+        = link_to category do         
+          %p= category.title 
+          = image_tag category.image(:small), :class => "category-image"
+        .box-menu 
+          .arrow-vertical
+          %ul
+            %li= link_to t('model'), category
+            %li= link_to t('technical'), category
+            %li= link_to t('maintain'), category
+            %li= link_to t('warranty'), category
         
-      
+          
+        

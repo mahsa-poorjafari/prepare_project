@@ -21,7 +21,7 @@
 
 .set-center {margin-right:auto; margin-left:auto}
 .float-left {float:left;}
-.info-holder{ width:100%; max-height:350px}
+
 .category-info {max-width:400px; min-width:400px; float:right; }
 .product-pics { margin:5px}
 
@@ -81,11 +81,11 @@ span.Necessary {color:#F33535}
 .products {width: 100%}
 .products  .pro_wrapper {display: inline-block;
     float: left;
-    height: 350px;
+    height: 200px;
     margin: 15px;
     overflow: hidden;
     padding: 0;
-    width: 304px;}
+    width: 150px;}
 .products  .pro_wrapper img {width: 100%}
 .products  .pro_wrapper .pro-info {text-align:center; margin:0px; }
 .products  .pro_wrapper .pro-info p{text-align:center; margin:0px; }
@@ -118,3 +118,20 @@ overflow:hidden; color:#DEFF00; text-align:center;
 -webkit-transition:all 2s; /* For Safari 3.1 to 6.0 */
 transition:all 2s;}
 .admin-link:hover{ height:100px ; cursor:pointer}
+.category-bg { 
+  height:100%; 
+  background:url('vintage-wallpaper-2.jpg') ; 
+  }
+.product-bg {
+  height:100%; 
+  background:url('Elizabeth_Dow__0_52ff809486c18.jpg');
+}
+.page-bg {
+  height:100%; 
+  background:url('contact.jpg');
+}
+.info-holder{ 
+  width:100%; 
+  height:100%;
+  background:url('vintage-wallpaper-2.jpg');
+}

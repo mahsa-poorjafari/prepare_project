@@ -1,5 +1,4 @@
-
-.info-holder{:id => I18n.locale}
+.info-holder
   %p#notice= notice  
   
   .category-info.general.float-left
@@ -24,16 +23,16 @@
       = link_to 'ویرایش', edit_category_path(@category)
       \|
       = link_to 'بازگشت', categories_path
-  #category-details    
-    .col-sm-8.float-left#installation
+  #category-details   
+    .col-sm-8.float-left#installation.cycle-overlay
       %b= 'نصب'
       %p=raw @category.installation
       
-    .col-sm-8.float-left#maintaion      
+    .col-sm-8.float-left#maintaion.cycle-overlay      
       %b= 'شرایط'
       %p=raw @category.maintaion
       
-    .col-sm-8.float-left#warranty
+    .col-sm-8.float-left#warranty.cycle-overlay
       %b= 'گارانتی'
       %p=raw @category.warranty
           
@@ -60,33 +59,33 @@
 
 
 
-$('#show-cer').click(function(){   
-  $('#category-details').children().hide(); 
-  $('.row.col-sm-8#certification').show(1000);
-  
-});
-$('#show-model').click(function(){   
-  $('#category-details').children().hide(); 
-  $('#pictures').show(1000);
-  
-});
+  $('#show-cer').click(function(){   
+    $('#category-details').children().hide(); 
+    $('#certification').show(1000);
+    
+  });
+  $('#show-model').click(function(){   
+    $('#category-details').children().hide(); 
+    $('#pictures').show(1000);
+    
+  });
 
-$('#show-main').click(function(){          
-  $('#category-details').children().hide(); 
-  $('#category-details #maintaion').fadeIn(1000);
-  
-});
+  $('#show-main').click(function(){          
+    $('#category-details').children().hide(); 
+    $('#maintaion').fadeIn(1000);
+    
+  });
 
-$('#show-inst').click(function(){          
-  $('#category-details').children().hide(); 
-  $('#category-details #installation').fadeIn(1000);
-  
-});
+  $('#show-inst').click(function(){          
+    $('#category-details').children().hide(); 
+    $('#installation').fadeIn(1000);
+    
+  });
 
-$('#show-war').click(function(){          
-  $('#category-details').children().hide(); 
-  $('#category-details #warranty').fadeIn(1000);    
-});
+  $('#show-war').click(function(){          
+    $('#category-details').children().hide(); 
+    $('#warranty').fadeIn(1000);    
+  });
 
 
 
