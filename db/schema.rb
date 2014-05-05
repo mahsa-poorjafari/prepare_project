@@ -14,6 +14,8 @@
 ActiveRecord::Schema.define(version: 20140428082512) do
 
   create_table "categories", force: true do |t|
+    t.string   "title"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
@@ -41,25 +43,12 @@ ActiveRecord::Schema.define(version: 20140428082512) do
     t.datetime "image_updated_at"
   end
 
-  create_table "friendly_id_slugs", force: true do |t|
-    t.string   "slug",                      null: false
-    t.integer  "sluggable_id",              null: false
-    t.string   "sluggable_type", limit: 50
-    t.string   "scope"
-    t.datetime "created_at"
-  end
-
-  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
-  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
-
   create_table "messages", force: true do |t|
     t.text     "email"
     t.string   "name"
     t.string   "phone"
     t.text     "text"
-    t.boolean  "visited"
+    t.boolean  "visited",    default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

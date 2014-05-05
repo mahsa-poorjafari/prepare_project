@@ -2,9 +2,9 @@
   %p#notice= notice  
   
   .category-info.general.float-left
-    .row.col-sm-9
-      %p   
-        = @category.title
+    .row.col-sm-12
+      .line.set-center   
+        %b= @category.title
       %p    
         = @category.description
     
@@ -24,27 +24,27 @@
       \|
       = link_to 'بازگشت', categories_path
   #category-details   
-    .col-sm-8.float-left#installation.cycle-overlay
+    .col-sm-8.details.bg-opacity#installation
       %b= 'نصب'
       %p=raw @category.installation
       
-    .col-sm-8.float-left#maintaion.cycle-overlay      
+    .col-sm-8.details.bg-opacity#maintaion
       %b= 'شرایط'
       %p=raw @category.maintaion
       
-    .col-sm-8.float-left#warranty.cycle-overlay
+    .col-sm-8.details.bg-opacity#warranty
       %b= 'گارانتی'
       %p=raw @category.warranty
           
     
       
-    .row.col-sm-8#pictures.float-left       
+    .row.details.col-sm-8#pictures
       - @category.products.each do |product|         
         - product.pictures.each do |pic|              
           = image_tag pic.image(:small) 
           
       
-    .row.col-sm-8#certification.float-left{:style => "overflow-y: scroll; max-height:350px; "}
+    .row.details.col-sm-8#certification
       = link_to "", "#",:name => "cer"
       %b= 'گواهینامه ها'
       %br

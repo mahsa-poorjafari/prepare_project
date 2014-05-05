@@ -1,20 +1,18 @@
-
-%h1= 'گواهینامه ها'
-= link_to 'گواهینامه جدید', new_certification_path
-%table
-  %tr
-    %th عنوان
-    
-    %th
-    %th
-    %th
-
-  - @certifications.each do |certification|
-    %tr
-      %td= certification.title      
-      %td= link_to 'Show', certification
-      %td= link_to 'Edit', edit_certification_path(certification)
-      %td= link_to 'Destroy', certification, :method => :delete, :data => { :confirm => 'Are you sure?' }
+.cer-bg{:class => I18n.locale}
+  %h1= t('certificate')
+  -if is_admin?
+    .admin-link.fa
+      %p= 'منوی صفحه'
+      %hr
+    = link_to 'گواهینامه جدید', new_certification_path
+  %table
+      
+    - @certifications.each do |certification|
+      %tr
+        %td= certification.title      
+        %td= link_to 'Show', certification
+        %td= link_to 'Edit', edit_certification_path(certification)
+        %td= link_to 'Destroy', certification, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 
 

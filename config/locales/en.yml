@@ -43,6 +43,7 @@ en:
   
   
   catalog: "Catalog"
+  certificate: "Certification"
   
   form:
     title: "Title:"

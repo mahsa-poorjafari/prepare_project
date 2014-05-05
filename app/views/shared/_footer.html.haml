@@ -8,7 +8,7 @@
         %li.head
           %b= t('products')
         %li.pointer.noline 
-          =t('model')
+          = link_to t('model'), Product
         %li.pointer.noline 
           =t('technical')
         %li.pointer.noline
@@ -16,7 +16,7 @@
         %li.pointer.noline
           =t('warranty')
         %li.pointer.noline
-          =t('certificate')
+          =link_to t('certificate'), Certification
     %li
       %ul
         %li.head
