@@ -40,8 +40,9 @@
       
     .row.details.col-sm-8#pictures
       - @category.products.each do |product|         
-        - product.pictures.each do |pic|              
-          = image_tag pic.image(:small) 
+        - product.pictures.each do |pic|  
+
+          = image_tag pic.image(:small)
           
       
     .row.details.col-sm-8#certification

@@ -1,19 +1,20 @@
-
-.col-sm-4
+.category-info{:style => "min-width:20%; max-width:20%"}
   %h1= 'تعریف گروه جدید '
-.col-sm-6.category-link
-  = link_to 'نصب و راه اندازی', '#install'
-  \|
-  = link_to 'شرایط نگهداری', '#maintaion'
-  \|
-  = link_to 'گارانتی', '#warranty'
-  \|
-  = link_to 'گواهینامه ها', '#certification'
-.clr-float
-= render 'form'
+  = link_to 'بازگشت', categories_path
+  %br
+  = link_to '#general' do
+    = image_tag "go-up.png"    
+    %span= 'بازگشت به بالا صفحه'
 
-= link_to 'بازگشت', categories_path
-\|
-= link_to '#general' do
-  = image_tag "go-up.png"
-  %span= 'بازگشت به بالا صفحه'
+  %br
+  = link_to 'نصب و راه اندازی', '#install'
+  %br
+  = link_to 'شرایط نگهداری', '#maintaion'
+  %br
+  = link_to 'گارانتی', '#warranty'
+  %br
+  = link_to 'گواهینامه ها', '#certification'
+#category-details{:style => "min-width:80%; max-width:80%"}
+  = render 'form'
+
+

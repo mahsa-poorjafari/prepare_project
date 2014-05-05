@@ -5,49 +5,71 @@
         - @category.errors.each do |attr, msg|
           %li= msg
   
-  .info-form.set-center
+  .info-form
     .col-sm-6
       = link_to ' ', '#', :name => "general"
       .form-group
-        = f.label "عنوان گروه به فارسی", :class => "col-sm-4 control-label"    
+        = f.label "عنوان گروه به فارسی", :class => "col-sm-5 control-label"    
         = f.text_field :title_fa, :class => "form-control"
       .form-group
-        = f.label "عنوان گروه به انگلیسی", :class => "col-sm-4 control-label"      
+        = f.label "عنوان گروه به انگلیسی", :class => "col-sm-5 control-label"      
         = f.text_field :title_en, :class => "form-control"    
-      .form-group
-        = f.label "توضیحات به فارسی", :class => "col-sm-4 control-label"      
-        = f.text_area :description_fa, :class => "form-control"
-      .form-group
-        = f.label "توضیحات به انگلیسی", :class => "col-sm-4 control-label"      
-        = f.text_area :description_en, :class => "form-control"       
-  
     .col-sm-6
       .form-group        
         = f.label " تصویر نمونه:", :class => "col-sm-3 control-label"      
         = f.file_field :image     
         -if @category.image.present?              
           = image_tag @category.image(:small) 
+    .clr-float    
+    .form-group.col-sm-6
+      = f.label "توضیحات به فارسی", :class => "col-sm-5 control-label"      
+      = f.text_area :description_fa, :class => "form-control"
+    .form-group.col-sm-6
+      = f.label "توضیحات به انگلیسی", :class => "col-sm-5 control-label"      
+      = f.text_area :description_en, :class => "form-control"       
+  
+    
     .clr-float
       .form-group        
         = link_to ' ', '#', :name => "install"
-        = f.label "وارد کردن اطلاعات نصب و راه اندازی فنی", :class => "control-label"
-      .editor.form-group   
-        = f.text_area :installation, :class => "form-control ckeditor"
-      
-      .form-group        
-        = f.label "وارد کردن اطلاعات شرایط نگهداری", :class => "control-label"  
+        .title-put= 'نصب و راه اندازی فنی'
+        
+      .form-group           
+        .editor.col-sm-6
+          = f.label 'به فارسی', :class => "control-label"
+          = f.text_area :installation, :class => "form-control ckeditor"
+        
+        .editor.col-sm-6
+          = f.label 'به انگلیسی', :class => "control-label"
+          = f.text_area :installation, :class => "form-control ckeditor"
+          
+      .form-group                
         = link_to ' ', '#', :name => "maintaion"
-      .editor.form-group
-        = f.text_area :maintaion, :class => "form-control ckeditor"      
-      
-      .form-group        
-        = f.label "وارد کردن اطلاعات گارانتی", :class => "control-label"  
+        .title-put= 'شرایط نگهداری'
+      .form-group
+        .editor.col-sm-6
+          = f.label 'به فارسی', :class => "control-label"
+          = f.text_area :maintaion, :class => "form-control ckeditor"      
+        .editor.col-sm-6
+          = f.label 'به انگلیسی', :class => "control-label"
+          = f.text_area :maintaion, :class => "form-control ckeditor"      
+          
+      .form-group                
         = link_to ' ', '#', :name => "warranty"
-      .editor.form-group
-        = f.text_area :warranty, :class => "form-control ckeditor"      
+        .title-put= 'گارانتی'
+      .form-group
+        .editor.col-sm-6
+          = f.label 'به فارسی', :class => "control-label"
+          = f.text_area :warranty, :class => "form-control ckeditor"      
+          
+        .editor.col-sm-6
+          = f.label 'به انگلیسی', :class => "control-label"
+          = f.text_area :warranty, :class => "form-control ckeditor"      
     .form-group     
-      .col-sm-10
+      .col-sm-12
+        
         = link_to ' ', '#', :name => "certification"
+        .title-put= 'گواهینامه'
         = f.link_to_add content_tag(:span, "افزودن گواهینامه", :class => "btn"), :certifications, :id => "add_new_picture"    
       .clr-float
       .form-group 
@@ -58,7 +80,7 @@
         = f.fields_for :certifications do |certificate|  
           = render "certifications/form", :f => certificate
       
-  .form-group.col-sm-4
+  .col-sm-4
     = f.submit 'ثبت', :class=> "btn btn-default"
   
 
