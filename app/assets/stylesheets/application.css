@@ -22,13 +22,26 @@
 .set-center {margin-right:auto; margin-left:auto}
 .float-left {float:left;}
 
-.category-info {max-width:400px; min-width:400px; float:right; background:#4D4D4D; opacity:.8; color:#e5ec6f; margin-top:10px }
+.category-info {
+  max-width:400px;
+  min-width:400px; 
+  float:right; 
+  background:#4D4D4D; 
+  opacity:.8; 
+  color:#e5ec6f; 
+  margin-top:10px }
 .product-pics { margin:5px}
 
 span.Necessary {color:#F33535}
 .footer-menu ul li a {color:#e5ec6f}
 .footer-menu ul li a:hover {color:#DEFF00}
-.admin-icon {width: 100px; background:#1A1A1A; float: left; height:370px; opacity:.8; display: none}
+.admin-icon {
+  width: 100px; 
+  background:#1A1A1A; 
+  float: left; 
+  height:370px; 
+  opacity:.8; 
+  display: none}
 #content:hover .admin-icon{display: block}
 .show-pro {
   min-width:90%; min-height:90%; 
@@ -38,17 +51,29 @@ span.Necessary {color:#F33535}
 
 .box-3 {     
   font-size:12px;
-  bottom: 0; z-index: 600;
-  background:#aba906; color: white; padding: 5px; opacity: .8;
-  min-height:70px; margin:30px;
-  float:right; width:28%; 
+  bottom: 0; 
+  z-index: 600;
+  background:#aba906; 
+  color: white; 
+  padding: 5px; 
+  opacity: .8;
+  min-height:70px; 
+  margin:30px;
+  float:right; 
+  width:28%; 
 }
 .box-4 {     
   font-size:10px;
-  bottom: 0; z-index: 600;
-  background:#aba906; color: white; padding: 5px; opacity: .8;
-  min-height:70px; margin:30px;
-  float:right; width:20%; 
+  bottom: 0; 
+  z-index: 600;
+  background:#aba906; 
+  color: white; 
+  padding: 5px;
+   opacity: .8;
+  min-height:70px; 
+  margin:30px;
+  float:right; 
+  width:20%; 
 }
 
 .box-4 img {width:100%}
@@ -73,7 +98,10 @@ span.Necessary {color:#F33535}
 .show-pro .box-menu a {color:#E5EC6F; }
 .show-pro .box-menu a:hover {color:#DEFF00}
 .show-pro .box-3:hover .box-menu{ width:100%}
-.box-menu .arrow-vertical {width:5px; background:#4D4D4D; height:100%}
+.box-menu .arrow-vertical {
+  width:5px; 
+  background:#4D4D4D; 
+  height:100%}
 .cer-title {text-align:center}
 
 .info-form {width: 95%; overflow-y: scroll; height:350px}
@@ -87,20 +115,48 @@ span.Necessary {color:#F33535}
     padding: 0;
     width: 150px;}
 .products  .pro_wrapper img {width: 100%}
-.products  .pro_wrapper .pro-info {text-align:center; margin:0px; }
-.products  .pro_wrapper .pro-info p{text-align:center; margin:0px; }
-.line {background:#DEFF00; height:5px; border-radius:5px}
+.products  .pro_wrapper .pro-info {
+  text-align:center; 
+  margin:0px; 
+  }
+.products  .pro_wrapper .pro-info p {
+  text-align:center; 
+  margin:0px; 
+  }
+.line {
+  background:#DEFF00; 
+  height:5px; 
+  border-radius:5px
+  }
 
 .slider  img {width: 100%}
-.slider  .cycle-overlay {text-align:center; width: 40%; position: absolute; left: 30%; bottom:65px}
+.slider  .cycle-overlay {
+  text-align:center; 
+  width: 40%; 
+  position: absolute; 
+  left: 30%; 
+  bottom:65px}
 .row .cycle-overlay {margin-bottom:2px}
-#installation, #maintaion, #warranty, #certification {display:none; overflow-y:scroll; height:425px; margin-top:10px; padding:5px}
-#pictures {overflow-y:scroll; height:400px; margin-top:10px; padding:5px}
+#installation, #maintaion, #warranty, #certification {
+  display:none; 
+  overflow-y:scroll; 
+  height:425px; 
+  margin-top:10px; 
+  padding:5px}
+#pictures {
+  overflow-y:scroll; 
+  height:400px; 
+  margin-top:10px; 
+  padding:5px}
 
 .slider .hero-unit {width: 100%; max-height: 441px; position:relative;}
 .slider .hero-unit .carousel-inner img {height: 441px}
 
-.hero-unit .image-des-holder {margin-top:-20px; background-color:#FFA500; color:#000; position: absolute;}
+.hero-unit .image-des-holder {
+  margin-top:-20px; 
+  background-color:#FFA500; 
+  color:#000; 
+  position: absolute;}
 .content-holder{ max-height: 540px; overflow: hidden;}
 .category-image{max-height: 350px;}
 .carousel-control img {margin-top: 200px}
@@ -108,15 +164,28 @@ table.table  tr {text-align:right;}
 table.table  tr th {width: 120px;}
 table.table  tr th.count {width: 50px;}
 table.table tr.visited {font-weight:bold}
-.footer-admin {float:right; direction:rtl; text-align:right;font-family:'open_sansregular'; min-width:20%; height:100%}
+.footer-admin {
+  float:right; 
+  direction:rtl; 
+  text-align:right;
+  font-family:'open_sansregular'; 
+  min-width:20%; 
+  height:100%}
 .footer-admin .col-sm-6 {border-right: 2px solid #deff00}
 .footer-admin a {color:#e5ec6f;}
 .footer-admin a:hover {color:#DEFF00}
 
-.admin-link {height:20px; margin:5px; background:#4D4D4D; width:200px; opacity:.5;
-overflow:hidden; color:#DEFF00; text-align:center;
--webkit-transition:all 2s; /* For Safari 3.1 to 6.0 */
-transition:all 2s;}
+.admin-link {
+  height:20px; 
+  margin:5px; 
+  background:#4D4D4D;
+  width:200px; 
+  opacity:.5;
+  overflow:hidden; 
+  color:#DEFF00; 
+  text-align:center;
+  -webkit-transition:all 2s; /* For Safari 3.1 to 6.0 */
+  transition:all 2s;}
 .admin-link:hover{ height:100px ; cursor:pointer}
 .category-bg { 
   height:100%; 
