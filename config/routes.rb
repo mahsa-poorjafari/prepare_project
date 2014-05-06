@@ -7,7 +7,11 @@ scope "(:locale)", :locale => /en|fa/ do
   resources :sliders
   resources :messages  
   resources :pictures
-  resources :products
+  resources :products do
+    member do
+      get :download
+    end
+  end
   resources :pages
   resources :categories
 end
@@ -17,6 +21,7 @@ end
   get "login" => "users#login"  
   post "create_session" => "users#create_session", :as => :create_session
   get "delete_session" => "users#delete_session", :as => :delete_session
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

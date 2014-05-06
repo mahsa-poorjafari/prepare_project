@@ -12,7 +12,9 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
   end
-
+  def download
+    send_file  @image.path, :type => 'image/jpeg', :disposition => 'inline', :x_sendfile => true
+  end
   # GET /products/new
   def new
     @product = Product.new

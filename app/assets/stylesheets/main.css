@@ -210,7 +210,7 @@ footer #footer-bottom {
 #content {
 	position: relative;
 	width: 100%;
-	z-index: 20;
+	z-index: 10;
 	margin: 100px 0 150px 0;
 	background: #d9cf35;
   overflow:hidden;
