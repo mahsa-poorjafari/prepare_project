@@ -53,8 +53,7 @@ en:
     reseller: "Reseller"
     edit: "Edit"
     delete: "Delete"
-    web: "WebSite:"
-    
+    web: "WebSite:"   
   
   
   reseller:
@@ -62,6 +61,11 @@ en:
     CEO: "CEO"
     Phone: "Phone"
     address: "Address"
+
+  send-url:
+    sender: 'Sender Email'
+    receiver: 'Receiver Email'
+    text: 'Text'  
   
   msg:
     contact-name: "Name:"

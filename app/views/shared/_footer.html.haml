@@ -35,11 +35,12 @@
       %ul
         %li.head
           %b= t('contact')
-        %li= t('send-msg')           
+        %li= link_to t('send-msg'), Page.first
         %li= link_to t('resellers'), Page.first
         %li        
-          %button.btn.btn-primary{"data-toggle" => "modal", "data-target" => ".bs-example-modal-sm"}
-            ارسال لینک به دوستان
+          = link_to  t('send-mail'), '#', "data-toggle" => "modal", "data-target" => ".bs-example-modal-sm"
+            
+
 
 .modal.fade.bs-example-modal-sm{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", role: "dialog", tabindex: "-1"}
   .modal-dialog.modal-sm
@@ -47,9 +48,9 @@
       .modal-header
         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
         %h4#myModalLabel.modal-title 
-          ارسال لینک صفحه جاری به ایمیل دوستان
+          ارسال لینک جاری به ایمیل دوستان
       .modal-body
-        
+        = render 'shared/send_url'
       .modal-footer
         %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
         %button.btn.btn-primary{type: "button"} Save changes

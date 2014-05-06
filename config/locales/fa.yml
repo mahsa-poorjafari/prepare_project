@@ -43,6 +43,11 @@ fa:
     CEO: "مدیر عامل"
     Phone: "تلفن تماس"
     address: "آدرس"
+  
+  send-url:
+    sender: 'ایمیل فرستنده'
+    receiver: 'ایمیل گیرنده'
+    text: 'متن پیام'
 
   
   msg:

@@ -5,7 +5,9 @@ class Slider < ActiveRecord::Base
                                         :gallery_size => {:geometry => "720x360^", :processors => [:jcropper]}}
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
   def cropping?
-    !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
+      p '123cropping'
+     p  (!crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?)
+     !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
   end
   def description
     I18n.locale == :fa ? self.read_attribute("description_fa") : self.read_attribute("description_en")

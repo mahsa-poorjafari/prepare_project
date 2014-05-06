@@ -290,3 +290,4 @@ footer #footer-bottom {
 }
 
 .pointer{cursor: pointer}
+.modal-backdrop{z-index:14;}

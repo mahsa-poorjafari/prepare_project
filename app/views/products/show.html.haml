@@ -22,6 +22,6 @@
     .product-pics    
       =link_to (image_tag pic.image(:medium)), pic.image(:large), :data => { :colorbox => true }, :title => pic.description         
     .download
-      = link_to 'Download', download_product_path(pic.image)
+      = link_to 'Download', download_product_path(:image_id => pic.id)
         
 

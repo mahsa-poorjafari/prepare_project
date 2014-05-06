@@ -202,11 +202,12 @@ table.table tr.visited {font-weight:bold}
   width:200px; 
   opacity:.5;
   overflow:hidden; 
+  position:absolute;
   color:#DEFF00; 
   text-align:center;
-  -webkit-transition:all 2s; /* For Safari 3.1 to 6.0 */
-  transition:all 2s;}
-.admin-link:hover{ height:100px ; cursor:pointer}
+  -webkit-transition:all 1s; /* For Safari 3.1 to 6.0 */
+  transition:all 1s;}
+.admin-link:hover{ min-height:100px ; cursor:pointer}
 .category-bg { 
   height:100%; 
   background:url('vintage-wallpaper-2.jpg') ; 
