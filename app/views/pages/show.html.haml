@@ -2,8 +2,9 @@
   -if is_admin?
     .admin-link.fa
       %p= 'منوی صفحه'
-      = link_to 'تعریف نمایندگی جدید', new_reseller_path, :class=> "btn btn-default"
-      %br
+      %hr
+      = link_to 'تعریف نمایندگی جدید', new_reseller_path
+      %hr
       = link_to 'ویرایش صفحه', edit_page_path(@page)
 
   -if @page.read_attribute("title") == "Contact us"

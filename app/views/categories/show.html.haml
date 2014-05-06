@@ -1,4 +1,11 @@
 .info-holder
+  -if is_admin?
+    .admin-link.fa
+      %p= 'منوی صفحه'
+      %hr
+      = link_to 'ویرایش', edit_category_path(@category)
+      \|
+      = link_to 'بازگشت', categories_path
   %p#notice= notice  
   
   .category-info.general.float-left
@@ -20,9 +27,7 @@
       = link_to t('certificate'), '#cer', :id => "show-cer"
       
       %br
-      = link_to 'ویرایش', edit_category_path(@category)
-      \|
-      = link_to 'بازگشت', categories_path
+     
   #category-details   
     .col-sm-8.details.bg-opacity#installation
       %b= 'نصب'

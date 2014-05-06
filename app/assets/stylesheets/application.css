@@ -208,6 +208,8 @@ table.table tr.visited {font-weight:bold}
   -webkit-transition:all 1s; /* For Safari 3.1 to 6.0 */
   transition:all 1s;}
 .admin-link:hover{ min-height:100px ; cursor:pointer}
+.admin-link a {color:#e5ec6f}
+.admin-link a:hover {color:#DEFF00}
 .category-bg { 
   height:100%; 
   background:url('vintage-wallpaper-2.jpg') ; 
