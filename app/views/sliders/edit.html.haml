@@ -1,27 +1,26 @@
-#content 
-  .form-holder    
-    = form_for @slider, :html => {:multipart => true} do |f| 
-      .col-sm-9
-        = image_tag @slider.image.url(:original), :class => "crop cropImage", :height => "350", :width => "750"
-        = f.hidden_field :crop_x
-        = f.hidden_field :crop_y
-        = f.hidden_field :crop_w
-        = f.hidden_field :crop_h
-      .col-sm-3
-        .field
-          .s-description
-            = f.label "توضیحات به انگلیسی"
-            = f.text_area :description_en, :cols => '80', :rows => "3", :class => "slide-description"
-        .field
-          .s-description
-            = f.label "توضیحات به فارسی"
-            = f.text_area :description_fa, :cols => '80', :rows => "3", :class => "slide-description"  
+
+.edi-slider-holder.fa  
+  %h2= 'تنظیم اندازه تصویر'
+  = form_for @slider, :html => {:multipart => true} do |f| 
+    .col-sm-9
+      = image_tag @slider.image.url(:original), :class => "crop cropImage", :height => "350", :width => "750"
+      = f.hidden_field :crop_x
+      = f.hidden_field :crop_y
+      = f.hidden_field :crop_w
+      = f.hidden_field :crop_h
+    .col-sm-3
+      .form-group        
+        = f.label "توضیحات به انگلیسی", :class => "control-label"
+        = f.text_area :description_en, :class => "form-control"    
         
-        
-        .actions          
-          = f.submit 'ثبت', :class => "btn"
-    
-        = link_to 'بازگشت', sliders_path
+      .form-group        
+        = f.label "توضیحات به فارسی", :class => "control-label"
+        = f.text_area :description_fa, :class => "form-control"    
+            
+      .form-group
+        = f.submit 'ثبت', :class => "btn"
+  
+      = link_to 'بازگشت', sliders_path
 
 :javascript
   $( '.crop' ).each( function () {

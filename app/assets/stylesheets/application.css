@@ -234,3 +234,6 @@ table.table tr.visited {font-weight:bold}
   opacity:.8
 }
 #content form.new_category {height:400px}
+.edi-slider-holder {position:absolute; width:100%; height:100%; margin-top:20px}
+.show-slider {width:100%; height:100%}
+.index-slider {width:55%; height:80%}

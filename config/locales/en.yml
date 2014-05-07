@@ -46,7 +46,7 @@ en:
   certificate: "Certification"
   
   statistics: 'Site Statistics'
-  
+  visit_site: "Read the site"
   link:
     sender_email: "Sender Email"
     receiver_email: "Receiver Email"

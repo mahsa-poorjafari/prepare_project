@@ -5,17 +5,16 @@
         - @slider.errors.each do |attr, msg|
           %li= msg
 
-  .field
+  .form-group
     .s-upload-img
       = f.file_field :image, :id => "slide_img"    
-    .s-description
-      = f.label "توضیحات به انگلیسی"
-      = f.text_area :description_en, :id => "slide_des"
-    .s-description
-      = f.label "توضیحات به فارسی"
-      = f.text_area :description_fa, :id => "slide_des"
-  .clrear-float
+  .form-group    
+    = f.label "توضیحات به انگلیسی", :class => "col-sm-5 control-label"    
+    = f.text_area :description_en, :id => "slide_des", :class => "form-control"
+  .form-group
+    = f.label "توضیحات به فارسی", :class => "col-sm-5 control-label"    
+    = f.text_area :description_fa, :id => "slide_des", :class => "form-control"
+  
     
-  .actions
-    .div_btn
-      = f.submit 'ثبت تصویر', :class => "btn"
+  .form-group
+    = f.submit 'ثبت تصویر', :class => "btn btn-default"

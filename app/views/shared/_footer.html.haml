@@ -8,7 +8,7 @@
         %li.head
           %b= t('statistics')
         %li.pointer.noline 
-          دفعات بازدید از سایت    
+          = t('visit_site') 
     %li
       %ul
         %li.head
@@ -54,7 +54,7 @@
       .modal-header
         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
         %h4#myModalLabel.modal-title 
-          = t ('send-mail')
+          = t ('send-mail')          
       .modal-body
         = render 'send_links/form'
       .modal-footer
