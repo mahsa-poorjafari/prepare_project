@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class SendLinksController < ApplicationController
   before_action :set_send_link, only: [:show, :edit, :update, :destroy]
 
@@ -26,15 +27,11 @@ class SendLinksController < ApplicationController
   def create
     @send_link = SendLink.new(send_link_params)
 
-    respond_to do |format|
-      if @send_link.save
-        format.html { redirect_to @send_link, notice: 'Send link was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @send_link }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @send_link.errors, status: :unprocessable_entity }
-      end
+    if @send_link.save
+      UrlMailer.send_friend_link.deliver      
+      @deliver = 'کاربر گرامی پیام شما ارسال گردید.'
     end
+    redirect_to :back
   end
 
   # PATCH/PUT /send_links/1

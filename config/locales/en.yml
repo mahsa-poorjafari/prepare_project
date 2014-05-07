@@ -47,6 +47,13 @@ en:
   
   statistics: 'Site Statistics'
   
+  link:
+    sender_email: "Sender Email"
+    receiver_email: "Receiver Email"
+    text: "Text"
+    subject: "Subject"
+    send: "Send"
+  
   form:
     title: "Title:"
     Description: "Description"
