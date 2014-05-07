@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140428082512) do
+ActiveRecord::Schema.define(version: 20140507052232) do
 
   create_table "categories", force: true do |t|
     t.string   "title"
@@ -91,6 +91,16 @@ ActiveRecord::Schema.define(version: 20140428082512) do
     t.text     "phone"
     t.text     "address_fa"
     t.text     "address_en"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "send_links", force: true do |t|
+    t.string   "sender_email"
+    t.string   "receiver_email"
+    t.string   "current_link"
+    t.text     "text"
+    t.string   "subject"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

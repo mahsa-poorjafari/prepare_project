@@ -2,8 +2,14 @@
   - if is_admin?
     = render 'shared/admin_menu'
 .footer-menu{:class => I18n.locale, :style => "float:right"}
-  %ul      
+  %ul          
     %li.first
+      %ul
+        %li.head
+          %b= t('statistics')
+        %li.pointer.noline 
+          دفعات بازدید از سایت    
+    %li
       %ul
         %li.head
           %b= t('products')

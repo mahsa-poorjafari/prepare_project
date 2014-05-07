@@ -1,0 +1,25 @@
+= form_for @send_link do |f|
+  - if @send_link.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@send_link.errors.count, "error")} prohibited this send_link from being saved:"
+      %ul
+        - @send_link.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :sender_email
+    = f.text_field :sender_email
+  .field
+    = f.label :receiver_email
+    = f.text_field :receiver_email
+  .field
+    = f.label :current_link
+    = f.text_field :current_link
+  .field
+    = f.label :text
+    = f.text_area :text
+  .field
+    = f.label :subject
+    = f.text_field :subject
+  .actions
+    = f.submit 'Save'

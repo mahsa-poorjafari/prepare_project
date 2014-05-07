@@ -40,10 +40,12 @@ en:
   warranty: "Warranty"
   certificate: "Certification"
   send-msg: "Leave a Message"
-  send-mail: "Send Current URL To Friends"
+  send-mail: "Email This Link To a Friend"
   
   catalog: "Catalogue"
   certificate: "Certification"
+  
+  statistics: 'Site Statistics'
   
   form:
     title: "Title:"

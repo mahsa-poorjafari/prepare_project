@@ -28,6 +28,9 @@ fa:
   
   catalog: 'کاتالوگ '
   certificate: "گواهینامه ها"
+  
+  statistics: 'آمار سایت'
+  
   form:
     title: "عنوان:"
     Description: "توضیحات"
