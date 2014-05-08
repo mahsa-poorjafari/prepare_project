@@ -38,6 +38,7 @@ fa:
     text: "متن"
     subject: "موضوع"
     send: "ارسال"
+    current_link: 'لینک ارسال شده'
     
   
   

@@ -53,6 +53,7 @@ en:
     text: "Text"
     subject: "Subject"
     send: "Send"
+    current_link: 'link'
   
   form:
     title: "Title:"

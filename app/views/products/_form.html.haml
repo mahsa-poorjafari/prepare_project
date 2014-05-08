@@ -6,10 +6,10 @@
           %li= msg
   .col-sm-6
     .form-group  
-      = f.label "عنوان محصول به فارسی:", :class => "col-sm-4 control-label"      
+      = f.label "عنوان مدل به فارسی:", :class => "col-sm-4 control-label"      
       = f.text_field :title_fa, :class => "form-control"
     .form-group 
-      = f.label "عنوان محصول به انگلیسی:", :class => "col-sm-4 control-label"      
+      = f.label "عنوان مدل به انگلیسی:", :class => "col-sm-4 control-label"      
       = f.text_field :title, :class => "form-control"
     .form-group 
       = f.label "توضیحات به فارسی:", :class => "col-sm-4 control-label"      
@@ -18,8 +18,8 @@
       = f.label "توضیحات به انگلیسی:", :class => "col-sm-4 control-label"      
       = f.text_area :description, :class => "form-control"
     .form-group 
-      = f.label "گروه محصول", :class => "col-sm-4 control-label"      
-      = f.select(:category_id, Category.all.collect {|u| [u.title_fa, u.id]}, :prompt => 'گروه محصول را انتخاب کنید.')        
+      = f.label "محصول مربوط" , :class => "col-sm-4 control-label"      
+      = f.select(:category_id, Category.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' محصول را انتخاب کنید.')        
   .col-sm-6.info-form
     .form-group 
       = f.fields_for :pictures do |picture|  
@@ -28,7 +28,7 @@
       = f.link_to_add content_tag(:span, "افزودن تصویر"), :pictures, :id => "add_new_picture"    
   .clr-float
   .form-group
-    = f.submit 'ثبت'
+    = f.submit 'ثبت', :class=> "btn btn-default"
 
 :javascript
   function enable_file_select(){

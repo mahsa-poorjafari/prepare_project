@@ -21,7 +21,12 @@ class SendLinksController < ApplicationController
   # GET /send_links/1/edit
   def edit
   end
-
+  def statistic    
+    @max_send_link = 1
+    @max_send_num = 1
+    @min_send_link = 2
+    @min_send_num = 2
+  end
   # POST /send_links
   # POST /send_links.json
   def create

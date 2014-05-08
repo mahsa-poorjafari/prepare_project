@@ -1,7 +1,10 @@
+-if is_admin?
+  .admin-link.fa
+    %p= 'منوی صفحه'
+    %hr
+    = link_to 'تعریف نمایندگی جدید', new_reseller_path
 .col-sm-12{:style => "overflow-y:scroll; max-height:370px; "}
-  .admin-link
-    -if is_admin?
-      = link_to 'تعریف نمایندگی جدید', new_reseller_path
+  
   %br
   .row
     - Reseller.all.each do |reseller|

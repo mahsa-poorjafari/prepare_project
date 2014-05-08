@@ -1,21 +1,21 @@
-%p#notice= notice
+.fa
+  -if is_admin?
+    .admin-link.fa
+      %p= 'منوی صفحه'
+      %hr
+      = link_to 'بازگشت', messages_path
 
 %p
-  %b Email:
+  %b= t('msg.contact-email')
   = @message.email
 %p
-  %b Name:
+  %b= t('msg.contact-name')
   = @message.name
 %p
-  %b Phone:
+  %b= t('msg.contact-phone')
   = @message.phone
 %p
-  %b Text:
+  %b= t('msg.contact-msg')
   = @message.text
-%p
-  %b Visited:
-  = @message.visited
 
-= link_to 'Edit', edit_message_path(@message)
-\|
-= link_to 'Back', messages_path
+

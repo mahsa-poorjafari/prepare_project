@@ -6,13 +6,14 @@
           %li= msg
 
   .field
-    = f.label :email
-    = f.text_area :email
+    = f.label 'ایمیل', :class => "col-sm-5 control-label"    
+    = f.text_area :email, :class => "form-control"
   .field
-    = f.label :user_name
-    = f.text_field :user_name
+    = f.label 'نام کاربری', :class => "col-sm-5 control-label"    
+    = f.text_field :user_name, :class => "form-control",  :disabled => true
+    
   .field
-    = f.label :password
-    = f.text_field :password
+    = f.label 'تغییر رمزعبور', :class => "col-sm-5 control-label"    
+    = f.text_field :password, :class => "form-control"
   .actions
-    = f.submit 'Save'
+    = f.submit 'ثبت', :class=> "btn btn-default"

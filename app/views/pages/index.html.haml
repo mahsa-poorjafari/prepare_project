@@ -1,10 +1,11 @@
+-if is_admin?
+  .admin-link.fa
+    %p= 'منوی صفحه'
+    %hr
+    = link_to 'صفحه جدید', new_page_path
 .fa
   %h1= 'صفحات متنی'
-  -if is_admin?
-    .admin-link.fa
-      %p= 'منوی صفحه'
-      %hr
-      = link_to 'صفحه جدید', new_page_path
+  
   %table.table
     - @pages.each do |page|
       %tr
