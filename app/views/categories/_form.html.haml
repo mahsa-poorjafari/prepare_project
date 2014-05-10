@@ -93,7 +93,9 @@
 :javascript
   function enable_file_select(){
     $(".enable_file_select").unbind('click').click(function(){
+      console.log("enable_file_select");
       $(this).parent().find("input:file").click();
+      console.log("enable_file_select2");
     });
    }
 
