@@ -4,7 +4,7 @@
 	height: 100%;
 	left: 0;
 	top: 0;
-	background: #D9CF35;
+	background: #87856A;
 	z-index: 10;
 }
 header {
@@ -14,7 +14,7 @@ header {
 	left: 0;
 	top: 0;
 	z-index: 15; 
-	background-image:url('<%= asset_path("top.jpg") %> ');
+	background-image:url('ttop.jpg ');
   
 	
 }
