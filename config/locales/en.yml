@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  title: 'Rainbow Co'
   back: "back"
   show: "Show"
   home: "Home"  

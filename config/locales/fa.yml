@@ -2,6 +2,7 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting point
 
 fa:
+  title: 'شرکت رنگین کمان'
   back: "بازگشت"
   show: "مشاهده"
   home: "صفحه اصلی"

@@ -1,12 +1,17 @@
 !!!
 %html
   %head
-    %title رنگین کمان
+    %title 
+      = t("title")  #{@head.fetch(:title, '') if @head}
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = favicon_link_tag 'favicon.png', rel:'shortcut icon', type: 'image/png'
     = csrf_meta_tags
-    %meta{content: "no", "http-equiv" => "imagetoolbar"}/
+    %meta{:charset => "utf-8"}
+    %meta{:name => "keywords", :content => Category.all.collect(&:title_fa).join(" ") } 
+    %meta{:name => "description", :content => "Rainbow, شرکت رنگین کمان, پارکت ، کاغذ دیواری، کفپوش"}
+    %meta{content: "no", "http-equiv" => "imagetoolbar"}
+    = yield(:refresh_meta) if content_for?(:refresh_meta)
     -#
       :javascript
         
