@@ -5,7 +5,7 @@
         - @category.errors.each do |attr, msg|
           %li= msg
   
-  .info-form
+  .info-form.fa
     .col-sm-6
       = link_to ' ', '#', :name => "general"
       .form-group
@@ -32,44 +32,49 @@
     .clr-float
       .form-group        
         = link_to ' ', '#', :name => "install"
-        .title-put= 'نصب و راه اندازی فنی'
+        %h3.fa= 'نصب و راه اندازی فنی'
         
       .form-group           
-        .editor.col-sm-6
+        %hr
+        .editor.col-sm-6.fa
           = f.label 'به فارسی', :class => "control-label"
           = f.text_area :installation, :class => "form-control ckeditor"
         
-        .editor.col-sm-6
+        .editor.col-sm-6.fa
           = f.label 'به انگلیسی', :class => "control-label"
           = f.text_area :installation, :class => "form-control ckeditor"
           
       .form-group                
         = link_to ' ', '#', :name => "maintaion"
-        .title-put= 'شرایط نگهداری'
+        %h3.fa= 'شرایط نگهداری'
+        
       .form-group
-        .editor.col-sm-6
-          = f.label 'به فارسی', :class => "control-label"
+        %hr
+        .editor.col-sm-6.fa
+          = f.label 'به فارسی', :class => "control-label "
           = f.text_area :maintaion, :class => "form-control ckeditor"      
-        .editor.col-sm-6
-          = f.label 'به انگلیسی', :class => "control-label"
+        .editor.col-sm-6.fa
+          = f.label 'به انگلیسی', :class => "control-label "
           = f.text_area :maintaion, :class => "form-control ckeditor"      
           
       .form-group                
         = link_to ' ', '#', :name => "warranty"
-        .title-put= 'گارانتی'
+        %h3.fa= 'گارانتی'
+        
       .form-group
-        .editor.col-sm-6
+        %hr
+        .editor.col-sm-6.fa
           = f.label 'به فارسی', :class => "control-label"
           = f.text_area :warranty, :class => "form-control ckeditor"      
           
-        .editor.col-sm-6
+        .editor.col-sm-6.fa
           = f.label 'به انگلیسی', :class => "control-label"
           = f.text_area :warranty, :class => "form-control ckeditor"      
     .form-group     
       .col-sm-12
         
         = link_to ' ', '#', :name => "certification"
-        .title-put= 'گواهینامه'
+        %h3.fa= 'گواهینامه'
         = f.link_to_add content_tag(:span, "افزودن گواهینامه", :class => "btn"), :certifications, :id => "add_new_picture"    
       .clr-float
       .form-group 

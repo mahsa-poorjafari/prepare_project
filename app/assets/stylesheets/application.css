@@ -109,8 +109,8 @@ span.Necessary {color:#F33535}
   height:100%}
 .cer-title {text-align:center}
 
-.info-form {width: 100%; height:330px; overflow-y:scroll; padding-top:5px}
-.info-form .title-put{width: 100%; height:30px; padding:2px; background:#4D4D4D; opacity:.7; color:#DEFF00; text-align:center}
+.info-form {width: 100%; height:400px; overflow-y:scroll; padding-top:5px}
+.info-form .title-put{width: 100%; height:30px; padding:2px;  text-align:center}
 .category-link a:hover{color:#4D4D4D}
 .products {width: 90%}
 .products  .pro_wrapper {display: inline-block;
