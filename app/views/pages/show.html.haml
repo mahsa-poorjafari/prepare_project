@@ -7,7 +7,7 @@
     = link_to 'ویرایش صفحه', edit_page_path(@page)
 .page-bg
   -if @page.read_attribute("title") == "Contact us"
-    
+   
     = render "shared/msg_form"
     = render 'resellers/index'
 

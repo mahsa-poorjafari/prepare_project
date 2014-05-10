@@ -1,16 +1,17 @@
 # encoding: UTF-8
 class SlidersController < ApplicationController
   before_action :set_slider, only: [:show, :edit, :update, :destroy]
-
+  before_filter :check_autentication
   # GET /sliders
   # GET /sliders.json
-  def index
-    @sliders = Slider.all
+  def index    
+    @sliders = Slider.all           
   end
 
   # GET /sliders/1
   # GET /sliders/1.json
   def show
+    
   end
 
   # GET /sliders/new
@@ -43,6 +44,7 @@ class SlidersController < ApplicationController
   def update
     respond_to do |format|
       if @slider.update(slider_params)
+        @slider.image.reprocess!
         format.html { redirect_to @slider, notice: 'Slider was successfully updated.' }
         format.json { head :no_content }
       else
