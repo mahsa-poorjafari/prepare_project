@@ -2,7 +2,7 @@
 %html
   %head
     %title 
-      = t("title")  #{@head.fetch(:title, '') if @head}
+      = t("rainbow") + ', ' + Category.all.collect(&:title).join(",") #{@head.fetch(:title, '') if @head}
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = favicon_link_tag 'favicon.png', rel:'shortcut icon', type: 'image/png'
@@ -12,7 +12,7 @@
     %meta{:name => "description", :content => "Rainbow, شرکت رنگین کمان, پارکت ، کاغذ دیواری، کفپوش"}
     %meta{content: "no", "http-equiv" => "imagetoolbar"}
     = yield(:refresh_meta) if content_for?(:refresh_meta)
-
+  
     :javascript
       <!--
       //Disable right click script
@@ -32,12 +32,12 @@
   %body     
     .overlay
       %header
-        #header-top
-        .title-site
-          %h1= t('rainbow')
+        #header-top        
         #logo-menu
           #logo
             = image_tag "logo.png"          
+          .title-site
+            %h3= t('rainbow')
           #mainmenu
             %nav
               -if I18n.locale == :fa        
