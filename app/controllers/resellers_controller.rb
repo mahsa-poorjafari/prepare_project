@@ -4,7 +4,7 @@ class ResellersController < ApplicationController
   # GET /resellers
   # GET /resellers.json
   def index
-    @resellers = Reseller.all
+    @resellers = Reseller.order(" created_at desc")
   end
 
   # GET /resellers/1
