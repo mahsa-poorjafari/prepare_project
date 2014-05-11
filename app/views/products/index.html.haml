@@ -7,11 +7,12 @@
   .products.set-center
     - @products.each do |product|      
       .pro_wrapper{align: "center", :id => I18n.locale}                
-        = link_to product do
-          .pro-info  
+        = link_to product, :class => "model-link" do
+          .pro-info.set-center  
             = image_tag product.pictures.first.image(:small)
-          .line
-            %b= product.title 
+          .robbin
+            = image_tag 'cat-title2.png'
+            .model-title= product.title 
         
       
 

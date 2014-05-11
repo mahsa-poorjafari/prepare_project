@@ -10,24 +10,30 @@
   
   .category-info.general.float-left
     .row.col-sm-12
-      .line.set-center   
-        %b= @category.title
-      %p    
-        = @category.description
-    
+      .line.set-center  
+        = image_tag 'cat-title.png'
+        .go-up.set-center= @category.title
+      .cat-link
+        %p    
+          = @category.description
       
-      = link_to t('model'), '#model', :id => "show-model"
-      %br
-      = link_to t('maintain'), '#maintaion', :id => "show-main"
-      %br
-      = link_to t('technical'), '#installation', :id => "show-inst"
-      %br
-      = link_to t('warranty'), '#installation', :id => "show-war"
-      %br
-      = link_to t('certificate'), '#cer', :id => "show-cer"
-      
-      %br
-     
+        - if @category.products.present?
+          = link_to t('model'), '#model', :id => "show-model"
+        %br
+        - if @category.maintaion.present?
+          = link_to t('maintain'), '#maintaion', :id => "show-main"
+        %br
+        - if @category.installation.present?
+          = link_to t('technical'), '#installation', :id => "show-inst"
+        %br
+        - if @category.warranty.present?
+          = link_to t('warranty'), '#installation', :id => "show-war"
+        %br
+        - if @category.certifications.present?
+          = link_to t('certificate'), '#cer', :id => "show-cer"
+        
+        %br
+       
   #category-details   
     .col-sm-8.details.bg-opacity#installation
       %b= 'نصب'

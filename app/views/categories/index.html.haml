@@ -14,10 +14,14 @@
         .box-menu 
           .arrow-vertical
           %ul
-            %li= link_to t('model'), category
-            %li= link_to t('technical'), category
-            %li= link_to t('maintain'), category
-            %li= link_to t('warranty'), category
+            - if category.products.present?
+              %li= link_to t('model'), category#pictures
+            - if category.installation.present?
+              %li= link_to t('technical'), category#installation
+            - if category.maintaion.present?
+              %li= link_to t('maintain'), category#maintaion
+            - if category.warranty.present?
+              %li= link_to t('warranty'), category#warranty
         
           
         
