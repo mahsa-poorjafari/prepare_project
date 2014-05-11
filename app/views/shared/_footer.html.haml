@@ -3,7 +3,7 @@
     .admin_menu
       %h3= 'منوی مدیرسایت'
       = render 'shared/admin_menu'
-.footer-menu{:class => I18n.locale, :style => "float:right"}
+.footer-menu{:class => I18n.locale}
   %ul          
     %li.first
       %ul
@@ -11,27 +11,13 @@
           %b= t('statistics')
         %li.pointer.noline 
           = t('visit_site') 
-    %li
-      %ul
-        %li.head
-          %b= t('products')
-        %li.pointer.noline 
-          = link_to t('model'), Product
-        %li.pointer.noline 
-          =t('technical')
-        %li.pointer.noline
-          =t('maintain')
-        %li.pointer.noline
-          =t('warranty')
-        %li.pointer.noline
-          =link_to t('certificate'), Certification
+
     %li
       %ul
         %li.head
           %b= t('gallery')
         - Category.all.each do |category|
-          %li= link_to category.title, category
-        
+          %li= link_to category.title, category        
         
     %li
       %ul

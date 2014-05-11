@@ -148,9 +148,10 @@ footer #footer-bottom {
 }
 .footer-menu {
 	position: relative;
-	min-width: 70%;
+	min-width: 60%;
 	height: 110px;
-	margin: 0 auto;
+  float:left;
+	margin-left:200px;
 	z-index: 20;
 	font-size: 11px;	
 }
