@@ -178,7 +178,7 @@ span.Necessary {color:#F33535}
   color:#000; 
   position: absolute;}
 .content-holder{ max-height: 540px; overflow: hidden;}
-.category-image{max-height: 350px;}
+.category-image{max-height: 300px; min-height:300px}
 .carousel-control img {margin-top: 200px}
 table.table  tr {text-align:right;}
 table.table  tr th {max-width: 120px; text-align:right}
@@ -244,3 +244,4 @@ table.table tr.visited {font-weight:bold}
 .admin_menu a:hover {color:#E7F804; }
 .admin_menu:hover {height:200px; margin-top:-100px; cursor:pointer;}  
 .admin_menu h3 {text-align:center}
+

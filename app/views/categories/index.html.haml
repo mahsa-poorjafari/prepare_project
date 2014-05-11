@@ -9,7 +9,8 @@
       .box-3.set-center{align: "center", :class => I18n.locale}                
         = link_to category do         
           %p= category.title 
-          = image_tag category.image(:small), :class => "category-image"
+          .category-image
+            = image_tag category.image(:small)
         .box-menu 
           .arrow-vertical
           %ul

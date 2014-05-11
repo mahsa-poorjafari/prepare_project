@@ -41,9 +41,10 @@ header #header-top-tmp {
 	margin: 0 auto;
 	padding: 5px;
 	height: 90px;
-	width: 950px;
+	width: 70%;
 	z-index: 25;
 }
+.title-site {width:30%; float:right; color:#FFFFFF}
 #logo {
 	position: relative;
 	float: left;
@@ -114,7 +115,7 @@ footer #footer-bottom {
 	left: 0;
 	bottom: 0;
 	z-index: 20;
-	background: #eaff00;
+	background: #4D4D4D;
 	text-align: center;
 	color: white;
 	font-size: 10px;
