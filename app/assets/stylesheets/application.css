@@ -66,7 +66,7 @@ span.Necessary {color:#F33535}
   font-size:12px;
   bottom: 0; 
   z-index: 600;
-  background:#aba906; 
+  background:#200120; 
   color: white; 
   padding: 5px; 
   opacity: .8;
@@ -203,19 +203,20 @@ table.table tr.visited {font-weight:bold}
 
 .admin-link {
   height:20px; 
-  margin:5px; 
-  background:#EDA41E;
+  margin:5px;   
   width:200px; 
  z-index:10;
-
   overflow:hidden; 
   position:absolute;
-  color:#4D4D4D; 
+  color:#DEFF00;   
+  background:#200120;
+  opacity:.8; 
+  filter:alpha(opacity=80); /* For IE8 and earlier */
   text-align:center;
   -webkit-transition:all 1s; /* For Safari 3.1 to 6.0 */
   transition:all 1s;}
 .admin-link:hover{ min-height:150px ; cursor:pointer; display:block}
-.admin-link a {color:#4D4D4D}
+.admin-link a {color:#F8FD9F}
 .admin-link a:hover {color:#DEFF00}
 .category-bg { 
   height:100%; 
@@ -246,7 +247,9 @@ table.table tr.visited {font-weight:bold}
 .show-slider {width:100%; height:100%}
 .index-slider {width:55%; height:80%}
 .admin_menu {min-width:20%; height:50px;  -webkit-transition:all 1s; /* For Safari 3.1 to 6.0 */
-  transition:all 1s; overflow:hidden; color:#4d4d4d; background:#EDA41E; opacity:.8;
+  transition:all 1s; overflow:hidden; color:#DEFF00; 
+  background:#200120;
+  opacity:.8; 
   filter:alpha(opacity=80); /* For IE8 and earlier */}
 .admin_menu a {color:#4d4d4d; }
 .admin_menu a:hover {color:#E7F804; }
