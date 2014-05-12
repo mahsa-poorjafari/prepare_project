@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  download: 'Download'
   rainbow: 'Rainbow Trading Co'
   title: 'Rainbow Co'
   back: "back"
