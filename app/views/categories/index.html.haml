@@ -8,11 +8,16 @@
   .show-pro.set-center 
     - @categories.each do |category|
       .box-3.set-center{align: "center", :class => I18n.locale}                
+        - if is_admin?  
+          .link-del
+            = link_to 'ویرایش', edit_category_path(category)
+            = link_to 'حذف', category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
         = link_to category do         
           %p= category.title 
           .category-image
             = image_tag category.image(:small)
-        .box-menu 
+        
+        .box-menu           
           .arrow-vertical
           %ul
             - if category.products.present?
@@ -23,6 +28,7 @@
               %li= link_to t('maintain'), category#maintaion
             - if category.warranty.present?
               %li= link_to t('warranty'), category#warranty
+
         
           
         

@@ -6,8 +6,10 @@
       = link_to 'تعریف مدل جدید', new_product_path
   
   .products.set-center
-    - @products.each do |product|      
+    - @products.each do |product|            
       .pro_wrapper{align: "center", :id => I18n.locale}                
+        - if product.coming_soon
+          %b.coming-soon.set-center= t('coming')
         = link_to product, :class => "model-link" do
           .pro-info.set-center  
             = image_tag product.pictures.first.image(:small)

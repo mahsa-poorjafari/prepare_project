@@ -2,6 +2,7 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting point
 
 fa:
+  coming: 'بزودی'
   download: 'دانلود'
   rainbow: 'شرکت بازرگانی رنگین کمان'
   title: 'شرکت رنگین کمان'

@@ -5,6 +5,8 @@
       %hr
       = link_to 'ویرایش', edit_category_path(@category)
       \|
+      = link_to 'حذف', @category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+      \|
       = link_to 'بازگشت', categories_path
   %p#notice= notice  
   

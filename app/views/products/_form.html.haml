@@ -20,15 +20,18 @@
     .form-group 
       = f.label "محصول مربوط" , :class => "col-sm-4 control-label"      
       = f.select(:category_id, Category.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' محصول را انتخاب کنید.')        
+    .form-group 
+      = f.label "بزودی" , :class => "col-sm-4 control-label"      
+      = f.check_box :coming_soon
   .col-sm-6.info-form
     .form-group 
       = f.fields_for :pictures do |picture|  
         = render "shared/upload_image_form", :picture => picture
     .col-sm-12
-      = f.link_to_add content_tag(:span, "افزودن تصویر"), :pictures, :id => "add_new_picture"    
-  .clr-float
-  .form-group
-    = f.submit 'ثبت', :class=> "btn btn-default"
+      = f.link_to_add content_tag(:span, "افزودن تصویر"), :pictures, :id => "add_new_picture"      
+    %hr
+    .form-group.pull-left
+      = f.submit 'ثبت', :class=> "btn btn-default"
 
 :javascript
   function enable_file_select(){
