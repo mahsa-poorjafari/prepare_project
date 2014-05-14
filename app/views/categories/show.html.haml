@@ -8,33 +8,36 @@
       = link_to 'بازگشت', categories_path
   %p#notice= notice  
   
-  .category-info.general.float-left
+  .category-info.general
     .row.col-sm-12
       .line.set-center  
         = image_tag 'cat-title.png'
         .go-up.set-center= @category.title
       .cat-link
-        %p    
-          = @category.description
-      
-        - if @category.products.present?
-          = link_to t('model'), '#model', :id => "show-model"
-        %br
-        - if @category.maintaion.present?
-          = link_to t('maintain'), '#maintaion', :id => "show-main"
-        %br
-        - if @category.installation.present?
-          = link_to t('technical'), '#installation', :id => "show-inst"
-        %br
-        - if @category.warranty.present?
-          = link_to t('warranty'), '#installation', :id => "show-war"
-        %br
-        - if @category.certifications.present?
-          = link_to t('certificate'), '#cer', :id => "show-cer"
-        
-        %br
-       
-  #category-details   
+        %p= @category.description          
+        %ul#banner          
+          - if @category.products.present?
+            %li
+              = link_to t('model'), '#pictures', :id => "show-model"
+          
+          - if @category.maintaion.present?
+            %li
+              = link_to t('maintain'), '#maintaion', :id => "show-main"
+          
+          - if @category.installation.present?
+            %li
+              = link_to t('technical'), '#installation', :id => "show-inst"
+          
+          - if @category.warranty.present?
+            %li
+              = link_to t('warranty'), '#installation', :id => "show-war"
+          
+          - if @category.certifications.present?
+            %li
+              = link_to t('certificate'), '#cer', :id => "show-cer"          
+          
+         
+  #category-details    
     .col-sm-8.details.bg-opacity#installation
       %b= 'نصب'
       %p=raw @category.installation
@@ -46,8 +49,6 @@
     .col-sm-8.details.bg-opacity#warranty
       %b= 'گارانتی'
       %p=raw @category.warranty
-          
-    
       
     .row.details.col-sm-8#pictures
       - @category.products.each do |product|         
@@ -71,11 +72,8 @@
 
       
 :javascript
-
-
-
   $('#show-cer').click(function(){   
-    $('#category-details').children().hide(); 
+    $('#category-details  #scroll').children().hide(); 
     $('#certification').show(1000);
     
   });
@@ -92,7 +90,7 @@
   });
 
   $('#show-inst').click(function(){          
-    $('#category-details').children().hide(); 
+    $('#category-details  #scroll').children().hide(); 
     $('#installation').fadeIn(1000);
     
   });

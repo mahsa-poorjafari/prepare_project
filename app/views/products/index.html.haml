@@ -4,6 +4,7 @@
       %p= 'منوی صفحه'
       %hr
       = link_to 'تعریف مدل جدید', new_product_path
+  
   .products.set-center
     - @products.each do |product|      
       .pro_wrapper{align: "center", :id => I18n.locale}                
