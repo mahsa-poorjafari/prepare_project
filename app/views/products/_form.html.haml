@@ -25,10 +25,8 @@
       = f.check_box :coming_soon
   .col-sm-6.info-form
     .form-group 
-      = f.fields_for :pictures do |picture|  
-        = render "shared/upload_image_form", :picture => picture
-    .col-sm-12
-      = f.link_to_add content_tag(:span, "افزودن تصویر"), :pictures, :id => "add_new_picture"      
+      = f.label "تصویر:", :class => "col-sm-4 control-label"      
+      = f.file_field :image
     %hr
     .form-group.pull-left
       = f.submit 'ثبت', :class=> "btn btn-default"

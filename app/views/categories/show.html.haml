@@ -55,15 +55,16 @@
     
     .row#pictures
       .all-models.details.col-sm-8
-        - @category.products.each do |product|         
-          - product.pictures.each do |pic|  
-            .product-pics 
-              .img-box
-                =link_to (image_tag pic.image(:small), :class => "sample"), pic.image(:large), :data => { :colorbox => true }, :title => pic.description
-              .download
-                = link_to download_product_path(:image_id => pic.id) do
-                  = image_tag 'dnwn.png'
-                  = t ('download')
+        - @category.products.each_slice(4) do |products|
+          .row
+            -products.each do |product|
+              .product-pics 
+                .img-box
+                  =link_to (image_tag product.image(:small), :class => "sample"), product.image(:large), :data => { :colorbox => true }, :title => product.description
+                .download
+                  = link_to download_product_path(:image_id => product.id) do
+                    = image_tag 'dnwn.png'
+                    = t ('download')
       .clr-float
       .control
         .next

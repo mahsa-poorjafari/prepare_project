@@ -12,7 +12,7 @@
           %b.coming-soon.set-center= t('coming')
         = link_to product, :class => "model-link" do
           .pro-info.set-center  
-            = image_tag product.pictures.first.image(:small)
+            = image_tag product.image(:small)
           .robbin
             = image_tag 'cat-title2.png'
             .model-title= product.title 
