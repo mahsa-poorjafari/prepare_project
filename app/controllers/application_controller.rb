@@ -17,4 +17,5 @@ class ApplicationController < ActionController::Base
       params[:locale] == "fa" ?  I18n.locale = "fa" : I18n.locale = "en"
       Rails.application.routes.default_url_options[:locale] = I18n.locale 
     end   
+  
 end

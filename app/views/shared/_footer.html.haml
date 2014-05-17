@@ -11,6 +11,8 @@
           %b= t('statistics')
         %li.pointer.noline 
           = t('visit_site') 
+        %li
+          = Visit.group(:search_keyword).count
 
     %li
       %ul
