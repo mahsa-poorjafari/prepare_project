@@ -4,8 +4,8 @@
       %p= 'منوی صفحه'
       %hr
       = link_to 'تعریف مدل جدید', new_product_path
-  
-  .products.set-center
+  = image_tag 'lobby.jpg', :style => "z-index:-20; position:fixed"
+  .products.set-center  
     - @products.each do |product|            
       .pro_wrapper{align: "center", :id => I18n.locale}                
         - if product.coming_soon
