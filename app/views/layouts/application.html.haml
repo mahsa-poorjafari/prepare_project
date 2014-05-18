@@ -34,10 +34,11 @@
       %header
         #header-top        
         #logo-menu
-          #logo
-            = image_tag "logo.png"          
-          .title-site
-            %h3= t('rainbow')
+          .logo-style
+            #logo
+              = image_tag "logo.png"          
+            .title-site
+              %h3= t('rainbow')
           #mainmenu
             %nav
               -if I18n.locale == :fa        

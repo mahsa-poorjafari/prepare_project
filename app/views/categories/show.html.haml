@@ -60,8 +60,11 @@
             -products.each do |product|
               .product-pics 
                 .img-box
-                  =link_to (image_tag product.image(:small), :class => "sample"), product.image(:large), :data => { :colorbox => true }, :title => product.description
+                  =link_to (image_tag product.image(:small), :class => "sample"), product.image(:large), :data => { :colorbox => true }, :title => product.description                  
                 .download
+                  = link_to product.title, product
+                  %br
+                  .clr-float
                   = link_to download_product_path(:image_id => product.id) do
                     = image_tag 'dnwn.png'
                     = t ('download')
