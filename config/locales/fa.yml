@@ -29,6 +29,7 @@ fa:
   certificate: "گواهینامه"
   send-msg: "ارسال پیام به مدیر"
   send-mail: "ارسال لینک جاری به دوستان"
+  visit: 'بازدید تاکنون'
   
   catalog: 'کاتالوگ '
   certificate: "گواهینامه ها"

@@ -1,23 +1,23 @@
-.product-bg
-  -if is_admin?
-    .admin-link.fa
-      %p= 'منوی صفحه'
-      %hr
-      = link_to 'تعریف مدل جدید', new_product_path
-  = image_tag 'lobby.jpg', :style => "z-index:-20; position:fixed"
-  .products.set-center  
-    - @products.each do |product|            
-      .pro_wrapper{align: "center", :id => I18n.locale}                
-        - if product.coming_soon
-          %b.coming-soon.set-center= t('coming')
-        = link_to product, :class => "model-link" do
-          .pro-info.set-center  
-            = image_tag product.image(:small)
-          .robbin
-            = image_tag 'cat-title2.png'
-            .model-title= product.title 
-        
+
+-if is_admin?
+  .admin-link.fa
+    %p= 'منوی صفحه'
+    %hr
+    = link_to 'تعریف مدل جدید', new_product_path
+= image_tag 'lobby.jpg', :style => "z-index:-20; position:fixed"
+.products.set-center  
+  - @products.each do |product|            
+    .pro_wrapper{align: "center", :id => I18n.locale}                
+      - if product.coming_soon
+        %b.coming-soon.set-center= t('coming')
+      = link_to product, :class => "model-link" do
+        .pro-info.set-center  
+          = image_tag product.image(:small)
+        .robbin
+          = image_tag 'cat-title2.png'
+          .model-title= product.title 
       
+    
 
    
 

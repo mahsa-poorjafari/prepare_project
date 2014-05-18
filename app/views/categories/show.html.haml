@@ -58,12 +58,11 @@
       .all-models.details.col-sm-8
         - @category.products.each_slice(4) do |products|
           .row
-            -products.each do |product|
-              .product-pics 
-                - if product.coming_soon
-                  = image_tag 'coming-soon.png', :class => "coming-soon"
+            -products.each do |product|              
+              .product-pics                                 
                 .img-box
                   =link_to (image_tag product.image(:small), :class => "sample"), product.image(:large), :data => { :colorbox => true }, :title => product.description                  
+                
                 .download
                   = link_to product.title, product
                   %br
@@ -71,6 +70,8 @@
                   = link_to download_product_path(:image_id => product.id) do
                     = image_tag 'dnwn.png'
                     = t ('download')
+                - if product.coming_soon
+                  = image_tag 'coming-soon.png', :class => "coming-soon"
       .clr-float
       .control              
         .prev

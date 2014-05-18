@@ -340,8 +340,8 @@ ul#banner { position: fixed; line-height: 45px; margin: 0 30px; padding: 0;  }
 ul#banner li{height:20px;}
 .link-del {position:fixed}
 /*.scroll {margin-right:400px; width:8000px}*/
-img.coming-soon {z-index:20; position:fixed; margin-left:-10px;
-margin-top:-7px;}
+img.coming-soon {z-index:20;  margin-right: -85px;
+margin-top: -237px;}
 b.coming-soon { opacity:.8;  filter:alpha(opacity=80); /* For IE8 and earlier */ position:fixed; z-index:10; text-align:center} 
 .box-title {font-size:25px;}
 .col-sm-5 fieldset legend{color:#e5ec6f}
