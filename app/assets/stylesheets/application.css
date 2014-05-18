@@ -23,16 +23,28 @@
 .float-left {float:left;}
 
 .category-info {
-  max-width:30%;
-  min-width:30%; 
-  float:right; 
-  min-height:100%;
-  max-height:100%;
-  background:#27160e; 
-  opacity:.8; 
-  filter:alpha(opacity=80); /* For IE8 and earlier */
-  color:#e5ec6f; 
+ max-width: 30%;
+min-width: 30%;
+float: right;
+min-height: 100%;
+max-height: 100%;
+color: #e5ec6f; 
   }
+.category-details {background: #27160e;
+min-height: 400px;
+max-height: 400px;
+padding-top: 5%;
+padding-right:10px;
+padding-left:10px;
+margin-top: 3%;
+opacity: .8;
+filter: alpha(opacity=80);
+position: absolute;
+width: 22%;
+margin-right: 4%;
+margin-left: 4%;
+
+}
 .category-info p {text-align:justify}
 .product-pics { 
   margin-top:10px;
@@ -186,8 +198,12 @@ span.Necessary {color:#F33535}
   }
 
 .pro_wrapper .line b {color:#27160e; margin-top:10px; }
-.line {width:100%;  text-align:center; }
-
+.line {width: 30%;
+text-align: center;
+margin-top: 2.2%;
+z-index: 300;
+position: fixed;}
+.title-cat {font-size:25px;}
 .slider  img {width: 100%}
 .slider  .cycle-overlay {
   text-align:center; 
@@ -196,28 +212,35 @@ span.Necessary {color:#F33535}
   left: 30%; 
   bottom:65px}
 .row .cycle-overlay {margin-bottom:2px}
-#category-details {max-width:70%; min-width:70%; float:right}
+#category-details {max-width:75%; min-width:74%;
+ float:right; position: fixed;
+ 
+margin-right: 26%;}
 #category-details .details {    
-  min-height:438px; 
-  max-height:438px;   
+  min-height:402px; 
+  max-height:402px;   
+  overflow-y:scroll;
   font-size:12px;
   bottom: 0;  
   width:100%;
   display:none;
-  color: white; padding: 5px; 
-  padding:5px}
+  color: white; 
+  position:relative;
+  margin-top:3.8%; 
+  padding-right:20px;
+  padding-left:20px;
+  }
 #category-details  .bg-opacity {background:#27160e;opacity: .8;
 filter:alpha(opacity=80); /* For IE8 and earlier */}
 #category-details .all-models {display:block; margin-right: 10px; overflow:hidden}
-#category-details #pictures .control{z-index:100; margin-top:-40px; position:fixed; width:200px}
-#category-details #pictures .next, .prev{
-  width:50%;
-  float:left;
+.control{z-index:100;  position:fixed; width:900px; height:100px; margin-top:-20px; text-align:left}
+.next, .prev{
+  width:100%; 
   opacity: .8;
   filter:alpha(opacity=80); /* For IE8 and earlier */
 
 }
-#category-details #pictures .control .next:hover, .prev:hover{
+.control .next:hover, .prev:hover{
 cursor:pointer;
 opacity:1;
 filter:alpha(opacity=100); /* For IE8 and earlier */
@@ -304,11 +327,22 @@ table.table tr.visited {font-weight:bold}
 .admin_menu a:hover {color:#E7F804; }
 .admin_menu:hover {height:200px; margin-top:-100px; cursor:pointer;}  
 .admin_menu h3 {text-align:center}
-.go-up {margin-top:-75px; z-index:10; width:90%; text-align:center; color:#4d4d4d; font-weight:bold; margin-bottom:75px}
+.go-up {margin-top:-75px; z-index:10; width:90%; 
+  text-align:center; color:#401805; font-weight:bold; margin-bottom:75px}
 .cat-link { bottom:0}
+.cat-link p{
+  min-height:170px; 
+  max-height:170px; 
+  overflow-y:scroll}
 .robbin { margin-top:-32px}
-.robbin .model-title{ margin-top:-25px; color:#4d4d4d}
-ul#banner { position: fixed; line-height: 45px; margin: 0 30px; padding: 0; }
+.robbin .model-title{ margin-top:-25px; color:#401805}
+ul#banner { position: fixed; line-height: 45px; margin: 0 30px; padding: 0;  }
+ul#banner li{height:20px;}
 .link-del {position:fixed}
 /*.scroll {margin-right:400px; width:8000px}*/
-b.coming-soon { opacity:.8;  filter:alpha(opacity=80); /* For IE8 and earlier */ position:fixed; z-index:10; text-align:center}
+img.coming-soon {z-index:20; position:fixed; margin-left:-10px;
+margin-top:-7px;}
+b.coming-soon { opacity:.8;  filter:alpha(opacity=80); /* For IE8 and earlier */ position:fixed; z-index:10; text-align:center} 
+.box-title {font-size:25px;}
+.col-sm-5 fieldset legend{color:#e5ec6f}
+.col-sm-5 form .form-group label.control-label{color:#e5ec6f}

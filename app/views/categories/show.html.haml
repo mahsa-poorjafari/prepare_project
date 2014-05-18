@@ -12,45 +12,46 @@
   %p#notice= notice  
   
   .category-info.general
-    .row.col-sm-12
+    %div
       .line.set-center  
         = image_tag 'cat-title.png'
-        .go-up.set-center= @category.title
-      .cat-link
-        %p= @category.description          
-        %ul#banner          
-          - if @category.products.present?
-            %li
-              = link_to t('model'), '#pictures', :id => "show-model"
-          
-          - if @category.maintaion.present?
-            %li
-              = link_to t('maintain'), '#maintaion', :id => "show-main"
-          
-          - if @category.installation.present?
-            %li
-              = link_to t('technical'), '#installation', :id => "show-inst"
-          
-          - if @category.warranty.present?
-            %li
-              = link_to t('warranty'), '#installation', :id => "show-war"
-          
-          - if @category.certifications.present?
-            %li
-              = link_to t('certificate'), '#cer', :id => "show-cer"          
-          
+        .go-up.set-center.title-cat= @category.title
+      .category-details
+        .cat-link
+          %p= @category.description          
+          %ul#banner          
+            - if @category.products.present?
+              %li
+                = link_to t('model'), '#pictures', :id => "show-model"
+            
+            - if @category.maintaion.present?
+              %li
+                = link_to t('maintain'), '#maintaion', :id => "show-main"
+            
+            - if @category.installation.present?
+              %li
+                = link_to t('technical'), '#installation', :id => "show-inst"
+            
+            - if @category.warranty.present?
+              %li
+                = link_to t('warranty'), '#installation', :id => "show-war"
+            
+            - if @category.certifications.present?
+              %li
+                = link_to t('certificate'), '#cer', :id => "show-cer"          
+            
          
   #category-details    
     .col-sm-8.details.bg-opacity#installation
-      %b= 'نصب'
+      .box-title{:class => I18n.locale}= t('technical')
       %p=raw @category.installation
       
     .col-sm-8.details.bg-opacity#maintaion
-      %b= 'شرایط'
+      .box-title{:class => I18n.locale}= t('maintain')
       %p=raw @category.maintaion
       
     .col-sm-8.details.bg-opacity#warranty
-      %b= 'گارانتی'
+      .box-title{:class => I18n.locale}= t('warranty')
       %p=raw @category.warranty
     
     .row#pictures
@@ -59,6 +60,8 @@
           .row
             -products.each do |product|
               .product-pics 
+                - if product.coming_soon
+                  = image_tag 'coming-soon.png', :class => "coming-soon"
                 .img-box
                   =link_to (image_tag product.image(:small), :class => "sample"), product.image(:large), :data => { :colorbox => true }, :title => product.description                  
                 .download
@@ -69,26 +72,32 @@
                     = image_tag 'dnwn.png'
                     = t ('download')
       .clr-float
-      .control
-        .next
-          = image_tag 'go-down.png'          
+      .control              
         .prev
           = image_tag 'go-up.png'
-        
-    .row.details.col-sm-8#certification
+        .next
+          = image_tag 'go-down.png'    
+      .clr-float
+    .row#certification
       = link_to "", "#",:name => "cer"
-      %b= 'گواهینامه ها'
-      %br
-      - @category.certifications.each do |certification|      
-        .col-sm-3.box-3{:style => "text-align:center"}
-          =link_to (image_tag certification.image(:small)), certification.image(:original), :data => { :colorbox => true }
-          .cer-title= certification.title
-            
-
+      .all-models.details.col-sm-8      
+        .box-title{:class => I18n.locale, :style => "color:#1c0f09"}= t('certificate')
+        %div        
+          - @category.certifications.each do |certification|      
+            .col-sm-3.box-3.pro-cer{:style => "text-align:center"}
+              =link_to (image_tag certification.image(:small)), certification.image(:original), :data => { :colorbox => true }
+              .cer-title= certification.title
+      .clr-float
+      .control            
+        .prev
+          = image_tag 'go-up.png'
+        .next
+          = image_tag 'go-down.png'       
+      .clr-float
       
 :javascript
   $('#show-cer').click(function(){   
-    $('#category-details  #scroll').children().hide(); 
+    $('#category-details').children().hide(); 
     $('#certification').show(1000);
     
   });
@@ -105,7 +114,7 @@
   });
 
   $('#show-inst').click(function(){          
-    $('#category-details  #scroll').children().hide(); 
+    $('#category-details').children().hide(); 
     $('#installation').fadeIn(1000);
     
   });
@@ -121,4 +130,12 @@
   
   $('#category-details #pictures .control .prev').click(function(){
     $('#category-details #pictures .product-pics').animate({marginTop:"-=200px"});
+  });
+
+  $('#category-details #certification .control .next').click(function(){
+    $('#category-details #certification .pro-cer').animate({marginTop:"+=200px"});
+  });
+  
+  $('#category-details #certification .control .prev').click(function(){
+    $('#category-details #certification .pro-cer').animate({marginTop:"-=200px"});
   });
