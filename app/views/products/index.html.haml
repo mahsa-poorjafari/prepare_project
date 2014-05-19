@@ -5,23 +5,31 @@
     %hr
     = link_to 'تعریف مدل جدید', new_product_path
 = image_tag 'lobby.jpg', :style => "z-index:-20; position:fixed"
-.products.set-center  
-  - @products.each do |product|            
-    .pro_wrapper{align: "center", :id => I18n.locale}                
-      - if product.coming_soon
-        %b.coming-soon.set-center= t('coming')
-      = link_to product, :class => "model-link" do
-        .pro-info.set-center  
-          = image_tag product.image(:small)
-        .robbin
-          = image_tag 'cat-title2.png'
-          .model-title= product.title 
+- @category.each do |category|  
+  .cat-group{:id => "title#{category.id}"} 
+    .set-center{:style => "margin-top:5px"} 
+      = image_tag 'cat-title.png'
+      .set-center.pro-cat-title= category.title
+.products-group.set-center
+  - @category.each do |category|  
+    .products.set-cente{:id => "item#{category.id}"}  
+      - category.products.each do |product|            
+        .pro_wrapper{align: "center", :id => I18n.locale}                          
+          = link_to product, :class => "model-link" do
+            .pro-info.set-center  
+              = image_tag product.image(:small), :class => 'sample'            
+            .product-title.set-center=  product.title
+          - if product.coming_soon
+            = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right:-127px'
+
+:javascript
+  $( document ).ready(function() {
+    $('.cat-group#title2').addClass('active');
+    $('.cat-group').click(function(){
+      $('.cat-group').removeClass('active');
+      $(this).addClass('active');
+      $('.products').fadeOut(); 
+      $('.products#item2').fadeIn(1000);
       
-    
-
-   
-
-
-
-
-
+    });
+  });
