@@ -6,13 +6,13 @@
     = link_to 'تعریف مدل جدید', new_product_path
 = image_tag 'lobby.jpg', :class => "bg"
 - @category.each do |category|  
-  .cat-group{:id => "title#{category.id}"} 
+  .cat-group{:id => "item#{category.id}", :divname => "item#{category.id}"} 
     .set-center{:style => "margin-top:5px"} 
       = image_tag 'cat-title.png'
       .set-center.pro-cat-title= category.title
 .products-group.set-center
   - @category.each do |category|  
-    .products.set-cente{:id => "item#{category.id}"}  
+    .products.set-center{:class => "item#{category.id}", :divname => "item#{category.id}"} 
       - category.products.each do |product|            
         .pro_wrapper{align: "center", :id => I18n.locale}                          
           = link_to product, :class => "model-link" do
@@ -21,15 +21,22 @@
             .product-title.set-center=  product.title
           - if product.coming_soon
             = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right:-127px'
+    .clr-float
 
 :javascript
   $( document ).ready(function() {
     $('.cat-group#title2').addClass('active');
+    
     $('.cat-group').click(function(){
+    
       $('.cat-group').removeClass('active');
       $(this).addClass('active');
-      $('.products').fadeOut(); 
-      $('.products#item2').fadeIn(1000);
+      var item = $(this).attr('id');
+      
+      $('.products').hide(); 
+      $('.products.'+[item]).fadeIn(1000);
+      
+      
       
     });
   });
