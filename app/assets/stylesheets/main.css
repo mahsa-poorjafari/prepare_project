@@ -76,9 +76,9 @@ header #header-top-tmp {
 	position: absolute;
 }
 #mainmenu {
-	position: relative;
-	float: right;
-	margin-right: 100px;
+	position: fixed;
+  right:15%;
+	float: right;	
 	padding: 0;
 	z-index: 30;
 	height: 90px;

@@ -77,11 +77,7 @@
         %h3.fa= 'گواهینامه'
         = f.link_to_add content_tag(:span, "افزودن گواهینامه", :class => "btn"), :certifications, :id => "add_new_picture"    
       .clr-float
-      .form-group 
-        -if @category.certifications.present?
-          .col-sm-6     
-            - @category.certifications.each do |cer|
-              = image_tag cer.image(:small)
+      .form-group         
         = f.fields_for :certifications do |certificate|  
           = render "certifications/form", :f => certificate
       
