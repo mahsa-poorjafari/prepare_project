@@ -97,6 +97,11 @@
       .clr-float
       
 :javascript
+  $( document ).ready(function() {
+    $('#category-details').children().hide(); 
+    $('#pictures').show(1000);
+  });
+  
   $('#show-cer').click(function(){   
     $('#category-details').children().hide(); 
     $('#certification').show(1000);

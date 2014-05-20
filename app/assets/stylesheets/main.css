@@ -60,6 +60,7 @@ header #header-top-tmp {
 	z-index: 25;
 }
 .title-site {width:50%; float:left; color:#FFFFFF; margin-top:40px; margin-left:-55px}
+.title-site h3 {font-size:20px}
 .logo-style {float: left; width:60%; height:100%;}
 #logo {
 	position: relative;
