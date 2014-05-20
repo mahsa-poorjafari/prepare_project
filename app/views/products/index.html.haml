@@ -4,7 +4,7 @@
     %p= 'منوی صفحه'
     %hr
     = link_to 'تعریف مدل جدید', new_product_path
-= image_tag 'lobby.jpg', :style => "z-index:-20; position:fixed"
+= image_tag 'lobby.jpg', :class => "bg"
 - @category.each do |category|  
   .cat-group{:id => "title#{category.id}"} 
     .set-center{:style => "margin-top:5px"} 
