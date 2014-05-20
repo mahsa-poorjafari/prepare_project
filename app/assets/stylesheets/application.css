@@ -236,6 +236,7 @@ position: fixed;}
   position: absolute; 
   left: 30%; 
   bottom:65px}
+.line img {width:88%}
 .row .cycle-overlay {margin-bottom:2px}
 #category-details {max-width:75%; min-width:74%;
  float:right; position: fixed;
