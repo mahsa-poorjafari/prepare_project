@@ -388,3 +388,13 @@ font-weight: bold;
   height:20%;
   opacity: .8;
   filter:alpha(opacity=80); /* For IE8 and earlier */}
+a.show-product {
+  min-height:80%;
+  max-height:80%;
+  overflow:hidden;
+  
+}
+a.show-product img {
+  min-height:200px;
+  max-height:300px;
+}
