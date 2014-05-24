@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   def show
   end
   def download     
-    @image = Picture.find(params[:image_id])
+    @image = Product.find(params[:product_id])
     send_file @image.image.path,
               :filename => @image.image_file_name,
               :type => @image.image_content_type,

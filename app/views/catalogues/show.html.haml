@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Title fa:
+  = @catalogue.title_fa
+%p
+  %b Title en:
+  = @catalogue.title_en
+= image_tag  @catalogue.image(:large)
+= link_to 'Edit', edit_catalogue_path(@catalogue)
+\|
+= link_to 'Back', catalogues_path
