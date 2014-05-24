@@ -15,7 +15,7 @@ class CataloguesController < ApplicationController
   end
   
   def download     
-    @image = Catalogue.find(params[:catalogue_id])
+    @image = Catalogue.find(params[:id])
     send_file @image.image.path,
               :filename => @image.image_file_name,
               :type => @image.image_content_type,
