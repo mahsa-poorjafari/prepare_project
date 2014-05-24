@@ -225,7 +225,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c0f09', end
 	margin: 100px 0 150px 0;
 	background: #D69E81;
   overflow:hidden;
-  height:438px;
+  min-height:480px;
+  max-height:480px;
   
 }
 
