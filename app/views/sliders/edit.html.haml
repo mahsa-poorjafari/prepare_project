@@ -3,7 +3,7 @@
   %h2= 'تنظیم اندازه تصویر'
   = form_for @slider, :html => {:multipart => true} do |f| 
     .col-sm-9
-      = image_tag @slider.image.url(:original), :class => "crop cropImage", :height => "350", :width => "750"
+      = image_tag @slider.image.url(:original), :class => "crop cropImage", :height => "350", :width => "750", :style => "position:relative; display:block"
       = f.hidden_field :crop_x
       = f.hidden_field :crop_y
       = f.hidden_field :crop_w
@@ -23,7 +23,7 @@
       = link_to 'بازگشت', sliders_path
 
 :javascript
-  $( '.crop' ).each( function () {
+  $('.crop' ).each( function () {
     var image = $( this )
     , crop  = image
     .crop( {
