@@ -17,4 +17,13 @@ class Category < ActiveRecord::Base
   def description
     I18n.locale == :fa ? self.read_attribute("description_fa") : self.read_attribute("description_en")
   end
+  def warranty
+    I18n.locale == :fa ? self.read_attribute("warranty_fa") : self.read_attribute("warranty")
+  end
+  def maintaion
+    I18n.locale == :fa ? self.read_attribute("maintaion_fa") : self.read_attribute("maintaion")
+  end
+  def installation
+    I18n.locale == :fa ? self.read_attribute("installation_fa") : self.read_attribute("installation")
+  end
 end

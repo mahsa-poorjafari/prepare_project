@@ -1,0 +1,11 @@
+-if is_admin?
+  .admin-link.fa
+    %p= 'منوی صفحه'
+    %hr
+    = link_to 'بازگشت', catalogues_path
+.fa.catalog
+  %h1=t('catalog')
+
+  = render 'form'
+
+  

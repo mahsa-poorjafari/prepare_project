@@ -297,7 +297,8 @@ img {
 .carousel-inner > .item > a > img {
   display: block;
   max-width: 100%;
-  height: auto;
+  min-width: 100%;
+  height: 100%;
 }
 .img-rounded {
   border-radius: 6px;
@@ -5392,14 +5393,19 @@ button.close {
   border-left-color: #fff;
 }
 .carousel {
-  position: relative;
+   height: 100%;
+    position: absolute;
+    width: 100%;
 }
 .carousel-inner {
-  position: relative;
-  width: 100%;  
+ height: 100%;
+    position: absolute;
+    width: 100%
 }
 .carousel-inner > .item {
-  position: relative;
+  position: absolute;
+  height: 100%;
+  width: 100%;
   display: none;
   -webkit-transition: .6s ease-in-out left;
           transition: .6s ease-in-out left;

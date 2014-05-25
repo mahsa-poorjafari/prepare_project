@@ -1,0 +1,19 @@
+= form_for @catalogue do |f|
+  - if @catalogue.errors.any?
+    #error_explanation      
+      %ul
+        - @catalogue.errors.each do |attr, msg|
+          %li= msg
+
+  .form-group
+    = f.label 'عنوان به فارسی:', :class => "control-label"
+    = f.text_field :title_fa, :class => "form-control"
+  .form-group
+    = f.label 'عنوان به انگلیسی:', :class => "control-label"
+    = f.text_field :title_en, :class => "form-control"
+    
+  .form-group
+    = f.label 'تصویر کاتالوگ', :class => "control-label"
+    = f.file_field :image
+  .form-group
+    = f.submit 'ثبت', :class=> "btn btn-default"

@@ -1,20 +1,18 @@
 .hero-unit
   .carousel.slide
     .carousel-inner
-      - @sliders = Slider.all
-      -if @sliders.blank?
-        = image_tag 'slide12.jpg', :style => "width:100%; height:100%; position:fixed"
+      - @sliders = Slider.all    
         
-      - else
-        - @sliders.each do |slide|
-          .item-row.item
-            = link_to (image_tag slide.image(:gallery_size), :id =>  slide.id ), slide, :class => "slide"
-            -if is_admin?
-              .row-controls
-                = link_to edit_slider_path(slide) do
-                  %i.icon-edit
-                = link_to  slide, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }  do
-                  %i.icon-trash
+    
+      - @sliders.each do |slide|
+        .item-row.item
+          = link_to (image_tag slide.image(:gallery_size), :id =>  slide.id ), slide, :class => "slide"
+          -if is_admin?
+            .row-controls
+              = link_to edit_slider_path(slide) do
+                %i.icon-edit
+              = link_to  slide, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }  do
+                %i.icon-trash
               
       -if @sliders.count > 1          
         .carousel-controls

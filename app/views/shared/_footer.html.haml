@@ -29,7 +29,10 @@
       %ul
         %li.head
           %b= t('downloads')        
-        %li= t('catalog')
+        - Catalogue.all.each do |catalogue|
+          -if catalogue.image.present?
+            = link_to  download_catalogue_path(:id =>  catalogue.id) do            
+              %li= catalogue.title
     %li
       %ul{:style => "width:150px"}
         %li.head
