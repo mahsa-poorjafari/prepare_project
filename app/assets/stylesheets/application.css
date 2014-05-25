@@ -286,7 +286,7 @@ filter:alpha(opacity=100); /* For IE8 and earlier */
   color:#000; 
   position: absolute;}
 .content-holder{ max-height: 540px; overflow: hidden;}
-.category-image{max-height: 300px; min-height:300px}
+.category-image{max-height: 300px; min-height:300px; overflow: hidden;}
 .carousel-control img {margin-top: 200px}
 table.table  tr {text-align:right;}
 table.table  tr th {max-width: 120px; text-align:right}
