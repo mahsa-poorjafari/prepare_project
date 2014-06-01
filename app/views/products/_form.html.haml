@@ -30,7 +30,7 @@
     %hr
     .form-group   
       %h3.fa= 'افزودن تصویر به این مدل'
-      = f.link_to_add content_tag(:span, "افزودن تصویر", :class => "btn"), :pictures, :id => "add_new_picture"    
+      = f.link_to_add content_tag(:span, "افزودن تصویر", :class => "btn", :style => "background:#401805"), :pictures, :id => "add_new_picture"    
       .clr-float
       .form-group         
         = f.fields_for :pictures do |picture|  

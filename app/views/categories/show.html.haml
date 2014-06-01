@@ -65,7 +65,8 @@
                     = product.title
                   .img-box
                     = image_tag product.image(:medium)
-                
+                - if product.coming_soon
+                  = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right:-62%; margin-top:-118%'  
                 
       .clr-float
       .control              
