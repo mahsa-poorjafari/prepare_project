@@ -12,22 +12,38 @@
     = link_to 'بازگشت', products_path 
       
 
-.box-3 
-  %p    
-    = @product.category.title
-  %hr
-  %p   
-    = @product.title
-  %p    
-    = @product.description
+.category-info.general
+  %div
+    .line.set-center  
+      = image_tag 'cat-title.png'
+      .go-up.set-center.title-cat= @product.title
+    .category-link 
+      %b= @pro_category
+      .cat-link
+        %p= @product.description          
  
-    
-.box-3{:style => "height:auto"} 
-  .product-pics-large.set-center
-    =link_to (image_tag  @product.image(:medium)), @product.image(:large), :data => { :colorbox => true }, :title =>  @product.description, :class => "show-product"
-    .go-download
-      = link_to  download_product_path(:product_id =>  @product.id) do
-        = image_tag 'dnwn.png', :style => "height:30px; width:30px;"
-        = t ('download')
-            
-
+#category-details
+  .product-details
+    - @product.pictures.each do |picture|
+      .model-pro      
+        =link_to (image_tag  picture.image(:small)), picture.image(:large), :data => { :colorbox => true }, :title =>  picture.title, :class => "show-product"
+        .go-download
+          = link_to  download_product_path(:picture_id =>  picture.id) do
+            = image_tag 'dnwn.png', :style => "height:30px; width:30px;"
+            = t ('download')
+  .clr-float
+  .control            
+    .prev
+      = image_tag 'go-up.png'
+    .next
+      = image_tag 'go-down.png'       
+  .clr-float
+  
+:javascript
+  $('.control .next').click(function(){
+      $('.product-details').animate({marginTop:"+=200px"});
+    });
+      
+  $('.control .prev').click(function(){
+    $('.product-details').animate({marginTop:"-=200px"});
+  });

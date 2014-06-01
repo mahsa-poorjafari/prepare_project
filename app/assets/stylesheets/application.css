@@ -81,9 +81,9 @@ margin-left: 5.5%;
   margin-bottom:20px;   
   float:right; 
   padding:5px;
-  min-width:190px; max-width:190px; text-align:center;
-  min-height:180px;
-  max-height:180px;
+  min-width:260px; max-width:260px; text-align:center;
+  min-height:240px;
+  max-height:240px;
   background:#29170d;
   opacity: .8;
   filter:alpha(opacity=80); /* For IE8 and earlier */
@@ -95,12 +95,13 @@ margin-left: 5.5%;
   max-height:200px; 
   width:100%}
 .product-pics  .img-box {
-  min-height:170px;
-  max-height:170px;
+  margin-top:15px;
+  min-height:200px;
+  max-height:200px;
   overflow:hidden;
 
  width:100%}
-.product-pics-large {margin:5px;  text-align:center; }
+
 .download {background:#29170d; opacity:.8; 
   filter:alpha(opacity=80); /* For IE8 and earlier */
   color:#e5ec6f; 
@@ -240,7 +241,7 @@ position: fixed;}
   position: absolute; 
   left: 30%; 
   bottom:65px}
-.line img {width:88%}
+.line img {width:86%; margin-right:7px;}
 .row .cycle-overlay {margin-bottom:2px}
 #category-details {max-width:75%; min-width:74%;
  float:right; position: fixed;
@@ -262,8 +263,8 @@ margin-right: 20%;}
   }
 #category-details  .bg-opacity {background:#27160e;opacity: .8;
 filter:alpha(opacity=80); /* For IE8 and earlier */}
-#category-details .all-models {display:block; margin-right: 10px; overflow:hidden}
-.control{z-index:100;  position:fixed; width:900px; height:100px; margin-top:-20%; text-align:left; left:20px}
+#category-details .all-models {display:block; margin-right: 10px; overflow:hidden; padding-top:50px}
+.control{z-index:100;  position:fixed; width:50px; height:100px; margin-top:-20%; text-align:left; left:20px}
 .next, .prev{
   width:100%; 
   opacity: .8;
@@ -441,3 +442,16 @@ a.show-product img {
   filter:alpha(opacity=80); /* For IE8 and earlier */}
   
 
+.model-pro {
+  min-width:20%;
+  max-width:20%;
+  max-height:20%;
+  overflow:hidden; float:right;
+  margin:5px;
+  padding:5px;
+  text-align:center;
+  background:#29170d;
+  opacity: .8;  
+  filter:alpha(opacity=80); /* For IE8 and earlier */
+ }
+.model-pro img {width:100%; height:90%}
