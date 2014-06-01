@@ -4,13 +4,14 @@
 
   .form-group
     = picture.label "عنوان عکس به فارسی", :class => "col-sm-3 control-label"   
-    = picture.text_field :title_fa, :rows => 2, :class => "form-control col-sm-3"
+    = picture.text_field :title_fa, :rows => 2, :class => "form-control"
   .form-group
     = picture.label "عنوان عکس به انگلیسی", :class => "col-sm-3 control-label"   
-    = picture.text_field :title_en, :rows => 2, :class => "form-control col-sm-3"
+    = picture.text_field :title_en, :rows => 2, :class => "form-control"
   .form-group
     = picture.label "بزودی", :class => "col-sm-3 control-label"   
-    = picture.check_box :coming_soon, :class => "form-control col-sm-3"
-    
-    = picture.link_to_remove image_tag ("del.png"), :class => "remove-task "
+    = picture.check_box :coming_soon, :class => "form-control"
+  
+    = picture.link_to_remove image_tag ("del.png"), :class => "remove-task"
+  %hr
 .clr-float

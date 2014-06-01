@@ -3,8 +3,7 @@
 	position : relative;
 }
 
-.cropImage {
-	position : relative;
+.cropImage {	
 	top      : 0;
 	left     : 0;
 	cursor   : move;
