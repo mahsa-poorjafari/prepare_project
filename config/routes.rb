@@ -1,5 +1,7 @@
 PrepareProject::Application.routes.draw do  
 
+  resources :pictures
+
   resources :send_links
 
 scope "(:locale)", :locale => /en|fa/ do

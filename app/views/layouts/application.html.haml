@@ -34,10 +34,10 @@
       %header
         #header-top        
         #logo-menu
-          .logo-style
-            #logo
-              = image_tag "logo.png"          
-            .title-site
+          .logo-style            
+            #logo              
+              = image_tag "logo.png"                                  
+            .title-site              
               %h3= t('rainbow')
           #mainmenu
             %nav
@@ -47,6 +47,7 @@
               - else
                 .menu_en{:class => I18n.locale}
                   = render "shared/menu"
+                  
     #content{:class => I18n.locale}        
       = yield
     %footer{:class => I18n.locale}
