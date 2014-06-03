@@ -466,3 +466,4 @@ margin-left: 5%;
 margin-right: 26%;
 margin-top:4%
 }
+.catalog {overflow-y:scroll; height:350px;}

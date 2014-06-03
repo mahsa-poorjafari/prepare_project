@@ -4,16 +4,19 @@
       %ul
         - @catalogue.errors.each do |attr, msg|
           %li= msg
-
-  .form-group
-    = f.label 'عنوان به فارسی:', :class => "control-label"
-    = f.text_field :title_fa, :class => "form-control"
-  .form-group
-    = f.label 'عنوان به انگلیسی:', :class => "control-label"
-    = f.text_field :title_en, :class => "form-control"
-    
-  .form-group
-    = f.label 'تصویر کاتالوگ', :class => "control-label"
-    = f.file_field :image
+  .col-sm-4
+    .form-group
+      = f.label 'عنوان به فارسی:', :class => "control-label"
+      = f.text_field :title_fa, :class => "form-control"
+    .form-group
+      = f.label 'عنوان به انگلیسی:', :class => "control-label"
+      = f.text_field :title_en, :class => "form-control"
+  .col-sm-4
+    .form-group
+      = f.label 'تصویر کاتالوگ', :class => "control-label"
+      - if @catalogue.image.present?
+        = image_tag @catalogue.image(:medium)      
+      = f.file_field :image
+  .clr-float
   .form-group
     = f.submit 'ثبت', :class=> "btn btn-default"

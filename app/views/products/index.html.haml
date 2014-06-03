@@ -15,7 +15,7 @@
     .products.set-center{:class => "item#{category.id}", :divname => "item#{category.id}"} 
       - category.products.each do |product| 
         - product.pictures.each do |pic|
-          .pro_wrapper{align: "center", :id => I18n.locale}                          
+          .pro_wrapper{align: "center", :class => I18n.locale}                          
             = link_to product, :class => "model-link" do
               .pro-info.set-center  
                 = image_tag pic.image(:small), :class => 'sample'            
