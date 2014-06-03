@@ -3,17 +3,20 @@
     %p= 'منوی صفحه'
     %hr
     = link_to 'کاتالوگ جدید', new_catalogue_path
-%h1= t('catalog')
+    
 
 .col-sm-12
-
-  - @catalogues.each do |catalogue|
-    .col-sm-4
-      = catalogue.title
-      =image_tag catalogue.image(:large)      
-
-      = link_to 'ویرایش', edit_catalogue_path(catalogue)
-      = link_to 'حذف', catalogue, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+  %h1= t('catalog')
+  .catalog
+    - @catalogues.each do |catalogue|
+      .col-sm-4
+        = catalogue.title
+        = image_tag catalogue.image(:medium), :width => "250", :height => "250"
+        - if is_admin?
+          = link_to 'ویرایش', edit_catalogue_path(catalogue)
+          \|
+          = link_to 'حذف', catalogue, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+       
 
 
 

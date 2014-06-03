@@ -3,10 +3,9 @@
   .admin-link.fa
     %p= 'منوی صفحه'
     %hr
+    -if is_admin?
     
-    = link_to 'ویرایش', edit_certification_path(@certification)
-    \|
-    = link_to 'بازگشت', certifications_path
+      = link_to 'بازگشت', root_path
 
 %p#notice= notice
 .set-center{:style => "width:50%"}

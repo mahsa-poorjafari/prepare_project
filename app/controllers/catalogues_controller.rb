@@ -34,17 +34,11 @@ class CataloguesController < ApplicationController
   # POST /catalogues
   # POST /catalogues.json
   def create
-    @catalogue = Catalogue.new(catalogue_params)
-
-    respond_to do |format|
-      if @catalogue.save
-        format.html { redirect_to @catalogue, notice: 'Catalogue was successfully created.' }
-        format.json { render action: 'index', status: :created, location: @catalogue }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @catalogue.errors, status: :unprocessable_entity }
-      end
-    end
+    @catalogue = Catalogue.new(catalogue_params) 
+    
+    @catalogue.save
+    render action: 'index'
+    
   end
 
   # PATCH/PUT /catalogues/1

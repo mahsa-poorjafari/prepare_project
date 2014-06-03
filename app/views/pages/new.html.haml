@@ -2,5 +2,5 @@
   %h1= 'تعریف صفحه متنی جدید'
 
   = render 'form'
-
-  = link_to 'بازگشت', pages_path
+  - if is_admin?
+    = link_to 'بازگشت', pages_path

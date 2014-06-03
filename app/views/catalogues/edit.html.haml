@@ -1,7 +1,11 @@
-%h1 Editing catalogue
+.fa.col-sm-12
+  .admin-link.fa
+    %p= 'منوی صفحه'
+    %hr
+    = link_to 'بازگشت', Catalogue
+    
+  %h1 ویرایش کاتالوگ
+  = render 'form'
 
-= render 'form'
 
-= link_to 'Show', @catalogue
-\|
-= link_to 'Back', catalogues_path
+
