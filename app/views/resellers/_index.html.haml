@@ -3,10 +3,10 @@
 
   .row
     - Reseller.all.each do |reseller|
-      .cycle-overlay{:id => I18n.locale, :style => "width:90%; padding:3px"}
+      .cycle-overlay{:class => I18n.locale, :style => "width:90%; padding:3px"}
         %strong.row
           = reseller.title                 
-        .row{:id => I18n.locale}
+        .row{:class => I18n.locale}
           .col-sm-2= t('reseller.CEO')
           .col-sm-10= reseller.Management_name          
         .row
@@ -25,7 +25,7 @@
 
 :javascript
   
-  if ( $('.cycle-overlay').attr("id") == 'en' ) {
+  if ( $('.cycle-overlay').attr("class") == 'en' ) {
     $('.row .col-sm-2').css('float', 'left');    
     $('.row .col-sm-10').css('float', 'left');
   }

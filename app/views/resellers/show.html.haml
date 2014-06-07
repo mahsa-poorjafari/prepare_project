@@ -16,7 +16,7 @@
     %b=  t('reseller.address')
     = @reseller.address
 
-
-  = link_to 'ویرایش', edit_reseller_path(@reseller)
-  \|
-  = link_to 'بازگشت', resellers_path
+  -if is_admin?
+    = link_to 'ویرایش', edit_reseller_path(@reseller)
+    \|
+    = link_to 'بازگشت', resellers_path

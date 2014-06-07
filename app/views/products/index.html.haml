@@ -13,14 +13,15 @@
 .products-group.set-center
   - @category.each do |category|  
     .products.set-center{:class => "item#{category.id}", :divname => "item#{category.id}"} 
-      - category.products.each do |product|            
-        .pro_wrapper{align: "center", :id => I18n.locale}                          
-          = link_to product, :class => "model-link" do
-            .pro-info.set-center  
-              = image_tag product.image(:small), :class => 'sample'            
-            .product-title.set-center=  product.title
-          - if product.coming_soon
-            = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right:-127px'
+      - category.products.each do |product| 
+        - product.pictures.each do |pic|
+          .pro_wrapper{align: "center", :class => I18n.locale}                          
+            = link_to product, :class => "model-link" do
+              .pro-info.set-center  
+                = image_tag pic.image(:small), :class => 'sample'            
+              .product-title.set-center= truncate(pic.title, :lenght => 15)
+            - if pic.coming_soon
+              = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right:-41%; margin-top:-91%'
     .clr-float
 
 :javascript
