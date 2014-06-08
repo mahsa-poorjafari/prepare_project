@@ -19,7 +19,7 @@ gem 'ahoy_matey'
 
 
 group :production do
-  gem 'pg'
+  gem 'mysql2'
   gem 'rails_12factor'
 end
 
