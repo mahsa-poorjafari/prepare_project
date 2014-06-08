@@ -7,17 +7,16 @@
           = link_to (image_tag slide.image(:gallery_size), :id =>  slide.id ), slide, :class => "slide"
           
               
-      -if @sliders.count > 1          
-        .carousel-controls
-          .center
-            %ol.carousel-indicator-list.carousel-indicators
-              - if  @sliders.count != 1
-                -  @sliders.each_with_index do |slide, index|
-                  %li{"data-slide-to" => "#{index}", "data-target" => "#homeCarousel", :class => "slide-indicator"}      
-        = link_to ".carousel", :class => "carousel-control left", "data-slide" => "prev" do
-          = image_tag 'next-icon.png'
-        = link_to ".carousel", :class => "carousel-control right", "data-slide" => "next" do
-          = image_tag 'prev-icon.png'
+    -if @sliders.count > 1          
+      .carousel-controls
+        .center
+          %ol.carousel-indicator-list.carousel-indicators
+            -  @sliders.each_with_index do |slide, index|
+              %li{"data-slide-to" => "#{index}", "data-target" => "#homeCarousel", :class => "slide-indicator"}      
+      = link_to ".carousel", :class => "carousel-control left", "data-slide" => "prev" do
+        = image_tag 'next-icon.png'
+      = link_to ".carousel", :class => "carousel-control right", "data-slide" => "next" do
+        = image_tag 'prev-icon.png'
 :javascript 
   $(".item").first().addClass("active");
   $(".slide-indicator").first().addClass("active");
