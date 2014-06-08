@@ -24,6 +24,8 @@
  
 .product_show_pics
   .product-details
+    .model-pro
+      =link_to (image_tag  @product.image(:small), :class => "sample"), @product.image(:large), :data => { :colorbox => true }, :title =>  @product.title, :class => "show-product"
     - @product.pictures.each do |picture|
       .model-pro      
         =link_to (image_tag  picture.image(:small), :class => "sample"), picture.image(:large), :data => { :colorbox => true }, :title =>  picture.title, :class => "show-product"

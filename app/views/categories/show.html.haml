@@ -57,7 +57,7 @@
     .row#pictures
       .all-models.details.col-sm-8
         - @category.products.each_slice(4) do |products|
-          .row
+          .row{:style => "margin-left:5%"}
             -products.each do |product|                 
               .product-pics                                                 
                 = link_to  product, :category_id => @category.id do

@@ -11,7 +11,7 @@ class Product < ActiveRecord::Base
   has_many :pictures
   accepts_nested_attributes_for :pictures, :allow_destroy => true
   validates :title, :title_fa, :presence => {:message => 'عنوان محصول را وارد کنید.'}
-  validates :title, :title_fa, :uniqueness => {:message => 'عنوان محصول تکراری است'}
+  validates :title_fa, :uniqueness => {:message => 'عنوان محصول تکراری است'}
   
   def title
     I18n.locale == :fa ? self.read_attribute("title_fa") : self.read_attribute("title")
