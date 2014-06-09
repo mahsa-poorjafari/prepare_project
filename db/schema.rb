@@ -13,6 +13,21 @@
 
 ActiveRecord::Schema.define(version: 20140609113438) do
 
+  create_table "activities", force: true do |t|
+    t.string   "title_fa"
+    t.string   "title_en"
+    t.string   "title_ar"
+    t.text     "description_fa"
+    t.text     "description_en"
+    t.text     "description_ar"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
   create_table "catalogues", force: true do |t|
     t.string   "title_fa"
     t.string   "title_en"
@@ -25,8 +40,6 @@ ActiveRecord::Schema.define(version: 20140609113438) do
   end
 
   create_table "categories", force: true do |t|
-    t.string   "title"
-    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
@@ -37,12 +50,11 @@ ActiveRecord::Schema.define(version: 20140609113438) do
     t.string   "title_en"
     t.text     "description_fa"
     t.text     "description_en"
-    t.text     "installation"
-    t.text     "maintaion"
-    t.text     "warranty"
     t.text     "warranty_fa"
     t.text     "maintaion_fa"
     t.text     "installation_fa"
+    t.string   "title_ar"
+    t.text     "description_ar"
   end
 
   create_table "certifications", force: true do |t|
@@ -59,6 +71,18 @@ ActiveRecord::Schema.define(version: 20140609113438) do
 
   create_table "galleries", force: true do |t|
     t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "harams", force: true do |t|
+    t.string   "description_fa"
+    t.string   "description_en"
+    t.string   "description_ar"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
@@ -84,6 +108,8 @@ ActiveRecord::Schema.define(version: 20140609113438) do
     t.datetime "updated_at"
     t.string   "title_fa"
     t.text     "html_text_fa"
+    t.string   "title_ar"
+    t.text     "html_text_ar"
   end
 
   create_table "pictures", force: true do |t|
@@ -112,6 +138,8 @@ ActiveRecord::Schema.define(version: 20140609113438) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "title_ar"
+    t.text     "description_ar"
   end
 
   create_table "resellers", force: true do |t|
@@ -145,6 +173,7 @@ ActiveRecord::Schema.define(version: 20140609113438) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "category_id"
   end
 
   create_table "users", force: true do |t|
