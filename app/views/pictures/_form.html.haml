@@ -1,0 +1,27 @@
+= form_for @picture do |f|
+  - if @picture.errors.any?
+    #error_explanation
+      %ul
+        - @picture.errors.each do |attr, msg|
+          %li= msg
+  .col-sm-6.set-center
+    .form-group
+      = f.label "انتخاب مدل مربوط", :class => "col-sm-3 control-label"   
+      = f.select(:product_id, Product.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' مدل را انتخاب کنید.')        
+      
+    .form-group
+      = f.label "انتخاب تصویر", :class => "col-sm-3 control-label"   
+      = f.file_field :image
+      
+    .form-group
+      = f.label "عنوان عکس به فارسی", :class => "col-sm-3 control-label"   
+      = f.text_field :title_fa, :rows => 2, :class => "form-control"
+    .form-group
+      = f.label "عنوان عکس به انگلیسی", :class => "col-sm-3 control-label"   
+      = f.text_field :title_en, :rows => 2, :class => "form-control"
+      
+    .form-group
+      = f.label "بزودی", :class => "col-sm-3 control-label"   
+      = f.check_box :coming_soon, :class => "form-control"
+    .form-group 
+      = f.submit 'ثبت', :class=> "btn btn-default"

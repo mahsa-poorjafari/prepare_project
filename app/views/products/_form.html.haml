@@ -1,4 +1,4 @@
-= nested_form_for @product,  :html => { :multipart => true  } do |f| 
+= form_for @product,  :html => { :multipart => true  } do |f| 
   - if @product.errors.any?
     #error_explanation      
       %ul
@@ -27,28 +27,10 @@
     .form-group 
       = f.label "تصویر نمونه:", :class => "col-sm-4 control-label"      
       = f.file_field :image
-    %hr
-    .form-group   
-      %h3.fa= 'افزودن تصویر به این مدل'
-      = f.link_to_add content_tag(:span, "افزودن تصویر", :class => "btn", :style => "background:#401805"), :pictures, :id => "add_new_picture"    
-      .clr-float
-      .form-group         
-        = f.fields_for :pictures do |picture|  
-          = render "shared/upload_image_form", :picture => picture
+   
+    
+     
     %hr
     .form-group.pull-left
       = f.submit 'ثبت', :class=> "btn btn-default"
 
-:javascript
-  function enable_file_select(){
-    $(".enable_file_select").unbind('click').click(function(){
-      $(this).parent().find("input:file").click();
-    });
-   }
-
-  enable_file_select();
-
-  $("#add_new_picture").click(function(){
-    $(".enable_file_select").unbind('click');
-    window.setTimeout('enable_file_select()', 1000);
-  });
