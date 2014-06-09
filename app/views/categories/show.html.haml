@@ -61,10 +61,10 @@
             -products.each do |product|                 
               .product-pics                                                 
                 = link_to  product, :category_id => @category.id do
-                  %div
+                  .title-product
                     = product.title
                   .img-box
-                    = image_tag product.image(:medium)
+                    = image_tag product.image(:medium), :class => "sample"
                 - if product.coming_soon
                   = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right:-62%; margin-top:-118%'  
                 

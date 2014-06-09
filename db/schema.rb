@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140609113438) do
+ActiveRecord::Schema.define(version: 20140609134002) do
 
   create_table "activities", force: true do |t|
     t.string   "title_fa"
@@ -111,7 +111,7 @@ ActiveRecord::Schema.define(version: 20140609113438) do
     t.string   "title_ar"
     t.text     "html_text_ar"
   end
-
+r
   create_table "pictures", force: true do |t|
     t.string   "title_en"
     t.string   "title_fa"
@@ -123,6 +123,7 @@ ActiveRecord::Schema.define(version: 20140609113438) do
     t.datetime "image_updated_at"
     t.integer  "product_id"
     t.boolean  "coming_soon"
+    t.boolean  "download"
   end
 
   create_table "products", force: true do |t|
