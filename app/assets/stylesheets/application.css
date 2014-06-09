@@ -89,7 +89,7 @@ margin-left: 5.5%;
   filter:alpha(opacity=80); /* For IE8 and earlier */
   
   }
-  
+.product-pics .title-product {font-size:16px}
 .product-pics  img.sample {
   min-height:200px; 
   max-height:200px; 
@@ -468,6 +468,12 @@ a.show-gallery img {
   opacity: .8;  
   filter:alpha(opacity=80); /* For IE8 and earlier */
  }
+.model-pro .pic-title {color:#FBFB60; height:30px; overflow:hidden}
+.model-pro .go-download {margin-top:-30px; 
+  background:#29170d;
+  opacity: .8;  
+  filter:alpha(opacity=80); /* For IE8 and earlier */
+}
 .model-pro img.sample {width:100%; height:90%}
 .product_show_pics {width:70%; float: left;
 position: absolute;
