@@ -1,4 +1,4 @@
-.info-holder
+.fa
   -if is_admin?
     .admin-link.fa
       %p= 'منوی صفحه'
@@ -8,8 +8,8 @@
       = link_to 'حذف', @picture, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
       \|
       = link_to 'بازگشت', products_path
-  .col-sm-8
-  %p
-    %b عنوان
-    = @picture.title
-  = image_tag @picture.image(:large)
+  .col-sm-8.show-picture
+    %p
+      %b عنوان
+      = @picture.title
+    = image_tag @picture.image(:large)

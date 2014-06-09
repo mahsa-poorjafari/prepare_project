@@ -1,5 +1,7 @@
 PrepareProject::Application.routes.draw do  
 
+  resources :galleries
+
   resources :pictures
 
   resources :send_links

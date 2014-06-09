@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Category:
+  = @gallery.category_id
+
+= link_to 'Edit', edit_gallery_path(@gallery)
+\|
+= link_to 'Back', galleries_path
