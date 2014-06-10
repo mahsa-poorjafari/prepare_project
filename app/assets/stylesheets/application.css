@@ -62,14 +62,13 @@ margin-left: 4%;
 min-height: 400px;
 max-height: 400px;
 padding-top: 5%;
-padding-right:10px;
-padding-left:10px;
+
 margin-top: 3%;
 opacity: .8;
 filter: alpha(opacity=80);
 position: absolute;
 width: 19%;
-margin-right: 5.5%;
+margin-right: 5%;
 margin-left: 5.5%;
 
 }
@@ -234,7 +233,7 @@ text-align: center;
 margin-top: 2.2%;
 z-index: 20;
 position: fixed;}
-.title-cat {font-size:25px;}
+.title-cat {font-size:1.5em;}
 
 .slider  .cycle-overlay {
   text-align:center; 
@@ -362,16 +361,19 @@ table.table tr.visited {font-weight:bold}
 .admin_menu:hover {height:200px; margin-top:-100px; cursor:pointer;}  
 .admin_menu h3 {text-align:center}
 .go-up {
-  margin-top:-27%; z-index:10; width:90%; 
+  margin-top:-20%; z-index:10; width:70%; 
   text-align:center; 
   color:#401805; 
-  font-weight:bold; 
+  
   margin-bottom:75px;
   }
-.cat-link { bottom:0}
-.cat-link p{
+.cat-link { bottom:0; width:100%;
+padding:10px
+}
+.cat-link div{
   min-height:170px; 
   max-height:170px; 
+  width:100%;
   overflow-y:scroll}
 .robbin { margin-top:-32px}
 .robbin .model-title{ margin-top:-25px; color:#401805}
