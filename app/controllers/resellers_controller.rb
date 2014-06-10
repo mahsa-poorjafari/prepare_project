@@ -1,6 +1,6 @@
 class ResellersController < ApplicationController
   before_action :set_reseller, only: [:show, :edit, :update, :destroy]
-
+  before_filter :check_autentication, only: [:index, :new,:edit, :update, :destroy]
   # GET /resellers
   # GET /resellers.json
   def index
