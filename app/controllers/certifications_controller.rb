@@ -1,7 +1,7 @@
 # encoding: UTF-8
 class CertificationsController < ApplicationController
   before_action :set_certification, only: [:show, :edit, :update, :destroy]
-
+  before_filter :check_autentication
   # GET /certifications
   # GET /certifications.json
   def index
