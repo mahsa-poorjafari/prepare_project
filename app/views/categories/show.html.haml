@@ -57,7 +57,7 @@
     .row#pictures
       .all-models.details.col-sm-8
         - @category.products.each_slice(4) do |products|
-          .row{:style => "margin-left:5%"}
+          #product-holder{:style => "margin-left:5%"}
             -products.each do |product|                 
               .product-pics                                                 
                 = link_to  product, :category_id => @category.id do
@@ -75,7 +75,7 @@
         .next
           = image_tag 'go-down.png'    
       .clr-float
-    .row#certification
+    %div#certification
       = link_to "", "#",:name => "cer"
       .all-models.details.col-sm-8      
         .box-title{:class => I18n.locale, :style => "color:#1c0f09"}= t('certificate')
@@ -127,11 +127,11 @@
   });
 
   $('#category-details #pictures .control .next').click(function(){
-    $('#category-details #pictures .product-pics').animate({marginTop:"+=200px"});
+    $('#category-details #pictures .all-models #product-holder').animate({marginTop:"+=200px"});
   });
   
   $('#category-details #pictures .control .prev').click(function(){
-    $('#category-details #pictures .product-pics').animate({marginTop:"-=200px"});
+    $('#category-details #pictures .all-models #product-holder').animate({marginTop:"-=200px"});
   });
 
   $('#category-details #certification .control .next').click(function(){
