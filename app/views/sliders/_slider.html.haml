@@ -4,7 +4,7 @@
       - @sliders = Slider.all
       - @sliders.each do |slide|
         .item-row.item
-          = link_to (image_tag slide.image(:gallery_size), :id =>  slide.id ), slide, :class => "slide"
+          = image_tag slide.image(:gallery_size), :id =>  slide.id , :class => "slide"
           
               
     -if @sliders.count > 1          

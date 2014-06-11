@@ -386,8 +386,15 @@ img.coming-soon {z-index:20;  margin-right: -85px;
 margin-top: -237px;}
 b.coming-soon { opacity:.8;  filter:alpha(opacity=80); /* For IE8 and earlier */ position:fixed; z-index:10; text-align:center} 
 .box-title {font-size:25px;}
-.col-sm-5 fieldset legend{color:#350A00}
-.col-sm-5 form .form-group label.control-label{color:#350A00}
+.col-sm-4 fieldset legend span.contact{color:#361B02; text-shadow:2px 2px #FFFF00 ;}
+.col-sm-4 form .form-group label.control-label{color:#FFFF00}
+.col-sm-4 form .send-coment{background:#401A00;
+  opacity:.8;  filter:alpha(opacity=80);/* For IE8 and earlier */
+  color:#F6F68F;
+  font-size:11;
+  text-align:center;
+}
+
 .cat-group {width:15%; float:left; margin-left:37px}
 .cat-group.active, .cat-group:hover { 
   cursor:pointer
@@ -485,3 +492,4 @@ margin-top:4%
 }
 .catalog {overflow-y:scroll; height:350px;}
 .show-picture {padding:5%}
+.text-shadow {text-shadow:2px 2px #4D2907 ;}
