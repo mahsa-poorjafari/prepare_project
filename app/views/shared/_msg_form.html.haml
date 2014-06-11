@@ -1,7 +1,7 @@
-.col-sm-5{:style => "padding:20px"}
+.col-sm-4{:style => "padding:20px"}
   %fieldset
     %legend
-      %span= t('msg.contact-title')
+      %span.contact= t('msg.contact-title')
          
       
   = form_for @message ||= Message.new, :html => {:class => "contact"} do |f|
@@ -13,30 +13,44 @@
     
         
     -if flash[:notice]        
-      .alert.alert-success= notice
+      .send-coment= notice
         
     
     .form-group
-      = f.label t('msg.contact-name'),  :class => "control-label"    
+      = f.label t('msg.contact-name'),  :class => "control-label text-shadow"    
       %span.Necessary= t('msg.Required')
-      = f.text_field :name, :class => "form-control"  
+      = f.text_field :name, :class => "form-control", :style => "width:100%"
       
       
     .form-group
-      = f.label t('msg.contact-email'),  :class => "control-label"
+      = f.label t('msg.contact-email'),  :class => "control-label text-shadow"
       %span.Necessary= t('msg.Required')
-      = f.text_field :email, :class => "form-control"          
+      = f.text_field :email, :class => "form-control", :style => "width:100%"
       
     .form-group
-      = f.label t('msg.contact-phone'),  :class => "control-label"
-      = f.text_field :phone, :class => "form-control"
-      
-    .form-group
-      = f.label t('msg.contact-msg'),  :class => "control-label"
+      = f.label t('msg.contact-phone'),  :class => "control-label text-shadow"
       %span.Necessary=  t('msg.Required')
-      = f.text_area :text, :class => "form-control"
+      = f.text_field :phone, :class => "form-control", :style => "width:100%"
+      
+    .form-group
+      = f.label t('msg.contact-msg'),  :class => "control-label text-shadow"
+      %span.Necessary=  t('msg.Required')
+      = f.text_area :text, :class => "form-control" , :style => "resize: none; width:100%", rows: 4
       
            
     .form-group
       = f.submit t('msg.contact-btn'), :class=> "btn btn-default"
 %br
+
+
+:javascript 
+  $(function() { 
+    $(':submit').click(function(e) {
+      $(':text, textarea').each(function() {
+        if ($(this).val().length == 0) {
+          $(this).css('border', '2px solid red');
+          e.preventDefault();
+        }
+      });
+    });
+  });
