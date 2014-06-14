@@ -228,6 +228,7 @@ span.Necessary {color:#FF0000; font-weight:bold}
 
 .pro_wrapper .line b {color:#27160e; margin-top:10px; }
 .line {width: 22%;
+height:50px;
 right:4%;
 text-align: center;
 margin-top: 2.2%;
@@ -368,13 +369,12 @@ table.table tr.visited {font-weight:bold}
   margin-bottom:75px;
   }
 .cat-link { bottom:0; width:100%;
-padding:10px
+padding:10px;
+overflow-y:scroll;
+height:200px;
+
 }
-.cat-link div{
-  min-height:170px; 
-  max-height:170px; 
-  width:100%;
-  overflow-y:scroll}
+
 .robbin { margin-top:-32px}
 .robbin .model-title{ margin-top:-25px; color:#401805}
 ul#banner { position: fixed; line-height: 45px; margin: 0 30px; padding: 0;  }

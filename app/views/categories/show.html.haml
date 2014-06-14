@@ -8,8 +8,7 @@
       = link_to 'حذف', @category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
       \|
       = link_to 'بازگشت', categories_path
-  = image_tag 'slide12.jpg', :class => "bg"
-  %p#notice= notice  
+  = image_tag 'slide12.jpg', :class => "bg"  
   
   .category-info.general
     %div
@@ -18,27 +17,27 @@
         .go-up.set-center.title-cat= @category.title
       .category-link 
         .cat-link
-          %p= @category.description          
-          %ul#banner          
-            - if @category.products.present?
-              %li
-                = link_to t('model'), '#pictures', :id => "show-model"
-            
-            - if @category.maintaion.present?
-              %li
-                = link_to t('maintain'), '#maintaion', :id => "show-main"
-            
-            - if @category.installation.present?
-              %li
-                = link_to t('technical'), '#installation', :id => "show-inst"
-            
-            - if @category.warranty.present?
-              %li
-                = link_to t('warranty'), '#installation', :id => "show-war"
-            
-            - if @category.certifications.present?
-              %li
-                = link_to t('certificate'), '#cer', :id => "show-cer"          
+          =raw (@category.description)
+        %ul#banner          
+          - if @category.products.present?
+            %li
+              = link_to t('model'), '#pictures', :id => "show-model"
+          
+          - if @category.maintaion.present?
+            %li
+              = link_to t('maintain'), '#maintaion', :id => "show-main"
+          
+          - if @category.installation.present?
+            %li
+              = link_to t('technical'), '#installation', :id => "show-inst"
+          
+          - if @category.warranty.present?
+            %li
+              = link_to t('warranty'), '#installation', :id => "show-war"
+          
+          - if @category.certifications.present?
+            %li
+              = link_to t('certificate'), '#cer', :id => "show-cer"          
             
          
   #category-details    
