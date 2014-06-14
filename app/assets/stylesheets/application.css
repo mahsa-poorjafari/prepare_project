@@ -361,7 +361,7 @@ table.table tr.visited {font-weight:bold}
 .admin_menu:hover {height:200px; margin-top:-100px; cursor:pointer;}  
 .admin_menu h3 {text-align:center}
 .go-up {
-  margin-top:-20%; z-index:10; width:70%; 
+  margin-top:-25%; z-index:10; width:70%; 
   text-align:center; 
   color:#401805; 
   
@@ -477,7 +477,7 @@ a.show-gallery img {
   opacity: .8;  
   filter:alpha(opacity=80); /* For IE8 and earlier */
  }
-.model-pro .pic-title {color:#FBFB60; height:30px; overflow:hidden}
+.model-pro .pic-title {color:#FBFB60; height:38px; overflow:hidden}
 .model-pro .go-download {margin-top:-30px; 
   background:#29170d;
   opacity: .8;  
