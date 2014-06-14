@@ -16,17 +16,19 @@
         = f.text_field :title_en, :class => "form-control"    
     .col-sm-6
       .form-group        
-        = f.label " تصویر نمونه:", :class => "col-sm-3 control-label"      
+        = f.label " تصویر نمونه:", :class => "col-sm-5 control-label"      
         = f.file_field :image     
         -if @category.image.present?              
           = image_tag @category.image(:small) 
     .clr-float    
-    .form-group.col-sm-6
-      = f.label "توضیحات به فارسی", :class => "col-sm-5 control-label"      
-      = f.text_area :description_fa, :class => "form-control"
-    .form-group.col-sm-6
-      = f.label "توضیحات به انگلیسی", :class => "col-sm-5 control-label"      
-      = f.text_area :description_en, :class => "form-control"       
+    .form-group
+      .col-sm-6.editor.fa
+        = f.label "توضیحات به فارسی", :class => "control-label"      
+        = f.text_area :description_fa, :class => "form-control ckeditor"
+    .form-group
+      .col-sm-6.editor.fa
+        = f.label "توضیحات به انگلیسی", :class => "control-label"      
+        = f.text_area :description_en, :class => "form-control ckeditor"       
   
     
     .clr-float
@@ -82,8 +84,8 @@
         = f.fields_for :certifications do |certificate|  
           = render "certifications/form", :f => certificate
       
-  .col-sm-4{:style => "position:fixed; left:80%; top:65%"}
-    = f.submit 'ثبت', :class=> "btn btn-default"
+    %div{:style => "position:fixed; left:80%; top:65%"}
+      = f.submit 'ثبت', :class=> "btn btn-default"
   
 
 
