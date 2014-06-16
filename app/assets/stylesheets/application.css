@@ -300,6 +300,8 @@ table.table tr.visited {font-weight:bold}
   float:right; 
   direction:rtl; 
   text-align:right;
+  position:fixed;
+  right:0;
   font-family:'open_sansregular'; 
   min-width:20%; 
   height:100%}
