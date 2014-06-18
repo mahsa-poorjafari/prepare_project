@@ -29,7 +29,16 @@
             %li= link_to t('maintain'), category#maintaion
           - if category.warranty.present?
             %li= link_to t('warranty'), category#warranty
+          - if category.certifications.present?
+            %li= link_to t('certificate'), category#cer
 
       
         
-      
+:javascript
+  $(".box-3").mouseOver(function(){
+    $("div").animate({
+      left:'250px',
+      height:'+=150px',
+      width:'+=150px'
+    });
+  }); 
