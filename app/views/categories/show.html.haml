@@ -73,7 +73,7 @@
     %div#certification
       = link_to "", "#",:name => "cer"
       .all-models.details.col-sm-8      
-        .box-title{:class => I18n.locale, :style => "color:#1c0f09; margin-top:-5%"}= t('certificate')
+        .box-title{:class => I18n.locale, :style => "color:#FFFF58; margin-top:-5%; text-shadow:2px 2px #390E00 "}= t('certificate')
         #show-all-certificate        
           - @category.certifications.each do |certification|      
             .col-sm-3.box-3.pro-cer{:style => "text-align:center"}

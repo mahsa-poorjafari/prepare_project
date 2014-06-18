@@ -34,11 +34,12 @@
       %header
         #header-top        
         #logo-menu
+          #quick-bar
+            %span                 
+              = link_to ( image_tag 'GB.png'), locale: :en                
+              = link_to ( image_tag 'IR.png'), locale: :fa
           .logo-style  
-            #quick-bar
-              %span                 
-                = link_to ( image_tag 'GB.png'), locale: :en                
-                = link_to ( image_tag 'IR.png'), locale: :fa
+            
             #logo              
               = image_tag "logo.png"                                  
             .title-site              
