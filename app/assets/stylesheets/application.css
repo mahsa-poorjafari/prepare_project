@@ -244,7 +244,7 @@ position: fixed;}
   bottom:65px}
 .line img {width:86%; margin-right:7px;}
 .row .cycle-overlay {margin-bottom:2px}
-#category-details {max-width:80%; min-width:80%;
+#category-details {max-width:75%; min-width:75%;
  float:right; position: fixed;
  padding:10px;
 margin-right: 20%;}
