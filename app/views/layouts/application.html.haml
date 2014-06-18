@@ -28,13 +28,17 @@
       else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
       document.oncontextmenu=new Function("return false")
       // -->
-        
+      
   %body     
     .overlay
       %header
         #header-top        
         #logo-menu
-          .logo-style            
+          .logo-style  
+            #quick-bar
+              %span                 
+                = link_to ( image_tag 'GB.png'), locale: :en                
+                = link_to ( image_tag 'IR.png'), locale: :fa
             #logo              
               = image_tag "logo.png"                                  
             .title-site              
