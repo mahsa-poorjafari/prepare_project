@@ -146,7 +146,7 @@ span.Necessary {color:#FF0000; font-weight:bold}
   filter:alpha(opacity=80); /* For IE8 and earlier */
   min-height:350px; 
   max-height:350px; 
-  margin:30px;
+  margin:2%;
   float:right; 
   width:28%; 
   text-align:center
