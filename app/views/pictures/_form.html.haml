@@ -10,9 +10,11 @@
       = f.select(:product_id, Product.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' مدل را انتخاب کنید.')        
       
     .form-group
+      - if @picture.image.present?
+        = image_tag @picture.image(:small)
       = f.label "انتخاب تصویر", :class => "col-sm-3 control-label"   
       = f.file_field :image
-      
+  .col-sm-5
     .form-group
       = f.label "عنوان عکس به فارسی", :class => "col-sm-3 control-label"   
       = f.text_field :title_fa, :rows => 2, :class => "form-control"
