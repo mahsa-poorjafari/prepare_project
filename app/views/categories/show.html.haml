@@ -68,11 +68,7 @@
                   = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right:-62%; margin-top:-118%'  
                 
       .clr-float
-      .control              
-        .prev
-          = image_tag 'go-up.png'
-        .next
-          = image_tag 'go-down.png'    
+         
       .clr-float
     %div#certification
       = link_to "", "#",:name => "cer"
@@ -84,11 +80,7 @@
               =link_to (image_tag certification.image(:small), :style => "height:50%"), certification.image(:original), :target => "_blank"
               .cer-title= certification.title
       
-      .control            
-        .prev
-          = image_tag 'go-up.png'
-        .next
-          = image_tag 'go-down.png'       
+      
       .clr-float
       
 :javascript
@@ -125,18 +117,6 @@
     $('#warranty').fadeIn(1000);    
   });
 
-  $('#category-details #pictures .control .next').click(function(){
-    $('#category-details #pictures .all-models #product-holder').animate({marginTop:"+=200px"});
-  });
   
-  $('#category-details #pictures .control .prev').click(function(){
-    $('#category-details #pictures .all-models #product-holder').animate({marginTop:"-=200px"});
-  });
 
-  $('#category-details #certification .control .next').click(function(){
-    $('#category-details #certification #show-all-certificate').animate({marginTop:"+=200px"});
-  });
   
-  $('#category-details #certification .control .prev').click(function(){
-    $('#category-details #certification #show-all-certificate').animate({marginTop:"-=200px"});
-  });

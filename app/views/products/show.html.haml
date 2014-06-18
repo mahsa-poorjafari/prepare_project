@@ -48,21 +48,9 @@
           = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right:-52%; margin-top:-132%'
     
   
-.control{:style => "margin-top:5%"}             
-  .prev
-    = image_tag 'go-up.png'
-  .next
-    = image_tag 'go-down.png' 
-  
+
 .clr-float
   
-:javascript
-  $('.control .next').click(function(){
-      $('.product-details').animate({marginTop:"+=200px"});
-    });
-      
-  $('.control .prev').click(function(){
-    $('.product-details').animate({marginTop:"-=200px"});
-  });
+
   
   
