@@ -267,13 +267,17 @@ filter:alpha(opacity=80); /* For IE8 and earlier */}
 #category-details .all-models {
   display:block; 
    overflow:hidden; padding-top:50px}
-.control{z-index:100;  position:fixed; width:50px; height:100px; margin-top:-20%; text-align:left; left:20px}
+.control{z-index:100;  position:fixed;
+  width:50px; height:100px; 
+  top:40%;
+  text-align:left; left:20px}
 .next, .prev{
   width:100%; 
   opacity: .8;
   filter:alpha(opacity=80); /* For IE8 and earlier */
 
 }
+#category-details  p {text-align:justify}
 .control .next:hover, .prev:hover{
 cursor:pointer;
 opacity:1;
@@ -496,3 +500,4 @@ margin-top:4%
 .catalog {overflow-y:scroll; height:350px;}
 .show-picture {padding:5%}
 .text-shadow {text-shadow:2px 2px #4D2907 ;}
+.pro-cer {height:90%}

@@ -77,11 +77,11 @@
     %div#certification
       = link_to "", "#",:name => "cer"
       .all-models.details.col-sm-8      
-        .box-title{:class => I18n.locale, :style => "color:#1c0f09"}= t('certificate')
-        %div        
+        .box-title{:class => I18n.locale, :style => "color:#1c0f09; margin-top:-5%"}= t('certificate')
+        #show-all-certificate        
           - @category.certifications.each do |certification|      
             .col-sm-3.box-3.pro-cer{:style => "text-align:center"}
-              =link_to (image_tag certification.image(:small)), certification.image(:original), :data => { :colorbox => true }
+              =link_to (image_tag certification.image(:small), :style => "height:50%"), certification.image(:original), :target => "_blank"
               .cer-title= certification.title
       
       .control            
@@ -134,9 +134,9 @@
   });
 
   $('#category-details #certification .control .next').click(function(){
-    $('#category-details #certification .pro-cer').animate({marginTop:"+=200px"});
+    $('#category-details #certification #show-all-certificate').animate({marginTop:"+=200px"});
   });
   
   $('#category-details #certification .control .prev').click(function(){
-    $('#category-details #certification .pro-cer').animate({marginTop:"-=200px"});
+    $('#category-details #certification #show-all-certificate').animate({marginTop:"-=200px"});
   });
