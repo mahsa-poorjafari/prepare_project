@@ -80,7 +80,7 @@
         %h3.fa= 'گواهینامه'
         = f.link_to_add content_tag(:span, "افزودن گواهینامه", :class => "btn btn-default "), :certifications, :id => "add_new_picture"    
       .clr-float
-      .form-group         
+      .form-group
         = f.fields_for :certifications do |certificate|  
           = render "certifications/form", :f => certificate
       
