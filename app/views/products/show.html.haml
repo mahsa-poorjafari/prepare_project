@@ -19,7 +19,7 @@
       .go-up.set-center.title-cat= @product.title
     .category-link 
       %b= @pro_category
-      .cat-link
+      .cat-link{:style => "height:100%"}
         - if @product.description.present?                 
           %div=raw @product.description          
  
