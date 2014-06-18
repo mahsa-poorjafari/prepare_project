@@ -39,4 +39,8 @@
     %hr
     .form-group.pull-left
       = f.submit 'ثبت', :class=> "btn btn-default"
-
+:javascript
+  $(document).ready(function(){
+      $('.ckeditor').ckeditor();
+  })
+  

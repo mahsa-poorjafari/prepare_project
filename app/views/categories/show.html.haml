@@ -40,7 +40,7 @@
               = link_to t('certificate'), '#cer', :id => "show-cer"          
             
          
-  #category-details    
+  #category-details{:style => "margin-right:25%"}    
     .col-sm-8.details.bg-opacity#installation
       .box-title{:class => I18n.locale}= t('technical')
       %p=raw @category.installation
