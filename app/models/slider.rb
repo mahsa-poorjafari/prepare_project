@@ -1,7 +1,7 @@
 # encoding: UTF-8
 class Slider < ActiveRecord::Base
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
-  has_attached_file :image, :styles => { :small => "150x150",
+  has_attached_file :image, :styles => { :large => "420x160",
                                         :gallery_size => {:geometry => "720x360^", :processors => [:jcropper]}}
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
   def cropping?

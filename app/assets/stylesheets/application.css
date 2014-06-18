@@ -358,7 +358,7 @@ table.table tr.visited {font-weight:bold}
 #content form.new_category {height:400px}
 .edi-slider-holder {position:absolute; width:100%; height:100%; margin-top:20px}
 .show-slider {width:100%; height:480px}
-.index-slider {width:100%; height:80%}
+.index-slider {width:100%; height:80%; overflow-y:scroll}
 .admin_menu {min-width:20%; height:50px;  -webkit-transition:all 1s; /* For Safari 3.1 to 6.0 */
   transition:all 1s; overflow:hidden; color:#DEFF00; 
   background:#29170d;

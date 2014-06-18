@@ -5,7 +5,13 @@
     = link_to content_tag("span", "عکس جدید"), new_slider_path
 .slider.fa
   .index-slider.set-center 
-    = render 'slider'            
+    - @sliders.each do |slide|
+      .box-3
+        %div
+          = link_to content_tag("span", "ویرایش"), edit_slider_path(slide)          
+          \|        
+          = link_to 'حذف', slide, :method => :delete, :data => { confirm: 'آیا میخواهید این  تصویر را حذف کنید?'} 
+        = image_tag slide.image(:large)
     
       
       
