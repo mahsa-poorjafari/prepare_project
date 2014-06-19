@@ -55,18 +55,69 @@
     
     .row#pictures
       .all-models.details.col-sm-8
-        - @category.products.each_slice(4) do |products|
-          #product-holder{:style => "margin-left:5%"}
-            -products.each do |product|                 
-              .product-pics                                                 
-                = link_to  product, :category_id => @category.id do
-                  .title-product
-                    = product.title
-                  .img-box
-                    = image_tag product.image(:medium), :class => "sample"
+        - if @category.sub_categories.present?
+          - @category.sub_categories.each do |sub_category|            
+          
+            .product-pics#gold                              
+              - if is_admin?  
+                %div.admin-link-on-box.set-center
+                  = link_to 'ویرایش', edit_sub_category_path(sub_category)    
+                  \|
+                  = link_to 'حذف', sub_category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
+              .title-product
+                = sub_category.title
+              .img-box
+                = image_tag sub_category.image(:medium), :class => "sample"
+              - if sub_category.comming_soon
+                = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right: -61%;margin-top: -123%;'  
+          
+            
+            - sub_category.products.each_slice(4) do |products|                            
+              %div.sub-category-title
+                = sub_category.title
+                
+              - products.each do |product|                                                 
+                .product-pics#sub_category                          
+                  - if is_admin?
+                    %div.admin-link-on-box.set-center                    
+                      = link_to 'ویرایش', edit_product_path(product)    
+                      \|
+                      = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
+                  = link_to  product, :category_id => @category.id do  
+                    .title-product
+                      = product.title
+                    .img-box
+                      = image_tag product.image(:medium), :class => "sample"
                 - if product.coming_soon
                   = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right:-62%; margin-top:-118%'  
+          .sub-cat-link
+            - @category.sub_categories.each do |sub_category|               
+              .sub-category-product-pics
+                .title-product
+                  = sub_category.title
+                .img-box
+                  = image_tag sub_category.image(:small), :class => "sample"
                 
+              
+                
+        - else
+          - @category.products.each_slice(4) do |products|
+            #product-holder{:style => "margin-left:5%"}
+              -products.each do |product|                 
+                .product-pics                                                 
+                  = link_to  product, :category_id => @category.id do                    
+                    - if is_admin?
+                      %div.admin-link-on-box.set-center
+                        = link_to 'ویرایش', edit_product_path(product)    
+                        \|
+                        = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
+                    .title-product
+                      = product.title
+                    .img-box
+                      = image_tag product.image(:medium), :class => "sample"
+                  - if product.coming_soon
+                    = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right:-62%; margin-top:-118%'  
+                  
       .clr-float
          
       .clr-float
@@ -117,6 +168,12 @@
     $('#warranty').fadeIn(1000);    
   });
 
-  
+  $('.product-pics#gold').click(function(){
+    $(this).hide(50);
+    $('.product-pics#sub_category').show(500);
+    $('div.sub-category-title').show(500);
+    $('.sub-cat-link').show(500);    
+    $(".product-pics#gold").not($(this)).hide();
+  });
 
   

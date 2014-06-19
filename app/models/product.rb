@@ -8,6 +8,7 @@ class Product < ActiveRecord::Base
   
   
   belongs_to :category
+  belongs_to :sub_category
   has_many :pictures
   accepts_nested_attributes_for :pictures, :allow_destroy => true
   validates :title, :title_fa, :presence => {:message => 'عنوان محصول را وارد کنید.'}

@@ -1,0 +1,26 @@
+= form_for @sub_category do |f|
+  - if @sub_category.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@sub_category.errors.count, "error")} prohibited this sub_category from being saved:"
+      %ul
+        - @sub_category.errors.full_messages.each do |msg|
+          %li= msg
+  .col-sm-6.set-center
+    .form-group
+      = f.label 'عنوان به انگلیسی', :class => "col-sm-3 control-label"   
+      = f.text_field :title_en, :class => "form-control"
+    .form-group
+      = f.label 'عنوان به فارسی:', :class => "col-sm-3 control-label"   
+      = f.text_field :title_fa, :class => "form-control"
+    .form-group
+      = f.label ' گروه را انتخاب کنید', :class => "col-sm-3 control-label"   
+      = f.select(:category_id, Category.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' گروه را انتخاب کنید.')        
+    .form-group 
+      = f.label "تصویر نمونه:", :class => "control-label"      
+      = f.file_field :image
+    .form-group 
+      = f.label "بزودی" , :class => "col-sm-4 control-label"      
+      = f.check_box :comming_soon
+   
+    .form-group
+      = f.submit 'ثبت', :class=> "btn btn-default"

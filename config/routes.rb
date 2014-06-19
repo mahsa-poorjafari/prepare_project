@@ -1,6 +1,6 @@
 PrepareProject::Application.routes.draw do  
 
-  resources :galleries
+  
 
   resources :pictures
 
@@ -20,7 +20,9 @@ scope "(:locale)", :locale => /en|fa/ do
       get :download
     end
   end
-  
+  resources :sub_categories
+
+  resources :galleries
   
   resources :certifications
   resources :resellers

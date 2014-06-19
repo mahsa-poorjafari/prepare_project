@@ -4,7 +4,8 @@
     %p= 'منوی صفحه'
     %hr
     = link_to 'تعریف محصول جدید', new_category_path
-= image_tag 'slide4.jpg', :class => "bg"
+
+= image_tag 'vintag-bg.png', :class => "bg", :style => "opacity:.8"
 .show-pro.set-center 
   - @categories.each do |category|
     .box-3.set-center{align: "center", :class => I18n.locale}                
@@ -34,11 +35,3 @@
 
       
         
-:javascript
-  $(".box-3").mouseOver(function(){
-    $("div").animate({
-      left:'250px',
-      height:'+=150px',
-      width:'+=150px'
-    });
-  }); 
