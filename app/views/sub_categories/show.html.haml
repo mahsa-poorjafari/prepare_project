@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title en:
+  = @sub_category.title_en
+%p
+  %b Title fa:
+  = @sub_category.title_fa
+%p
+  %b Category:
+  = @sub_category.category_id
+
+= link_to 'Edit', edit_sub_category_path(@sub_category)
+\|
+= link_to 'Back', sub_categories_path
