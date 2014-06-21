@@ -28,7 +28,7 @@
     - @product.pictures.order('title_en ASC').each do |picture|
       .model-pro   
         .pic-title= picture.title
-        =link_to (image_tag  picture.image(:small), :class => "sample"), picture.image(:large), :data => { :colorbox => true, :title => true }, :class => "show-product", :title =>  picture.title
+        =link_to (image_tag  picture.image(:small), :class => "sample"), picture.image(:large), :data => { :colorbox => true }, :class => "show-product", :title =>  picture.title
         - if  picture.download
           .go-download
             = link_to  download_product_path(:picture_id =>  picture.id) do
@@ -42,12 +42,15 @@
         
           
         - if picture.coming_soon
-          = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right:-52%; margin-top:-132%'
+          = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right: -52%;margin-top: -123%;'
     
   
 
 .clr-float
-  
 
+:javascript  
+  $(".show-product").click(function(){
+    $("this").colorbox({title: 'hello word'});    
+  });
   
 

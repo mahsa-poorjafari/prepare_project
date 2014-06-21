@@ -16,7 +16,7 @@
       - category.galleries.each do |gallery|              
         .pro_wrapper{align: "center", :class => I18n.locale}                          
           .pro-info.set-center  
-            =link_to (image_tag  gallery.image(:medium)), gallery.image(:large), :data => { :colorbox => true },  :class => "show-gallery"            
+            =link_to (image_tag  gallery.image(:medium) ), gallery.image(:large),  :data => { :colorbox => true },  :class => "show-gallery"                        
             %div
               - if is_admin?
                 = link_to 'ویرایش', edit_gallery_path(gallery)
@@ -42,7 +42,10 @@
       
       
     });
+  
   });
+  $('.show-gallery').colorbox({title: 'title'});
+    
 
 
  

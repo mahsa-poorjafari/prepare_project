@@ -69,35 +69,37 @@
               .img-box
                 = image_tag sub_category.image(:medium), :class => "sample"
               - if sub_category.comming_soon
-                = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right: -61%;margin-top: -123%;'  
+                = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right: -61%;margin-top: -123%; display:none'  
           
             
             - sub_category.products.each_slice(4) do |products|                            
               %div.sub-category-title
                 = sub_category.title
-                
-              - products.each do |product|                                                 
-                .product-pics#sub_category                          
-                  - if is_admin?
-                    %div.admin-link-on-box.set-center                    
-                      = link_to 'ویرایش', edit_product_path(product)    
-                      \|
-                      = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
-                  = link_to  product, :category_id => @category.id do  
-                    .title-product
-                      = product.title
-                    .img-box
-                      = image_tag product.image(:medium), :class => "sample"
-                - if product.coming_soon
-                  = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right:-62%; margin-top:-118%'  
-          .sub-cat-link
+              .col-sm-8
+                - products.each do |product|                                                 
+                  .product-pics#sub_category{:style => "min-width: 40%;max-width:40%"}                          
+                    - if is_admin?
+                      %div.admin-link-on-box.set-center                    
+                        = link_to 'ویرایش', edit_product_path(product)    
+                        \|
+                        = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
+                    = link_to  product, :category_id => @category.id do  
+                      .title-product
+                        = product.title
+                      .img-box
+                        = image_tag product.image(:medium), :class => "sample"
+                    - if product.coming_soon
+                      = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right: -56%;margin-top: -136%;'  
+                    
+          .sub-cat-link.col-sm-3
             - @category.sub_categories.each do |sub_category|               
               .sub-category-product-pics
                 .title-product
                   = sub_category.title
                 .img-box
                   = image_tag sub_category.image(:small), :class => "sample"
-                
+                - if sub_category.comming_soon
+                  = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right: -21%;margin-top: -108%;width: 77%; display:none'  
               
                 
         - else
@@ -116,7 +118,7 @@
                     .img-box
                       = image_tag product.image(:medium), :class => "sample"
                   - if product.coming_soon
-                    = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right:-62%; margin-top:-118%'  
+                    = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right:-62%; margin-top:-118%; display:none'  
                   
       .clr-float
          
@@ -147,7 +149,7 @@
   });
   $('#show-model').click(function(){   
     $('#category-details').children().hide(); 
-    $('#pictures').show(1000);
+    $('#pictures').show(1000);    
     
   });
 
@@ -177,3 +179,4 @@
   });
 
   
+  $('.coming-soon').fadeIn(1000);

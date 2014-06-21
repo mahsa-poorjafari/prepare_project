@@ -185,7 +185,7 @@ span.Necessary {color:#FF0000; font-weight:bold}
 }
 
 .box-4 img {width:100%}
-.box-3 img {width:95%;
+.box-3 img.sample-img {width:95%;
   -webkit-transition: all 1s ease;
      -moz-transition: all 1s ease;
        -o-transition: all 1s ease;
@@ -212,7 +212,7 @@ span.Necessary {color:#FF0000; font-weight:bold}
 .show-pro .box-menu a {color:#E5EC6F; }
 .show-pro .box-menu a:hover {color:#DEFF00}
 .show-pro .box-3:hover .box-menu{ width:100%}
-.show-pro .box-3:hover img{ 
+.show-pro .box-3:hover img.sample-img{ 
 width:120%;
 height:120%;
 transform:rotate(9deg);
