@@ -101,8 +101,9 @@ margin-left: 5.5%;
   overflow:hidden;
 }
 .sub-category-product-pics img{ width:90%; height:90%} 
-.product-pics#sub_category {display:none} 
+.product-pics#sub_category {display:none; overflow:hidden} 
 .product-pics#sub_category .img-box img.sample-sub-category{width:100%; height:100%} 
+.product-pics#sub_category .title-sub-category{font-size:12px} 
 .deactive {width:50px; height:50px; opacity:.5; margin-left:-50%}
 div.sub-category-title {display:none; width:50%;  text-shadow:2px 2px #3C0101 ; color:#FFFF00; font-size:20px; }
 .product-pics .title-product {font-size:16px}
