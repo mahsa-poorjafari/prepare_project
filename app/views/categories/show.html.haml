@@ -77,7 +77,7 @@
                 = sub_category.title
               .col-sm-8
                 - products.each do |product|                                                 
-                  .product-pics#sub_category{:style => "min-width: 40%;max-width:40%"}                          
+                  .product-pics#sub_category{:style => " min-height:200px; max-height:200px"}                          
                     - if is_admin?
                       %div.admin-link-on-box.set-center                    
                         = link_to 'ویرایش', edit_product_path(product)    
@@ -87,9 +87,9 @@
                       .title-product
                         = product.title
                       .img-box
-                        = image_tag product.image(:medium), :class => "sample"
+                        = image_tag product.image(:medium), :class => "sample-sub-category"
                     - if product.coming_soon
-                      = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right: -56%;margin-top: -136%;'  
+                      = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right: -36%;margin-top: -198%;'  
                     
           .sub-cat-link.col-sm-3
             - @category.sub_categories.each do |sub_category|               
