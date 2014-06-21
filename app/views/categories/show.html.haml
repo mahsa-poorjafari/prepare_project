@@ -84,7 +84,7 @@
                         \|
                         = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
                     = link_to  product, :category_id => @category.id do  
-                      .title-product
+                      .title-sub-category
                         = product.title
                       .img-box
                         = image_tag product.image(:medium), :class => "sample-sub-category"
