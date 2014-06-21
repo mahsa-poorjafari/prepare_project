@@ -5,19 +5,19 @@
     %hr
     = link_to 'تعریف محصول جدید', new_category_path
 
-= image_tag 'vintag-bg.png', :class => "bg", :style => "opacity:.8"
+= image_tag 'd.jpg', :class => "bg"
 .show-pro.set-center 
-  - @categories.each do |category|
-    .box-3.set-center{align: "center", :class => I18n.locale}                
+  - @categories.each do |category|    
+    .box-3.set-center{align: "center", :class => I18n.locale}                            
       - if is_admin?  
         .link-del
           = link_to 'ویرایش', edit_category_path(category)
           = link_to 'حذف', category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
-      = link_to category do         
-      
+      = link_to category do               
         %p= category.title 
         .category-image
-          = image_tag category.image(:small)
+          = image_tag category.image(:small), :class => "sample-img"
+    
       
       .box-menu           
         .arrow-vertical
@@ -32,6 +32,6 @@
             %li= link_to t('warranty'), category#warranty
           - if category.certifications.present?
             %li= link_to t('certificate'), category#cer
-
+    
       
         
