@@ -67,13 +67,14 @@
                   = link_to 'حذف', sub_category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
               .title-product
                 = sub_category.title
-              .cover{:style => "width:19%"}
-                = image_tag 'pointer.png'
+              
               .img-box
                 = image_tag sub_category.image(:medium), :class => "sample"
+              
               - if sub_category.comming_soon
                 = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right: -61%;margin-top: -123%; display:none'  
-          
+              .cover
+                = image_tag 'pointer.png'
             
             - sub_category.products.each_slice(4) do |products|                            
               %div.sub-category-title
@@ -88,13 +89,14 @@
                         = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
                     = link_to  product, :category_id => @category.id do  
                       .title-sub-category
-                        = product.title
-                      .cover.pointer-sub-category{:style => "width:11.6%"}
-                        = image_tag 'pointer.png'
+                        = product.title                      
                       .img-box
                         = image_tag product.image(:medium), :class => "sample-sub-category"
-                    - if product.coming_soon
-                      = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right: -36%;margin-top: -198%;'  
+                      
+                      - if product.coming_soon
+                        = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right: -36%;margin-top: -198%;'  
+                      .cover.pointer-sub-category
+                        = image_tag 'pointer.png'
                     
           .sub-cat-link.col-sm-3
             - @category.sub_categories.each do |sub_category|               
@@ -120,12 +122,14 @@
                         = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
                     .title-product
                       = product.title
-                    .cover
-                      = image_tag 'pointer.png'                      
+                    
                     .img-box
                       = image_tag product.image(:medium), :class => "sample"
-                  - if product.coming_soon
-                    = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right:-62%; margin-top:-118%; display:none'  
+                                         
+                    - if product.coming_soon
+                      = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right:-62%; margin-top:-118%; display:none'  
+                    .cover
+                      = image_tag 'pointer.png' 
                   
       .clr-float
          
