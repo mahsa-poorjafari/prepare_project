@@ -58,7 +58,8 @@
         - if @category.sub_categories.present?
           - @category.sub_categories.each do |sub_category|            
           
-            .product-pics#gold                              
+            .product-pics#gold                     
+              
               - if is_admin?  
                 %div.admin-link-on-box.set-center
                   = link_to 'ویرایش', edit_sub_category_path(sub_category)    
@@ -66,6 +67,8 @@
                   = link_to 'حذف', sub_category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
               .title-product
                 = sub_category.title
+              .cover{:style => "width:19%"}
+                = image_tag 'pointer.png'
               .img-box
                 = image_tag sub_category.image(:medium), :class => "sample"
               - if sub_category.comming_soon
@@ -86,6 +89,8 @@
                     = link_to  product, :category_id => @category.id do  
                       .title-sub-category
                         = product.title
+                      .cover.pointer-sub-category{:style => "width:11.6%"}
+                        = image_tag 'pointer.png'
                       .img-box
                         = image_tag product.image(:medium), :class => "sample-sub-category"
                     - if product.coming_soon
@@ -106,8 +111,8 @@
           - @category.products.each_slice(4) do |products|
             #product-holder{:style => "margin-left:5%"}
               -products.each do |product|                 
-                .product-pics                                                 
-                  = link_to  product, :category_id => @category.id do                    
+                .product-pics                     
+                  = link_to  product, :category_id => @category.id do                                        
                     - if is_admin?
                       %div.admin-link-on-box.set-center
                         = link_to 'ویرایش', edit_product_path(product)    
@@ -115,6 +120,8 @@
                         = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
                     .title-product
                       = product.title
+                    .cover
+                      = image_tag 'pointer.png'                      
                     .img-box
                       = image_tag product.image(:medium), :class => "sample"
                   - if product.coming_soon
@@ -180,3 +187,5 @@
 
   
   $('.coming-soon').fadeIn(1000);
+  
+  
