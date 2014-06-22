@@ -16,10 +16,10 @@
       - category.galleries.each do |gallery|              
         .pro_wrapper{align: "center", :class => I18n.locale}                          
           .pro-info.set-center
-            =link_to gallery.image(:large), :data => { :colorbox => true }, :class => "show-gallery" do
-              .cover{:style => "width: 19%;margin-top: .5%;margin-left: 1%;"}
+            =link_to gallery.image(:large), :data => { :colorbox => true }, :class => "show-gallery" do              
+              = image_tag  gallery.image(:medium), :class => "gallery-pic"
+              .cover
                 = image_tag 'zoom.png', :class => "zoom-pic"  
-            = image_tag  gallery.image(:medium), :class => "gallery-pic"
             %div
               - if is_admin?
                 = link_to 'ویرایش', edit_gallery_path(gallery)

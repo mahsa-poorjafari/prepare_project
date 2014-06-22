@@ -28,10 +28,10 @@
     - @product.pictures.order('title_en ASC').each do |picture|
       .model-pro   
         .pic-title= picture.title
-        =link_to picture.image(:large), :data => { :colorbox => true }, :class => "show-product", :title =>  picture.title do
-          .cover{:style => "width:15%; margin-top:0"}
+        =link_to picture.image(:large), :data => { :colorbox => true }, :class => "show-product", :title =>  picture.title do          
+          = image_tag  picture.image(:small), :class => "sample"
+          .cover
             = image_tag 'zoom.png', :class => "zoom-pic"
-        = image_tag  picture.image(:small), :class => "sample"
         - if  picture.download
           .go-download
             = link_to  download_product_path(:picture_id =>  picture.id) do

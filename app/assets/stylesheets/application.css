@@ -84,6 +84,7 @@ margin-left: 5.5%;
   min-height:240px;
   max-height:240px;
   background:#29170d;
+  overflow:hidden;
   opacity: .8;
   filter:alpha(opacity=80); /* For IE8 and earlier */
   
@@ -512,15 +513,14 @@ min-height:90%;
 .model-pro {
   min-width:23%;
   max-width:23%;
-  min-height:17%;
-  max-height:17%;
+  min-height:200px;
+  max-height:200px;
   overflow:hidden; float:right;
   margin:5px;
   padding:5px;
   text-align:center;
   background:#29170d;
-  opacity: .8;  
-  filter:alpha(opacity=80); /* For IE8 and earlier */
+  
  }
 .model-pro .pic-title {color:#FBFB60; height:38px; overflow:hidden}
 .model-pro .go-download {margin-top:-30px; 
@@ -554,31 +554,36 @@ background:#29170d;
   text-align:left;
 }
 .cover {
-  width:18%;
-  height:0; background:#1A1A1A;
+  width:100%;
+  height:0; 
+  background:#1A1A1A;
   opacity: .6;  
-  filter:alpha(opacity=60); /* For IE8 and earlier */
-  margin-top:1%;
-  text-align:center;
-  position:fixed;    
+  filter:alpha(opacity=60); /* For IE8 and earlier */  
+  text-align:center;  
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
 }
-.product-pics:hover .cover { height:28%; }
-.product-pics:hover .cover.pointer-sub-category { height:22%; }
+.product-pics:hover .cover { height:28%; margin-top:-65%;}
+.product-pics#sub_category:hover .cover.pointer-sub-category { height:22%;margin-top:-105%; }
 .product-pics:hover .cover img{ height:30%; }
-.cover img {margin-top:30%; height:0;
+.cover img {
+margin-top:30%; 
+margin-bottom:20%;
+height:0;
  -webkit-transition: all .5s ease;
   -moz-transition: all .5s ease;
   -o-transition: all .5s ease;
   transition: all .5s ease;}
+  
 .product_show_pics .product-details .model-pro:hover .cover {
- height:22%;
+ margin-top:-55%;
+ height:100%; 
+ 
 }
 .product_show_pics .product-details .model-pro:hover .cover img{height:20%}
 
 
-.pro_wrapper .pro-info:hover .cover {height:34%; }
+.pro_wrapper .pro-info:hover .cover {height:100%; margin-top:-50% }
 .pro_wrapper .pro-info:hover .cover img{height:20%; }
