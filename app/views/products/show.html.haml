@@ -29,7 +29,7 @@
       .model-pro   
         .pic-title= picture.title
         =link_to picture.image(:large), :data => { :colorbox => true }, :class => "show-product", :title =>  picture.title do          
-          = image_tag  picture.image(:small), :class => "sample"
+          = image_tag  picture.image(:small), :class => "sample", :model => picture.title
           .cover
             = image_tag 'zoom.png', :class => "zoom-pic"
         - if  picture.download
@@ -51,9 +51,8 @@
 
 .clr-float
 
-:javascript  
-  $(".show-product").click(function(){
-    $("this").colorbox({title: 'hello word'});    
-  });
+:javascript    
+  $('.show-product').colorbox({title: $(this).attr('title') });   
+  
   
 
