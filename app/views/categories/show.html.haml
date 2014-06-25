@@ -59,7 +59,7 @@
           - @category.sub_categories.each do |sub_category|                        
             .product-pics#gold
               - if is_admin?  
-                .admin-link-on-box.set-center
+                .model-admin-link
                   = link_to 'ویرایش', edit_sub_category_path(sub_category)    
                   \|
                   = link_to 'حذف', sub_category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
@@ -81,7 +81,7 @@
                 - products.each do |product|                                                 
                   .product-pics#sub_category{:style => " min-height:200px; max-height:200px"}                          
                     - if is_admin?
-                      %div.admin-link-on-box.set-center                    
+                      .model-admin-link{:style => "width:auto"}             
                         = link_to 'ویرایش', edit_product_path(product)    
                         \|
                         = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
@@ -113,7 +113,7 @@
               -products.each do |product|                 
                 .product-pics                     
                   - if is_admin?
-                    .admin-link-on-box.set-center
+                    .model-admin-link
                       = link_to 'ویرایش', edit_product_path(product)    
                       \|
                       = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
