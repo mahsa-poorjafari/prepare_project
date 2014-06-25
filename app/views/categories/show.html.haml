@@ -56,12 +56,10 @@
     .row#pictures
       .all-models.details.col-sm-8
         - if @category.sub_categories.present?
-          - @category.sub_categories.each do |sub_category|            
-          
-            .product-pics#gold                     
-              
+          - @category.sub_categories.each do |sub_category|                        
+            .product-pics#gold
               - if is_admin?  
-                %div.admin-link-on-box.set-center
+                .admin-link-on-box.set-center
                   = link_to 'ویرایش', edit_sub_category_path(sub_category)    
                   \|
                   = link_to 'حذف', sub_category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
@@ -114,18 +112,16 @@
             #product-holder{:style => "margin-left:5%"}
               -products.each do |product|                 
                 .product-pics                     
-                  = link_to  product, :category_id => @category.id do                                        
-                    - if is_admin?
-                      %div.admin-link-on-box.set-center
-                        = link_to 'ویرایش', edit_product_path(product)    
-                        \|
-                        = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
+                  - if is_admin?
+                    .admin-link-on-box.set-center
+                      = link_to 'ویرایش', edit_product_path(product)    
+                      \|
+                      = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
+                  = link_to  product, :category_id => @category.id do                                                            
                     .title-product
-                      = product.title
-                    
+                      = product.title                    
                     .img-box
-                      = image_tag product.image(:medium), :class => "sample"
-                                         
+                      = image_tag product.image(:medium), :class => "sample"                                         
                     - if product.coming_soon
                       = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right:-62%; margin-top:-118%; display:none'  
                     .cover

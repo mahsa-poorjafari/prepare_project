@@ -27,26 +27,25 @@
   .product-details    
     - @product.pictures.order('title_en ASC').each do |picture|
       .model-pro   
+        - if is_admin?
+          .model-admin-link
+            = link_to 'ویرایش', edit_picture_path(picture)
+            \|
+            = link_to 'حذف', picture, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
+        
         .pic-title= picture.title
-        =link_to picture.image(:large), :data => { :colorbox => true }, :class => "show-product", :title =>  picture.title do          
-          = image_tag  picture.image(:small), :class => "sample", :model => picture.title
-          .cover
-            = image_tag 'zoom.png', :class => "zoom-pic"
         - if  picture.download
           .go-download
             = link_to  download_product_path(:picture_id =>  picture.id) do
               = image_tag 'dnwn.png', :style => "height:30px; width:30px;"
               = t ('download')
-        - if is_admin?
-          %div
-            = link_to 'ویرایش', edit_picture_path(picture)
-            \|
-            = link_to 'حذف', picture, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
-        
-          
-        - if picture.coming_soon
-          = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right: -52%;margin-top: -103%;'
-    
+        =link_to picture.image(:large), :data => { :colorbox => true }, :class => "show-product", :title =>  picture.title do          
+          = image_tag  picture.image(:small), :class => "sample", :model => picture.title
+       
+          - if picture.coming_soon
+            = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right: -52%;margin-top: -103%;'
+          .cover
+            = image_tag 'zoom.png', :class => "zoom-pic"
   
 
 .clr-float
