@@ -12,7 +12,8 @@
     %meta{:name => "description", :content => "Rainbow, شرکت رنگین کمان, پارکت ، کاغذ دیواری، کفپوش"}
     %meta{content: "no", "http-equiv" => "rainbow"}
     = yield(:refresh_meta) if content_for?(:refresh_meta)
-    - unless is_admin?      
+    -# - unless is_admin? 
+    -#     
       :javascript
         <!--
         //Disable right click script
