@@ -16,7 +16,7 @@
       - category.galleries.each do |gallery|              
         .pro_wrapper{align: "center", :class => I18n.locale}                          
           .pro-info.set-center
-            =link_to gallery.image(:large), :data => { :colorbox => true }, :class => "show-gallery" do              
+            =link_to gallery.image(:original), :data => { :colorbox => true }, :class => "show-gallery" do              
               = image_tag  gallery.image(:medium), :class => "gallery-pic", :alt => gallery.image_file_name
               .cover
                 = image_tag 'zoom.png', :class => "zoom-pic"  

@@ -199,11 +199,9 @@ span.Necessary {color:#FF0000; font-weight:bold}
 
 .show-pro .box-menu {
   background:#27160e;    
-  width:1px;
-  min-height:85px;
-  max-height:85px;
-  overflow:hidden;    
-  margin-top:-26%;
+  width:100%;
+  height:1px;
+  overflow:hidden;      
   padding:5px;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -214,19 +212,19 @@ span.Necessary {color:#FF0000; font-weight:bold}
 .show-pro .box-menu ul {list-style:none;}
 .show-pro .box-menu a {color:#E5EC6F; }
 .show-pro .box-menu a:hover {color:#DEFF00}
-.show-pro .box-3:hover .box-menu{ width:100%}
+.show-pro .box-3:hover .box-menu{  min-height:86px;
+  max-height:86px;margin-top:-26%;
+  }
 .show-pro .box-3:hover img.sample-img{ 
 width:120%;
 height:120%;
-transform:rotate(9deg);
--ms-transform:rotate(9deg); /* IE 9 */
--webkit-transform:rotate(9deg); /* Opera, Chrome, and Safari */
+
 }
 
 .box-menu .arrow-vertical {
-  width:5px; 
+  width:5%; 
   background:#27160e; 
-  height:100%}
+  }
 .cer-title {text-align:center}
 
 .info-form {width: 100%; min-height:400px; max-height:400px; overflow-y:scroll; padding-top:5px}
@@ -427,8 +425,11 @@ ul#banner li{height:20px;}
 ul#banner li:hover a{color:#F6F649}
 .link-del {position:fixed}
 /*.scroll {margin-right:400px; width:8000px}*/
-img.coming-soon {z-index:20;  margin-right: -85px;
-margin-top: -237px;}
+img.coming-soon {z-index:20;  
+  position:absolute;
+  top:25%;
+  right:4%
+}
 b.coming-soon { opacity:.8;  filter:alpha(opacity=80); /* For IE8 and earlier */ position:fixed; z-index:10; text-align:center} 
 .box-title {font-size:25px;}
 .col-sm-4 fieldset legend span.contact{color:#361B02; text-shadow:2px 2px #FFFF00 ;}
@@ -599,3 +600,4 @@ background: linear-gradient(to bottom,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
 
 }
+#cboxTitle {color:#000}
