@@ -36,6 +36,7 @@ end
   root :to => 'static#home'
   get "login" => "users#login"  
   get "googlebc5f5c16062b24b0" => "static#googlebc5f5c16062b24b0"  
+  get "sitemap.xml" => "static#sitemap", :format => "xml", :as => :sitemap
   post "create_session" => "users#create_session", :as => :create_session
   get "delete_session" => "users#delete_session", :as => :delete_session
   

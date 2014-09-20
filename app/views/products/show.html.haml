@@ -38,7 +38,7 @@
             = link_to  download_product_path(:picture_id =>  picture.id) do
               = image_tag 'dnwn.png', :style => "height:30px; width:30px;"
               = t ('download')
-        =link_to picture.image(:large), :data => { :colorbox => true }, :class => "show-product", :title =>  picture.title do          
+        =link_to picture.image(:original), :data => { :colorbox => true }, :class => "show-product", :title =>  picture.title do          
           = image_tag  picture.image(:small), :class => "sample", :model => picture.title
        
           - if picture.coming_soon
