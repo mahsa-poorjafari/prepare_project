@@ -24,15 +24,7 @@
 - if @product.product_folders.present?
   - @product.product_folders.each do |product_folder|
     %button.filter{"data-filter" => "#folder-"+product_folder.id.to_s, :style => "color:#FBFB87; font-size:20px;margin-top:2%;"}= product_folder.title 
-  - #
-    .product_show_pics{:style => "margin-top:0;"}
-      .product-details#Container    
-        
-        - @product.pictures.order('title_en ASC').each do |picture|
-          - if picture.product_folder_id.present?
-            .model-pro.mix{:id => 'folder-'+picture.product_folder_id.to_s, "data-my-order" => picture.id}
-              = render 'products/filter_folder', :picture => picture
-    - else 
+  
   .product_show_pics
     .product-details      
       - @product.pictures.order('title_en ASC').each do |picture|        
