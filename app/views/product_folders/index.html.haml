@@ -1,0 +1,28 @@
+-if is_admin?
+  .admin-link.fa
+    %p= 'منوی صفحه'
+    %hr
+    = link_to 'پوشه جدید', new_product_folder_path
+
+= image_tag 'd.jpg', :class => "bg"
+.show-pro.set-center.fa
+  %h1 لیست پوشه های محصولات
+
+  %table
+    %tr
+      %th عنوان پوشه  
+      
+      %th
+      %th
+
+    - @product_folders.each do |product_folder|
+      %tr
+        %td= product_folder.title
+        
+        %td
+          = link_to 'مشاهده', product_folder
+          = link_to 'ویرایش', edit_product_folder_path(product_folder)
+          = link_to 'حذف', product_folder, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+
+

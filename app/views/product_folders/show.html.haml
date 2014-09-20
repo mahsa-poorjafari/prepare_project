@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Title en:
+  = @product_folder.title_en
+%p
+  %b Title fa:
+  = @product_folder.title_fa
+
+= link_to 'Edit', edit_product_folder_path(@product_folder)
+\|
+= link_to 'Back', product_folders_path

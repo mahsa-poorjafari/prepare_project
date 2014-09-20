@@ -30,14 +30,13 @@
     .form-group 
       = f.label "اگر محصول زیرگروه دارد از این منو انتخاب کنید:" , :class => "control-label"      
       = f.select(:sub_category_id, SubCategory.all.collect {|u| [u.title_fa, u.id]}, :prompt => 'زیرگروه محصول را انتخاب کنید.')        
-      
+    
     .form-group 
       = f.label "بزودی" , :class => "col-sm-4 control-label"      
       = f.check_box :coming_soon
     .form-group 
       = f.label "تصویر نمونه:", :class => "control-label"      
-      = f.file_field :image
-   
+      = f.file_field :image  
     
      
     %hr

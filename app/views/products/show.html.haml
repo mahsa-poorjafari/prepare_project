@@ -21,37 +21,29 @@
       .cat-link{:style => "height:100%"}
         - if @product.description.present?                 
           %div=raw @product.description          
- 
-.product_show_pics
-  .product-details    
-    - @product.pictures.order('title_en ASC').each do |picture|
-      .model-pro   
-        - if is_admin?
-          .model-admin-link
-            = link_to 'ویرایش', edit_picture_path(picture)
-            \|
-            = link_to 'حذف', picture, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
-        
-        .pic-title= picture.title
-        - if  picture.download
-          .go-download
-            = link_to  download_product_path(:picture_id =>  picture.id) do
-              = image_tag 'dnwn.png', :style => "height:30px; width:30px;"
-              = t ('download')
-        =link_to picture.image(:original), :data => { :colorbox => true }, :class => "show-product", :title =>  picture.title do          
-          - if picture.coming_soon
-            = image_tag 'coming-soon.png', :class => "coming-soon"
-          = image_tag  picture.image(:small), :class => "sample", :model => picture.title
-       
-          
-          .cover
-            = image_tag 'zoom.png', :class => "zoom-pic"
-  
+- if @product.product_folders.present?
+  - @product.product_folders.each do |product_folder|
+    %button.filter{"data-filter" => "#folder-"+product_folder.id.to_s, :style => "color:#FBFB87; font-size:20px;margin-top:2%;"}= product_folder.title 
+  .product_show_pics{:style => "margin-top:0;"}
+    .product-details#Container    
+      
+      - @product.pictures.order('title_en ASC').each do |picture|
+        - if picture.product_folder_id.present?
+          .model-pro.mix{:id => 'folder-'+picture.product_folder_id.to_s, "data-my-order" => picture.id}
+            = render 'products/filter_folder', :picture => picture
+- else 
+  .product_show_pics
+    .product-details      
+      - @product.pictures.order('title_en ASC').each do |picture|        
+        .model-pro
+          = render 'products/filter_folder', :picture => picture
 
 .clr-float
 
 :javascript    
   $('.show-product').colorbox({title: $(this).attr('title') });   
-  
+  $(function(){
+    $('#Container').mixItUp();  
+  });
   
 

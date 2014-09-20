@@ -2,6 +2,8 @@ PrepareProject::Application.routes.draw do
 
   
 
+  resources :product_folders
+
   resources :pictures
 
   resources :send_links

@@ -202,9 +202,9 @@ span.Necessary {color:#FF0000; font-weight:bold}
 .show-pro .box-menu {
   background:#27160e;    
   width:100%;
-  height:1px;
+  height:0;
   overflow:hidden;      
-  padding:5px;
+  padding:0;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -216,6 +216,7 @@ span.Necessary {color:#FF0000; font-weight:bold}
 .show-pro .box-menu a:hover {color:#DEFF00}
 .show-pro .box-3:hover .box-menu{  min-height:86px;
   max-height:86px;margin-top:-26%;
+  padding-top:2px;
   }
 .show-pro .box-3:hover img.sample-img{ 
 width:120%;
@@ -345,7 +346,7 @@ table.table tr.visited {font-weight:bold}
   z-index:25;
   right:0;
   font-family:'open_sansregular'; 
-  width:35%; 
+  width:20%; 
   height:100%}
 .footer-admin .col-sm-6 {border-right: 2px solid #deff00}
 .footer-admin a {color:#e5ec6f;}
@@ -396,14 +397,14 @@ table.table tr.visited {font-weight:bold}
 .edi-slider-holder {position:absolute; width:100%; height:100%; margin-top:20px}
 .show-slider {width:100%; height:480px}
 .index-slider {width:100%; height:80%; overflow-y:scroll}
-.admin_menu {min-width:20%; height:50px;  -webkit-transition:all 1s; /* For Safari 3.1 to 6.0 */
+.admin_menu {min-width:10%; height:50px;  -webkit-transition:all 1s; /* For Safari 3.1 to 6.0 */
   transition:all 1s; overflow:hidden; color:#DEFF00; 
   background:#29170d;
   opacity:.8; 
   filter:alpha(opacity=80); /* For IE8 and earlier */}
-.admin_menu a {color:#4d4d4d; }
+.admin_menu a {color:#fff; }
 .admin_menu a:hover {color:#E7F804; }
-.admin_menu:hover {height:200px; margin-top:-100px; cursor:pointer;}  
+.admin_menu:hover {height:400px; margin-top:-400px; cursor:pointer;}  
 .admin_menu h3 {text-align:center}
 .go-up {
   margin-top:-25%; z-index:10; width:70%; 
@@ -604,3 +605,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', end
 
 }
 #cboxTitle {color:#000}
+#Container .mix{
+    display: none;
+}
+button {background-color:#27160e;border:0; margin-top:2%;
+
+  opacity: .8;
+filter: alpha(opacity=80);
+font-size:20px;
+}
+button.filter:hover {background-color:#C23B0E;}
