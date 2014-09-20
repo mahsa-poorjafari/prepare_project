@@ -70,7 +70,7 @@
                 = image_tag sub_category.image(:medium), :class => "sample"
               
               - if sub_category.comming_soon
-                = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right: -61%;margin-top: -123%; display:none'  
+                = image_tag 'cm.png', :class => "coming-soon", :style => 'right:0; top:7%;display:none'  
               .cover
                 = image_tag 'pointer.png'
             
@@ -186,6 +186,6 @@
   });
 
   
-  $('.coming-soon').fadeIn(1000);
+  $('.coming-soon').show(1000);
   
   
