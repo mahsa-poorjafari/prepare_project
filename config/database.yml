@@ -5,9 +5,11 @@
 
 development:
   adapter: mysql2
-  database: rlfloor_development
+  database: rlfloor
   pool: 5
   timeout: 5000
+  username: rlfloor 
+  password: rlfloor224490 
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -22,6 +24,5 @@ production:
   database: rlfloor 
   pool: 5
   timeout: 5000
-  username: da_admin
-  password: hllUXDhM
-
+  username: rlfloor 
+  password: rlfloor224490 

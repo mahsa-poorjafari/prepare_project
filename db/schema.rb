@@ -11,22 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140609134002) do
-
-  create_table "activities", force: true do |t|
-    t.string   "title_fa"
-    t.string   "title_en"
-    t.string   "title_ar"
-    t.text     "description_fa"
-    t.text     "description_en"
-    t.text     "description_ar"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
+ActiveRecord::Schema.define(version: 20140619064630) do
 
   create_table "catalogues", force: true do |t|
     t.string   "title_fa"
@@ -51,10 +36,11 @@ ActiveRecord::Schema.define(version: 20140609134002) do
     t.text     "description_fa"
     t.text     "description_en"
     t.text     "warranty_fa"
+    t.text     "warranty",           null: false
     t.text     "maintaion_fa"
+    t.text     "maintaion",          null: false
     t.text     "installation_fa"
-    t.string   "title_ar"
-    t.text     "description_ar"
+    t.text     "installation",       null: false
   end
 
   create_table "certifications", force: true do |t|
@@ -71,18 +57,6 @@ ActiveRecord::Schema.define(version: 20140609134002) do
 
   create_table "galleries", force: true do |t|
     t.integer  "category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
-
-  create_table "harams", force: true do |t|
-    t.string   "description_fa"
-    t.string   "description_en"
-    t.string   "description_ar"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
@@ -108,10 +82,8 @@ ActiveRecord::Schema.define(version: 20140609134002) do
     t.datetime "updated_at"
     t.string   "title_fa"
     t.text     "html_text_fa"
-    t.string   "title_ar"
-    t.text     "html_text_ar"
   end
-r
+
   create_table "pictures", force: true do |t|
     t.string   "title_en"
     t.string   "title_fa"
@@ -139,8 +111,7 @@ r
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.string   "title_ar"
-    t.text     "description_ar"
+    t.integer  "sub_category_id"
   end
 
   create_table "resellers", force: true do |t|
@@ -175,6 +146,19 @@ r
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "category_id"
+  end
+
+  create_table "sub_categories", force: true do |t|
+    t.string   "title_en"
+    t.string   "title_fa"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.boolean  "comming_soon"
   end
 
   create_table "users", force: true do |t|
