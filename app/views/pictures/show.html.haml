@@ -7,7 +7,7 @@
       \|
       = link_to 'حذف', @picture, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
       \|
-      = link_to 'بازگشت', show_product_path(@picture.product_id)
+      = link_to 'بازگشت', :back
   .col-sm-8.show-picture
     %p
       %b عنوان
