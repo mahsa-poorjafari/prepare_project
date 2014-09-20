@@ -605,9 +605,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', end
 
 }
 #cboxTitle {color:#000}
-#Container .mix{
-    display: none;
-}
+
 button {background-color:#27160e;border:0; margin-top:2%;
 
   opacity: .8;
