@@ -1,0 +1,2 @@
+module ProductFoldersHelper
+end
