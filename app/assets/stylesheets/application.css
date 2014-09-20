@@ -593,7 +593,7 @@ height:0;
 border-radius:5px;
 z-index:20;
 position:absolute;
-margin-top:2%;
+margin-top:15%;
 background: rgb(169,3,41); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(169,3,41,1)), color-stop(44%,rgba(143,2,34,1)), color-stop(100%,rgba(109,0,25,1))); /* Chrome,Safari4+ */
