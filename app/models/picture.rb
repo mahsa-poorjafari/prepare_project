@@ -1,8 +1,6 @@
 # encoding: UTF-8
 class Picture < ActiveRecord::Base
-  extend FriendlyId  
-  friendly_id :title_fa  
-  
+   
   belongs_to :product
   belongs_to :product_folder
   

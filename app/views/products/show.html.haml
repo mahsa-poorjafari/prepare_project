@@ -22,8 +22,9 @@
         - if @product.description.present?                 
           %div=raw @product.description          
 - if @product.product_folders.present?
-  - @product.product_folders.each do |product_folder|
-    %button.filter{"data-filter" => "#folder-"+product_folder.id.to_s, :style => "color:#FBFB87; font-size:20px;margin-top:2%;"}= product_folder.title 
+  .col-sm-7.set-center
+    - @product.product_folders.each do |product_folder|
+      %button.filter{"data-filter" => "#folder-"+product_folder.id.to_s, :style => "color:#FBFB87; font-size:20px;margin-top:2%;"}= product_folder.title 
   
   .product_show_pics
     .product-details      
