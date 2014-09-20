@@ -87,6 +87,7 @@ margin-left: 5.5%;
   overflow:hidden;
   opacity: .8;
   filter:alpha(opacity=80); /* For IE8 and earlier */
+  position:relative
   
   }
 .sub-category-product-pics {
@@ -100,11 +101,12 @@ margin-left: 5.5%;
   opacity: .8;
   filter:alpha(opacity=80); /* For IE8 and earlier */
   overflow:hidden;
+  position:relative
 }
 .sub-category-product-pics img{ width:90%; height:90%} 
 .product-pics#sub_category {display:none; overflow:hidden} 
-.product-pics#sub_category .img-box img.sample-sub-category{width:100%; height:100%} 
-.product-pics#sub_category .title-sub-category{font-size:12px} 
+.product-pics#sub_category .img-box img.sample-sub-category{width:100%; height:100%; position:relative} 
+.product-pics#sub_category .title-sub-category{font-size:12px; position:relative} 
 .deactive {width:50px; height:50px; opacity:.5; margin-left:-50%}
 div.sub-category-title {display:none; width:50%;  text-shadow:2px 2px #3C0101 ; color:#FFFF00; font-size:20px; }
 .product-pics .title-product {font-size:16px}
@@ -426,9 +428,8 @@ ul#banner li:hover a{color:#F6F649}
 .link-del {position:fixed}
 /*.scroll {margin-right:400px; width:8000px}*/
 img.coming-soon {z-index:20;  
-  position:absolute;
-  top:25%;
-  right:4%
+position:absolute; right:3%;
+top:18%
 }
 b.coming-soon { opacity:.8;  filter:alpha(opacity=80); /* For IE8 and earlier */ position:fixed; z-index:10; text-align:center} 
 .box-title {font-size:25px;}
@@ -566,7 +567,7 @@ margin-top:4%
   transition: all 1s ease;
 }
 .product-pics:hover .cover { height:28%; margin-top:-65%;}
-.product-pics#sub_category:hover .cover.pointer-sub-category { height:22%;margin-top:-105%; }
+.product-pics#sub_category:hover .cover.pointer-sub-category { height:22%;margin-top:-105%; position:relative }
 .product-pics:hover .cover img{ height:30%; }
 .cover img {
 
@@ -586,8 +587,9 @@ height:0;
 
 .pro_wrapper .pro-info:hover .cover {height:100%; margin-top:-50% }
 .pro_wrapper .pro-info:hover .cover img{height:20%; }
-.model-admin-link {width: 10%;
+.model-admin-link {
 border-radius:5px;
+z-index:20;
 position:absolute;
 margin-top:2%;
 background: rgb(169,3,41); /* Old browsers */

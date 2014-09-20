@@ -67,10 +67,11 @@
                 = sub_category.title
               
               .img-box
+                - if sub_category.comming_soon
+                  = image_tag 'cm.png', :class => "coming-soon", :style => 'position: absolute;display:none'  
                 = image_tag sub_category.image(:medium), :class => "sample"
               
-              - if sub_category.comming_soon
-                = image_tag 'cm.png', :class => "coming-soon", :style => 'right:0; top:7%;display:none'  
+              
               .cover
                 = image_tag 'pointer.png'
             
@@ -88,11 +89,12 @@
                     = link_to  product, :category_id => @category.id do  
                       .title-sub-category
                         = product.title                      
+                      - if product.coming_soon
+                        = image_tag 'coming-soon.png', :class => "coming-soon"
                       .img-box
                         = image_tag product.image(:medium), :class => "sample-sub-category"
                       
-                      - if product.coming_soon
-                        = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right: -36%;margin-top: -198%;'  
+                      
                       .cover.pointer-sub-category
                         = image_tag 'pointer.png'
                     
@@ -104,7 +106,7 @@
                 .img-box
                   = image_tag sub_category.image(:small), :class => "sample"
                 - if sub_category.comming_soon
-                  = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right: -21%;margin-top: -108%;width: 77%; display:none'  
+                  = image_tag 'coming-soon.png', :class => "coming-soon", :style => ' display:none'  
               
                 
         - else
