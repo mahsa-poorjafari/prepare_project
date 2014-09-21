@@ -11,7 +11,7 @@
     %meta{:name => "google-site-verification", :content => "hPXuN1Z2UI-3CdpfRSTuvv2l1GqErR4pK5kNXy34SuA" }
     %meta{:name => "keywords", :content => Category.all.collect(&:title_fa).join(",") + ','+ Category.all.collect(&:title_en).join(",") } 
     %meta{:name => "description", :content => "Rainbow_Trading_Co, شرکت بازرگانی رنگین کمان, کاغذ دیواری, پارکت, کفپوش مایع , پارکت طلایی مات, پارکت طلایی براق, کاغذدیواری الیزابت دو, کاغذدیواری پرفکت, کاغذدیواری لکسی, کفپوش مایع اکلیلی, کفپوش مایع شفاف, کفپوش مایع مات, کاغذدیواری" }
-    
+    %meta{:name => "robots", :content => "NOODP"}
     = yield(:refresh_meta) if content_for?(:refresh_meta)
     -# - unless is_admin? 
     -#     
