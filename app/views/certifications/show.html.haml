@@ -13,5 +13,5 @@
     %b عنوان گواهینامه
     = @certification.title_fa
   %p
-    = image_tag @certification.image(:medium)
+    = image_tag @certification.image(:medium), :title => @certification.title , :alt => @certification.title 
   

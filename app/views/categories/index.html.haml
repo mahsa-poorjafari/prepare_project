@@ -3,9 +3,9 @@
   .admin-link.fa
     %p= 'منوی صفحه'
     %hr
-    = link_to 'تعریف محصول جدید', new_category_path
+    = link_to 'تعریف محصول جدید', new_category_path, :title => "رنگین کمان"
 
-= image_tag 'd.jpg', :class => "bg"
+= image_tag 'd.jpg', :class => "bg", :alt => "رنگین کمان", :title => "رنگین کمان"
 .show-pro.set-center 
   - @categories.each do |category|    
     .box-3.set-center{align: "center", :class => I18n.locale}                            
@@ -13,25 +13,25 @@
         .link-del
           = link_to 'ویرایش', edit_category_path(category)
           = link_to 'حذف', category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
-      = link_to category do               
+      = link_to category, :title => "محصولات رنگین کمان" do               
         %p= category.title 
         .category-image
-          = image_tag category.image(:small), :class => "sample-img"
+          = image_tag category.image(:small), :class => "sample-img", :alt => category.title_fa, :title =>  category.title_fa
     
       
       .box-menu           
         .arrow-vertical
         %ul
           - if category.products.present?
-            %li= link_to t('model'), category#pictures
+            %li= link_to t('model'), category, :title => category.title_fa
           - if category.installation.present?
-            %li= link_to t('technical'), category#installation
+            %li= link_to t('technical'), category, :title => category.title_fa
           - if category.maintaion.present?
-            %li= link_to t('maintain'), category#maintaion
+            %li= link_to t('maintain'), category, :title => category.title_fa
           - if category.warranty.present?
-            %li= link_to t('warranty'), category#warranty
+            %li= link_to t('warranty'), category, :title => category.title_fa
           - if category.certifications.present?
-            %li= link_to t('certificate'), category#cer
+            %li= link_to t('certificate'), category, :title => category.title_fa
     
       
         

@@ -5,11 +5,11 @@
     .box-4.set-center{align: "center", :class => I18n.locale}  
       = link_to certification do         
         %p= certification.title 
-        = image_tag certification.image(:small), :class => "category-image"
+        = image_tag certification.image(:small), :class => "category-image", :alt => certification.title , :title => certification.title 
       - if is_admin?  
-        = link_to 'مشاهده', certification        
+        = link_to 'مشاهده', certification        , :title => certification.title 
         \|
-        = link_to 'حذف', certification, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+        = link_to 'حذف', certification, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }, :title => certification.title 
 
 
 

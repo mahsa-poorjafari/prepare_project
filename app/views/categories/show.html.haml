@@ -3,17 +3,17 @@
     .admin-link.fa
       %p= 'منوی صفحه'
       %hr
-      = link_to 'ویرایش', edit_category_path(@category)
+      = link_to 'ویرایش', edit_category_path(@category), :title => @category.title_fa
       \|
-      = link_to 'حذف', @category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+      = link_to 'حذف', @category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }, :title => @category.title_fa
       \|
-      = link_to 'بازگشت', categories_path
-  = image_tag 'slide12.jpg', :class => "bg"  
+      = link_to 'بازگشت', categories_path, :title => @category.title_fa
+  = image_tag 'slide12.jpg', :class => "bg"  , :title => @category.title_fa, :alt => @category.title_fa
   
   .category-info.general
     %div
       .line.set-center  
-        = image_tag 'cat-title.png'
+        = image_tag 'cat-title.png', :title => @category.title_fa, :alt => @category.title_fa
         .go-up.set-center.title-cat= @category.title
       .category-link 
         .cat-link
@@ -21,23 +21,23 @@
         %ul#banner          
           - if @category.products.present?
             %li
-              = link_to t('model'), '#pictures', :id => "show-model"
+              = link_to t('model'), '#pictures', :id => "show-model", :title => @category.title_fa
           
           - if @category.maintaion.present?
             %li
-              = link_to t('maintain'), '#maintaion', :id => "show-main"
+              = link_to t('maintain'), '#maintaion', :id => "show-main", :title => @category.title_fa
           
           - if @category.installation.present?
             %li
-              = link_to t('technical'), '#installation', :id => "show-inst"
+              = link_to t('technical'), '#installation', :id => "show-inst", :title => @category.title_fa
           
           - if @category.warranty.present?
             %li
-              = link_to t('warranty'), '#installation', :id => "show-war"
+              = link_to t('warranty'), '#installation', :id => "show-war", :title => @category.title_fa
           
           - if @category.certifications.present?
             %li
-              = link_to t('certificate'), '#cer', :id => "show-cer"          
+              = link_to t('certificate'), '#cer', :id => "show-cer" , :title => @category.title_fa
             
          
   #category-details{:style => "margin-right:25%"}    
@@ -60,20 +60,20 @@
             .product-pics#gold
               - if is_admin?  
                 .model-admin-link
-                  = link_to 'ویرایش', edit_sub_category_path(sub_category)    
+                  = link_to 'ویرایش', edit_sub_category_path(sub_category), :title => @category.title_fa    
                   \|
-                  = link_to 'حذف', sub_category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
+                  = link_to 'حذف', sub_category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } , :title => @category.title_fa    
               .title-product
                 = sub_category.title
               
               .img-box
                 - if sub_category.comming_soon
-                  = image_tag 'cm.png', :class => "coming-soon", :style => 'position: absolute;display:none'  
-                = image_tag sub_category.image(:medium), :class => "sample"
+                  = image_tag 'cm.png', :class => "coming-soon", :style => 'position: absolute;display:none', :title => @category.title_fa    , :alt => @category.title_fa    
+                = image_tag sub_category.image(:medium), :class => "sample", :title => @category.title_fa    , :alt => @category.title_fa    
               
               
               .cover
-                = image_tag 'pointer.png'
+                = image_tag 'pointer.png', :alt => @category.title_fa    , :title => @category.title_fa    
             
             - sub_category.products.each_slice(4) do |products|                            
               %div.sub-category-title
@@ -83,20 +83,20 @@
                   .product-pics#sub_category{:style => " min-height:200px; max-height:200px"}                          
                     - if is_admin?
                       .model-admin-link{:style => "width:auto"}             
-                        = link_to 'ویرایش', edit_product_path(product)    
+                        = link_to 'ویرایش', edit_product_path(product), :title => @category.title_fa+'_'+product.title_fa    
                         \|
-                        = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
-                    = link_to  product, :category_id => @category.id do  
+                        = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } , :title => @category.title_fa+'_'+product.title_fa
+                    = link_to  product, :category_id => @category.id, :title => @category.title_fa+' '+product.title_fa     do  
                       .title-sub-category
                         = product.title                      
                       - if product.coming_soon
-                        = image_tag 'coming-soon.png', :class => "coming-soon"
+                        = image_tag 'coming-soon.png', :class => "coming-soon", :title => @category.title_fa+'_'+product.title_fa    , :alt => @category.title_fa+'_'+product.title_fa    
                       .img-box
-                        = image_tag product.image(:medium), :class => "sample-sub-category"
+                        = image_tag product.image(:medium), :class => "sample-sub-category", :title => @category.title_fa+'_'+product.title_fa , :alt => @category.title_fa+'_'+product.title_fa
                       
                       
                       .cover.pointer-sub-category
-                        = image_tag 'pointer.png'
+                        = image_tag 'pointer.png', :title => @category.title_fa+'_'+product.title_fa, :alt => @category.title_fa+'_'+product.title_fa
                     
           .sub-cat-link.col-sm-3
             - @category.sub_categories.each do |sub_category|               
@@ -104,9 +104,9 @@
                 .title-product
                   = sub_category.title
                 .img-box
-                  = image_tag sub_category.image(:small), :class => "sample"
+                  = image_tag sub_category.image(:small), :class => "sample", :title => @category.title_fa    , :alt => @category.title_fa    
                 - if sub_category.comming_soon
-                  = image_tag 'coming-soon.png', :class => "coming-soon", :style => ' display:none'  
+                  = image_tag 'coming-soon.png', :class => "coming-soon", :style => ' display:none'  , :title => @category.title_fa    , :alt => @category.title_fa    
               
                 
         - else
@@ -116,20 +116,20 @@
                 .product-pics                     
                   - if is_admin?
                     .model-admin-link
-                      = link_to 'ویرایش', edit_product_path(product)    
+                      = link_to 'ویرایش', edit_product_path(product)    , :title => @category.title_fa+'_'+product.title_fa    
                       \|
-                      = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } 
-                  = link_to  product, :category_id => @category.id do                                                            
+                      = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } , :title => @category.title_fa+'_'+product.title_fa    
+                  = link_to  product, :category_id => @category.id, :title => @category.title_fa+'_'+product.title_fa     do                                                            
                     .title-product
                       = product.title                    
                     .img-box
-                      = image_tag product.image(:medium), :class => "sample"                                         
+                      = image_tag product.image(:medium), :class => "sample" , :title => @category.title_fa+'_'+product.title_fa    , :alt => @category.title_fa+'_'+product.title_fa                       
                     - if product.coming_soon
-                      = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right:-62%; margin-top:-118%; display:none'  
+                      = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right:-62%; margin-top:-118%; display:none'  , :title => @category.title_fa+'_'+product.title_fa    , :alt => @category.title_fa+'_'+product.title_fa    
                     .cover
-                      = image_tag 'pointer.png' 
+                      = image_tag 'pointer.png' , :title => @category.title_fa+'_'+product.title_fa    , :alt => @category.title_fa+'_'+product.title_fa    
                   
-      .clr-float
+      
          
       .clr-float
     %div#certification
@@ -139,7 +139,7 @@
         #show-all-certificate        
           - @category.certifications.each do |certification|      
             .col-sm-3.box-3.pro-cer{:style => "text-align:center"}
-              =link_to (image_tag certification.image(:small), :style => "height:50%"), certification.image(:original), :target => "_blank"
+              =link_to (image_tag certification.image(:small), :style => "height:50%", :title => @category.title_fa    , :alt => @category.title_fa    ), certification.image(:original), :target => "_blank", :title => @category.title_fa    
               .cer-title= certification.title
       
       
