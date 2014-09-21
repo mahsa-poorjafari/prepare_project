@@ -13,7 +13,7 @@
         .link-del
           = link_to 'ویرایش', edit_category_path(category)
           = link_to 'حذف', category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
-      = link_to category, :title => "محصولات رنگین کمان" do               
+      = link_to category, :title => category.title_fa do               
         %p= category.title 
         .category-image
           = image_tag category.image(:small), :class => "sample-img", :alt => category.title_fa, :title =>  category.title_fa

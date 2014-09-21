@@ -9,9 +9,9 @@
     = csrf_meta_tags
     %meta{:charset => "utf-8"}
     %meta{:name => "google-site-verification", :content => "hPXuN1Z2UI-3CdpfRSTuvv2l1GqErR4pK5kNXy34SuA" }
-    %meta{:name => "keywords", :content => Category.all.collect(&:title_fa).join(" ") } 
-    %meta{:name => "description", :content => "Rainbow, شرکت رنگین کمان, پارکت ، کاغذ دیواری، کفپوش, شرکت رنگین کمان پس از چند سال تحقیق و بررسی توسط تیم های مختلف شروع به فعالیتی قوی در صنعت دکوراسیون داخلی نمود و هم اکنون در سایه الطاف پروردگار دارای صدها نماینده و عاملیت فروش در سراسر کشور می باشد"}
-    %meta{content: "no", "http-equiv" => "rainbow"}
+    %meta{:name => "keywords", :content => Category.all.collect(&:title_fa).join(",") + ','+ Category.all.collect(&:title_en).join(",") } 
+    %meta{:name => "description", :content => "Rainbow_Trading_Co, شرکت بازرگانی رنگین کمان, کاغذ دیواری, پارکت, کفپوش مایع , پارکت طلایی مات, پارکت طلایی براق, کاغذدیواری الیزابت دو, کاغذدیواری پرفکت, کاغذدیواری لکسی, کفپوش مایع اکلیلی, کفپوش مایع شفاف, کفپوش مایع مات, کاغذدیواری" }
+    
     = yield(:refresh_meta) if content_for?(:refresh_meta)
     -# - unless is_admin? 
     -#     
@@ -43,7 +43,7 @@
           .logo-style  
             
             #logo              
-              = image_tag "logo.png"                                  
+              = image_tag "logo.png", :title => "شرکت بازرگانی رنگین کمان", :alt => "شرکت بازرگانی رنگین کمان"
             .title-site              
               %h3= t('rainbow')
           #mainmenu
