@@ -4,7 +4,7 @@
       - @sliders = Slider.all
       - @sliders.each do |slide|
         .item-row.item
-          = image_tag slide.image(:gallery_size), :id =>  slide.id , :class => "slide"
+          = image_tag slide.image(:gallery_size), :id =>  slide.id , :class => "slide", :title => "رنگین کمان_" + slide.image_file_name, :alt =>  "رنگین کمان _" + slide.image_file_name
           
               
     -if @sliders.count > 1          
@@ -13,10 +13,10 @@
           %ol.carousel-indicator-list.carousel-indicators
             -  @sliders.each_with_index do |slide, index|
               %li{"data-slide-to" => "#{index}", "data-target" => "#homeCarousel", :class => "slide-indicator"}      
-      = link_to ".carousel", :class => "carousel-control left", "data-slide" => "prev" do
-        = image_tag 'next-icon.png'
-      = link_to ".carousel", :class => "carousel-control right", "data-slide" => "next" do
-        = image_tag 'prev-icon.png'
+      = link_to ".carousel", :class => "carousel-control left", "data-slide" => "prev", :title => "رنگین کمان " do
+        = image_tag 'next-icon.png', :alt => "رنگین کمان " , :title =>  "رنگین کمان " 
+      = link_to ".carousel", :class => "carousel-control right", "data-slide" => "next", :title => "رنگین کمان" do
+        = image_tag 'prev-icon.png', :alt => "رنگین کمان " , :title => "رنگین کمان " 
 :javascript 
   $(".item").first().addClass("active");
   $(".slide-indicator").first().addClass("active");

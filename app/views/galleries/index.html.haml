@@ -3,11 +3,11 @@
     %p= 'منوی صفحه'
     %hr
     = link_to 'افزودن تصویر جدید', new_gallery_path
-= image_tag 'lobby.jpg', :class => "bg"
+= image_tag 'lobby.jpg', :class => "bg", :title => "رنگین کمان", :alt => "رنگین کمان"
 - @category.each do |category|  
   .cat-group{:id => "item#{category.id}", :divname => "item#{category.id}"} 
     .set-center{:style => "margin-top:5px"} 
-      = image_tag 'cat-title.png'
+      = image_tag 'cat-title.png', :title => category.title_fa, :alt => category.title_fa
       .set-center.pro-cat-title= category.title
   
 .products-group.set-center  
@@ -16,15 +16,15 @@
       - category.galleries.each do |gallery|              
         .pro_wrapper{align: "center", :class => I18n.locale}                          
           .pro-info.set-center
-            =link_to gallery.image(:original), :data => { :colorbox => true }, :class => "show-gallery" do              
-              = image_tag  gallery.image(:medium), :class => "gallery-pic", :alt => gallery.image_file_name
+            =link_to gallery.image(:original), :data => { :colorbox => true }, :class => "show-gallery", :title => gallery.category.title_fa do              
+              = image_tag  gallery.image(:medium), :class => "gallery-pic", :alt => gallery.category.title_fa, :title => gallery.category.title_fa
               .cover
-                = image_tag 'zoom.png', :class => "zoom-pic"  
+                = image_tag 'zoom.png', :class => "zoom-pic"  , :alt => gallery.category.title_fa, :title => gallery.category.title_fa
             %div
               - if is_admin?
-                = link_to 'ویرایش', edit_gallery_path(gallery)
+                = link_to 'ویرایش', edit_gallery_path(gallery), :alt => gallery.category.title_fa, :title => gallery.category.title_fa
                 \|
-                = link_to 'حذف', gallery, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+                = link_to 'حذف', gallery, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }, :alt => gallery.category.title_fa, :title => gallery.category.title_fa
 
               
         

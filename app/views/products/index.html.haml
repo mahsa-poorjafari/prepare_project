@@ -3,12 +3,12 @@
   .admin-link.fa
     %p= 'منوی صفحه'
     %hr
-    = link_to 'تعریف مدل جدید', new_product_path
-= image_tag 'lobby.jpg', :class => "bg"
+    = link_to 'تعریف مدل جدید', new_product_path, :title => "رنگین کمان"
+= image_tag 'lobby.jpg', :class => "bg", :title => "رنگین کمان", :alt => "رنگین کمان"
 - @category.each do |category|  
   .cat-group{:id => "item#{category.id}", :divname => "item#{category.id}"} 
     .set-center{:style => "margin-top:5px"} 
-      = image_tag 'cat-title.png'
+      = image_tag 'cat-title.png', :alt => category.title_fa, :title => category.title_fa
       .set-center.pro-cat-title= category.title
 .products-group.set-center
   - @category.each do |category|  
@@ -16,12 +16,12 @@
       - category.products.each do |product| 
         - product.pictures.each do |pic|
           .pro_wrapper{align: "center", :class => I18n.locale}                          
-            = link_to product, :class => "model-link" do
+            = link_to product, :class => "model-link" , :title => category.title_fa+'_'+product.title_fa do
               .pro-info.set-center  
-                = image_tag pic.image(:small), :class => 'sample'            
+                = image_tag pic.image(:small), :class => 'sample' , :alt => category.title_fa+'_'+product.title_fa, :title => category.title_fa+'_'+product.title_fa
               .product-title.set-center= truncate(pic.title, :lenght => 15)
             - if pic.coming_soon
-              = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right:-41%; margin-top:-91%'
+              = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right:-41%; margin-top:-91%', :alt => category.title_fa+'_'+product.title_fa, :title => category.title_fa+'_'+product.title_fa
     .clr-float
 
 :javascript
