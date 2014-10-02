@@ -20,17 +20,18 @@
       %b= @pro_category
       .cat-link{:style => "height:100%"}
         - if @product.description.present?                 
-          %div=raw @product.description          
-- if @product.product_folders.present?
-  .col-sm-7.set-center
-    - @product.product_folders.each do |product_folder|
-      %button.filter{:title => @product.category.title_fa + '_'+product_folder.title_fa, "data-filter" => "#folder-"+product_folder.id.to_s, :style => "color:#FBFB87; font-size:20px;margin-top:2%;"}= product_folder.title 
-  
-  .product_show_pics
-    .product-details      
-      - @product.pictures.order('title_en ASC').each do |picture|        
-        .model-pro
-          = render 'products/filter_folder', :picture => picture, :product => @product
+          %div=raw @product.description  
+  -#                  
+    - if @product.product_folders.present?
+      .col-sm-7.set-center
+        - @product.product_folders.each do |product_folder|
+          %button.filter{:title => @product.category.title_fa + '_'+product_folder.title_fa, "data-filter" => "#folder-"+product_folder.id.to_s, :style => "color:#FBFB87; font-size:20px;margin-top:2%;"}= product_folder.title 
+    
+.product_show_pics
+  .product-details      
+    - @product.pictures.order('title_en ASC').each do |picture|        
+      .model-pro
+        = render 'products/filter_folder', :picture => picture, :product => @product
 
 .clr-float
 
