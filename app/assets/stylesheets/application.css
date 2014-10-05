@@ -132,6 +132,7 @@ div.sub-category-title {display:none; width:50%;  text-shadow:2px 2px #3C0101 ; 
   transition: all 1s ease;
   overflow:hidden;
   }
+.product-pics:hover {cursor:pointer}
 .product-pics:hover .download {height:100px;margin-top:-100px;}
 .download a{color:#e5ec6f}
 .download a:hover{color:#DEFF00}
