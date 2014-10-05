@@ -614,3 +614,5 @@ filter: alpha(opacity=80);
 font-size:20px;
 }
 button.filter:hover {background-color:#C23B0E;}
+p.error_size {background:#FF0000; opacity: .8;
+filter: alpha(opacity=80); width:50%; height:20px;}

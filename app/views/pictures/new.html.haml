@@ -1,6 +1,7 @@
 .fa
   %h1= 'تصویر جدید'
-
+  - if flash[:size].present?
+    %p.error_size= flash[:size]
 
   = render 'form'
 

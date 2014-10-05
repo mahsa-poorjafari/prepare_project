@@ -24,24 +24,24 @@
                   
     
 .product_show_pics
-  -#
-    - if @product.product_folders.present?
-      .col-sm-10.set-center
-        %button.filter.active{"data-filter" => "all", :style => "color:#FBFB87; font-size:20px;margin-top:2%;"}= t('filter-all')
-        - @product.product_folders.each do |product_folder|
-          %button.filter{:title => @product.category.title_fa + '_'+product_folder.title_fa, "data-filter" => "#folder-"+product_folder.id.to_s, :style => "color:#FBFB87; font-size:20px;margin-top:2%;"}= product_folder.title 
-      .clr-float
-      .product-details#Container              
-        - @product.pictures.order('title_en ASC').each do |picture|
-          - if picture.product_folder_id.present?
-            .model-pro.mix{:id => 'folder-'+picture.product_folder_id.to_s, "data-my-order" => picture.id}
-              = render 'products/filter_folder', :picture => picture, :product => @product
-    
-    - else 
-  .product-details      
-    - @product.pictures.order('title_en ASC').each do |picture|        
-      .model-pro
-        = render 'products/filter_folder', :picture => picture, :product => @product
+  
+  - if @product.product_folders.present?
+    .col-sm-11.set-center
+      %button.filter.active{"data-filter" => "all", :style => "color:#FBFB87; font-size:20px;margin-top:2%;"}= t('filter-all')
+      - @product.product_folders.each do |product_folder|
+        %button.filter{:title => @product.category.title_fa + '_'+product_folder.title_fa, "data-filter" => "#folder-"+product_folder.id.to_s, :style => "color:#FBFB87; font-size:20px;margin-top:2%;"}= product_folder.title 
+    .clr-float
+    .product-details#Container              
+      - @product.pictures.order('title_en ASC').each do |picture|
+        - if picture.product_folder_id.present?
+          .model-pro.mix{:id => 'folder-'+picture.product_folder_id.to_s, "data-my-order" => picture.id}
+            = render 'products/filter_folder', :picture => picture, :product => @product
+  
+  - else 
+    .product-details      
+      - @product.pictures.order('title_en ASC').each do |picture|        
+        .model-pro
+          = render 'products/filter_folder', :picture => picture, :product => @product
 
 .clr-float
 
