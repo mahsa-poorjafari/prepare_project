@@ -613,6 +613,7 @@ button {background-color:#27160e;border:0; margin-top:2%;
 filter: alpha(opacity=80);
 font-size:20px;
 }
-button.filter:hover {background-color:#C23B0E;}
+button.filter{ font-family: 'MTCORSVA';}
+button.filter:hover {background-color:#C23B0E; font-family: 'MTCORSVA';}
 p.error_size {background:#FF0000; opacity: .8;
 filter: alpha(opacity=80); width:50%; height:20px;}
