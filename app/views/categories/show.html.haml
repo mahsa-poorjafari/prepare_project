@@ -4,8 +4,9 @@
       %p= 'منوی صفحه'
       %hr
       = link_to 'ویرایش', edit_category_path(@category), :title => @category.title_fa
-      \|
-      = link_to 'حذف', @category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }, :title => @category.title_fa
+      -#
+        \|
+        = link_to 'حذف', @category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }, :title => @category.title_fa
       \|
       = link_to 'بازگشت', categories_path, :title => @category.title_fa
   = image_tag 'slide12.jpg', :class => "bg"  , :title => @category.title_fa, :alt => @category.title_fa
@@ -61,8 +62,9 @@
               - if is_admin?  
                 .model-admin-link
                   = link_to 'ویرایش', edit_sub_category_path(sub_category), :title => @category.title_fa    
-                  \|
-                  = link_to 'حذف', sub_category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } , :title => @category.title_fa    
+                  -#
+                    \|
+                    = link_to 'حذف', sub_category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } , :title => @category.title_fa    
               .title-product
                 = sub_category.title
               
@@ -80,12 +82,13 @@
                 = sub_category.title
               .col-sm-8
                 - products.each do |product|                                                 
-                  .product-pics#sub_category{:style => " min-height:200px; max-height:200px"}                          
+                  .product-pics#sub_category{:style => " min-height:200px; max-height:200px; opacity:1; filter: alpha(opacity=100);"}                          
                     - if is_admin?
                       .model-admin-link{:style => "width:auto"}             
                         = link_to 'ویرایش', edit_product_path(product), :title => @category.title_fa+'_'+product.title_fa    
-                        \|
-                        = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } , :title => @category.title_fa+'_'+product.title_fa
+                        -#
+                          \|
+                          = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } , :title => @category.title_fa+'_'+product.title_fa
                     = link_to  product, :category_id => @category.id, :title => @category.title_fa+' '+product.title_fa     do  
                       .title-sub-category
                         = product.title                      
@@ -117,8 +120,9 @@
                   - if is_admin?
                     .model-admin-link
                       = link_to 'ویرایش', edit_product_path(product)    , :title => @category.title_fa+'_'+product.title_fa    
-                      \|
-                      = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } , :title => @category.title_fa+'_'+product.title_fa    
+                      -#
+                        \|
+                        = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } , :title => @category.title_fa+'_'+product.title_fa    
                   = link_to  product, :category_id => @category.id, :title => @category.title_fa+'_'+product.title_fa     do                                                            
                     .title-product
                       = product.title                    
