@@ -5,8 +5,9 @@
     %p= 'منوی صفحه'
     %hr
     = link_to 'ویرایش', edit_product_path(@product), :title => @product.category.title_fa + '_'+@product.title_fa
-    \|
-    = link_to 'حذف', @product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }   , :title => @product.category.title_fa + '_'+@product.title_fa
+    -#
+      \|
+      = link_to 'حذف', @product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }   , :title => @product.category.title_fa + '_'+@product.title_fa
     \|
     = link_to 'بازگشت', products_path , :title => @product.category.title_fa + '_'+@product.title_fa
       
@@ -30,12 +31,14 @@
       %button.filter.active{"data-filter" => "all", :style => "color:#FBFB87; font-size:20px;margin-top:2%;"}= t('filter-all')
       - @product.product_folders.each do |product_folder|
         %button.filter{:title => @product.category.title_fa + '_'+product_folder.title_fa, "data-filter" => "#folder-"+product_folder.id.to_s, :style => "color:#FBFB87; font-size:20px;margin-top:2%;"}= product_folder.title 
+        
     .clr-float
-    .product-details#Container              
-      - @product.pictures.order('title_en ASC').each do |picture|
-        - if picture.product_folder_id.present?
-          .model-pro.mix{:id => 'folder-'+picture.product_folder_id.to_s, "data-my-order" => picture.id}
-            = render 'products/filter_folder', :picture => picture, :product => @product
+    .product-details#Container 
+      
+      - @product.product_folders.order('title_en ASC').each do |product_folder|                
+        .model-pro.mix{:id => 'folder-'+product_folder.id.to_s, "data-my-order" => product_folder.id}
+          -@first_pictures = product_folder.pictures.first
+          = render 'products/filter_folder', :picture => @first_pictures, :product => @product
   
   - else 
     .product-details      
