@@ -33,12 +33,11 @@
         %button.filter{:title => @product.category.title_fa + '_'+product_folder.title_fa, "data-filter" => "#folder-"+product_folder.id.to_s, :style => "color:#FBFB87; font-size:20px;margin-top:2%;"}= product_folder.title 
         
     .clr-float
-    .product-details#Container 
-      
+    .product-details#Container       
       - @product.product_folders.order('title_en ASC').each do |product_folder|                
         .model-pro.mix{:id => 'folder-'+product_folder.id.to_s, "data-my-order" => product_folder.id}
-          -@first_pictures = product_folder.pictures.first
-          = render 'products/filter_folder', :picture => @first_pictures, :product => @product
+          -@pictures = product_folder.pictures
+          = render 'products/filter_folder', :picture => @pictures, :product => @product
   
   - else 
     .product-details      
