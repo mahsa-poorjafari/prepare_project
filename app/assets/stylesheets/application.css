@@ -460,17 +460,14 @@ b.coming-soon { opacity:.8;  filter:alpha(opacity=80); /* For IE8 and earlier */
   transition: all 1s ease;
   }
 .products-group {width:95%; 
-  height:70%; 
-  
+  height:70%;   
   padding-top:45px;
   margin-top:.8%;
   z-index:-20;
   position:fixed;
   right: 2.4%;
   left: 2.4%;
-  background:#29170d;
-  opacity: .8;
-  filter:alpha(opacity=80); /* For IE8 and earlier */
+  background:#29170d; 
   overflow-y:scroll
 }
 .pro-cat-title {
