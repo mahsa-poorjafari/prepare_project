@@ -35,8 +35,8 @@
     .clr-float
     .product-details#Container       
       - @product.product_folders.order('title_en ASC').each do |product_folder|                
-        .model-pro.mix{:id => 'folder-'+product_folder.id.to_s, "data-my-order" => product_folder.id}
-          - product_folder.pictures.each do |picture|
+        - product_folder.pictures.each do |picture|            
+          .model-pro.mix{:id => 'folder-'+product_folder.id.to_s, "data-my-order" => product_folder.id}          
             = render 'products/filter_folder', :picture => picture, :product => @product
   
   - else 
