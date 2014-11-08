@@ -1,7 +1,7 @@
-%h1 Editing sub_category
+.fa
+  %h1= ' ویرایش زیرگروه ' + @sub_category.title_fa
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Show', @sub_category
-\|
-= link_to 'Back', sub_categories_path
+  = link_to 'مشاهده', @sub_category
+  

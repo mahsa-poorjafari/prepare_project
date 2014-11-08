@@ -224,13 +224,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c0f09', end
 	position: absolute;
 	width: 100%;
 	z-index: 10;
-	margin: 100px 0 150px 0;
-	background: #D69E81;
+	margin: 100px 0 150px 0;	
   overflow:hidden;
   min-height:72%;
   max-height:485px;
   
 }
+.page-products {background-image:url('bd.jpg');
+  background-size:cover;
+  background-repeat:no-repeat;}
 
 #next-button {
 	position: fixed;

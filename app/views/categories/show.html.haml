@@ -1,14 +1,11 @@
 .info-holder
   -if is_admin?
-    .admin-link.fa
-      %p= 'منوی صفحه'
-      %hr
-      = link_to 'ویرایش', edit_category_path(@category), :title => @category.title_fa
+    .admin-link.fa      
+      = link_to 'ویرایش ' + @category.title_fa, edit_category_path(@category), :title => @category.title_fa
       -#
         \|
         = link_to 'حذف', @category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }, :title => @category.title_fa
-      \|
-      = link_to 'بازگشت', categories_path, :title => @category.title_fa
+      
   = image_tag 'slide12.jpg', :class => "bg"  , :title => @category.title_fa, :alt => @category.title_fa
   
   .category-info.general
@@ -56,61 +53,66 @@
     
     .row#pictures
       .all-models.details.col-sm-8
+        
         - if @category.sub_categories.present?
           - @category.sub_categories.each do |sub_category|                        
-            .product-pics#gold
+            
+            .product-pics
               - if is_admin?  
                 .model-admin-link
                   = link_to 'ویرایش', edit_sub_category_path(sub_category), :title => @category.title_fa    
                   -#
                     \|
                     = link_to 'حذف', sub_category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } , :title => @category.title_fa    
-              .title-product
-                = sub_category.title
-              
-              .img-box
-                - if sub_category.comming_soon
-                  = image_tag 'cm.png', :class => "coming-soon", :style => 'position: absolute;display:none', :title => @category.title_fa    , :alt => @category.title_fa    
-                = image_tag sub_category.image(:medium), :class => "sample", :title => @category.title_fa    , :alt => @category.title_fa    
-              
-              
-              .cover
-                = image_tag 'pointer.png', :alt => @category.title_fa    , :title => @category.title_fa    
-            
-            - sub_category.products.each_slice(4) do |products|                            
-              %div.sub-category-title
-                = sub_category.title
-              .col-sm-8
-                - products.each do |product|                                                 
-                  .product-pics#sub_category{:style => " min-height:200px; max-height:200px; opacity:1; filter: alpha(opacity=100);"}                          
-                    - if is_admin?
-                      .model-admin-link{:style => "width:auto"}             
-                        = link_to 'ویرایش', edit_product_path(product), :title => @category.title_fa+'_'+product.title_fa    
-                        -#
-                          \|
-                          = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } , :title => @category.title_fa+'_'+product.title_fa
-                    = link_to  product, :category_id => @category.id, :title => @category.title_fa+' '+product.title_fa     do  
-                      .title-sub-category
-                        = product.title                      
-                      - if product.coming_soon
-                        = image_tag 'coming-soon.png', :class => "coming-soon", :title => @category.title_fa+'_'+product.title_fa    , :alt => @category.title_fa+'_'+product.title_fa    
-                      .img-box
-                        = image_tag product.image(:medium), :class => "sample-sub-category", :title => @category.title_fa+'_'+product.title_fa , :alt => @category.title_fa+'_'+product.title_fa
-                      
-                      
-                      .cover.pointer-sub-category
-                        = image_tag 'pointer.png', :title => @category.title_fa+'_'+product.title_fa, :alt => @category.title_fa+'_'+product.title_fa
-                    
-          .sub-cat-link.col-sm-3
-            - @category.sub_categories.each do |sub_category|               
-              .sub-category-product-pics
+              = link_to sub_category do
                 .title-product
-                  = sub_category.title
+                  =sub_category.title
+                
                 .img-box
-                  = image_tag sub_category.image(:small), :class => "sample", :title => @category.title_fa    , :alt => @category.title_fa    
-                - if sub_category.comming_soon
-                  = image_tag 'coming-soon.png', :class => "coming-soon", :style => ' display:none'  , :title => @category.title_fa    , :alt => @category.title_fa    
-              
+                  - if sub_category.comming_soon
+                    = image_tag 'cm.png', :class => "coming-soon", :style => 'position: absolute;display:none', :title => @category.title_fa    , :alt => @category.title_fa    
+                  = image_tag sub_category.image(:medium), :class => "sample", :title => @category.title_fa    , :alt => @category.title_fa    
+                
+                
+                .cover
+                  = image_tag 'pointer.png', :alt => @category.title_fa    , :title => @category.title_fa    
+            -#
+              - sub_category.products.each_slice(4) do |products|               
+                .sub-category-title.set-center
+                  = sub_category.title
+                .col-sm-8#sub_categories_boxes
+                  #Container
+                    - products.each do |product|                                                 
+                      .product-pics.mix.sub_category_box{"data-my-order" => product.sub_category.id,:style => " min-height:200px; max-height:200px; opacity:1; filter: alpha(opacity=100);", :id => "sub_category_"+sub_category.id.to_s}
+                        - if is_admin?
+                          .model-admin-link{:style => "width:auto"}             
+                            = link_to 'ویرایش', edit_product_path(product), :title => @category.title_fa+'_'+product.title_fa    
+                            -#
+                              \|
+                              = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } , :title => @category.title_fa+'_'+product.title_fa
+                        = link_to  product, :category_id => @category.id, :title => @category.title_fa+' '+product.title_fa     do  
+                          .title-sub-category
+                            = product.title                      
+                          - if product.coming_soon
+                            = image_tag 'coming-soon.png', :class => "coming-soon", :title => @category.title_fa+'_'+product.title_fa    , :alt => @category.title_fa+'_'+product.title_fa    
+                          .img-box
+                            = image_tag product.image(:medium), :class => "sample-sub-category", :title => @category.title_fa+'_'+product.title_fa , :alt => @category.title_fa+'_'+product.title_fa
+                          
+                          
+                          .cover.pointer-sub-category
+                            = image_tag 'pointer.png', :title => @category.title_fa+'_'+product.title_fa, :alt => @category.title_fa+'_'+product.title_fa
+                      
+              .sub-cat-link.col-sm-3
+                - @category.sub_categories.each do |sub_category|
+                  %button{:class => "filter", "data-filter" => "#sub_category_" + sub_category.id.to_s}
+                    .sub-category-product-pics 
+                      = sub_category.title
+                    -#
+                      .img-box
+                        = image_tag sub_category.image(:small), :class => "sample", :title => @category.title_fa    , :alt => @category.title_fa    
+                      - if sub_category.comming_soon
+                        = image_tag 'coming-soon.png', :class => "coming-soon", :style => ' display:none'  , :title => @category.title_fa    , :alt => @category.title_fa    
+                  
                 
         - else
           - @category.products.each_slice(4) do |products|
@@ -152,7 +154,7 @@
 :javascript
   $( document ).ready(function() {
     $('#category-details').children().hide(); 
-    $('#pictures').show(1000);
+    $('#pictures').fadeIn(1000);
   });
   
   $('#show-cer').click(function(){   
@@ -162,7 +164,7 @@
   });
   $('#show-model').click(function(){   
     $('#category-details').children().hide(); 
-    $('#pictures').show(1000);    
+    $('#pictures').fadeIn(1000);    
     
   });
 
@@ -182,16 +184,10 @@
     $('#category-details').children().hide(); 
     $('#warranty').fadeIn(1000);    
   });
-
-  $('.product-pics#gold').click(function(){
-    $(this).hide(50);
-    $('.product-pics#sub_category').show(500);
-    $('div.sub-category-title').show(500);
-    $('.sub-cat-link').show(500);    
-    $(".product-pics#gold").not($(this)).hide();
-  });
-
   
   $('.coming-soon').show(1000);
+  $(function(){
+    $('#Container').mixItUp();  
+  });
   
   

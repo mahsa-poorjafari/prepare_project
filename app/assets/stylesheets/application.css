@@ -78,37 +78,64 @@ margin-left: 5.5%;
   margin-right:15px;
   margin-left:10px;
   margin-bottom:20px;   
-  float:right; 
-  padding:5px;
+  float:right;   
   min-width:28%; max-width:28%; text-align:center;
   min-height:240px;
   max-height:240px;
   background:#29170d;
-  overflow:hidden;
-  opacity: .8;
-  filter:alpha(opacity=80); /* For IE8 and earlier */
+  border: 5px solid #29170d;
+  overflow:hidden;  
   position:relative
   
   }
+  #sub_categories_boxes {}
+  .sub_category_box
+  { 
+  margin-top:10px;
+  margin-right:15px;
+  margin-left:10px;
+  margin-bottom:20px;   
+  float:right;   
+  min-width:21%; max-width:21%; 
+  text-align:center;
+  min-height:240px;
+  max-height:240px;
+  background:#29170d;
+  border: 5px solid #29170d;
+  overflow:hidden;  
+  position:relative
+  
+  }
+  
 .sub-category-product-pics {
+  font-family:'MTCORSVA';
   margin:1%;  
   padding:5px;
+  
   float:left;
-  min-width:50%; 
-  max-width:50%;
+  min-width:100%; 
+  max-width:100%;
   text-align:center; 
   background:#29170d;
   opacity: .8;
   filter:alpha(opacity=80); /* For IE8 and earlier */
   overflow:hidden;
-  position:relative
+  position:relative;
+  font-size:1.5em;
+  font-weight:bold;
 }
+.sub-category-product-pics:hover {background:#CF5F14; cursor:pointer}
 .sub-category-product-pics img{ width:90%; height:90%} 
-.product-pics#sub_category {display:none; overflow:hidden} 
-.product-pics#sub_category .img-box img.sample-sub-category{width:100%; height:100%; position:relative} 
-.product-pics#sub_category .title-sub-category{font-size:12px; position:relative} 
+.sub_category_box { overflow:hidden} 
+.sub_category_box .img-box img.sample-sub-category{width:100%; height:100%; position:relative} 
+.sub_category_box .title-sub-category{font-size:12px; position:relative} 
 .deactive {width:50px; height:50px; opacity:.5; margin-left:-50%}
-div.sub-category-title {display:none; width:50%;  text-shadow:2px 2px #3C0101 ; color:#FFFF00; font-size:20px; }
+.sub-category-title { width:50%;  text-shadow:2px 2px #3C0101 ; color:#FFFF00; font-size:3em; 
+font-family:'MTCORSVA';
+text-align:center;
+  position: relative;
+
+}
 .product-pics .title-product {font-size:16px}
 .product-pics  img.sample {
   min-height:97%; 
@@ -160,6 +187,7 @@ span.Necessary {color:#FF0000; font-weight:bold}
 
 .box-3 {     
   font-size:12px;
+  position:relative;
   bottom: 0; 
   z-index: 600;  
   color: white; 
@@ -282,9 +310,9 @@ position: fixed;}
 .line img {width:86%; margin-right:7px;}
 .row .cycle-overlay {margin-bottom:2px}
 #category-details {max-width:75%; min-width:75%;
- float:right; position: fixed;
+ float:right; position: relative;
  padding:10px;
-margin-right: 20%;}
+margin-right: 25%;}
 #category-details .details {    
   min-height:402px; 
   max-height:402px;   
@@ -353,23 +381,25 @@ table.table tr.visited {font-weight:bold}
 .footer-admin a {color:#e5ec6f;}
 .footer-admin a:hover {color:#DEFF00}
 
-.admin-link {
-  height:20px; 
+.admin-link {  
+  
+  padding:2%;
+  display:block;
   margin:5px;   
   width:200px; 
- z-index:10;
+  z-index:10;
   overflow:hidden; 
   position:absolute;
-  color:#DEFF00;   
-  background:#29170d;
+  color:#29170d;   
+  background:#DEFF00;
   opacity:.8; 
   filter:alpha(opacity=80); /* For IE8 and earlier */
   text-align:center;
   -webkit-transition:all 1s; /* For Safari 3.1 to 6.0 */
   transition:all 1s;}
-.admin-link:hover{ min-height:150px ; cursor:pointer; display:block}
-.admin-link a {color:#F8FD9F}
-.admin-link a:hover {color:#DEFF00}
+.admin-link a {color:#29170d;  }
+
+.admin-link a:hover {color:#A52A2A}
 .category-bg { 
   height:100%; 
  /* background:url('vintage-wallpaper-2.jpg') ; */
@@ -519,20 +549,33 @@ min-height:90%;
   max-height:200px;
   overflow:hidden; float:right;
   margin:5px;
-  padding:5px;
+  border: 5px solid #29170d;
   text-align:center;
   background:#29170d;
   
  }
-.model-pro .pic-title {color:#FBFB60; height:38px; overflow:hidden}
-.model-pro .go-download {
+.model-folder-pro {
+  position:relative;
+  min-width:22%;
+  max-width:22%;
+  min-height:270px;
+  max-height:270px;
+  overflow:hidden; float:right;
+  margin:5px;
+  border: 5px solid #29170d;
+  text-align:center;
+  background:#29170d;  
+ } 
+ 
+.model-pro .pic-title, .model-folder-pro .pic-title {color:#FBFB60; height:38px; overflow:hidden}
+.model-pro .go-download, .model-folder-pro .go-download{
   position:absolute;
   width:22%;
   background:#29170d;
   opacity: .8;  
   filter:alpha(opacity=80); /* For IE8 and earlier */
 }
-.model-pro img.sample {width:100%; height:150px}
+.model-pro img.sample, .model-folder-pro img.sample{width:100%; height:100%}
 .product_show_pics {width:70%; float: left;
 overflow-y:scroll;
 height:82%;
@@ -541,6 +584,16 @@ margin-left: 5%;
 margin-right: 26%;
 margin-top:4%
 }
+.folder-product_show_pics {width:95%; overflow-y:scroll;
+height:82%;
+position: absolute;
+margin-left: 1%;
+margin-right: 1%;
+margin-top:4%}
+.folder-product_show_pics h4.folder-pro {text-align:center; background-color:#27160e;
+  width:50%;
+  color:#FBFB87;
+  font-family:'MTCORSVA';}
 .catalog {overflow-y:scroll; height:350px;}
 .show-picture {padding:5%}
 .text-shadow {text-shadow:2px 2px #4D2907 ;}
@@ -567,7 +620,7 @@ margin-top:4%
   transition: all 1s ease;
 }
 .product-pics:hover .cover { height:28%; margin-top:-65%;}
-.product-pics#sub_category:hover .cover.pointer-sub-category { height:22%;margin-top:-105%; position:relative }
+.product-pics.sub_category_box:hover .cover.pointer-sub-category { height:22%;margin-top:-105%; position:relative }
 .product-pics:hover .cover img{ height:30%; }
 .cover img {
 
@@ -604,13 +657,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', end
 }
 #cboxTitle {color:#000}
 
-button {background-color:#27160e;border:0; margin-top:2%;
-
-  opacity: .8;
-filter: alpha(opacity=80);
+button {background-color:#27160e;border:0; margin-top:2%;  
+width:100%;
 font-size:20px;
 }
-button.filter{ font-family: 'MTCORSVA';}
-button.filter:hover {background-color:#C23B0E; font-family: 'MTCORSVA';}
+
+
 p.error_size {background:#FF0000; opacity: .8;
 filter: alpha(opacity=80); width:50%; height:20px;}
+.pro-folder-btn {color:#FBFB87; font-size:20px;margin-top:2%;
+  padding:1%;
+  background-color:#27160e;
+  font-family:'MTCORSVA';
+}
+.pro-folder-btn:hover {background-color:#C23B0E; font-family: 'MTCORSVA';}
