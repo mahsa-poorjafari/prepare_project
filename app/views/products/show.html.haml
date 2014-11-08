@@ -34,8 +34,9 @@
     .product-details#Container       
       - @product.product_folders.order('title_en ASC').each do |product_folder|                        
         - @picture = product_folder.pictures.first
-        .model-pro{:id => 'folder-'+product_folder.id.to_s}
-          = render 'products/filter_folder', :picture => @picture, :product => @product
+        - if @picture.present?
+          .model-pro{:id => 'folder-'+product_folder.id.to_s}
+            = render 'products/filter_folder', :picture => @picture, :product => @product
   
   - else 
     .product-details      
