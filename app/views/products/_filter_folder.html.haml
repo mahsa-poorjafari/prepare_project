@@ -1,10 +1,11 @@
-- if is_admin?
-  .model-admin-link
-    = link_to 'ویرایش', edit_picture_path(picture), :title => product.category.title_fa + '_'+product.title_fa
-    \|
-    = link_to 'حذف', picture, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } , :title => product.category.title_fa + '_'+product.title_fa
-
 - if picture.present?
+  - if is_admin?
+    .model-admin-link
+      = link_to 'ویرایش', edit_picture_path(picture), :title => product.category.title_fa + '_'+product.title_fa
+      \|
+      = link_to 'حذف', picture, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } , :title => product.category.title_fa + '_'+product.title_fa
+
+
   .pic-title{:title => picture.id}= picture.title
 
   - if  picture.download
