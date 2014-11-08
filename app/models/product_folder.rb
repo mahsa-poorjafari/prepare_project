@@ -1,5 +1,7 @@
 # encoding: UTF-8
 class ProductFolder < ActiveRecord::Base
+  extend FriendlyId  
+  friendly_id :title_en
   has_many :pictures
   belongs_to :product
   validates :title_en, :title_fa, :product_id, :presence => {:message => 'عنوان را وارد کنید.'}
