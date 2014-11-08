@@ -3,8 +3,8 @@
     = link_to 'ویرایش', edit_picture_path(picture), :title => product.category.title_fa + '_'+product.title_fa
     \|
     = link_to 'حذف', picture, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } , :title => product.category.title_fa + '_'+product.title_fa
-
-.pic-title= picture.title
+- if picture.present?
+  .pic-title= picture.title
 
 - if  picture.download
   .go-download

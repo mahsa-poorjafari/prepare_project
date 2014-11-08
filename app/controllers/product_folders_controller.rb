@@ -64,7 +64,7 @@ class ProductFoldersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product_folder
-      @product_folder = ProductFolder.find(params[:id])
+      @product_folder = ProductFolder.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
