@@ -3,18 +3,19 @@
     = link_to 'ویرایش', edit_picture_path(picture), :title => product.category.title_fa + '_'+product.title_fa
     \|
     = link_to 'حذف', picture, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } , :title => product.category.title_fa + '_'+product.title_fa
+
 - if picture.present?
   .pic-title= picture.title
 
-- if  picture.download
-  .go-download
-    = link_to  download_product_path(:picture_id =>  picture.id), :title => product.category.title_fa + '_'+product.title_fa do
-      = image_tag 'dnwn.png', :style => "height:30px; width:30px;", :title => product.category.title_fa + '_'+product.title_fa , :title => product.category.title_fa + '_'+product.title_fa
-      = t ('download')
-=link_to picture.image(:original), :data => { :colorbox => true }, :class => "show-product", :title => product.category.title_fa + '_'+product.title_fa do          
-  - if picture.coming_soon
-    = image_tag 'coming-soon.png', :class => "coming-soon", :title => product.category.title_fa + '_'+product.title_fa, :alt => product.category.title_fa + '_'+product.title_fa
-  = image_tag  picture.image(:small), :class => "sample", :model => picture.title, :title => product.category.title_fa + '_'+product.title_fa, :alt => product.category.title_fa + '_'+product.title_fa
+  - if  picture.download
+    .go-download
+      = link_to  download_product_path(:picture_id =>  picture.id), :title => product.category.title_fa + '_'+product.title_fa do
+        = image_tag 'dnwn.png', :style => "height:30px; width:30px;", :title => product.category.title_fa + '_'+product.title_fa , :title => product.category.title_fa + '_'+product.title_fa
+        = t ('download')
+  =link_to picture.image(:original), :data => { :colorbox => true }, :class => "show-product", :title => product.category.title_fa + '_'+product.title_fa do          
+    - if picture.coming_soon
+      = image_tag 'coming-soon.png', :class => "coming-soon", :title => product.category.title_fa + '_'+product.title_fa, :alt => product.category.title_fa + '_'+product.title_fa
+    = image_tag  picture.image(:small), :class => "sample", :model => picture.title, :title => product.category.title_fa + '_'+product.title_fa, :alt => product.category.title_fa + '_'+product.title_fa
 
   
   .cover
