@@ -1,9 +1,8 @@
+
 = image_tag 'lobby.jpg', :class => "bg"  , :title => "رنگین کمان", :alt => "رنگین کمان"
 
 -if is_admin?
-  .admin-link.fa
-    %p= 'منوی صفحه'
-    %hr
+  .admin-link.fa    
     = link_to 'ویرایش', edit_product_path(@product), :title => @product.category.title_fa + '_'+@product.title_fa
     -#
       \|
@@ -27,17 +26,16 @@
 .product_show_pics
   
   - if @product.product_folders.present?
-    .col-sm-11.set-center
-      %button.filter.active{"data-filter" => "all", :style => "color:#FBFB87; font-size:20px;margin-top:2%;"}= t('filter-all')
+    .col-sm-11.set-center      
       - @product.product_folders.each do |product_folder|
-        %button.filter{:title => @product.category.title_fa + '_'+product_folder.title_fa, "data-filter" => "#folder-"+product_folder.id.to_s, :style => "color:#FBFB87; font-size:20px;margin-top:2%;"}= product_folder.title 
+        = link_to product_folder.title , product_folder, {:title => @product.category.title_fa + '_'+product_folder.title_fa,  :class => "pro-folder-btn"}        
         
     .clr-float
     .product-details#Container       
-      - @product.product_folders.order('title_en ASC').each do |product_folder|                
-        - product_folder.pictures.each do |picture|            
-          .model-pro.mix{:id => 'folder-'+product_folder.id.to_s, "data-my-order" => product_folder.id}          
-            = render 'products/filter_folder', :picture => picture, :product => @product
+      - @product.product_folders.order('title_en ASC').each do |product_folder|                        
+        - @picture = product_folder.pictures.first
+        .model-pro{:id => 'folder-'+product_folder.id.to_s}          
+          = render 'products/filter_folder', :picture => @picture, :product => @product
   
   - else 
     .product-details      
@@ -46,11 +44,7 @@
           = render 'products/filter_folder', :picture => picture, :product => @product
 
 .clr-float
-
 :javascript    
   $('.show-product').colorbox({title: $(this).attr('title') });   
-  $(function(){
-    $('#Container').mixItUp();  
-  });
-  
+
 

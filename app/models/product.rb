@@ -7,8 +7,7 @@ class Product < ActiveRecord::Base
                                             :message =>  "فرمت عکس صحیح نیست"
   
   
-  belongs_to :category
-  
+  belongs_to :category  
   belongs_to :sub_category
   has_many :pictures
   has_many :product_folders

@@ -1,12 +1,30 @@
-%p#notice= notice
+= image_tag 'lobby.jpg', :class => "bg"  , :title => "رنگین کمان", :alt => "رنگین کمان"
+-if is_admin?
+  .admin-link.fa    
+    = link_to 'ویرایش فولدر', edit_product_folder_path(@product_folder)
+    
+      
+    
+.folder-product_show_pics
+  %h4.folder-pro.set-center= @product_folder.product.category.title + " / " + @product_folder.product.title + " / " + @product_folder.title
+  - @product_folder.pictures.each do |picture|
+    .model-folder-pro 
+      - if is_admin?
+        .model-admin-link
+          = link_to 'ویرایش', edit_picture_path(picture), :title => @product_folder.product.title_fa + '_'+ @product_folder.title_fa
+          \|
+          = link_to 'حذف', picture, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } , :title => @product_folder.product.title_fa + '_'+ @product_folder.title_fa
+      - if  picture.download
+        .go-download
+          = link_to  download_product_path(:picture_id =>  picture.id), :title => @product_folder.product.title_fa + '_'+ @product_folder.title_fa do
+            = image_tag 'dnwn.png', :style => "height:30px; width:30px;", :title => @product_folder.product.title_fa + '_'+@product_folder.title_fa , :title => @product_folder.product.title_fa + '_'+@product_folder.title_fa
+            = t ('download')
+      = link_to picture.image(:original), :data => { :colorbox => true }, :class => "show-product", :title => @product_folder.product.title_fa + '_'+ @product_folder.product.title_fa do          
+        - if picture.coming_soon
+          = image_tag 'coming-soon.png', :class => "coming-soon", :title => @product_folder.product.title_fa + '_'+ @product_folder.title_fa, :alt => @product_folder.product.title_fa + '_'+ @product_folder.title_fa
+        = image_tag  picture.image(:small), :class => "sample", :model => picture.title, :title => @product_folder.product.title_fa + '_'+ @product_folder.product.title_fa, :alt => @product_folder.product.title_fa + '_'+ @product_folder.title_fa
 
-%p
-  %b Title en:
-  = @product_folder.title_en
-%p
-  %b Title fa:
-  = @product_folder.title_fa
+        
+        .cover
+          = image_tag 'zoom.png', :class => "zoom-pic", :title => @product_folder.product.title_fa + '_'+ @product_folder.title_fa, :alt => @product_folder.product.title_fa + '_'+ @product_folder.title_fa
 
-= link_to 'Edit', edit_product_folder_path(@product_folder)
-\|
-= link_to 'Back', product_folders_path

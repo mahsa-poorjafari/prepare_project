@@ -1,8 +1,6 @@
 
 -if is_admin?
-  .admin-link.fa
-    %p= 'منوی صفحه'
-    %hr
+  .admin-link.fa    
     = link_to 'تعریف محصول جدید', new_category_path, :title => "رنگین کمان"
 
 = image_tag 'd.jpg', :class => "bg", :alt => "رنگین کمان", :title => "رنگین کمان"
@@ -10,7 +8,7 @@
   - @categories.each do |category|    
     .box-3.set-center{align: "center", :class => I18n.locale}                            
       - if is_admin?  
-        .link-del
+        .model-admin-link
           = link_to 'ویرایش', edit_category_path(category)
           -#
             = link_to 'حذف', category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
