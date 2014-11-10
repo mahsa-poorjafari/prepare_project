@@ -116,7 +116,7 @@ nav ul li.notlink {
 	cursor: default;
 }
 footer {
-	position: absolute;
+	position: fixed;
 	width: 100%;	
 	left: 0;
 	bottom: 0;
@@ -221,7 +221,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c0f09', end
 	color: #FFFFFF;
 }
 #content {
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	z-index: 10;
 	margin: 100px 0 150px 0;	
