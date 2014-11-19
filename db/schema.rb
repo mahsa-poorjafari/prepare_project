@@ -170,19 +170,6 @@ ActiveRecord::Schema.define(version: 20140920090018) do
     t.boolean  "comming_soon"
   end
 
-  create_table "sub_categories", force: true do |t|
-    t.string   "title_en"
-    t.string   "title_fa"
-    t.integer  "category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.boolean  "comming_soon"
-  end
-
   create_table "users", force: true do |t|
     t.text     "email"
     t.string   "user_name"
