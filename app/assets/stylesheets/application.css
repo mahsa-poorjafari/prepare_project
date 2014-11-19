@@ -461,8 +461,8 @@ ul#banner li:hover a{color:#F6F649}
 .link-del {position:fixed}
 /*.scroll {margin-right:400px; width:8000px}*/
 img.coming-soon {z-index:20;  
-position:absolute; right:3%;
-top:18%
+position:absolute; right:25%;
+top:35%
 }
 b.coming-soon { opacity:.8;  filter:alpha(opacity=80); /* For IE8 and earlier */ position:fixed; z-index:10; text-align:center} 
 .box-title {font-size:25px;}

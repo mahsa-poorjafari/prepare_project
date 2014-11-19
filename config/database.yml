@@ -22,6 +22,4 @@ production:
   database: rlfloor 
   pool: 5
   timeout: 5000
-  username: da_admin
-  password: hllUXDhM
-
+ 
