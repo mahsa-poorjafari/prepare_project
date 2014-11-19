@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20140920090018) do
   end
 
   create_table "categories", force: true do |t|
+    t.string   "title"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
