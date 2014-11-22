@@ -1,8 +1,6 @@
 
 -if is_admin?
-  .admin-link.fa
-    %p= 'منوی صفحه'
-    %hr
+  .admin-link.fa    
     = link_to content_tag("span", "ویرایش"), edit_slider_path(@slider), :title => "رنگین کمان_"+@slider.image_file_name
     \|
     = link_to content_tag("span", "بازگشت"), root_path, :title => "رنگین کمان_"+@slider.image_file_name

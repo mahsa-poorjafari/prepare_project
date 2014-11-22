@@ -1,13 +1,11 @@
 -if is_admin?
-  .admin-link.fa
-    %p= 'منوی صفحه'
-    %hr
+  .admin-link.fa    
     = link_to content_tag("span", "عکس جدید"), new_slider_path
 .slider.fa
   .index-slider.set-center 
     - @sliders.each do |slide|
-      .box-3
-        %div
+      %div{:style => "overflow:hidden; width:20%; float:right; border: solid 1px #29170d"}
+        .model-admin-link
           = link_to content_tag("span", "ویرایش"), edit_slider_path(slide) , :title => "رنگین کمان_"+slide.image_file_name
           \|        
           = link_to 'حذف', slide, :method => :delete, :data => { confirm: 'آیا میخواهید این  تصویر را حذف کنید?'} , :title => "رنگین کمان_"+slide.image_file_name
@@ -19,3 +17,4 @@
   $(".item").first().addClass("active");
   $(".slide-indicator").first().addClass("active");
   $('.carousel').carousel();
+  $('#content').css('overflow-y', 'scroll');

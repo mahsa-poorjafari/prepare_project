@@ -1,8 +1,6 @@
 
 -if is_admin?
-  .admin-link.fa
-    %p= 'منوی صفحه'
-    %hr
+  .admin-link.fa    
     = link_to 'تعریف مدل جدید', new_product_path, :title => "رنگین کمان"
 = image_tag 'lobby.jpg', :class => "bg", :title => "رنگین کمان", :alt => "رنگین کمان"
 - @category.each do |category|  

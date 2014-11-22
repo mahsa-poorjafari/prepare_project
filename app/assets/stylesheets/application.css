@@ -351,7 +351,7 @@ cursor:pointer;
 opacity:1;
 filter:alpha(opacity=100); /* For IE8 and earlier */
 }
-.slider {width: 100%; height: 100%; z-index:10}
+.slider {width: 100%; height: 100%; z-index:10;}
 
 .slider .hero-unit {width: 100%; max-height: 480px; min-height: 480px; position:relative;}
 
@@ -428,7 +428,7 @@ table.table tr.visited {font-weight:bold}
 #content form.new_category {height:400px}
 .edi-slider-holder {position:absolute; width:100%; height:100%; margin-top:20px}
 .show-slider {width:100%; height:480px}
-.index-slider {width:100%; height:80%; overflow-y:scroll}
+.index-slider {width:100%; height:80%; overflow-y:scroll; padding-top:2%}
 .admin_menu {min-width:10%; height:50px;  -webkit-transition:all 1s; /* For Safari 3.1 to 6.0 */
   transition:all 1s; overflow:hidden; color:#DEFF00; 
   background:#29170d;
@@ -461,8 +461,8 @@ ul#banner li:hover a{color:#F6F649}
 .link-del {position:fixed}
 /*.scroll {margin-right:400px; width:8000px}*/
 img.coming-soon {z-index:20;  
-position:absolute; right:25%;
-top:35%
+position:absolute; left:0;
+top:16%
 }
 b.coming-soon { opacity:.8;  filter:alpha(opacity=80); /* For IE8 and earlier */ position:fixed; z-index:10; text-align:center} 
 .box-title {font-size:25px;}
