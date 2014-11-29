@@ -23,16 +23,16 @@ img.bg {z-index:-20; position:fixed; right:0%; left:0%; width:100%; height:80%}
 .float-left {float:left;}
 
 .category-info {
- padding:10px;
-float: right;
-min-height: 100%;
-max-height: 100%;
-color: #e5ec6f; 
+  padding:1%;
+  position:relative;
+  float: right;
+  height:456px;
+  color: #e5ec6f;
+  background: #27160e;
+  opacity: .8;
+  filter: alpha(opacity=80);
+  width:25%;
 
-opacity: .8;
-filter: alpha(opacity=80);
-min-width:31%;
-min-width:31%;
   }
 .edit-category {float: right;
 position:fixed; right:0;
@@ -59,18 +59,10 @@ margin-left: 4%;
 
 }
 .category-link {
-  background: #27160e;
-min-height:85%;
-max-height: 85%;
-padding-top: 5%;
-
-margin-top: 3%;
-opacity: .8;
-filter: alpha(opacity=80);
+top:15%;
 position: absolute;
-width: 19%;
-margin-right: 5%;
-margin-left: 5.5%;
+width: 100%;
+
 
 }
 
@@ -295,9 +287,9 @@ height:120%;
 .pro_wrapper .line b {color:#27160e; margin-top:10px; }
 .line {width: 22%;
 height:50px;
-right:4%;
+right:0;
 text-align: center;
-margin-top: 2.2%;
+margin-top: -1%;
 z-index: 20;
 position: fixed;}
 .title-cat {font-size:1.5em;}
@@ -308,12 +300,12 @@ position: fixed;}
   position: absolute; 
   left: 30%; 
   bottom:65px}
-.line img {width:86%; margin-right:7px;}
+.line img {width:86%; position:absolute; right:12%}
 .row .cycle-overlay {margin-bottom:2px}
-#category-details {max-width:75%; min-width:75%;
+#category-details {width:75%;
  float:right; position: relative;
  padding:10px;
-margin-right: 25%;}
+}
 #category-details .details {    
   min-height:402px; 
   max-height:402px;   
@@ -383,14 +375,14 @@ table.table tr.visited {font-weight:bold}
 .footer-admin a:hover {color:#DEFF00}
 
 .admin-link {  
-  
-  padding:2%;
+  padding:1%;
   display:block;
   margin:5px;   
   width:200px; 
   z-index:10;
   overflow:hidden; 
-  position:absolute;
+  top:5%;
+  position:fixed;
   color:#29170d;   
   background:#DEFF00;
   opacity:.8; 
@@ -415,9 +407,7 @@ table.table tr.visited {font-weight:bold}
 .info-holder{ 
   width:100%; 
   height:100%;
-  margin-top:-10px
- 
-}
+  }
 .cer-bg {width:100%; 
   height:400px;
   color:#fff;
@@ -439,16 +429,18 @@ table.table tr.visited {font-weight:bold}
 .admin_menu:hover {height:400px; margin-top:-400px; cursor:pointer;}  
 .admin_menu h3 {text-align:center}
 .go-up {
-  margin-top:-25%; z-index:10; width:70%; 
+  z-index:10; width:70%; 
   text-align:center; 
   color:#401805; 
-  
-  margin-bottom:75px;
+  position:absolute;
+  right:20%;
+  padding-top:5%;
+ 
   }
 .cat-link { bottom:0; width:100%;
 padding:10px;
 overflow-y:scroll;
-height:230px;
+height:290px;
 
 
 }
@@ -474,22 +466,9 @@ b.coming-soon { opacity:.8;  filter:alpha(opacity=80); /* For IE8 and earlier */
   font-size:11;
   text-align:center;
 }
-
-.cat-group {width:15%; float:left; margin-left:37px}
-.cat-group.active, .cat-group:hover { 
-  cursor:pointer
-}
-.cat-group.active .set-center img, .cat-group:hover .set-center img  {height:80px;margin-top:-6px; }
-
-.cat-group.active .pro-cat-title, .cat-group:hover  .pro-cat-title {transform:rotate(9deg);
--ms-transform:rotate(9deg); /* IE 9 */
--webkit-transform:rotate(9deg); /* Opera, Chrome, and Safari */ }
-
-.cat-group .set-center img {height:35px; width:200px; -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-  }
+.cat-group {width:30%; float:left; height:100%}
+.cat-group:hover {cursor:pointer; color:#D79213;}
+.cat-group:hover .pro-cat-title, .cat-group.active .pro-cat-title{color:#D79213;}
 .products-group {width:95%; 
   height:70%;   
   padding-top:45px;
@@ -502,14 +481,14 @@ b.coming-soon { opacity:.8;  filter:alpha(opacity=80); /* For IE8 and earlier */
   overflow-y:scroll
 }
 .pro-cat-title {
-margin-top: -39px;
+margin-top: -22%;
 z-index: 10;
 width: 75%;
 text-align: center;
 font-size:20px;
 color: #401805;
 margin-right:20%;
-margin-left:17%;
+margin-left:14%;
 font-weight: bold;
 
 }
@@ -674,3 +653,4 @@ filter: alpha(opacity=80); width:50%; height:20px;}
   font-family:'MTCORSVA';
 }
 .pro-folder-btn:hover {background-color:#C23B0E; font-family: 'MTCORSVA';}
+.gallery-category {width: 50%; height: 60px; position:relative;}

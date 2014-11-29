@@ -1,14 +1,14 @@
 -if is_admin?
   .admin-link.fa
-    %p= 'منوی صفحه'
-    %hr
+   
     = link_to 'افزودن تصویر جدید', new_gallery_path
-= image_tag 'slide12.jpg', :class => "bg", :title => "رنگین کمان", :alt => "رنگین کمان"
-- @category.each do |category|  
-  .cat-group{:id => "item#{category.id}", :divname => "item#{category.id}"} 
-    .set-center{:style => "margin-top:5px"} 
-      = image_tag 'cat-title.png', :title => category.title_fa, :alt => category.title_fa
-      .set-center.pro-cat-title= category.title
+= image_tag 'slides12.jpg', :class => "bg", :title => "رنگین کمان", :alt => "رنگین کمان"
+.gallery-category.set-center
+  - @category.each do |category|  
+    .cat-group{:id => "item#{category.id}", :divname => "item#{category.id}"} 
+      .set-center{:style => "margin-top:5px; height:100%"} 
+        = image_tag 'cat-title.png', :title => category.title_fa, :alt => category.title_fa, :style => "height:100%"
+        .set-center.pro-cat-title= category.title
   
 .products-group.set-center  
   - @category.each do |category|  
