@@ -1,7 +1,5 @@
 -if is_admin?
-  .admin-link.fa
-    %p= 'منوی صفحه'
-    %hr
+  .admin-link.fa    
     = link_to 'تعریف نمایندگی جدید', new_reseller_path
     %hr
     = link_to 'ویرایش صفحه', edit_page_path(@page)
