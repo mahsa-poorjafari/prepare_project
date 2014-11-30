@@ -12,14 +12,12 @@
           = link_to 'ویرایش', edit_category_path(category)
           -#
             = link_to 'حذف', category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
-      = link_to category, :title => category.title_fa do               
-        %p= category.title 
+      = link_to category, :title => category.title_fa , :class => "category-link-title" do 
         .category-image
           = image_tag category.image(:small), :class => "sample-img", :alt => category.title_fa, :title =>  category.title_fa
-    
+        %p.cat-title-on-box-3= category.title 
       
-      .box-menu           
-        .arrow-vertical
+      .box-menu 
         %ul
           - if category.products.present?
             %li= link_to t('model'), category, :title => category.title_fa
