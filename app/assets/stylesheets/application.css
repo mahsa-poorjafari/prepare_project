@@ -185,7 +185,8 @@ span.Necessary {color:#FF0000; font-weight:bold}
   z-index: 600;  
   color: white; 
   padding: 5px; 
-  background: url('sprinkles.png') repeat;
+  background-image: url('sprinkles.png');
+  background-repeat: repeat;
   box-shadow:-3px 0px 5px #333333, 3px 1px 5px #333333;
   min-height:350px; 
   max-height:350px; 
@@ -233,7 +234,9 @@ span.Necessary {color:#FF0000; font-weight:bold}
   height:80px;
   color:#27160e;
 }
-.box-3 p.cat-title-on-box-3 {background:url('we.png') no-repeat;
+.box-3 p.cat-title-on-box-3 {
+  background-image:url('we.png');
+  background-repeat: no-repeat;
   left:-7%;
   padding-top:4%;
 }
