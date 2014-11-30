@@ -137,7 +137,7 @@ footer {
 	background: linear-gradient(to bottom, #1c0f09 0%,#27160e 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c0f09', endColorstr='#27160e',GradientType=0 ); /* IE6-9 */
 	
-	/* background-image:url('bg-footer.png');
+	/* background-image:url(image-path('bg-footer.png'));
 	background-repeat:repeat-x */
 }
 footer #footer-bottom {
@@ -237,7 +237,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c0f09', end
   max-height:485px;
   
 }
-.page-products {background-image:url('bd.jpg');
+.page-products {background-image:url(image-path('bd.jpg'));
   background-size:cover;
   background-repeat:no-repeat;}
 
