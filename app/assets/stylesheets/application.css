@@ -185,7 +185,7 @@ span.Necessary {color:#FF0000; font-weight:bold}
   z-index: 600;  
   color: white; 
   padding: 5px; 
-  background-image: url('sprinkles.png');
+  background-image: image-url('sprinkles.png');
   background-repeat: repeat;
   box-shadow:-3px 0px 5px #333333, 3px 1px 5px #333333;
   min-height:350px; 
