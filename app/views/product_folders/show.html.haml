@@ -34,8 +34,4 @@
         - if picture.coming_soon
           = image_tag 'coming-soon.png', :class => "coming-soon", :title => @product_folder.product.title_fa + '_'+ @product_folder.title_fa, :alt => @product_folder.product.title_fa + '_'+ @product_folder.title_fa
         = image_tag  picture.image(:small), :class => "sample", :model => picture.title, :title => @product_folder.product.title_fa + '_'+ @product_folder.product.title_fa, :alt => @product_folder.product.title_fa + '_'+ @product_folder.title_fa
-
-        
-        .cover
-          = image_tag 'zoom.png', :class => "zoom-pic", :title => @product_folder.product.title_fa + '_'+ @product_folder.title_fa, :alt => @product_folder.product.title_fa + '_'+ @product_folder.title_fa
-
+      = image_tag 'pointer.png', :class => "model-logo"
