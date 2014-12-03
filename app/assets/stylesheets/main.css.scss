@@ -47,7 +47,8 @@ header #header-top{
 	left: 0;
 	top: 0;
 	z-index: 20;	
-  background:url('pt.jpg') repeat;
+  background-image:url(image-path('pt.jpg'));
+  background-repeat:repeat;
   opacity:.1;
    filter: alpha(opacity=10); /* For IE8 and earlier */
 }
