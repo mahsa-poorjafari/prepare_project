@@ -5,9 +5,6 @@
     \|
     = link_to 'حذف', picture, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } , :title => product.category.title_fa + '_'+product.title_fa
 
-
-.pic-title{:title => picture.id}= picture.title
-
 - if  picture.download
   .go-download
     = link_to  download_product_path(:picture_id =>  picture.id), :title => product.category.title_fa + '_'+product.title_fa do
@@ -17,7 +14,5 @@
   - if picture.coming_soon
     = image_tag 'coming-soon.png', :class => "coming-soon", :title => product.category.title_fa + '_'+product.title_fa, :alt => product.category.title_fa + '_'+product.title_fa
   = image_tag  picture.image(:small), :class => "sample", :model => picture.title, :title => product.category.title_fa + '_'+product.title_fa, :alt => product.category.title_fa + '_'+product.title_fa
+.pic-title{:title => picture.id}= picture.title
 
-
-.cover
-  = image_tag 'zoom.png', :class => "zoom-pic", :title => product.category.title_fa + '_'+product.title_fa, :alt => product.category.title_fa + '_'+product.title_fa

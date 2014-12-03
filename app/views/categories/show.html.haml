@@ -69,54 +69,22 @@
                     \|
                     = link_to 'حذف', sub_category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } , :title => @category.title_fa    
               = link_to sub_category do
-                .title-product
-                  =sub_category.title
-                
                 .img-box
                   - if sub_category.comming_soon
                     = image_tag 'cm.png', :class => "coming-soon", :style => 'position: absolute;display:none', :title => @category.title_fa    , :alt => @category.title_fa    
                   = image_tag sub_category.image(:medium), :class => "sample", :title => @category.title_fa    , :alt => @category.title_fa    
-                
+                .title-product
+                  =sub_category.title
                 
                 .cover
                   = image_tag 'pointer.png', :alt => @category.title_fa    , :title => @category.title_fa    
-            -#
-              - sub_category.products.each_slice(4) do |products|               
-                .sub-category-title.set-center
-                  = sub_category.title
-                .col-sm-8#sub_categories_boxes
-                  #Container
-                    - products.each do |product|                                                 
-                      .product-pics.mix.sub_category_box{"data-my-order" => product.sub_category.id,:style => " min-height:200px; max-height:200px; opacity:1; filter: alpha(opacity=100);", :id => "sub_category_"+sub_category.id.to_s}
-                        - if is_admin?
-                          .model-admin-link{:style => "width:auto"}             
-                            = link_to 'ویرایش', edit_product_path(product), :title => @category.title_fa+'_'+product.title_fa    
-                            -#
-                              \|
-                              = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } , :title => @category.title_fa+'_'+product.title_fa
-                        = link_to  product, :category_id => @category.id, :title => @category.title_fa+' '+product.title_fa     do  
-                          .title-sub-category
-                            = product.title                      
-                          - if product.coming_soon
-                            = image_tag 'coming-soon.png', :class => "coming-soon", :title => @category.title_fa+'_'+product.title_fa    , :alt => @category.title_fa+'_'+product.title_fa    
-                          .img-box
-                            = image_tag product.image(:medium), :class => "sample-sub-category", :title => @category.title_fa+'_'+product.title_fa , :alt => @category.title_fa+'_'+product.title_fa
-                          
-                          
-                          .cover.pointer-sub-category
-                            = image_tag 'pointer.png', :title => @category.title_fa+'_'+product.title_fa, :alt => @category.title_fa+'_'+product.title_fa
-                      
+            
               .sub-cat-link.col-sm-3
                 - @category.sub_categories.each do |sub_category|
                   %button{:class => "filter", "data-filter" => "#sub_category_" + sub_category.id.to_s}
                     .sub-category-product-pics 
                       = sub_category.title
-                    -#
-                      .img-box
-                        = image_tag sub_category.image(:small), :class => "sample", :title => @category.title_fa    , :alt => @category.title_fa    
-                      - if sub_category.comming_soon
-                        = image_tag 'coming-soon.png', :class => "coming-soon", :style => ' display:none'  , :title => @category.title_fa    , :alt => @category.title_fa    
-                  
+                    
                 
         - else
           - @category.products.each_slice(4) do |products|
@@ -130,10 +98,11 @@
                         \|
                         = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' } , :title => @category.title_fa+'_'+product.title_fa    
                   = link_to  product, :category_id => @category.id, :title => @category.title_fa+'_'+product.title_fa     do                                                            
-                    .title-product
-                      = product.title                    
+                                       
                     .img-box
                       = image_tag product.image(:medium), :class => "sample" , :title => @category.title_fa+'_'+product.title_fa    , :alt => @category.title_fa+'_'+product.title_fa                       
+                    .title-product
+                      = product.title 
                     - if product.coming_soon
                       = image_tag 'coming-soon.png', :class => "coming-soon", :style => 'margin-right:-62%; margin-top:-118%; display:none'  , :title => @category.title_fa+'_'+product.title_fa    , :alt => @category.title_fa+'_'+product.title_fa    
                     .cover
