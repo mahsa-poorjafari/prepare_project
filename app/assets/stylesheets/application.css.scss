@@ -702,7 +702,7 @@ font-size:20px;
 p.error_size {background:#FF0000; opacity: .8;
 filter: alpha(opacity=80); width:50%; height:20px;}
 .pro-folder-btn {color:#FBFB87; font-size:20px;margin-top:2%;
-  padding:1%;
+  padding:2%;
   background-color:#27160e;
   width:100%;
   }
@@ -712,6 +712,7 @@ filter: alpha(opacity=80); width:50%; height:20px;}
 
 .pro-folder-btn:hover {background-color:#C23B0E; }
 .product-folder-lists {width:auto; margin: 5px;}
+
 .product-folder-lists.en {float:left}
 .product-folder-lists.fa {float:right}
 .gallery-category {width: 50%; height: 60px; position:relative;}
