@@ -131,8 +131,8 @@ width: 100%;
   border-bottom: 2px solid #FFA500;} 
 .sub_category_box .img-box img.sample-sub-category{width:100%; position:relative;} 
 
-.sub_category_box .title-sub-category{font-size:15px; position:relative; height:40px; color:#29170d;
-  padding-top: 4%; 
+.sub_category_box .title-sub-category{font-size:15px; position:absolute; height:40px; color:#29170d;
+  bottom:0;
   } 
 .sub_category_box .title-sub-category:hover { text-shadow:2px 2px 5px #3C0101 ;}
 .deactive {width:50px; height:50px; opacity:.5; margin-left:-50%}
