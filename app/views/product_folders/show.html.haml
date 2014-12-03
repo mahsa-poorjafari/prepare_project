@@ -1,4 +1,9 @@
-= image_tag 'lobby.jpg', :class => "bg"  , :title => "رنگین کمان", :alt => "رنگین کمان"
+- if @product_folder.product.category.id == 1
+  = image_tag 'liquid.jpg', :class => "bg", :alt => "رنگین کمان", :title => "رنگین کمان"  
+- elsif @product_folder.product.category.id == 2
+  = image_tag 'wallpaper.jpg', :class => "bg", :alt => "رنگین کمان", :title => "رنگین کمان"  
+- else
+  = image_tag 'laminate.jpg', :class => "bg", :alt => "رنگین کمان", :title => "رنگین کمان"  
 -if is_admin?
   .admin-link.fa    
     = link_to 'ویرایش فولدر', edit_product_folder_path(@product_folder)
@@ -6,7 +11,13 @@
       
     
 .folder-product_show_pics
-  %h4.folder-pro.set-center= @product_folder.product.category.title + " / " + @product_folder.product.title + " / " + @product_folder.title
+  %h4.folder-pro.set-center{:class => I18n.locale}
+    = link_to @product_folder.product.category.title , category_path(@product_folder.product.category), :class => I18n.locale
+    \\
+    = link_to @product_folder.product.title , product_path(@product_folder.product.title_fa), :class => I18n.locale
+    \\
+    %span{:class => I18n.locale}= @product_folder.title 
+    
   - @product_folder.pictures.each do |picture|
     .model-folder-pro 
       - if is_admin?

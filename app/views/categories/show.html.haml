@@ -5,9 +5,13 @@
       -#
         \|
         = link_to 'حذف', @category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }, :title => @category.title_fa
-      
-  = image_tag 'slide12.jpg', :class => "bg"  , :title => @category.title_fa, :alt => @category.title_fa
-  
+  - if @category.id == 1
+    = image_tag 'liquid.jpg', :class => "bg", :alt => "رنگین کمان", :title => "رنگین کمان"  
+  - elsif @category.id == 2
+    = image_tag 'wallpaper.jpg', :class => "bg", :alt => "رنگین کمان", :title => "رنگین کمان"  
+  - else
+    = image_tag 'laminate.jpg', :class => "bg", :alt => "رنگین کمان", :title => "رنگین کمان"  
+    
   .category-info.general
     %div
       .line.set-center  
@@ -149,8 +153,8 @@
               .cer-title= certification.title
       
       
-      .clr-float
-      
+    .clr-float
+        
 :javascript
   $( document ).ready(function() {
     $('#category-details').children().hide(); 
@@ -191,3 +195,4 @@
   });
   
   $('.cat-link p').css('margin', '0');
+
