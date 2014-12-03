@@ -2,7 +2,7 @@
   .admin-link.fa
    
     = link_to 'افزودن تصویر جدید', new_gallery_path
-= image_tag 'slides12.jpg', :class => "bg", :title => "رنگین کمان", :alt => "رنگین کمان"
+= image_tag 'lobby.jpg', :class => "bg", :title => "رنگین کمان", :alt => "رنگین کمان"
 .gallery-category.set-center
   - @category.each do |category|  
     .cat-group{:id => "item#{category.id}", :divname => "item#{category.id}"} 

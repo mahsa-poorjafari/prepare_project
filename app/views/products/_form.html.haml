@@ -29,6 +29,8 @@
       = f.select(:category_id, Category.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' محصول را انتخاب کنید.')        
     .form-group 
       = f.label "اگر محصول زیرگروه دارد از این منو انتخاب کنید:" , :class => "control-label"      
+      - if @product.sub_category_id.present?
+        %b= @product.sub_category.title_fa
       = f.select(:sub_category_id, SubCategory.all.collect {|u| [u.title_fa, u.id]}, :prompt => 'زیرگروه محصول را انتخاب کنید.')        
     
     .form-group 
@@ -36,6 +38,8 @@
       = f.check_box :coming_soon
     .form-group 
       = f.label "تصویر نمونه:", :class => "control-label"      
+      - if @product.present?
+        = image_tag @product.image(:small)
       = f.file_field :image  
     
      

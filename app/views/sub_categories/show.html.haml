@@ -3,7 +3,12 @@
     .admin-link.fa 
       = link_to 'ویرایش زیرگروه ' + @sub_category.title_fa , edit_sub_category_path(@sub_category)
   
-  = image_tag 'slide12.jpg', :class => "bg"  , :title => @sub_category.title_fa, :alt => @sub_category.title_fa
+  - if @sub_category.category.id == 1
+    = image_tag 'liquid.jpg', :class => "bg", :alt => "رنگین کمان", :title => "رنگین کمان"  
+  - elsif @sub_category.category.id == 2
+    = image_tag 'wallpaper.jpg', :class => "bg", :alt => "رنگین کمان", :title => "رنگین کمان"  
+  - else
+    = image_tag 'laminate.jpg', :class => "bg", :alt => "رنگین کمان", :title => "رنگین کمان"  
   .category-info.general
     %div
       .line.set-center  
@@ -36,33 +41,22 @@
   #category-details
     .sub-category-title.set-center{:class => I18n.locale}
       = @sub_category.title
-    - @sub_category.products.each_slice(4) do |products|               
-      
-      #sub_categories_boxes        
-        - products.each do |product|                                                 
-          .sub_category_box{"data-my-order" => product.sub_category.id,:style => " min-height:200px; max-height:200px; opacity:1; filter: alpha(opacity=100);", :id => "sub_category_"+@sub_category.id.to_s}
-            
-            = link_to  product, :category_id => @sub_category.category.id, :title => @sub_category.category.title_fa+' '+product.title_fa     do  
-              .title-sub-category
-                = product.title                      
-              - if product.coming_soon
-                = image_tag 'coming-soon.png', :class => "coming-soon", :title => @sub_category.category.title_fa+'_'+product.title_fa    , :alt => @sub_category.category.title_fa+'_'+product.title_fa    
-              .img-box
-                = image_tag product.image(:medium), :class => "sample-sub-category", :title => @sub_category.category.title_fa+'_'+product.title_fa , :alt => @sub_category.category.title_fa+'_'+product.title_fa
+    - if @sub_category.products.present?
+      - @sub_category.products.each_slice(4) do |products|
+        #sub_categories_boxes        
+          - products.each do |product|                                                 
+            .sub_category_box{"data-my-order" => product.sub_category.id,:style => " min-height:200px; max-height:200px; opacity:1; filter: alpha(opacity=100);", :id => "sub_category_"+@sub_category.id.to_s}
               
-              
-              .cover.pointer-sub-category
-                = image_tag 'pointer.png', :title => @sub_category.category.title_fa+'_'+product.title_fa, :alt => @sub_category.category.title_fa+'_'+product.title_fa
-    -#       
-      .sub-cat-link.col-sm-3
-        - @category.sub_categories.each do |sub_category|
-          %button{:class => "filter", "data-filter" => "#sub_category_" + sub_category.id.to_s}
-            .sub-category-product-pics 
-              = sub_category.title
-            -#
-              .img-box
-                = image_tag sub_category.image(:small), :class => "sample", :title => @category.title_fa    , :alt => @category.title_fa    
-              - if sub_category.comming_soon
-                = image_tag 'coming-soon.png', :class => "coming-soon", :style => ' display:none'  , :title => @category.title_fa    , :alt => @category.title_fa    
-                      
-
+              = link_to  product, :category_id => @sub_category.category.id, :title => @sub_category.category.title_fa+' '+product.title_fa     do  
+                .title-sub-category
+                  = product.title                      
+                - if product.coming_soon
+                  = image_tag 'coming-soon.png', :class => "coming-soon", :title => @sub_category.category.title_fa+'_'+product.title_fa    , :alt => @sub_category.category.title_fa+'_'+product.title_fa    
+                .img-box
+                  = image_tag product.image(:medium), :class => "sample-sub-category", :title => @sub_category.category.title_fa+'_'+product.title_fa , :alt => @sub_category.category.title_fa+'_'+product.title_fa
+                
+                
+                .cover.pointer-sub-category
+                  = image_tag 'pointer.png', :title => @sub_category.category.title_fa+'_'+product.title_fa, :alt => @sub_category.category.title_fa+'_'+product.title_fa
+    - else
+      = image_tag '6.png', :alt => "رنگین کمان", :title => "رنگین کمان"  , :class => "box-coming-soon "

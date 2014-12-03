@@ -213,17 +213,8 @@ span.Necessary {color:#FF0000; font-weight:bold}
 
 .box-4 img {width:100%}
 
-.box-3 img.sample-img {width:100%;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
-  height: 100%;
-  opacity:.3; 
-  filter: alpha(opacity=83);
-}
-.box-3:hover img.sample-img {opacity:1; filter:alpha(opacity=80); /* For IE8 and earlier */}
+.box-3 img.sample-img {width:100%;}
+.box-3:hover p.cat-title-on-box-3 {font-size:30px;}
 .box-3 p {
   text-align: center;
   font-size: 20px;
@@ -239,9 +230,17 @@ span.Necessary {color:#FF0000; font-weight:bold}
   background-repeat: no-repeat;
   left:-7%;
   padding-top:4%;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 .show-pro .box-menu {  
+  background-image: url(image-path('logo-bg.png'));
+  background-repeat: no-repeat;  
+  background-position: 2% 90%; 
   width:100%;
   height:100px;
   overflow:hidden;      
@@ -260,7 +259,7 @@ span.Necessary {color:#FF0000; font-weight:bold}
   padding: 0;
 }
 .show-pro .box-menu a {color:#27160e; }
-.show-pro .box-menu a:hover {color:#DEFF00}
+.show-pro .box-menu a:hover {color:#DEFF00; text-shadow:1px 1px #4C1E08 ;}
 /*
 .show-pro .box-3:hover .box-menu{  min-height:86px;
   max-height:86px;margin-top:-26%;
@@ -425,8 +424,7 @@ table.table tr.visited {font-weight:bold}
 
 .admin-link a:hover {color:#A52A2A}
 .category-bg { 
-  height:100%; 
- /* background:url('vintage-wallpaper-2.jpg') ; */
+  height:100%;  
   }
 .product-bg {
   height:100%;  
@@ -435,14 +433,18 @@ table.table tr.visited {font-weight:bold}
   height:100%; 
  
 }
-.info-holder{ 
+.background-vintage{
+  background-image:url(image-path('pt.jpg'));
+  background-repeat:repeat;
+  }
+.info-holder{   
   width:100%; 
   height:100%;
+  position:absolute;  
   }
 .cer-bg {width:100%; 
   height:400px;
-  color:#fff;
-  background:url('vintage-wallpaper-2.jpg');
+  color:#fff;  
   opacity:.8;
   filter:alpha(opacity=80); /* For IE8 and earlier */
 }
@@ -602,13 +604,22 @@ position: absolute;
 margin-left: 1%;
 margin-right: 1%;
 margin-top:4%}
-.folder-product_show_pics h4.folder-pro {text-align:center; background-color:#27160e;
+.folder-product_show_pics h4.folder-pro {
+  text-align:center; 
+  font-size:2em;
   width:50%;
-  color:#FBFB87;
+  color:#27160e;}
+.folder-product_show_pics h4.folder-pro.en {
   font-family:'MTCORSVA';}
+.folder-product_show_pics h4.folder-pro a {color:#27160e;
+  text-shadow:2px 2px 5px #E6E6FA;}
+.folder-product_show_pics h4.folder-pro a.en {
+  font-family:'MTCORSVA';}
+.folder-product_show_pics h4.folder-pro a:hover {color:#F6F64B;} 
+.folder-product_show_pics h4.folder-pro span {color:#1A1A1A;  text-shadow:2px 2px 5px #E6E6FA;} 
 .catalog {overflow-y:scroll; height:350px;}
 .show-picture {padding:5%}
-.text-shadow {text-shadow:2px 2px #4D2907 ;}
+.text-shadow {text-shadow:2px 2px 5px #4D2907 ;}
 .pro-cer {height:90%}
 
 .sub-cat-link {display:none; 
@@ -681,7 +692,25 @@ filter: alpha(opacity=80); width:50%; height:20px;}
 .pro-folder-btn {color:#FBFB87; font-size:20px;margin-top:2%;
   padding:1%;
   background-color:#27160e;
-  font-family:'MTCORSVA';
+  padding:15%;
+  }
+.en .pro-folder-btn {
+  font-family:'MTCORSVA';  
 }
-.pro-folder-btn:hover {background-color:#C23B0E; font-family: 'MTCORSVA';}
+
+.pro-folder-btn:hover {background-color:#C23B0E; }
+.product-folder-lists {width:10%;}
+.product-folder-lists.en {float:left}
+.product-folder-lists.fa {float:right}
 .gallery-category {width: 50%; height: 60px; position:relative;}
+
+.liquid-bg {
+  background-image: url(image-path('liquid.jpg'));
+  background-repeat: no-repeat;  
+  background-attachment: fixed;
+}
+.box-coming-soon {position: absolute;
+width: 50%;
+left: 25%;
+right: 25%;
+top: 0;}
