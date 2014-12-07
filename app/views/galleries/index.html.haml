@@ -18,8 +18,7 @@
           .pro-info.set-center
             =link_to gallery.image(:original), :data => { :colorbox => true }, :class => "show-gallery", :title => gallery.category.title_fa do              
               = image_tag  gallery.image(:medium), :class => "gallery-pic", :alt => gallery.category.title_fa, :title => gallery.category.title_fa
-              .cover
-                = image_tag 'zoom.png', :class => "zoom-pic"  , :alt => gallery.category.title_fa, :title => gallery.category.title_fa
+              
             %div
               - if is_admin?
                 = link_to 'ویرایش', edit_gallery_path(gallery), :alt => gallery.category.title_fa, :title => gallery.category.title_fa

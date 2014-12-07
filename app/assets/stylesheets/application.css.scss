@@ -298,6 +298,7 @@ height:120%;
 .products {width: 100%; text-align:center;}
 .products  .pro_wrapper {display: inline-block;
     float: left;
+    position:relative;
     min-height: 30%;
     max-height: 30%;
     margin-bottom:20px;
@@ -307,11 +308,15 @@ height:120%;
     min-width: 25%;
     max-width: 25%;
     text-align:center}
-.products  .pro_wrapper:hover{opacity:1;
-    filter:alpha(opacity=100); /* For IE8 and earlier */  }
+.products  .pro_wrapper:hover .pro-info{
+  background:#632A18;
+  opacity:.8;
+  filter:alpha(opacity=80); /* For IE8 and earlier */  }
 .products  .pro_wrapper a.model-link{width:100%}
 .products  .pro_wrapper img.sample {width: 80%; margin-top: 11px;}
 .products  .pro_wrapper .pro-info { 
+  -webkit-transition:all 1s; /* For Safari 3.1 to 6.0 */
+  transition:all 1s;
   border:1px solid #632A18;
   text-align:center;  
   min-height:250px;
