@@ -17,37 +17,35 @@
         
     
     .form-group
-      = f.label t('msg.contact-name'),  :class => "control-label text-shadow"    
+      = f.label t('msg.contact-name'),  :class => "control-label text-shadow contact-text"    
       %span.Necessary= t('msg.Required')
       = f.text_field :name, :class => "form-control", :style => "width:100%", :title => "رنگین کمان"
       
       
     .form-group
-      = f.label t('msg.contact-email'),  :class => "control-label text-shadow"
+      = f.label t('msg.contact-email'),  :class => "control-label text-shadow contact-text"
       %span.Necessary= t('msg.Required')
       = f.text_field :email, :class => "form-control", :style => "width:100%", :title => "رنگین کمان"
       
     .form-group
-      = f.label t('msg.contact-phone'),  :class => "control-label text-shadow"
+      = f.label t('msg.contact-phone'),  :class => "control-label text-shadow contact-text"
       %span.Necessary=  t('msg.Required')
       = f.text_field :phone, :class => "form-control", :style => "width:100%", :title => "رنگین کمان"
       
     .form-group
-      = f.label t('msg.contact-msg'),  :class => "control-label text-shadow"
+      = f.label t('msg.contact-msg'),  :class => "control-label text-shadow contact-text-area"
       %span.Necessary=  t('msg.Required')
-      = f.text_area :text, :class => "form-control" , :style => "resize: none; width:100%", rows: 4, :title => "رنگین کمان"
-      
+      = f.text_area :text, :class => "form-control" , :style => "resize: none; width:100%", rows: 4, :title => "رنگین کمان"      
            
     .form-group
-      = f.submit t('msg.contact-btn'), :class=> "btn btn-default", :title => "رنگین کمان"
-%br
+      = f.submit t('msg.contact-btn'), :class=> "btn btn-default contact-submit", :title => "رنگین کمان"
 
 
 :javascript 
   $(function() { 
-    $(':submit').click(function(e) {
-      $(':text, textarea').each(function() {
-        if ($(this).val().length == 0) {
+    $(':submit.contact-submit').click(function(e) {      
+      $('#message_name, #message_email, #message_phone, #message_text').each(function() {
+        if ($(this).val() == "") {
           $(this).css('border', '2px solid red');
           e.preventDefault();
         }

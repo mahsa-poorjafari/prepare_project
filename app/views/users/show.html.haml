@@ -1,10 +1,7 @@
 -if is_admin?
-  .admin-link.fa
-    %p= 'منوی صفحه'
-    %hr
+  .admin-link.fa   
     = link_to 'ویرایش', edit_user_path(@user)
-    \|
-    = link_to 'بازگشت', users_path
+    
 
 .fa.set-center{:style => "width:50%"}
   %p#notice= notice
