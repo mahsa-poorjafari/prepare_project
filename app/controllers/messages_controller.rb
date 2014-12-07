@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
     @messages = Message.order(" created_at desc")
     @num_msg = Message.count
     @read_msg = Message.where(visited: true).count
-    @unread_msg = Message.count(:conditions => "visited is null")
+    @unread_msg = Message.where(visited: 0).count
   end
 
   # GET /messages/1
@@ -64,7 +64,7 @@ class MessagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_message
-      @message = Message.friendly.find(params[:id])
+      @message = Message.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

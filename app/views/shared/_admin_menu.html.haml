@@ -9,7 +9,11 @@
 
 %div= link_to 'مدیریت اسلایدر', Slider
 %div= link_to 'مدیریت کاتالوگ', Catalogue 
-%div= link_to 'مشاهده ارسال لینکها', SendLink
-%div= link_to 'پیام های ارسالی', Message
+%div= link_to 'مشاهده لینک های ارسال شده', SendLink
+%div  
+  = link_to 'پیام های ارسال شده', Message
+  - @unread_msg = Message.where(visited: 0).count
+  - if @unread_msg.present?
+    %span.unread_msg= @unread_msg
 %div= link_to 'پروفایل مدیر', edit_user_path(current_user)
 %div= link_to 'خروج', delete_session_path

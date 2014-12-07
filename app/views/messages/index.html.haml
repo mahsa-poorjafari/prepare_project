@@ -1,4 +1,4 @@
-.fa
+.fa{:style => "overflow-y:scroll"}
   %h2= 'لیست پیام های ارسالی'
   .col-sm-8
     .col-sm-4
@@ -21,20 +21,22 @@
       %th نام
       %th تلفن
       %th متن    
-      %th
-      %th
-      %th
+      %th عملیات
+     
 
     - @messages.each_with_index do |message, i| 
-      %tr{:class => ('visited' if message.visited == true)}
+      %tr{:class => ('visited' unless message.visited == true)}
         %td= (i+1)        
         %td= message.email
         %td= message.name
         %td= message.phone
         %td= truncate(strip_tags(message.text), :length => 30)
-        %td= link_to 'Show', message
-        %td= link_to 'Edit', edit_message_path(message)
-        %td= link_to 'Destroy', message, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+        %td
+          - if is_admin?
+            .model-admin-link{:style => "margin-top:0;"}
+              = link_to 'مشاهده', message
+              = link_to 'ویرایش', edit_message_path(message)
+              = link_to 'حذف', message, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
 
 
 

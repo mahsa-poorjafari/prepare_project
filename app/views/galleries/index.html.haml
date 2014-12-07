@@ -1,8 +1,7 @@
 -if is_admin?
-  .admin-link.fa
-   
+  .admin-link.fa   
     = link_to 'افزودن تصویر جدید', new_gallery_path
-= image_tag 'lobby.jpg', :class => "bg", :title => "رنگین کمان", :alt => "رنگین کمان"
+= image_tag 'categories.jpg', :class => "bg", :title => "رنگین کمان", :alt => "رنگین کمان"
 .gallery-category.set-center
   - @category.each do |category|  
     .cat-group{:id => "item#{category.id}", :divname => "item#{category.id}"} 
@@ -21,9 +20,10 @@
               
             %div
               - if is_admin?
-                = link_to 'ویرایش', edit_gallery_path(gallery), :alt => gallery.category.title_fa, :title => gallery.category.title_fa
-                \|
-                = link_to 'حذف', gallery, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }, :alt => gallery.category.title_fa, :title => gallery.category.title_fa
+                .model-admin-link{:style => "top:0;"}
+                  = link_to 'ویرایش', edit_gallery_path(gallery), :alt => gallery.category.title_fa, :title => gallery.category.title_fa
+                  \|
+                  = link_to 'حذف', gallery, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }, :alt => gallery.category.title_fa, :title => gallery.category.title_fa
 
               
         

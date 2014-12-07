@@ -1,12 +1,8 @@
 -if is_admin?
-  .admin-link.fa
-    %p= 'منوی صفحه'
-    %hr
+  .admin-link.fa   
     = link_to 'تعریف مدیر جدید', new_user_path
 .fa
   %h1= 'پروفایل  مدیر سایت'
-
-  
   - @users.each do |user|
     .col-sm-4      
       %b ایمیل
