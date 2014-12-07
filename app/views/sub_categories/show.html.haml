@@ -3,7 +3,7 @@
     .admin-link.fa 
       = link_to 'ویرایش زیرگروه ' + @sub_category.title_fa , edit_sub_category_path(@sub_category)
   
-  - if @sub_category.category.id == 1
+  - if @sub_category.category.id == 3
     = image_tag 'liquid.jpg', :class => "bg", :alt => "رنگین کمان", :title => "رنگین کمان"  
   - elsif @sub_category.category.id == 2
     = image_tag 'wallpaper.jpg', :class => "bg", :alt => "رنگین کمان", :title => "رنگین کمان"  
@@ -59,4 +59,4 @@
                 .cover.pointer-sub-category
                   = image_tag 'pointer.png', :title => @sub_category.category.title_fa+'_'+product.title_fa, :alt => @sub_category.category.title_fa+'_'+product.title_fa
     - else
-      = image_tag '6.png', :alt => "رنگین کمان", :title => "رنگین کمان"  , :class => "box-coming-soon "
+      %h2{:style => "color:#FFA500;"}= t('coming')
