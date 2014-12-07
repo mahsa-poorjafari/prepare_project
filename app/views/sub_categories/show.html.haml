@@ -58,5 +58,11 @@
                 
                 .cover.pointer-sub-category
                   = image_tag 'pointer.png', :title => @sub_category.category.title_fa+'_'+product.title_fa, :alt => @sub_category.category.title_fa+'_'+product.title_fa
+              - if is_admin?
+                .model-admin-link{:style => "top:0;"}
+                  = link_to 'ویرایش', edit_product_path(product), :alt => product.title_fa, :title => product.title_fa
+                  \|
+                  = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }, :alt => product.title_fa, :title => product.title_fa
+
     - else
       %h2.text-shadow{:style => "color:#FFA500; text-align:center"}= t('coming')
