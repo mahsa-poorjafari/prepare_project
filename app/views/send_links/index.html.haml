@@ -1,8 +1,4 @@
--if is_admin?
-  .admin-link.fa
-    %p= 'منوی صفحه'
-    %hr
-    = link_to 'آمار ارسال لینکها', send_links_path
+
 .fa
   %h2= 'لینک های ایمیل شده'
 
@@ -24,7 +20,9 @@
         %td{:style => "max-width:150px; overflow:hidden"}= send_link.current_link
         %td= send_link.text
         %td= send_link.subject        
-        %td          
-          = link_to 'حذف', send_link, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
-          \|
-          = link_to 'مشاهده', send_link
+        %td  
+          - if is_admin?
+            .model-admin-link{:style => "margin-top:0;"}
+              = link_to 'حذف', send_link, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+              \|
+              = link_to 'مشاهده', send_link

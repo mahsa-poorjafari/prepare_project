@@ -11,5 +11,8 @@
   %p
     %b= t('msg.contact-msg')
     = @message.text
+  %p
+    %b= 'تاریخ ارسال:'
+    = JalaliDate.new (@message.created_at)
 
 

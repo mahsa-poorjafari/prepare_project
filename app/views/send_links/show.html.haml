@@ -1,9 +1,6 @@
 
 -if is_admin?
-  .admin-link.fa
-    %p= 'منوی صفحه'
-    %hr
-   
+  .admin-link.fa   
     = link_to 'بازگشت', send_links_path
 .set-center{:style => "margin-top:100px; width:95%"}
   %p
@@ -22,3 +19,6 @@
   %p
     %b= t('link.text')
     = @send_link.text
+  %p
+    %b= 'تاریخ ارسال:'
+    = JalaliDate.new (@message.created_at)
