@@ -16,7 +16,7 @@
         .go-up.set-center.title-cat= @sub_category.category.title
       .category-link 
         .cat-link
-          =raw (@sub_category.category.description)
+          =raw (@sub_category.description)
         %ul#banner          
           - if @sub_category.category.products.present?
             %li
