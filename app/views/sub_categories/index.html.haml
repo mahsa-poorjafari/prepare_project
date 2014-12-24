@@ -1,25 +1,21 @@
-.fa
+.fa{:style => "overflow-y:scroll;  height:460px;"} 
   -if is_admin?
-    .admin-link.fa
-      %p= 'منوی صفحه'
-      %hr
+    .admin-link.fa      
       = link_to 'زیرگروه جدید', new_sub_category_path
 
   %h1 تعریف زیرگروه
 
 
-  .show-pro.set-center{:style => "overflow-y:scroll"} 
+  .show-pro.set-center
     - @sub_categories.each do |sub_category|
-      .col-sm-4{:style => "background:#29170d; opacity: .8; filter:alpha(opacity=80); /* For IE8 and earlier */ color:#fff; margin:1%; height:20% "}    
-      
-        %b= sub_category.category.title
-        %div= sub_category.title
-        %div= image_tag sub_category.image(:medium), :class => "sample"
-        %div
+      .col-sm-3.sub_category-index
+        .model-admin-link
           = link_to 'مشاهده', sub_category
           \|
           = link_to 'ویرایش', edit_sub_category_path(sub_category)
           \|
           = link_to 'حذف', sub_category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
-            
-
+        %b= sub_category.category.title
+        %div= sub_category.title
+        %div= image_tag sub_category.image(:medium), :class => "sample"
+      
