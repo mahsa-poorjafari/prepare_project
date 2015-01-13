@@ -24,6 +24,6 @@ production:
   database: rlfloor 
   pool: 5
   timeout: 5000
-  username: rlfloor 
-  password: rlfloor224490 
+  username: rlfloor
+  password: XZHGSrAxPsbrQFad
  
