@@ -15,7 +15,8 @@
           = link_to 'ویرایش', edit_sub_category_path(sub_category)
           \|
           = link_to 'حذف', sub_category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
-        %b= sub_category.category.title
+        - if sub_category.category_id.present?
+          %b= sub_category.category.title
         %div= sub_category.title
         - if sub_category.image.present?
           %div= image_tag sub_category.image(:medium), :class => "sample"
