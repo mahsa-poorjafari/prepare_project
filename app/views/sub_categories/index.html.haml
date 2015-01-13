@@ -17,5 +17,6 @@
           = link_to 'حذف', sub_category, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
         %b= sub_category.category.title
         %div= sub_category.title
-        %div= image_tag sub_category.image(:medium), :class => "sample"
+        - if sub_category.image.present?
+          %div= image_tag sub_category.image(:medium), :class => "sample"
       
