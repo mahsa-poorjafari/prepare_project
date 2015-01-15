@@ -59,7 +59,7 @@
       .all-models.details.col-sm-8
         
         - if @category.sub_categories.present?
-          - @category.sub_categories.each do |sub_category|                        
+          - @category.sub_categories.order(" created_at desc").each do |sub_category|                        
             
             .product-pics
               - if is_admin?  
