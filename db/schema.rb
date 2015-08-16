@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141224090137) do
+ActiveRecord::Schema.define(version: 20150816094441) do
 
   create_table "catalogues", force: true do |t|
     t.string   "title_fa"
@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(version: 20141224090137) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.text     "description_fa"
+    t.text     "description_en"
   end
 
   create_table "messages", force: true do |t|

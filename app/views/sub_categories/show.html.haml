@@ -2,7 +2,7 @@
   -if is_admin?
     .admin-link.fa 
       = link_to 'ویرایش زیرگروه ' + @sub_category.title_fa , edit_sub_category_path(@sub_category)
-  
+   
   - if @sub_category.category.id == 3
     = image_tag 'liquid.jpg', :class => "bg", :alt => "رنگین کمان", :title => "رنگین کمان"  
   - elsif @sub_category.category.id == 2
