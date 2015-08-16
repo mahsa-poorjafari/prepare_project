@@ -1,7 +1,7 @@
 -if is_admin?
   .admin-link.fa   
     = link_to 'افزودن تصویر جدید', new_gallery_path
-= image_tag 'categories.jpg', :class => "bg", :title => "رنگین کمان", :alt => "رنگین کمان"
+= image_tag 'categories.jpg', :class => "bg", :title => "رنگین کمان", :alt => "رنگین کمان", :style => "height:125%;"
 .gallery-category.set-center
   - @category.each do |category|  
     .cat-group{:id => "item#{category.id}", :divname => "item#{category.id}"} 
@@ -17,6 +17,12 @@
           .pro-info.set-center
             =link_to gallery.image(:original), :data => { :colorbox => true }, :class => "show-gallery", :title => gallery.category.title_fa do              
               = image_tag  gallery.image(:medium), :class => "gallery-pic", :alt => gallery.category.title_fa, :title => gallery.category.title_fa
+              - if  gallery.description.present?
+                .show-details-gallery
+                  %p= gallery.description
+                  
+            
+              
               
             %div
               - if is_admin?

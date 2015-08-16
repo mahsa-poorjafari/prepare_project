@@ -41,15 +41,13 @@ class GalleriesController < ApplicationController
   # PATCH/PUT /galleries/1
   # PATCH/PUT /galleries/1.json
   def update
-    respond_to do |format|
-      if @gallery.update(gallery_params)
-        format.html { redirect_to @gallery, notice: 'Gallery was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @gallery.errors, status: :unprocessable_entity }
-      end
+    
+    if @gallery.update(gallery_params)      
+      redirect_to galleries_path
+    else
+      redirect_to :back
     end
+    
   end
 
   # DELETE /galleries/1
@@ -70,6 +68,6 @@ class GalleriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gallery_params
-      params.require(:gallery).permit(:category_id, :image)
+      params.require(:gallery).permit(:category_id, :image, :description_fa, :description_en)
     end
 end
