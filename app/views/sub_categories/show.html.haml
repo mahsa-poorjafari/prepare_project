@@ -46,13 +46,22 @@
         #sub_categories_boxes        
           - products.each do |product|                                                 
             .sub_category_box{"data-my-order" => product.sub_category.id,:style => " opacity:1; filter: alpha(opacity=100);", :id => "sub_category_"+@sub_category.id.to_s}
-              
-              = link_to  product, :category_id => @sub_category.category.id, :title => @sub_category.category.title_fa+' '+product.title_fa     do  
-                                   
-                - if product.coming_soon
-                  = image_tag 'coming-soon.png', :class => "coming-soon", :title => @sub_category.category.title_fa+'_'+product.title_fa    , :alt => @sub_category.category.title_fa+'_'+product.title_fa    
-                .img-box
-                  = image_tag product.image(:medium), :class => "sample-sub-category", :title => @sub_category.category.title_fa+'_'+product.title_fa , :alt => @sub_category.category.title_fa+'_'+product.title_fa
+              - if @sub_category.title_fa == 'استند'
+                = link_to product.image(:original), :data => { :colorbox => true }, :class => "show-product" do          
+                  - if product.coming_soon
+                    = image_tag 'coming-soon.png', :class => "coming-soon", :title => @sub_category.category.title_fa+'_'+product.title_fa    , :alt => @sub_category.category.title_fa+'_'+product.title_fa    
+                  .img-box                                     
+                    = image_tag product.image(:medium), :class => "sample-sub-category", :title => @sub_category.category.title_fa+'_'+product.title_fa , :alt => @sub_category.category.title_fa+'_'+product.title_fa
+                  
+              - else        
+                = link_to  product, :category_id => @sub_category.category.id, :title => @sub_category.category.title_fa+' '+product.title_fa     do  
+                                     
+                  - if product.coming_soon
+                    = image_tag 'coming-soon.png', :class => "coming-soon", :title => @sub_category.category.title_fa+'_'+product.title_fa    , :alt => @sub_category.category.title_fa+'_'+product.title_fa    
+                  .img-box                                     
+                    = image_tag product.image(:medium), :class => "sample-sub-category", :title => @sub_category.category.title_fa+'_'+product.title_fa , :alt => @sub_category.category.title_fa+'_'+product.title_fa
+                    
+                  
                 .title-sub-category
                   = product.title   
                 
