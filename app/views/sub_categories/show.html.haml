@@ -52,7 +52,8 @@
                     = image_tag 'coming-soon.png', :class => "coming-soon", :title => @sub_category.category.title_fa+'_'+product.title_fa    , :alt => @sub_category.category.title_fa+'_'+product.title_fa    
                   .img-box                                     
                     = image_tag product.image(:medium), :class => "sample-sub-category", :title => @sub_category.category.title_fa+'_'+product.title_fa , :alt => @sub_category.category.title_fa+'_'+product.title_fa
-                  
+                  .title-sub-category
+                    = product.title  
               - else        
                 = link_to  product, :category_id => @sub_category.category.id, :title => @sub_category.category.title_fa+' '+product.title_fa     do  
                                      
@@ -62,8 +63,8 @@
                     = image_tag product.image(:medium), :class => "sample-sub-category", :title => @sub_category.category.title_fa+'_'+product.title_fa , :alt => @sub_category.category.title_fa+'_'+product.title_fa
                     
                   
-                .title-sub-category
-                  = product.title   
+                  .title-sub-category
+                    = product.title   
                 
                 .cover.pointer-sub-category
                   = image_tag 'pointer.png', :title => @sub_category.category.title_fa+'_'+product.title_fa, :alt => @sub_category.category.title_fa+'_'+product.title_fa
