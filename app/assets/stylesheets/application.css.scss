@@ -72,9 +72,8 @@ width: 100%;
   margin-left:10px;
   margin-bottom:20px;   
   float:right;   
-  min-width:28%; max-width:28%; text-align:center;
-  min-height:240px;
-  max-height:240px;
+ width:15%; text-align:center;
+  height:175px;
   background-image: url(image-path('sprinkles.png'));
   background-repeat: repeat;
   box-shadow:-3px 0px 5px #333333, 3px 1px 5px #333333;  
@@ -150,8 +149,8 @@ text-align:center;
   border-bottom:2px solid #FFA500;
   width:100%}
 .product-pics  .img-box {  
-  min-height:200px;
-  max-height:200px;
+  min-height:150px;
+  max-height:150px;
   overflow:hidden;  
  width:100%}
 
@@ -591,10 +590,10 @@ min-height:90%;
 
 .model-pro {
   position:relative;
-  min-width:23%;
-  max-width:23%;
-  min-height:200px;
-  max-height:200px;
+  min-width:15%;
+  max-width:15%;
+  min-height:160px;
+  max-height:160px;
   overflow:hidden; float:right;
   margin:5px;  
   text-align:center;
@@ -626,15 +625,15 @@ min-height:90%;
   filter:alpha(opacity=80); /* For IE8 and earlier */
 }
 .model-pro:hover {cursor:pointer}
-.model-pro img.sample{width:100%; height:160px}
+.model-pro img.sample{width:100%; height:130px}
 .model-folder-pro img.sample{width:98%; height:98%; position:absolute; top:1%; right:1%; left:1%; bottom:1%}
 .product_show_pics {width:70%; float: left;
   overflow-y:scroll;
-  height:82%;
+  height:95%;
   position: absolute;
   margin-left: 5%;
   margin-right: 26%;
-  margin-top:4%
+  margin-top:1%
 }
 .folder-product_show_pics {width:95%; overflow-y:scroll;
   height:82%;
@@ -690,7 +689,7 @@ min-height:90%;
 .product-pics:hover .cover img{ height:50% }  
 
 .product-pics:hover .cover img, .sub_category_box:hover .cover img, .product_show_pics .product-details .model-pro:hover .cover img{ height:auto }
-.product-details {margin-top:5%}
+
 
 
 
