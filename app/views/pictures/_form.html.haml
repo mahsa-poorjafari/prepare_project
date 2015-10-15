@@ -30,5 +30,13 @@
     .form-group
       = f.label "امکان دانلود", :class => "col-sm-3 control-label"   
       = f.check_box :download, :class => "form-control"
+    .form-group{:style => "background-color:#64F853"} 
+      = f.label "مدل کاغذ دیواری را انتخاب کنید." , :class => "col-sm-4 control-label"      
+      %p
+        %b مدل ساده
+        = f.radio_button :model_type,  "false"
+      %p
+        %b مدل هنری
+        = f.radio_button :model_type,  "true"
     .form-group 
       = f.submit 'ثبت', :class=> "btn btn-default"

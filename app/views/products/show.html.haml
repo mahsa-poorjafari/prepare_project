@@ -45,7 +45,7 @@
   
   - else 
     .product-details      
-      - @product.pictures.order('title_en ASC').each do |picture|        
+      - @product.pictures.order('model_type ASC, title_en ASC').each do |picture|        
         .model-pro
           = render 'products/filter_folder', :picture => picture, :product => @product
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150816094441) do
+ActiveRecord::Schema.define(version: 20151015131509) do
 
   create_table "catalogues", force: true do |t|
     t.string   "title_fa"
@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(version: 20150816094441) do
     t.boolean  "coming_soon"
     t.boolean  "download"
     t.integer  "product_folder_id"
+    t.boolean  "model_type"
   end
 
   create_table "product_folders", force: true do |t|
