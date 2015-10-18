@@ -12,7 +12,7 @@
 .products-group.set-center  
   - @category.each do |category|  
     .products.set-center{:class => "item#{category.id}", :divname => "item#{category.id}"}               
-      - category.galleries.each do |gallery|              
+      - category.galleries.order(" created_at desc").each do |gallery|              
         .pro_wrapper{align: "center", :class => I18n.locale}                          
           .pro-info.set-center
             =link_to gallery.image(:original), :data => { :colorbox => true }, :class => "show-gallery", :title => gallery.category.title_fa do              
