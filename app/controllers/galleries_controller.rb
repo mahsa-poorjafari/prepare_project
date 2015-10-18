@@ -27,15 +27,13 @@ class GalleriesController < ApplicationController
   def create
     @gallery = Gallery.new(gallery_params)
 
-    respond_to do |format|
-      if @gallery.save
-        format.html { redirect_to @gallery, notice: 'Gallery was successfully created.' }
-        format.json { render action: 'index', status: :created, location: @gallery }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @gallery.errors, status: :unprocessable_entity }
-      end
+    
+    if @gallery.save
+      redirect_to  action: 'index'
+    else
+      redirect_to action: 'new'
     end
+    
   end
 
   # PATCH/PUT /galleries/1

@@ -8,30 +8,51 @@
       .set-center{:style => "margin-top:5px; height:100%"} 
         = image_tag 'cat-title.png', :title => category.title_fa, :alt => category.title_fa, :style => "height:100%"
         .set-center.pro-cat-title= category.title
-  
-.products-group.set-center  
-  - @category.each do |category|  
-    .products.set-center{:class => "item#{category.id}", :divname => "item#{category.id}"}               
-      - category.galleries.order(" created_at desc").each do |gallery|              
-        .pro_wrapper{align: "center", :class => I18n.locale}                          
-          .pro-info.set-center
-            =link_to gallery.image(:original), :data => { :colorbox => true }, :class => "show-gallery", :title => gallery.category.title_fa do              
-              = image_tag  gallery.image(:medium), :class => "gallery-pic", :alt => gallery.category.title_fa, :title => gallery.category.title_fa
-              - if  gallery.description.present?
-                .show-details-gallery
-                  %p= gallery.description
-                  
-            
+-#  
+  .products-group.set-center  
+    - @category.each do |category|  
+      .products.set-center{:class => "item#{category.id}", :divname => "item#{category.id}"}               
+        - category.galleries.order(" created_at desc").each do |gallery|              
+          .pro_wrapper{align: "center", :class => I18n.locale}                          
+            .pro-info.set-center
+              =link_to gallery.image(:original), :data => { :colorbox => true }, :class => "show-gallery", :title => gallery.category.title_fa do              
+                = image_tag  gallery.image(:medium), :class => "gallery-pic", :alt => gallery.category.title_fa, :title => gallery.category.title_fa
+                - if  gallery.description.present?
+                  .show-details-gallery
+                    %p= gallery.description
+                    
               
-              
-            %div
-              - if is_admin?
-                .model-admin-link{:style => "top:0;"}
-                  = link_to 'ویرایش', edit_gallery_path(gallery), :alt => gallery.category.title_fa, :title => gallery.category.title_fa
-                  \|
-                  = link_to 'حذف', gallery, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }, :alt => gallery.category.title_fa, :title => gallery.category.title_fa
+                
+                
+              %div
+                - if is_admin?
+                  .model-admin-link{:style => "top:0;"}
+                    = link_to 'ویرایش', edit_gallery_path(gallery), :alt => gallery.category.title_fa, :title => gallery.category.title_fa
+                    \|
+                    = link_to 'حذف', gallery, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }, :alt => gallery.category.title_fa, :title => gallery.category.title_fa
 
-              
+
+.products-group.set-center  
+  - @galleries.each do |gallery|
+    .products.set-center{:class => "item#{gallery.category_id}", :divname => "item#{gallery.category_id}"}                     
+      .pro_wrapper{align: "center", :class => I18n.locale}                          
+        .pro-info.set-center
+          =link_to gallery.image(:original), :data => { :colorbox => true }, :class => "show-gallery", :title => gallery.image_file_name do              
+            = image_tag  gallery.image(:medium), :class => "gallery-pic", :alt => gallery.image_file_name, :title => gallery.image_file_name
+            - if  gallery.description.present?
+              .show-details-gallery
+                %p= gallery.description
+                
+        
+          
+          
+        %div
+          - if is_admin?
+            .model-admin-link{:style => "top:0;"}
+              = link_to 'ویرایش', edit_gallery_path(gallery), :alt => gallery.image_file_name, :title => gallery.image_file_name
+              \|
+              = link_to 'حذف', gallery, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }, :alt => gallery.image_file_name, :title => gallery.image_file_name
+
         
     
 
