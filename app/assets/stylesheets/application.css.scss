@@ -205,11 +205,11 @@ span.Necessary {color:#FF0000; font-weight:bold}
   background-image: url(image-path('sprinkles.png'));
   background-repeat: repeat;
   box-shadow:-3px 0px 5px #333333, 3px 1px 5px #333333;
-  min-height:350px; 
-  max-height:350px; 
+  min-height:310px; 
+  max-height:310px; 
   margin:4%;
   float:right; 
-  width:35%; 
+  width:40%; 
   text-align:center
 }
 
@@ -236,7 +236,7 @@ span.Necessary {color:#FF0000; font-weight:bold}
   text-align: center;
   font-size: 20px;
   position: absolute;
-  top: 50%;
+  bottom:50px;
   right: 0;
   left: 0;
   height:50px;
@@ -262,7 +262,7 @@ span.Necessary {color:#FF0000; font-weight:bold}
   background-repeat: no-repeat;  
   background-position: 2% 90%; 
   width:100%;
-  height:100px;
+  height:65px;
   overflow:hidden;      
   padding:0;
   -webkit-transition: all 1s ease;
@@ -328,7 +328,7 @@ height:120%;
   min-height:250px;
   max-height:250px;
   overflow:hidden;
-  width:90%
+  width:95%
   }
 .products  .pro_wrapper .pro-info p {
   text-align:center; 
@@ -406,7 +406,7 @@ filter:alpha(opacity=100); /* For IE8 and earlier */
   color:#000; 
   position: absolute;}
 .content-holder{ max-height: 540px; overflow: hidden;}
-.category-image{height:150px; overflow: hidden; position:absolute; width:98%;
+.category-image{height:200px; overflow: hidden; position:absolute; width:98%;
   right: 1%;
   left: 1%;
   background:#000000;
@@ -524,12 +524,12 @@ b.coming-soon { opacity:.8;  filter:alpha(opacity=80); /* For IE8 and earlier */
   font-size:11;
   text-align:center;
 }
-.cat-group {width:30%; float:left; height:100%}
+.cat-group {width:49%; float:left; height:100%}
 .cat-group:hover {cursor:pointer; color:#D79213;}
 .cat-group:hover .pro-cat-title, .cat-group.active .pro-cat-title{color:#D79213;}
 .products-group {width:95%; 
   height:60%;   
-  padding-top:45px;
+  padding-top:20px;
   margin-top:.8%;
   z-index:-20;
   position:fixed;
@@ -541,7 +541,7 @@ b.coming-soon { opacity:.8;  filter:alpha(opacity=80); /* For IE8 and earlier */
 .pro-cat-title {
 margin-top: -22%;
 z-index: 10;
-width: 75%;
+width: 65%;
 text-align: center;
 font-size:20px;
 color: #401805;
@@ -569,17 +569,17 @@ a.show-product {
   
   width:100%;right: 0;
 left: 0;
-min-height: 30px;
+min-height: 32px;
 color:#fff;
 top: 97px;
   }
 
 img.gallery-pic {
-min-height:90%;
-  max-height:90%;
-  min-width:90%;
-  max-width:90%;
-  margin-top:3%;
+min-height:95%;
+  max-height:95%;
+  min-width:95%;
+  max-width:95%;
+  margin-top:2%;
 }
 
 
@@ -732,7 +732,7 @@ filter: alpha(opacity=80); width:50%; height:20px;}
 
 .product-folder-lists.en {float:left}
 .product-folder-lists.fa {float:right}
-.gallery-category {width: 50%; height: 60px; position:relative;}
+.gallery-category {width: 32%; height: 60px; position:relative;}
 
 .liquid-bg {
   background-image: url(image-path('liquid.jpg'));
