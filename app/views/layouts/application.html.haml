@@ -1,18 +1,25 @@
 !!!
 %html
-  %head
-    %title 
-      = t("rainbow") + ', ' + Category.all.collect(&:title).join(",") #{@head.fetch(:title, '') if @head}
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
-    = favicon_link_tag 'favicon.png', rel:'shortcut icon', type: 'image/png'
+  %head    
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "content-type"}
+    %meta{:charset => "utf-8"}  
+    %title= 'شرکت بازرگانی رنگین کمان'
     = csrf_meta_tags
-    %meta{:charset => "utf-8"}
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true    
+    = favicon_link_tag 'favicon.png', rel:'shortcut icon', type: 'image/png'   
+    %meta{:name => "robots", :content => "Index,follow"}
+    %meta{:name => "googlebot", :content => "archive"}
+    %meta{:name => "slurp", :content => "Index,follow"}
+    %meta{:name => "msnbot", :content => "Index,follow"}
+    %meta{:name => "teoma", :content => "Index,follow"}
     %meta{:content => "nOoVpAxZ_Ar6ZdmxkY5c4VCoMHun48M3-LKgD8kxlk4", :name => "google-site-verification"}
     %meta{:name => "keywords", :content => Category.all.collect(&:title_fa).join(",") + ','+ Category.all.collect(&:title_en).join(",") } 
-    %meta{:name => "description", :content => "Rainbow_Trading_Co, شرکت بازرگانی رنگین کمان, کاغذ دیواری, پارکت, کفپوش مایع , پارکت طلایی مات, پارکت طلایی براق, کاغذدیواری الیزابت دو, کاغذدیواری پرفکت, کاغذدیواری لکسی, کفپوش مایع اکلیلی, کفپوش مایع شفاف, کفپوش مایع مات, کاغذدیواری" }
-    %meta{:name => "robots", :content => "NOODP"}
-    = yield(:refresh_meta) if content_for?(:refresh_meta)
+    %meta{:name => "description", :content => "مفتخریم که از ابتدای مسیرهدف شرکت استفاده از با کیفیت ترین متریالها در تولید و واردات محصولات مختلف اعم از پارکت و لمینت کاغذ دیواری که برای اولین بار با انتخاب و سفارش مواد اولیه مرغوب و انعقاد قرارداد مستقیم با تولید کننده معتبر تحقق یافت."}
+    %meta{:content => "true", :name => "HandheldFriendly"}/
+    %meta{:content => "شرکت راش بنیان مدرن پاژ", :name => "author"}/
+    = canonical_tag 
+    = javascript_include_tag "application"
+    
     -# - unless is_admin? 
     -#     
       :javascript
@@ -31,8 +38,7 @@
         document.oncontextmenu=new Function("return false")
         // -->
         
-  %body     
-
+  %body
     %header
       #header-top        
       #logo-menu
@@ -60,6 +66,7 @@
     %footer{:class => I18n.locale}
       #header-top
       = render "shared/footer"
+  
   :javascript
   
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -69,4 +76,6 @@
 
     ga('create', 'UA-54378255-1', 'auto');
     ga('send', 'pageview');
+
+  
 

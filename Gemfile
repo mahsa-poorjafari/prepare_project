@@ -64,3 +64,4 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'canonical-rails', github: 'jumph4x/canonical-rails'
