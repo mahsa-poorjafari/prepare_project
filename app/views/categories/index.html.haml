@@ -15,7 +15,9 @@
       = link_to category, :title => category.title_fa , :class => "category-link-title" do 
         .category-image
           = image_tag category.image(:small), :class => "sample-img", :alt => category.title_fa, :title =>  category.title_fa
-        %p.cat-title-on-box-3= category.title 
+        %p.cat-title-on-box-3 
+          %h2
+            = category.title 
       
       .box-menu 
         %ul

@@ -21,7 +21,7 @@
 img.bg {z-index:-20; position:fixed; right:0%; left:0%; width:100%; height:80%}
 .set-center {margin-right:auto; margin-left:auto}
 .float-left {float:left;}
-
+.title-site h1 {font-size:1.5em}
 .category-info {
   padding:1%;
   position:relative;
@@ -61,7 +61,7 @@ margin-left: 4%;
 .category-link {
 top:15%;
 position: absolute;
-width: 100%;
+width: 95%;
 
 
 }
@@ -72,8 +72,8 @@ width: 100%;
   margin-left:10px;
   margin-bottom:20px;   
   float:right;   
- width:15%; text-align:center;
-  height:175px;
+ width:22%; text-align:center;
+  height:280px;
   background-image: url(image-path('sprinkles.png'));
   background-repeat: repeat;
   box-shadow:-3px 0px 5px #333333, 3px 1px 5px #333333;  
@@ -149,8 +149,8 @@ text-align:center;
   border-bottom:2px solid #FFA500;
   width:100%}
 .product-pics  .img-box {  
-  min-height:150px;
-  max-height:150px;
+  min-height:250px;
+  max-height:250px;
   overflow:hidden;  
  width:100%}
 
@@ -188,13 +188,13 @@ span.Necessary {color:#FF0000; font-weight:bold}
   min-width:90%; min-height:90%; 
   max-width:90%; max-height:90%; 
   text-align:center;    
-  margin-top:3%;
+  
   }
 */
 .show-pro {min-width:60%; min-height:90%; 
   max-width:60%; max-height:90%; 
   text-align:center;    
-  margin-top:3%;}
+  }
 .box-3 {     
   font-size:12px;
   position:relative;
@@ -205,8 +205,8 @@ span.Necessary {color:#FF0000; font-weight:bold}
   background-image: url(image-path('sprinkles.png'));
   background-repeat: repeat;
   box-shadow:-3px 0px 5px #333333, 3px 1px 5px #333333;
-  min-height:310px; 
-  max-height:310px; 
+  min-height:415px; 
+  max-height:415px; 
   margin:4%;
   float:right; 
   width:40%; 
@@ -231,7 +231,7 @@ span.Necessary {color:#FF0000; font-weight:bold}
 .box-4 img {width:100%}
 
 .box-3 img.sample-img {width:100%; height:100%}
-.box-3:hover p.cat-title-on-box-3 {font-size:25px;}
+.box-3:hover h2 {font-size:25px; color:#fff}
 .box-3 p {
   text-align: center;
   font-size: 20px;
@@ -256,7 +256,10 @@ span.Necessary {color:#FF0000; font-weight:bold}
   -ms-transition: all 1s ease;
   transition: all 1s ease;
 }
-
+.box-3 h2 {position: absolute;color:#27160e; font-size:2em;
+bottom: 60px;
+text-align: center;
+width: 100%;}
 .show-pro .box-menu {  
   background-image: url(image-path('logo-bg.png'));
   background-repeat: no-repeat;  
@@ -265,6 +268,7 @@ span.Necessary {color:#FF0000; font-weight:bold}
   height:65px;
   overflow:hidden;      
   padding:0;
+  padding-top:2%;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -351,8 +355,9 @@ position: fixed;}
   position: absolute; 
   left: 30%; 
   bottom:65px}
-.line img {width:86%; position:absolute; right:12%}
+.line img {width:86%; position:absolute; right:12%; height:60px}
 .row .cycle-overlay {margin-bottom:2px}
+.slider .cycle-overlay h2 {font-size:1em}
 #category-details {width:75%;height: 455px;
 overflow-y: scroll;
  float:right; position: relative;
@@ -406,7 +411,7 @@ filter:alpha(opacity=100); /* For IE8 and earlier */
   color:#000; 
   position: absolute;}
 .content-holder{ max-height: 540px; overflow: hidden;}
-.category-image{height:200px; overflow: hidden; position:absolute; width:98%;
+.category-image{height:300px; overflow: hidden; position:absolute; width:98%;
   right: 1%;
   left: 1%;
   background:#000000;
@@ -497,17 +502,14 @@ table.table tr.visited {font-weight:bold}
  
   }
 .cat-link { bottom:0; width:100%;
-padding:10px;
 overflow-y:scroll;
-height:290px;
-
-
-}
+height:340px;}
 
 .robbin { margin-top:-32px}
 .robbin .model-title{ margin-top:-25px; color:#401805}
-ul#banner { position: fixed; line-height: 45px; margin: 0 30px; padding: 0;  }
-ul#banner li{height:20px;}
+ul#banner { position: fixed; line-height: 45px; margin: 0 30px; padding: 0; width:200px  }
+ul#banner li{height:20px; float: right;
+width: 100px;}
 ul#banner li:hover a{color:#F6F649}
 .link-del {position:fixed}
 /*.scroll {margin-right:400px; width:8000px}*/
