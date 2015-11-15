@@ -1,14 +1,17 @@
 -if is_admin?
-  .admin-link.fa    
-    = link_to 'تعریف نمایندگی جدید', new_reseller_path
-    %hr
+  .admin-link.fa        
     = link_to 'ویرایش صفحه', edit_page_path(@page)
 = image_tag 'd.jpg', :class => "bg"
 .page-bg
   -if @page.read_attribute("title") == "Contact us"
-   
+    .admin-link.fa    
+      = link_to 'تعریف نمایندگی جدید', new_reseller_path
+      %hr
+      = link_to 'ویرایش صفحه', edit_page_path(@page)
     = render "shared/msg_form"
     = render 'resellers/index'
-
+  -if @page.read_attribute("title") == "About us"
+    #page-details
+      %p{:style => "color:#fff"}=raw @page.phtml_text
 
 
