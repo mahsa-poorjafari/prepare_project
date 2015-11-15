@@ -11,6 +11,8 @@
       = f.select(:category_id, Category.all.collect {|u| [u.title_fa, u.id]}, :prompt => '  محصول را انتخاب کنید.')        
     .form-group
       = f.label 'انتخاب تصویر', :class => "control-label"   
+      - if @gallery.image.present?
+        = image_tag @gallery.image(:small)
       = f.file_field :image
     .form-group
       = f.label 'جزییات فارسی', :class => "control-label"   
