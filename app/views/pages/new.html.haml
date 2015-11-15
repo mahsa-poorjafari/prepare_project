@@ -1,6 +1,6 @@
 .fa
   %h1= 'تعریف صفحه متنی جدید'
-
-  = render 'form'
-  - if is_admin?
-    = link_to 'بازگشت', pages_path
+  #category-details
+    = render 'form'
+    - if is_admin?
+      = link_to 'بازگشت', pages_path
