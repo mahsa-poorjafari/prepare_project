@@ -6,5 +6,7 @@
   %li#ourprojects{style: "font-size:11px;font-weight:bold"} 
     = link_to t('gallery'), Gallery, :title => "رنگین کمان"
   
-  %li#contact{style: "font-size:11px;font-weight:bold"} 
-    = link_to Page.first.ptitle, :title => "رنگین کمان"
+  %li#contact{style: "font-size:11px;font-weight:bold"}    
+    - Page.all.each do |contact_us|
+      -if contact_us.ptitle == 'تماس با ما'
+        = link_to Page.first.ptitle, contact_us, :title => "رنگین کمان"
