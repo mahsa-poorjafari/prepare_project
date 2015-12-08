@@ -595,10 +595,10 @@ min-height:235px;
 
 .model-pro {
   position:relative;
-  min-width:15%;
-  max-width:15%;
-  min-height:160px;
-  max-height:160px;
+  min-width:100px;
+  max-width:100px;
+  min-height:350px;
+  max-height:350px;
   overflow:hidden; float:right;
   margin:5px;  
   text-align:center;
@@ -620,8 +620,16 @@ min-height:235px;
   background-repeat: repeat;
   box-shadow:-3px 0px 5px #333333, 3px 1px 5px #333333;    
  } 
- .model-folder-pro .model-logo {position:absolute; left:0; bottom:0}
-.model-pro .pic-title, .model-folder-pro .pic-title {color:#27160e; height:38px; overflow:hidden; padding-top:4%}
+ .model-folder-pro:hover .logo-pointer .model-logo {display:none}
+ .model-folder-pro:hover .logo-pointer .model-logo-color {display:block}
+.model-folder-pro .logo-pointer .model-logo {position:absolute; left:0; bottom:0}
+.model-pro .pic-title, .model-folder-pro .pic-title {color:#27160e; height:38px; overflow:hidden; padding-top:4%;
+-webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+.model-pro:hover  .pic-title {color:#000; background-color:#FFA500}
 .model-pro .go-download, .model-folder-pro .go-download{
   position:absolute;
   width:22%;
@@ -630,7 +638,7 @@ min-height:235px;
   filter:alpha(opacity=80); /* For IE8 and earlier */
 }
 .model-pro:hover {cursor:pointer}
-.model-pro img.sample{width:100%; height:130px}
+.model-pro img.sample{width:100px; height:320px}
 .model-folder-pro img.sample{width:98%; height:98%; position:absolute; top:1%; right:1%; left:1%; bottom:1%}
 .product_show_pics {width:70%; float: left;
   overflow-y:scroll;
@@ -758,3 +766,9 @@ span.unread_msg {background:#FFFF00; color:#000; padding:2%; border-radius:50%;}
 #page-details p, #page-details p span, #page-details h2{color:#fff}
 
 .parket-shine {padding-top: 13%;}
+.logo-pointer {position: absolute;
+height: 90px;
+width: 100%;
+bottom:0; 
+}
+.logo-pointer .model-logo-color{display:none}
