@@ -604,9 +604,19 @@ min-height:235px;
   text-align:center;
   background-image: url(image-path('sprinkles.png'));
   background-repeat: repeat;
-  box-shadow:-3px 0px 5px #333333, 3px 1px 5px #333333;    
-  
+  box-shadow:-3px 0px 5px #333333, 3px 1px 5px #333333;      
  }
+ .model-pro-wallpaper {position:relative;
+  min-width:15%;
+  max-width:15%;
+  min-height:150px;
+  max-height:150px;
+  overflow:hidden; float:right;
+  margin:5px;  
+  text-align:center;
+  background-image: url(image-path('sprinkles.png'));
+  background-repeat: repeat;
+  box-shadow:-3px 0px 5px #333333, 3px 1px 5px #333333;      }
 .model-folder-pro {
   position:relative;
   min-width:15%;
@@ -629,7 +639,7 @@ min-height:235px;
   -o-transition: all .5s ease;
   transition: all .5s ease;
 }
-.model-pro:hover  .pic-title {color:#000; background-color:#FFA500}
+.model-pro:hover  .pic-title, .model-pro-wallpaper .pic-title{color:#000; background-color:#FFA500}
 .model-pro .go-download, .model-folder-pro .go-download{
   position:absolute;
   width:22%;
@@ -637,8 +647,9 @@ min-height:235px;
   opacity: .8;  
   filter:alpha(opacity=80); /* For IE8 and earlier */
 }
-.model-pro:hover {cursor:pointer}
-.model-pro img.sample{width:100px; height:320px}
+.model-pro:hover, .model-pro-wallpaper {cursor:pointer}
+.model-pro img.sample{width:100px; height:115px}
+.model-pro-wallpaper img.sample{width:100%; height:320px}
 .model-folder-pro img.sample{width:98%; height:98%; position:absolute; top:1%; right:1%; left:1%; bottom:1%}
 .product_show_pics {width:70%; float: left;
   overflow-y:scroll;
@@ -765,7 +776,7 @@ span.unread_msg {background:#FFFF00; color:#000; padding:2%; border-radius:50%;}
 #page-details {width:80%; margin-right:10%; margin-left:10%; overflow-y:scroll; height:400px}
 #page-details p, #page-details p span, #page-details h2{color:#fff}
 
-.parket-shine {padding-top: 13%;}
+
 .logo-pointer {position: absolute;
 height: 90px;
 width: 100%;
