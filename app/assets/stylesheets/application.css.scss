@@ -648,8 +648,8 @@ min-height:235px;
   filter:alpha(opacity=80); /* For IE8 and earlier */
 }
 .model-pro:hover, .model-pro-wallpaper {cursor:pointer}
-.model-pro img.sample{width:100px; height:115px}
-.model-pro-wallpaper img.sample{width:100%; height:320px}
+.model-pro img.sample{width:100px; height:320px}
+.model-pro-wallpaper img.sample{width:100%; height:115px}
 .model-folder-pro img.sample{width:98%; height:98%; position:absolute; top:1%; right:1%; left:1%; bottom:1%}
 .product_show_pics {width:70%; float: left;
   overflow-y:scroll;
