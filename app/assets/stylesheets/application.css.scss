@@ -633,13 +633,13 @@ min-height:235px;
  .model-folder-pro:hover .logo-pointer .model-logo {display:none}
  .model-folder-pro:hover .logo-pointer .model-logo-color {display:block}
 .model-folder-pro .logo-pointer .model-logo {position:absolute; left:0; bottom:0}
-.model-pro .pic-title, .model-folder-pro .pic-title {color:#27160e; height:38px; overflow:hidden; padding-top:4%;
+.model-pro .pic-title, .model-folder-pro .pic-title, .model-pro-wallpaper .pic-title{color:#27160e; height:38px; overflow:hidden; padding-top:4%;
 -webkit-transition: all .5s ease;
   -moz-transition: all .5s ease;
   -o-transition: all .5s ease;
   transition: all .5s ease;
 }
-.model-pro:hover  .pic-title, .model-pro-wallpaper .pic-title{color:#000; background-color:#FFA500}
+.model-pro:hover  .pic-title, .model-pro-wallpaper:hover .pic-title{color:#000; background-color:#FFA500}
 .model-pro .go-download, .model-folder-pro .go-download{
   position:absolute;
   width:22%;
@@ -649,7 +649,7 @@ min-height:235px;
 }
 .model-pro:hover, .model-pro-wallpaper {cursor:pointer}
 .model-pro img.sample{width:100px; height:320px}
-.model-pro-wallpaper img.sample{width:100%; height:115px}
+.model-pro-wallpaper img.sample{width:100%; height:130px}
 .model-folder-pro img.sample{width:98%; height:98%; position:absolute; top:1%; right:1%; left:1%; bottom:1%}
 .product_show_pics {width:70%; float: left;
   overflow-y:scroll;
