@@ -32,14 +32,17 @@
                   
     
 .product_show_pics
-  
+    
   - if @product.product_folders.present?
     .col-sm-11.set-center      
+      .line.set-center  
+        = image_tag 'cat-title.png', :title => @product.category.title_fa + '_'+@product.title_fa, :alt => @product.category.title_fa + '_'+@product.title_fa
+        .go-up.set-center.title-cat= @product.title
       - @product.product_folders.each do |product_folder|
         .product-folder-lists{:class => I18n.locale}= link_to product_folder.title , product_folder, :title => @product.category.title_fa + '_'+product_folder.title_fa,  :class => "pro-folder-btn"
         
     .clr-float
-    .product-details#Container{:class => ('parket-shine' if @product.id == 24)}
+    .product-details#Container
       - @product.product_folders.order('title_en ASC').each do |product_folder|                        
         - @picture = product_folder.pictures.first
         - if @picture.present?
