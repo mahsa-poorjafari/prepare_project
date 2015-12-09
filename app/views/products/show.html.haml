@@ -51,9 +51,10 @@
   
   - else 
     .product-details      
-      - @product.pictures.order('model_type ASC, title_en ASC').each do |picture|        
-        .model-pro
-          = render 'products/filter_folder', :picture => picture, :product => @product
+      - if @product.category.title_fa == 'کاغذ دیواری'
+        - @product.pictures.order('model_type ASC, title_en ASC').each do |picture|        
+          .model-pro-wallpaper
+            = render 'products/filter_folder', :picture => picture, :product => @product
 
 .clr-float
 :javascript    
