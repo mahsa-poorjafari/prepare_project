@@ -13,7 +13,7 @@
 = link_to picture.image(:original), :data => { :colorbox => true }, :class => "show-product", :title => product.category.title_fa + '_'+product.title_fa do          
   - if picture.coming_soon
     = image_tag 'coming-soon.png', :class => "coming-soon", :title => product.category.title_fa + '_'+product.title_fa, :alt => product.category.title_fa + '_'+product.title_fa
-  = image_tag  picture.image(:medium), :class => "sample image1", :model => picture.title, :title => product.category.title_fa + '_'+product.title_fa, :alt => product.category.title_fa + '_'+product.title_fa
+  = image_tag  picture.image(:original), :class => "sample image1", :model => picture.title, :title => product.category.title_fa + '_'+product.title_fa, :alt => product.category.title_fa + '_'+product.title_fa
   
 .pic-title{:title => picture.id}= picture.title
 
