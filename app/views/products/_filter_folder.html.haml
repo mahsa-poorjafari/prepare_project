@@ -1,4 +1,4 @@
-
+.pic-title{:title => picture.id}= picture.title
 - if is_admin?
   .model-admin-link
     = link_to 'ویرایش', edit_picture_path(picture), :title => product.category.title_fa + '_'+product.title_fa
@@ -15,6 +15,6 @@
     = image_tag 'coming-soon.png', :class => "coming-soon", :title => product.category.title_fa + '_'+product.title_fa, :alt => product.category.title_fa + '_'+product.title_fa
   = image_tag  picture.image(:original), :class => "sample image1", :model => picture.title, :title => product.category.title_fa + '_'+product.title_fa, :alt => product.category.title_fa + '_'+product.title_fa
   
-.pic-title{:title => picture.id}= picture.title
+
 
 
