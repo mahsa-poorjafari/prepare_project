@@ -34,7 +34,7 @@
 .product_show_pics
     
   - if @product.product_folders.present?
-    .col-sm-11.set-center      
+    .col-sm-12.set-center{:style => "padding:0"}      
       .line.set-center  
         = image_tag 'cat-title.png', :title => @product.category.title_fa + '_'+@product.title_fa, :alt => @product.category.title_fa + '_'+@product.title_fa
         .go-up.set-center.title-cat= @product.title
