@@ -609,8 +609,8 @@ min-height:235px;
  .model-pro-wallpaper {position:relative;
   min-width:15%;
   max-width:15%;
-  min-height:150px;
-  max-height:150px;
+  min-height:155px;
+  max-height:155px;
   overflow:hidden; float:right;
   margin:5px;  
   text-align:center;
@@ -633,7 +633,7 @@ min-height:235px;
  .model-folder-pro:hover .logo-pointer .model-logo {display:none}
  .model-folder-pro:hover .logo-pointer .model-logo-color {display:block}
 .model-folder-pro .logo-pointer .model-logo {position:absolute; left:0; bottom:0}
-.model-pro .pic-title, .model-folder-pro .pic-title, .model-pro-wallpaper .pic-title{color:#27160e; height:38px; overflow:hidden; padding-top:4%;
+.model-pro .pic-title, .model-folder-pro .pic-title, .model-pro-wallpaper .pic-title{color:#27160e; height:25px; overflow:hidden; padding-top:4%;
 -webkit-transition: all .5s ease;
   -moz-transition: all .5s ease;
   -o-transition: all .5s ease;
