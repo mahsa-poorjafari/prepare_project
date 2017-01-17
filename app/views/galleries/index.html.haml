@@ -33,6 +33,19 @@
 
 
 .products-group.set-center  
+  - @g_folders.each do |g_folder|	
+    
+    .products.set-center{:class => "item#{g_folder.category_id}", :divname => "item#{g_folder.category_id}"}                     
+      .pro_wrapper{align: "center", :class => I18n.locale}                          
+        .pro-info.set-center
+          =link_to g_folder, :class => "show-gallery_f", :title => g_folder.title_fa do              
+            - @f_g = Gallery.where("g_folder_id = ? ", g_folder.id)
+            - if @f_g.exists?
+              = image_tag  @f_g.first.image(:medium), :class => "gallery-pic", :alt => @f_g.first.image_file_name, :title => @f_g.first.image_file_name
+            .show-details-gallery              
+              %p= g_folder.title_fa
+            
+            
   - @galleries.each do |gallery|
     .products.set-center{:class => "item#{gallery.category_id}", :divname => "item#{gallery.category_id}"}                     
       .pro_wrapper{align: "center", :class => I18n.locale}                          
