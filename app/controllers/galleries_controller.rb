@@ -4,8 +4,9 @@ class GalleriesController < ApplicationController
   # GET /galleries
   # GET /galleries.json
   def index
-    @galleries = Gallery.order(" created_at desc")
+    @galleries = Gallery.where("g_folder_id is null OR g_folder_id = ' ' ")
     @category = Category.all
+    @g_folders = GalleryFolder.all 
   end
 
   # GET /galleries/1
@@ -66,6 +67,6 @@ class GalleriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gallery_params
-      params.require(:gallery).permit(:category_id, :image, :description_fa, :description_en)
+      params.require(:gallery).permit(:category_id, :image, :description_fa, :description_en, :g_folder_id)
     end
 end

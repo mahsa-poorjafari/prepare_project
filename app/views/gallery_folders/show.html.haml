@@ -1,0 +1,45 @@
+-if is_admin?
+  .admin-link.fa   
+    = link_to 'افزودن تصویر جدید', new_gallery_path
+= image_tag 'categories.jpg', :class => "bg", :title => "رنگین کمان", :alt => "رنگین کمان"
+.products-group.set-center  
+  - @galleries.each do |gallery|
+    .products.set-center{:class => "item#{gallery.category_id}", :divname => "item#{gallery.category_id}"}                     
+      .pro_wrapper{align: "center", :class => I18n.locale}                          
+        .pro-info.set-center
+          =link_to gallery.image(:original), :data => { :colorbox => true }, :class => "show-gallery", :title => gallery.image_file_name do              
+            = image_tag  gallery.image(:medium), :class => "gallery-pic", :alt => gallery.image_file_name, :title => gallery.image_file_name
+            - if  gallery.description.present?
+              .show-details-gallery
+                %p= gallery.description
+        %div
+          - if is_admin?
+            .model-admin-link{:style => "top:0;"}
+              = link_to 'ویرایش', edit_gallery_path(gallery), :alt => gallery.image_file_name, :title => gallery.image_file_name
+              \|
+              = link_to 'حذف', gallery, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }, :alt => gallery.image_file_name, :title => gallery.image_file_name
+
+
+:javascript
+  $( document ).ready(function() {
+    $('.cat-group#title2').addClass('active');
+    
+    $('.cat-group').click(function(){
+    
+      $('.cat-group').removeClass('active');
+      $(this).addClass('active');
+      var item = $(this).attr('id');
+      
+      $('.products').hide(); 
+      $('.products.'+[item]).fadeIn(1000);      
+      
+      
+    });
+    var title = $('.show-gallery img').attr('alt');
+    $('.show-gallery').colorbox({title: title });
+    
+  });
+ 
+
+
+ 
