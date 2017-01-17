@@ -2,6 +2,7 @@ PrepareProject::Application.routes.draw do
 
   
 
+  resources :gallery_folders
   resources :product_folders
 
   resources :pictures
