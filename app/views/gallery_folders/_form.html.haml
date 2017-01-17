@@ -1,0 +1,20 @@
+= form_for @gallery_folder do |f|
+  - if @gallery_folder.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@gallery_folder.errors.count, "error")} prohibited this gallery_folder from being saved:"
+      %ul
+        - @gallery_folder.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field  
+    
+    = f.label 'انتخاب گروه محصولات', :class => "control-label"   
+    = f.select(:category_id, Category.all.collect {|u| [u.title_fa, u.id]}, :prompt => '  محصول را انتخاب کنید.' , :required => true )
+  .field
+    = f.label ':عنوان فارسی'
+    = f.text_field :title_fa
+  .field
+    = f.label ':عنوان انگلیسی'
+    = f.text_field :title_en
+  .actions
+    = f.submit 'ذخیره'
