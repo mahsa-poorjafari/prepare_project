@@ -1,6 +1,8 @@
+# encoding: UTF-8
 class GalleryFoldersController < ApplicationController
-  before_action :set_gallery_folder, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_gallery_folder, only: [:show, :edit, :update, :destroy]  
+  before_filter :check_autentication, only: [:new,:edit, :update, :destroy]
+	
   # GET /gallery_folders
   # GET /gallery_folders.json
   def index

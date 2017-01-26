@@ -1,0 +1,2 @@
+module GalleryFoldersHelper
+end
