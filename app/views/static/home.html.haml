@@ -1,7 +1,8 @@
 
 .slider.en
-  .cycle-overlay.center{ :class => I18n.locale}
-    %h2= raw Page.last.phtml_text
+  -if Page.last.phtml_text.present? 
+    .cycle-overlay.center{ :class => I18n.locale}
+      %h2= raw Page.last.phtml_text
     
   = render "sliders/slider"
 
