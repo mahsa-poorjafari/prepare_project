@@ -12,16 +12,9 @@
     = f.select(:category_id, Category.all.collect {|u| [u.title_fa, u.id]}, :prompt => '  محصول را انتخاب کنید.' , :required => true )
   .field
     = f.label ':عنوان فارسی'
-<<<<<<< HEAD
-    = f.text_field :title_fa
-  .field
-    = f.label ':عنوان انگلیسی'
-    = f.text_field :title_en
-=======
     = f.text_field :title_fa, :required => true
   .field
     = f.label ':عنوان انگلیسی'
     = f.text_field :title_en, :required => true
->>>>>>> e0e067f44bcaf38d5c981bdd2a36afc7e6c2b1b9
   .actions
     = f.submit 'ذخیره'

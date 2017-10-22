@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.4'
+gem 'rails'
 
 
 gem "html2haml"
 gem 'haml-rails'
 
 gem 'colorbox-rails'
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem "paperclip", "~> 5.0.0"
 gem 'ckeditor_rails'
 gem "friendly_id", "~> 5.0.1"
 gem 'jalalidate'
@@ -64,4 +64,5 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-gem 'canonical-rails', github: 'jumph4x/canonical-rails'
+gem 'canonical-rails', :git =>  'git@github.com:jumph4x/canonical-rails.git'
+

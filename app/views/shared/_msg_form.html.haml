@@ -19,24 +19,25 @@
     .form-group
       = f.label t('msg.contact-name'),  :class => "control-label text-shadow contact-text"    
       %span.Necessary= t('msg.Required')
-      = f.text_field :name, :class => "form-control", :style => "width:100%", :title => "رنگین کمان"
+      = f.text_field :name, :class => "form-control", :style => "float: left;", :title => "رنگین کمان"
       
       
     .form-group
       = f.label t('msg.contact-email'),  :class => "control-label text-shadow contact-text"
       %span.Necessary= t('msg.Required')
-      = f.text_field :email, :class => "form-control", :style => "width:100%", :title => "رنگین کمان"
+      = f.text_field :email, :class => "form-control", :style => "float: left;", :title => "رنگین کمان"
       
     .form-group
       = f.label t('msg.contact-phone'),  :class => "control-label text-shadow contact-text"
       %span.Necessary=  t('msg.Required')
-      = f.text_field :phone, :class => "form-control", :style => "width:100%", :title => "رنگین کمان"
+      = f.text_field :phone, :class => "form-control", :style => "float: left;", :title => "رنگین کمان"
       
     .form-group
       = f.label t('msg.contact-msg'),  :class => "control-label text-shadow contact-text-area"
       %span.Necessary=  t('msg.Required')
       = f.text_area :text, :class => "form-control" , :style => "resize: none; width:100%", rows: 4, :title => "رنگین کمان"      
-           
+    .form-group       
+      .g-recaptcha{"data-sitekey" => "6LdLcy0UAAAAANGeyCoBwEUEEiSqweYIvKYmKs8x"}
     .form-group
       = f.submit t('msg.contact-btn'), :class=> "btn btn-default contact-submit", :title => "رنگین کمان"
 
