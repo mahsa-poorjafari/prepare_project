@@ -13,207 +13,208 @@
 
 ActiveRecord::Schema.define(version: 20170117212630) do
 
-  create_table "catalogues", force: true do |t|
-    t.string   "title_fa"
-    t.string   "title_en"
+  create_table "catalogues", force: :cascade do |t|
+    t.string   "title_fa",           limit: 255
+    t.string   "title_en",           limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
   end
 
-  create_table "categories", force: true do |t|
+  create_table "categories", force: :cascade do |t|
+    t.string   "title",              limit: 255
+    t.text     "description",        limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
-    t.string   "title_fa"
-    t.string   "title_en"
-    t.text     "description_fa"
-    t.text     "description_en"
-    t.text     "warranty_fa"
-    t.text     "warranty",           null: false
-    t.text     "maintaion_fa"
-    t.text     "maintaion",          null: false
-    t.text     "installation_fa"
-    t.text     "installation",       null: false
+    t.string   "title_fa",           limit: 255
+    t.string   "title_en",           limit: 255
+    t.text     "description_fa",     limit: 65535
+    t.text     "description_en",     limit: 65535
+    t.text     "installation",       limit: 65535
+    t.text     "maintaion",          limit: 65535
+    t.text     "warranty",           limit: 65535
+    t.text     "warranty_fa",        limit: 65535
+    t.text     "maintaion_fa",       limit: 65535
+    t.text     "installation_fa",    limit: 65535
   end
 
-  create_table "certifications", force: true do |t|
-    t.string   "title_fa"
-    t.string   "title_en"
+  create_table "certifications", force: :cascade do |t|
+    t.string   "title_fa",           limit: 255
+    t.string   "title_en",           limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "category_id"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
+    t.integer  "category_id",        limit: 4
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
   end
 
-  create_table "galleries", force: true do |t|
-    t.integer  "category_id"
+  create_table "galleries", force: :cascade do |t|
+    t.integer  "category_id",        limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
-    t.text     "description_fa"
-    t.text     "description_en"
-    t.integer  "g_folder_id"
+    t.text     "description_fa",     limit: 65535
+    t.text     "description_en",     limit: 65535
+    t.integer  "g_folder_id",        limit: 4
   end
 
-  create_table "gallery_folders", force: true do |t|
-    t.string   "title_fa"
-    t.string   "title_en"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "category_id"
+  create_table "gallery_folders", force: :cascade do |t|
+    t.string   "title_fa",    limit: 255
+    t.string   "title_en",    limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "category_id", limit: 4
   end
 
-  create_table "messages", force: true do |t|
-    t.text     "email"
-    t.string   "name"
-    t.string   "phone"
-    t.text     "text"
-    t.boolean  "visited",    default: false
+  create_table "messages", force: :cascade do |t|
+    t.text     "email",      limit: 65535
+    t.string   "name",       limit: 255
+    t.string   "phone",      limit: 255
+    t.text     "text",       limit: 65535
+    t.boolean  "visited",                  default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "pages", force: true do |t|
-    t.string   "title"
-    t.text     "html_text"
+  create_table "pages", force: :cascade do |t|
+    t.string   "title",        limit: 255
+    t.text     "html_text",    limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "title_fa"
-    t.text     "html_text_fa"
+    t.string   "title_fa",     limit: 255
+    t.text     "html_text_fa", limit: 65535
   end
 
-  create_table "pictures", force: true do |t|
-    t.string   "title_en"
-    t.string   "title_fa"
+  create_table "pictures", force: :cascade do |t|
+    t.string   "title_en",           limit: 255
+    t.string   "title_fa",           limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
-    t.integer  "product_id"
+    t.integer  "product_id",         limit: 4
     t.boolean  "coming_soon"
     t.boolean  "download"
-    t.integer  "product_folder_id"
+    t.integer  "product_folder_id",  limit: 4
     t.boolean  "model_type"
   end
 
-  create_table "product_folders", force: true do |t|
-    t.string   "title_en"
-    t.string   "title_fa"
+  create_table "product_folders", force: :cascade do |t|
+    t.string   "title_en",   limit: 255
+    t.string   "title_fa",   limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "product_id"
+    t.integer  "product_id", limit: 4
   end
 
-  create_table "products", force: true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.integer  "category_id"
+  create_table "products", force: :cascade do |t|
+    t.string   "title",              limit: 255
+    t.text     "description",        limit: 65535
+    t.integer  "category_id",        limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "title_fa"
-    t.text     "description_fa"
+    t.string   "title_fa",           limit: 255
+    t.text     "description_fa",     limit: 65535
     t.boolean  "coming_soon"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
-    t.integer  "sub_category_id"
+    t.integer  "sub_category_id",    limit: 4
   end
 
-  create_table "resellers", force: true do |t|
-    t.string   "title_fa"
-    t.string   "title_en"
-    t.string   "Management_name_fa"
-    t.string   "Management_name_en"
-    t.text     "phone"
-    t.text     "address_fa"
-    t.text     "address_en"
+  create_table "resellers", force: :cascade do |t|
+    t.string   "title_fa",           limit: 255
+    t.string   "title_en",           limit: 255
+    t.string   "Management_name_fa", limit: 255
+    t.string   "Management_name_en", limit: 255
+    t.text     "phone",              limit: 65535
+    t.text     "address_fa",         limit: 65535
+    t.text     "address_en",         limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "send_links", force: true do |t|
-    t.string   "sender_email"
-    t.string   "receiver_email"
-    t.string   "current_link"
-    t.text     "text"
-    t.string   "subject"
+  create_table "send_links", force: :cascade do |t|
+    t.string   "sender_email",   limit: 255
+    t.string   "receiver_email", limit: 255
+    t.string   "current_link",   limit: 255
+    t.text     "text",           limit: 65535
+    t.string   "subject",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "sliders", force: true do |t|
-    t.string   "description_fa"
-    t.string   "description_en"
+  create_table "sliders", force: :cascade do |t|
+    t.string   "description_fa",     limit: 255
+    t.string   "description_en",     limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
-    t.integer  "category_id"
   end
 
-  create_table "sub_categories", force: true do |t|
-    t.string   "title_en"
-    t.string   "title_fa"
-    t.integer  "category_id"
+  create_table "sub_categories", force: :cascade do |t|
+    t.string   "title_en",           limit: 255
+    t.string   "title_fa",           limit: 255
+    t.integer  "category_id",        limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
     t.boolean  "comming_soon"
-    t.text     "description_fa"
-    t.text     "description_en"
+    t.text     "description_fa",     limit: 65535
+    t.text     "description_en",     limit: 65535
   end
 
-  create_table "users", force: true do |t|
-    t.text     "email"
-    t.string   "user_name"
-    t.string   "password"
+  create_table "users", force: :cascade do |t|
+    t.text     "email",      limit: 65535
+    t.string   "user_name",  limit: 255
+    t.string   "password",   limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "visits", force: true do |t|
-    t.string   "visit_token"
-    t.string   "visitor_token"
-    t.string   "ip"
-    t.text     "user_agent"
-    t.text     "referrer"
-    t.text     "landing_page"
-    t.integer  "user_id"
-    t.string   "user_type"
-    t.string   "referring_domain"
-    t.string   "search_keyword"
-    t.string   "browser"
-    t.string   "os"
-    t.string   "device_type"
-    t.string   "country"
-    t.string   "region"
-    t.string   "city"
-    t.string   "utm_source"
-    t.string   "utm_medium"
-    t.string   "utm_term"
-    t.string   "utm_content"
-    t.string   "utm_campaign"
+  create_table "visits", force: :cascade do |t|
+    t.string   "visit_token",      limit: 255
+    t.string   "visitor_token",    limit: 255
+    t.string   "ip",               limit: 255
+    t.text     "user_agent",       limit: 65535
+    t.text     "referrer",         limit: 65535
+    t.text     "landing_page",     limit: 65535
+    t.integer  "user_id",          limit: 4
+    t.string   "user_type",        limit: 255
+    t.string   "referring_domain", limit: 255
+    t.string   "search_keyword",   limit: 255
+    t.string   "browser",          limit: 255
+    t.string   "os",               limit: 255
+    t.string   "device_type",      limit: 255
+    t.string   "country",          limit: 255
+    t.string   "region",           limit: 255
+    t.string   "city",             limit: 255
+    t.string   "utm_source",       limit: 255
+    t.string   "utm_medium",       limit: 255
+    t.string   "utm_term",         limit: 255
+    t.string   "utm_content",      limit: 255
+    t.string   "utm_campaign",     limit: 255
     t.datetime "created_at"
   end
 

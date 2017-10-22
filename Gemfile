@@ -16,15 +16,15 @@ gem "nested_form"
 gem "twitter-bootstrap-rails"
 gem 'i18n'
 gem 'ahoy_matey'
-
+gem 'mysql2'
 
 group :production do
-  gem 'mysql2'
+  #gem 'mysql2'
   gem 'rails_12factor'
 end
 
 group :development, :test do
-  gem 'mysql2'
+  #gem 'mysql2'
 end
 
 # Use SCSS for stylesheets
@@ -64,5 +64,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-gem 'canonical-rails', :git =>  'git@github.com:jumph4x/canonical-rails.git'
+#gem 'canonical-rails', :git =>  'git@github.com:jumph4x/canonical-rails.git'
+gem 'canonical-rails', '~> 0.0.9'
 

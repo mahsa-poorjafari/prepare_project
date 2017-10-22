@@ -1,3 +1,4 @@
 class Visit < ActiveRecord::Base
-  ahoy_visit
+  has_many :ahoy_events, class_name: "Ahoy::Event"
+  belongs_to :user
 end
